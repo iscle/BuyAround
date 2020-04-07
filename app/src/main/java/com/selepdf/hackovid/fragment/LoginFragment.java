@@ -7,14 +7,15 @@ import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
 import androidx.navigation.NavDirections;
 import androidx.navigation.Navigation;
 
 import com.selepdf.hackovid.R;
 import com.selepdf.hackovid.databinding.FragmentLoginBinding;
 
-public class LoginFragment extends Fragment {
+import dagger.android.support.DaggerFragment;
+
+public class LoginFragment extends DaggerFragment {
 
     private FragmentLoginBinding binding;
 

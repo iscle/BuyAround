@@ -11,7 +11,9 @@ import android.view.ViewGroup;
 import com.selepdf.hackovid.R;
 import com.selepdf.hackovid.databinding.FragmentRegisterBinding;
 
-public class RegisterFragment extends Fragment {
+import dagger.android.support.DaggerFragment;
+
+public class RegisterFragment extends DaggerFragment {
 
     private FragmentRegisterBinding binding;
 
