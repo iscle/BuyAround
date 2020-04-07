@@ -3,7 +3,6 @@ package com.selepdf.hackovid.di;
 import android.content.Context;
 
 import com.selepdf.hackovid.HackovidApplication;
-import com.selepdf.hackovid.di.module.LoginActivityModule;
 import com.selepdf.hackovid.di.module.NetworkModule;
 
 import javax.inject.Singleton;
@@ -17,7 +16,6 @@ import dagger.android.AndroidInjector;
 @Component(modules = {
         AndroidInjectionModule.class,
         NetworkModule.class,
-        LoginActivityModule.class,
 })
 public interface HackovidApplicationComponent extends AndroidInjector<HackovidApplication> {
 
