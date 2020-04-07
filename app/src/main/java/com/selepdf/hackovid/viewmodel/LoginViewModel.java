@@ -20,6 +20,6 @@ public class LoginViewModel extends ViewModel {
     public void login(String username, String password, LoginCallback loginCallback) {
         // Handle login here
 
-        loginCallback.onSuccess(UserType.Consumer); // Hardcoded for now!
+        loginCallback.onSuccess(UserType.CUSTOMER); // Hardcoded for now!
     }
 }
