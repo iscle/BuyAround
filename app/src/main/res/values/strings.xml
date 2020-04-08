@@ -35,6 +35,9 @@
     <string name="account_adresses">Adresses</string>
     <string name="account_payment">Payment</string>
 
+    <!-- RECYCLER_VIEW ITEM -->
+    <string name="item_content_title">Content title</string>
+
     <!-- NAVBAR -->
     <string name="nv_home">Home</string>
     <string name="nv_location">Location</string>
