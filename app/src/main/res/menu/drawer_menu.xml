@@ -1,27 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <group >
+    <group
+        android:id="@+id/top"
+        android:checkableBehavior="single">
         <item
-            android:id="@+id/home"
+            android:id="@+id/homeFragment"
             android:title="Home" />
         <item
-            android:id="@+id/orders"
+            android:id="@+id/ordersFragment"
             android:title="My orders" />
         <item
-            android:id="@+id/favourites"
+            android:id="@+id/favouritesFragment"
             android:title="Favourites" />
         <item
-            android:id="@+id/categories"
+            android:id="@+id/categoriesFragment"
             android:title="Categories" />
         <item
-            android:id="@+id/account"
+            android:id="@+id/accountFragment"
             android:title="My account" />
         <item
-            android:id="@+id/jobs"
+            android:id="@+id/jobsFragment"
             android:title="Jobs" />
     </group>
-    <group >
+    <group android:id="@+id/bottom">
         <item
             android:id="@+id/logout"
             android:title="Log out" />
