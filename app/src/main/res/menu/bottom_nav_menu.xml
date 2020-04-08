@@ -13,7 +13,7 @@
     <item android:id="@+id/ordersFragment"
         android:title="@string/orders"
         android:icon="@drawable/ic_orders" />
-    <item android:id="@+id/notificationFragment"
+    <item android:id="@+id/notificationsFragment"
         android:title="@string/notifications"
         android:icon="@drawable/ic_notifications" />
 </menu>

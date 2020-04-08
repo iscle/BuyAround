@@ -54,6 +54,15 @@
         <action
             android:id="@+id/action_homeFragment_to_ordersFragment2"
             app:destination="@id/ordersFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_settingsFragment"
+            app:destination="@id/settingsFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_supportFragment"
+            app:destination="@id/supportFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_legalFragment"
+            app:destination="@id/legalFragment" />
     </fragment>
     <fragment
         android:id="@+id/accountFragment"
@@ -80,4 +89,19 @@
         android:name="com.selepdf.hackovid.fragment.OrdersFragment"
         android:label="@string/orders"
         tools:layout="@layout/fragment_orders" />
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.selepdf.hackovid.fragment.SettingsFragment"
+        android:label="@string/settings"
+        tools:layout="@layout/fragment_settings" />
+    <fragment
+        android:id="@+id/legalFragment"
+        android:name="com.selepdf.hackovid.fragment.LegalFragment"
+        android:label="@string/legal"
+        tools:layout="@layout/fragment_legal" />
+    <fragment
+        android:id="@+id/supportFragment"
+        android:name="com.selepdf.hackovid.fragment.SupportFragment"
+        android:label="@string/customer_support"
+        tools:layout="@layout/fragment_support" />
 </navigation>
