@@ -38,6 +38,7 @@ public class RegisterFragment extends DaggerFragment implements RegisterCallback
 
         binding.registerBtnRegister.setOnClickListener(v -> {
             // TODO: API CALL TO REGISTER
+            
         });
     }
 

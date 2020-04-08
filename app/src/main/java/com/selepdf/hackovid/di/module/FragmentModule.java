@@ -14,4 +14,5 @@ public abstract class FragmentModule {
 
     @ContributesAndroidInjector
     abstract LoginFragment loginFragment();
+
 }

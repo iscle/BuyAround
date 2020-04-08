@@ -14,6 +14,4 @@ public class HackovidRepository {
     public HackovidRepository(HackovidService service) {
         this.service = service;
     }
-
-
 }
