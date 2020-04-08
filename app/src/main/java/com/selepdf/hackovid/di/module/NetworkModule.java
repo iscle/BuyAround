@@ -3,15 +3,13 @@ package com.selepdf.hackovid.di.module;
 import com.selepdf.hackovid.HackovidApplication;
 import com.selepdf.hackovid.service.HackovidService;
 
-import java.io.IOException;
-
 import javax.inject.Singleton;
 
 import dagger.Module;
 import dagger.Provides;
 import okhttp3.Interceptor;
 import okhttp3.OkHttpClient;
-import okhttp3.Response;
+import okhttp3.Request;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
@@ -21,11 +19,13 @@ public class NetworkModule {
     @Singleton
     @Provides
     public static Interceptor provideInterceptor() {
-        return new Interceptor() {
-            @Override
-            public Response intercept(Chain chain) throws IOException {
-                return null;
-            }
+        return chain -> {
+            Request request = chain.request()
+                    .newBuilder()
+                    .addHeader("Authorization", "NoTokenYet") // TODO: Change this
+                    .build();
+
+            return chain.proceed(request);
         };
     }
 
@@ -47,6 +47,4 @@ public class NetworkModule {
                 .build()
                 .create(HackovidService.class);
     }
-
-
 }
