@@ -58,26 +58,26 @@
     <fragment
         android:id="@+id/accountFragment"
         android:name="com.selepdf.hackovid.fragment.AccountFragment"
-        android:label="fragment_account"
+        android:label="@string/my_account"
         tools:layout="@layout/fragment_account" />
     <fragment
         android:id="@+id/categoriesFragment"
         android:name="com.selepdf.hackovid.fragment.CategoriesFragment"
-        android:label="fragment_categories"
+        android:label="@string/categories"
         tools:layout="@layout/fragment_categories" />
     <fragment
         android:id="@+id/favouritesFragment"
         android:name="com.selepdf.hackovid.fragment.FavouritesFragment"
-        android:label="fragment_favourites"
+        android:label="@string/favourites"
         tools:layout="@layout/fragment_favourites" />
     <fragment
         android:id="@+id/jobsFragment"
         android:name="com.selepdf.hackovid.fragment.JobsFragment"
-        android:label="fragment_jobs"
+        android:label="@string/jobs"
         tools:layout="@layout/fragment_jobs" />
     <fragment
         android:id="@+id/ordersFragment"
         android:name="com.selepdf.hackovid.fragment.OrdersFragment"
-        android:label="fragment_orders"
+        android:label="@string/orders"
         tools:layout="@layout/fragment_orders" />
 </navigation>
