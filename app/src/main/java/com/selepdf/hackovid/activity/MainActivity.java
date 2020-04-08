@@ -34,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
         Set<Integer> tlds = new HashSet<>();
         tlds.add(R.id.homeFragment);
         tlds.add(R.id.ordersFragment);
+        tlds.add(R.id.notificationsFragment);
         tlds.add(R.id.favouritesFragment);
         tlds.add(R.id.categoriesFragment);
         tlds.add(R.id.accountFragment);

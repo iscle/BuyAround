@@ -8,8 +8,9 @@
         android:title="@string/location"
         android:icon="@drawable/ic_location" />
     <item
-        android:id="@+id/itemEmpty"
-        android:title=""/>
+        android:checkable="false"
+        android:enabled="false"
+        android:title="" />
     <item android:id="@+id/ordersFragment"
         android:title="@string/orders"
         android:icon="@drawable/ic_orders" />
