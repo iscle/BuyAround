@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:id="@+id/action_home"
+    <item android:id="@+id/homeFragment"
         android:title="@string/nv_home"
         android:icon="@drawable/ic_home" />
-    <item android:id="@+id/action_location"
+    <item android:id="@+id/locationFragment"
         android:title="@string/nv_location"
         android:icon="@drawable/ic_location" />
     <item
         android:id="@+id/itemEmpty"
         android:title=""/>
-    <item android:id="@+id/action_orders"
+    <item android:id="@+id/ordersFragment"
         android:title="@string/nv_orders"
         android:icon="@drawable/ic_orders" />
-    <item android:id="@+id/action_notifications"
+    <item android:id="@+id/notificationFragment"
         android:title="@string/nv_notifications"
         android:icon="@drawable/ic_notifications" />
 </menu>
