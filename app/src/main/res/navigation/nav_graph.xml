@@ -63,6 +63,12 @@
         <action
             android:id="@+id/action_homeFragment_to_legalFragment"
             app:destination="@id/legalFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_locationFragment2"
+            app:destination="@id/locationFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_notificationsFragment2"
+            app:destination="@id/notificationsFragment" />
     </fragment>
     <fragment
         android:id="@+id/accountFragment"
@@ -104,4 +110,14 @@
         android:name="com.selepdf.hackovid.fragment.SupportFragment"
         android:label="@string/customer_support"
         tools:layout="@layout/fragment_support" />
+    <fragment
+        android:id="@+id/locationFragment"
+        android:name="com.selepdf.hackovid.fragment.LocationFragment"
+        android:label="@string/location"
+        tools:layout="@layout/fragment_location" />
+    <fragment
+        android:id="@+id/notificationsFragment"
+        android:name="com.selepdf.hackovid.fragment.NotificationsFragment"
+        android:label="@string/notifications"
+        tools:layout="@layout/fragment_notifications" />
 </navigation>
