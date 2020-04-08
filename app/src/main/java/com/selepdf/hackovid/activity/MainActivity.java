@@ -3,7 +3,6 @@ package com.selepdf.hackovid.activity;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
@@ -24,16 +23,14 @@ public class MainActivity extends AppCompatActivity {
         DrawerLayout drawerLayout = (DrawerLayout) binding.getRoot();
         setContentView(drawerLayout);
 
+        // Get the NavController
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
+
+        // Set up the toolbar
         AppBarConfiguration appBarConfiguration =
                 new AppBarConfiguration.Builder(navController.getGraph())
                         .setDrawerLayout(drawerLayout)
                         .build();
-
-        Toolbar toolbar = binding.toolbar;
-        NavigationUI.setupWithNavController(toolbar, navController, appBarConfiguration);
-
-        // Set SupportActionBar to our Toolbar
-        setSupportActionBar(toolbar);
+        NavigationUI.setupWithNavController(binding.toolbar, navController, appBarConfiguration);
     }
 }
