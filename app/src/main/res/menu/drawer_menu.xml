@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group >
+        <item
+            android:id="@+id/home"
+            android:title="Home" />
+        <item
+            android:id="@+id/orders"
+            android:title="My orders" />
+        <item
+            android:id="@+id/favourites"
+            android:title="Favourites" />
+        <item
+            android:id="@+id/categories"
+            android:title="Categories" />
+        <item
+            android:id="@+id/account"
+            android:title="My account" />
+        <item
+            android:id="@+id/jobs"
+            android:title="Jobs" />
+    </group>
+    <group >
+        <item
+            android:id="@+id/logout"
+            android:title="Log out" />
+        <item
+            android:id="@+id/notifications"
+            android:title="Notifications" />
+        <item
+            android:id="@+id/settings"
+            android:title="Settings" />
+        <item
+            android:id="@+id/support"
+            android:title="Customer support" />
+        <item
+            android:id="@+id/legal"
+            android:title="Legal" />
+    </group>
+</menu>

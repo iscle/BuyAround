@@ -3,12 +3,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/loginFragment">
+    app:startDestination="@id/homeFragment">
 
     <fragment
         android:id="@+id/loginFragment"
         android:name="com.selepdf.hackovid.fragment.LoginFragment"
-        android:label="Login"
+        android:label="@string/login"
         tools:layout="@layout/fragment_login">
         <action
             android:id="@+id/action_loginFragment_to_registerFragment"
@@ -22,11 +22,22 @@
     <fragment
         android:id="@+id/registerFragment"
         android:name="com.selepdf.hackovid.fragment.RegisterFragment"
-        android:label="Register"
-        tools:layout="@layout/fragment_register">
+        android:label="@string/register"
+        tools:layout="@layout/fragment_register"/>
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.selepdf.hackovid.fragment.HomeFragment"
+        android:label="@string/home"
+        tools:layout="@layout/fragment_home">
         <action
-            android:id="@+id/action_registerFragment_to_placeholder"
-            app:destination="@id/placeholder" />
+            android:id="@+id/action_homeFragment_to_loginFragment"
+            app:destination="@id/loginFragment"
+            app:enterAnim="@anim/fragment_fade_enter"
+            app:exitAnim="@anim/fragment_fade_exit"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+        <action
+            android:id="@+id/action_homeFragment_to_registerFragment"
+            app:destination="@id/registerFragment" />
     </fragment>
-    <fragment android:id="@+id/placeholder" />
 </navigation>

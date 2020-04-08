@@ -23,5 +23,8 @@
     <string name="register_button">Continue</string>
     <string name="login_goto_register_tv">Register</string>
     <string name="register_goto_login_tv">Log in</string>
+    <string name="login">Login</string>
+    <string name="register">Register</string>
+    <string name="home">Home</string>
 
 </resources>

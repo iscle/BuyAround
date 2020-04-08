@@ -11,6 +11,7 @@ import androidx.annotation.Nullable;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavDirections;
 import androidx.navigation.Navigation;
+import androidx.navigation.fragment.NavHostFragment;
 
 import com.selepdf.hackovid.R;
 import com.selepdf.hackovid.callback.LoginCallback;
@@ -57,7 +58,7 @@ public class LoginFragment extends DaggerFragment implements LoginCallback {
 
     @Override
     public void onSuccess(String token) {
-        // TODO: GO TO MAIN FRAGMENT
+        NavHostFragment.findNavController(this).popBackStack();
     }
 
     @Override
