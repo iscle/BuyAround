@@ -8,19 +8,26 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavDirections;
 import androidx.navigation.Navigation;
 
 import com.selepdf.hackovid.R;
 import com.selepdf.hackovid.callback.LoginCallback;
 import com.selepdf.hackovid.databinding.FragmentLoginBinding;
-import com.selepdf.hackovid.model.UserType;
+import com.selepdf.hackovid.factory.ViewModelFactory;
+import com.selepdf.hackovid.viewmodel.LoginViewModel;
+
+import javax.inject.Inject;
 
 import dagger.android.support.DaggerFragment;
 
 public class LoginFragment extends DaggerFragment implements LoginCallback {
 
     private FragmentLoginBinding binding;
+    @Inject
+    protected ViewModelFactory viewModelFactory;
+    private LoginViewModel loginViewModel;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -33,19 +40,23 @@ public class LoginFragment extends DaggerFragment implements LoginCallback {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        view.findViewById(R.id.login_login_to_register).setOnClickListener(v -> {
+        loginViewModel = new ViewModelProvider(this, viewModelFactory).get(LoginViewModel.class);
+
+        binding.loginLoginToRegister.setOnClickListener(v -> {
             NavDirections action = LoginFragmentDirections
                     .actionLoginFragmentToRegisterFragment();
             Navigation.findNavController(v).navigate(action);
         });
 
-        view.findViewById(R.id.login_btn_login).setOnClickListener(v -> {
-            // TODO: API CALL TO LOG IN
+        binding.loginBtnLogin.setOnClickListener(v -> {
+            String username = binding.loginUser.getText().toString();
+            String password = binding.loginPassword.getText().toString();
+            loginViewModel.login(username, password, this);
         });
     }
 
     @Override
-    public void onSuccess(UserType userType) {
+    public void onSuccess(String token) {
         // TODO: GO TO MAIN FRAGMENT
     }
 

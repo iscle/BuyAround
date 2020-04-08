@@ -1,9 +1,7 @@
 package com.selepdf.hackovid.callback;
 
-import com.selepdf.hackovid.model.UserType;
-
 public interface LoginCallback {
-    void onSuccess(UserType userType);
+    void onSuccess(String token);
     void onFailure(LoginError loginError);
 
     enum LoginError {

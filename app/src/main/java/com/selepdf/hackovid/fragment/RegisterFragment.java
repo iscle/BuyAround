@@ -32,11 +32,11 @@ public class RegisterFragment extends DaggerFragment implements RegisterCallback
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        view.findViewById(R.id.register_register_to_login).setOnClickListener(v -> {
+        binding.registerRegisterToLogin.setOnClickListener(v -> {
             Navigation.findNavController(v).popBackStack();
         });
 
-        view.findViewById(R.id.register_btn_register).setOnClickListener(v -> {
+        binding.registerBtnRegister.setOnClickListener(v -> {
             // TODO: API CALL TO REGISTER
         });
     }
