@@ -24,16 +24,16 @@ public class MainActivity extends AppCompatActivity {
         DrawerLayout drawerLayout = (DrawerLayout) binding.getRoot();
         setContentView(drawerLayout);
 
-        // Set ActionBar to our Toolbar
-        Toolbar toolbar = binding.toolbar;
-        setSupportActionBar(toolbar);
-
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         AppBarConfiguration appBarConfiguration =
                 new AppBarConfiguration.Builder(navController.getGraph())
                         .setDrawerLayout(drawerLayout)
                         .build();
 
+        Toolbar toolbar = binding.toolbar;
         NavigationUI.setupWithNavController(toolbar, navController, appBarConfiguration);
+
+        // Set SupportActionBar to our Toolbar
+        setSupportActionBar(toolbar);
     }
 }
