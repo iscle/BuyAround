@@ -1,14 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".fragment.AccountFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_alignParentTop="true"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/profile_thumbnail"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:src="@drawable/ic_account" />
+
+            <TextView
+                android:id="@+id/profile_username"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/account_username"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/profile_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/account_email"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/profile_job_reference"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:text="@string/account_job_reference"
+                android:textAlignment="center" />
+
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/account_recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="20dp"
+            android:layout_below="@+id/linearLayout"/>
+
+    </RelativeLayout>
 
 </FrameLayout>

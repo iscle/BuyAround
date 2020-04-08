@@ -28,12 +28,12 @@
     <string name="home">Home</string>
 
     <!-- ACCOUNT -->
-    <string name="account_username">Username</string>
+    <string name="account_username">Usuari</string>
     <string name="account_email">Email</string>
-    <string name="account_job_reference">Become our delivery person</string>
-    <string name="account_personal_info">Personal Info</string>
+    <string name="account_job_reference">Converteix-te en repartidor!</string>
+    <string name="account_personal_info">Informacio Personal</string>
     <string name="account_adresses">Adresses</string>
-    <string name="account_payment">Payment</string>
+    <string name="account_payment">Pagament</string>
 
     <!-- NAVBAR -->
     <string name="nv_home">Home</string>
