@@ -27,4 +27,10 @@
     <string name="register">Register</string>
     <string name="home">Home</string>
 
+    <!-- NAVBAR -->
+    <string name="nv_home">Home</string>
+    <string name="nv_location">Location</string>
+    <string name="nv_orders">Orders</string>
+    <string name="nv_notifications">Notifications</string>
+
 </resources>
