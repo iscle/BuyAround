@@ -1,6 +1,6 @@
 package com.selepdf.hackovid;
 
-import com.selepdf.hackovid.di.HackovidApplicationComponent;
+import com.selepdf.hackovid.di.DaggerHackovidApplicationComponent;
 
 import dagger.android.AndroidInjector;
 import dagger.android.DaggerApplication;
@@ -10,6 +10,6 @@ public class HackovidApplication extends DaggerApplication {
 
     @Override
     protected AndroidInjector<? extends DaggerApplication> applicationInjector() {
-        return HackovidApplicationComponent.factory().create(getApplicationContext());
+        return DaggerHackovidApplicationComponent.factory().create(getApplicationContext());
     }
 }
