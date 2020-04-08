@@ -1,4 +1,5 @@
 package com.selepdf.hackovid.model;
 
-public class Category {
+public abstract class Category {
+    private String name;
 }
