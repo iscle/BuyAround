@@ -6,38 +6,38 @@
         android:checkableBehavior="single">
         <item
             android:id="@+id/homeFragment"
-            android:title="Home" />
+            android:title="@string/home" />
         <item
             android:id="@+id/ordersFragment"
-            android:title="My orders" />
+            android:title="@string/orders" />
         <item
             android:id="@+id/favouritesFragment"
-            android:title="Favourites" />
+            android:title="@string/favourites" />
         <item
             android:id="@+id/categoriesFragment"
-            android:title="Categories" />
+            android:title="@string/categories" />
         <item
             android:id="@+id/accountFragment"
-            android:title="My account" />
+            android:title="@string/my_account" />
         <item
             android:id="@+id/jobsFragment"
-            android:title="Jobs" />
+            android:title="@string/jobs" />
     </group>
     <group android:id="@+id/bottom">
         <item
             android:id="@+id/logout"
-            android:title="Log out" />
+            android:title="@string/log_out" />
         <item
             android:id="@+id/notifications"
-            android:title="Notifications" />
+            android:title="@string/notifications" />
         <item
             android:id="@+id/settings"
-            android:title="Settings" />
+            android:title="@string/settings" />
         <item
             android:id="@+id/support"
-            android:title="Customer support" />
+            android:title="@string/customer_support" />
         <item
             android:id="@+id/legal"
-            android:title="Legal" />
+            android:title="@string/legal" />
     </group>
 </menu>

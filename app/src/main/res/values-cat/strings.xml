@@ -28,17 +28,17 @@
     <string name="home">Home</string>
 
     <!-- ACCOUNT -->
-    <string name="account_username">Usuari</string>
-    <string name="account_email">Email</string>
+    <string name="username">Usuari</string>
+    <string name="email">Email</string>
     <string name="account_job_reference">Converteix-te en repartidor!</string>
     <string name="account_personal_info">Informacio Personal</string>
-    <string name="account_adresses">Adresses</string>
-    <string name="account_payment">Pagament</string>
+    <string name="addresses">Adresses</string>
+    <string name="payment">Pagament</string>
 
     <!-- NAVBAR -->
     <string name="nv_home">Home</string>
-    <string name="nv_location">Location</string>
-    <string name="nv_orders">Orders</string>
-    <string name="nv_notifications">Notifications</string>
+    <string name="location">Location</string>
+    <string name="orders">Orders</string>
+    <string name="notifications">Notifications</string>
 
 </resources>
