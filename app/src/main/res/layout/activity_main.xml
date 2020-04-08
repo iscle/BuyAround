@@ -67,7 +67,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_anchor="@id/bar"
-            app:srcCompat="@drawable/ic_add" />
+            app:srcCompat="@drawable/ic_local_grocery_store_white_24dp" />
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
