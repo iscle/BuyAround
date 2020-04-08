@@ -37,6 +37,9 @@
 
     <!-- RECYCLER_VIEW ITEM -->
     <string name="item_content_title">Content title</string>
+    <string name="item_content_subtitle">Content subtitle</string>
+    <string name="item_content_stars">4,2</string>
+
 
     <!-- NAVBAR -->
     <string name="nv_home">Home</string>
