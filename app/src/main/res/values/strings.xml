@@ -34,12 +34,28 @@
     <string name="account_personal_info">Personal Info</string>
     <string name="addresses">Addresses</string>
     <string name="payment">Payment</string>
+    <string name="use_conditions">Use Conditions</string>
 
     <!-- RECYCLER_VIEW ITEM -->
     <string name="item_content_title">Content title</string>
     <string name="item_content_subtitle">Content subtitle</string>
+    <string name="item_content_cost">Cost</string>
+    <string name="item_content_date">Date</string>
     <string name="item_content_stars">4,2</string>
 
+    <!-- HOME -->
+    <string name="home_shops_around">Shops around you</string>
+    <string name="home_top_packs">Top Packs</string>
+    <string name="home_top_products">Top Products</string>
+    
+    <!-- SEARCH -->
+    <string name="search_top_search">Top Search</string>
+    <string name="search_nav_categories">Navigate through categories</string>
+    
+
+    <!-- GENERAL PURPOSE -->
+    <string name="show_more">Show More</string>
+    <string name="search_hint">What are you looking for?</string>
 
     <!-- NAVBAR -->
     <string name="location">Location</string>
