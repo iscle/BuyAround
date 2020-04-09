@@ -40,7 +40,7 @@ public class StoreListAdapter extends RecyclerView.Adapter<StoreListAdapter.View
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         holder.itemView.setOnClickListener(view -> mCallback.onItemSelected(mItems.get(position)));
         holder.tvTitle.setText(mItems.get(position).getName());
-        holder.tvSubtitle.setText(mItems.get(position).getDirection());
+        holder.tvSubtitle.setText(mItems.get(position).getDirection().getAddress());
         holder.tvRating.setText(Float.toString(mItems.get(position).getRating()));
         Glide.with(mContext)
                 .asBitmap()
