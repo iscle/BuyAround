@@ -6,7 +6,7 @@
     android:layout_height="70dp">
 
     <TextView
-        android:id="@+id/item_title"
+        android:id="@+id/item_content_title"
         style="@style/TitlesTheme"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
