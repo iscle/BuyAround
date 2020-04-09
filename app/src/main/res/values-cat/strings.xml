@@ -11,21 +11,21 @@
     <string name="already_exists">User already exists!</string>
 
     <!-- LOGIN AND REGISTER -->
-    <string name="login_welcome_tv">Welcome</string>
-    <string name="register_welcome_tv">Register</string>
-    <string name="user_tv">User</string>
-    <string name="user_hint">Enter your name</string>
+    <string name="login_welcome_tv">Benvingut/a</string>
+    <string name="register_welcome_tv">Registre</string>
+    <string name="user_tv">Usuari</string>
+    <string name="user_hint">Introdueix el teu nom</string>
     <string name="mail_tv">Email</string>
-    <string name="mail_hint">Enter your email</string>
+    <string name="mail_hint">Introdueix el teu email</string>
     <string name="password_tv">Password</string>
     <string name="password_hint">Enter your password</string>
     <string name="login_button">Log in</string>
-    <string name="register_button">Continue</string>
-    <string name="login_goto_register_tv">Register</string>
-    <string name="register_goto_login_tv">Log in</string>
-    <string name="login">Login</string>
-    <string name="register">Register</string>
-    <string name="home">Home</string>
+    <string name="register_button">Continuar</string>
+    <string name="login_goto_register_tv">Registre</string>
+    <string name="register_goto_login_tv">Iniciar Sessio</string>
+    <string name="login">Iniciar Sessio</string>
+    <string name="register">Registre</string>
+    <string name="home">Inici</string>
 
     <!-- ACCOUNT -->
     <string name="username">Usuari</string>
@@ -34,11 +34,27 @@
     <string name="account_personal_info">Informacio Personal</string>
     <string name="addresses">Adresses</string>
     <string name="payment">Pagament</string>
+    <string name="use_conditions">Condicions d\'us</string>
+
+    <!-- HOME -->
+    <string name="home_shops_around">Shops around you</string>
+    <string name="home_top_packs">Top Packs</string>
+    <string name="home_top_products">Top Products</string>
+
+    <!-- RECYCLER_VIEW ITEM -->
+    <string name="item_content_title">Titol contingut</string>
+    <string name="item_content_subtitle">Subtitol contingut</string>
+    <string name="item_content_cost">Cost</string>
+    <string name="item_content_date">Data</string>
+    <string name="item_content_stars">4,2</string>
+
+    <!-- GENERAL PURPOSE -->
+    <string name="show_more">Veure mes</string>
 
     <!-- NAVBAR -->
-    <string name="nv_home">Home</string>
-    <string name="location">Location</string>
-    <string name="orders">Orders</string>
-    <string name="notifications">Notifications</string>
+    <string name="nv_home">Inici</string>
+    <string name="location">Localitzacio</string>
+    <string name="orders">Comandes</string>
+    <string name="notifications">Notificacions</string>
 
 </resources>
