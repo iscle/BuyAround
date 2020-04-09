@@ -1,11 +1,29 @@
 package com.selepdf.hackovid.model;
 
-public class Product {
-    private String[] images;
+public class Product extends GeneralItem{
+
     private Category category;
-    private String name;
-    private String description;
     private Store store;
-    private float price;
-    private float rating;
+
+    public Product(String name, String description, String thumbnail, float price, float rating, String[] images, Category category, Store store) {
+        super(name, description, thumbnail, price, rating, images);
+        this.category = category;
+        this.store = store;
+    }
+
+    public Category getCategory() {
+        return category;
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
+    }
+
+    public Store getStore() {
+        return store;
+    }
+
+    public void setStore(Store store) {
+        this.store = store;
+    }
 }
