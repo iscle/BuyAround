@@ -29,6 +29,9 @@ public class HomeViewModel extends ViewModel {
     @Inject
     public HomeViewModel(HackovidRepository hackovidRepository) {
         this.hackovidRepository = hackovidRepository;
+        this.mStores = new MutableLiveData<>();
+        this.mPacks = new MutableLiveData<>();
+        this.mProducts = new MutableLiveData<>();
     }
 
     public void requestShopsAround(String username, StoreCallback storeCallback) {
