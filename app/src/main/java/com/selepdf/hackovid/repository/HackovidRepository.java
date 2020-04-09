@@ -27,6 +27,7 @@ public class HackovidRepository {
     @Inject
     public HackovidRepository(HackovidService service, TokenManager tokenManager) {
         this.service = service;
+        this.tokenManager = tokenManager;
     }
 
     public void register(User user, RegisterCallback registerCallback) {
@@ -35,18 +36,25 @@ public class HackovidRepository {
             public void onResponse(Call<RegisterResponse> call, Response<RegisterResponse> response) {
                 if (response.isSuccessful()) {
                     RegisterResponse registerResponse = response.body();
-                    if (registerResponse.isAuth()) {
-                        registerCallback.onSuccess();
-                        return;
+                    switch (registerResponse.getStatus()) {
+                        case OK:
+                            registerCallback.onSuccess();
+                            break;
+                        case INTERNAL_ERROR:
+                            registerCallback.onFailure(RegisterCallback.RegisterError.INTERNAL_ERROR);
+                            break;
+                        case EXISTING_EMAIL:
+                            registerCallback.onFailure(RegisterCallback.RegisterError.ALREADY_EXISTS);
+                            break;
                     }
+                } else {
+                    registerCallback.onFailure(RegisterCallback.RegisterError.INTERNAL_ERROR);
                 }
-
-                registerCallback.onFailure(RegisterCallback.RegisterError.INTERNAL_ERROR);
             }
 
             @Override
             public void onFailure(Call<RegisterResponse> call, Throwable t) {
-                registerCallback.onFailure(RegisterCallback.RegisterError.INTERNAL_ERROR);
+                registerCallback.onFailure(RegisterCallback.RegisterError.NETWORK_ERROR);
             }
         });
     }
@@ -69,14 +77,14 @@ public class HackovidRepository {
                             loginCallback.onFailure(LoginCallback.LoginError.WRONG_PASSWORD);
                             break;
                     }
+                } else {
+                    loginCallback.onFailure(LoginCallback.LoginError.INTERNAL_ERROR);
                 }
-
-                loginCallback.onFailure(LoginCallback.LoginError.INTERNAL_ERROR);
             }
 
             @Override
             public void onFailure(Call<LoginResponse> call, Throwable t) {
-                loginCallback.onFailure(LoginCallback.LoginError.INTERNAL_ERROR);
+                loginCallback.onFailure(LoginCallback.LoginError.NETWORK_ERROR);
             }
         });
     }

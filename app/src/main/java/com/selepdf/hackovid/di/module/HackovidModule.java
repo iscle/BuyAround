@@ -2,8 +2,8 @@ package com.selepdf.hackovid.di.module;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import com.selepdf.hackovid.LoginResponseStatusDeserializer;
-import com.selepdf.hackovid.model.LoginResponse;
+import com.selepdf.hackovid.model.ResponseStatus;
+import com.selepdf.hackovid.network.ResponseStatusDeserializer;
 
 import javax.inject.Singleton;
 
@@ -15,15 +15,15 @@ public class HackovidModule {
 
     @Provides
     @Singleton
-    public static LoginResponseStatusDeserializer provideLoginResponseStatusDeserializer() {
-        return new LoginResponseStatusDeserializer();
+    public static ResponseStatusDeserializer provideResponseStatusDeserializer() {
+        return new ResponseStatusDeserializer();
     }
 
     @Provides
     @Singleton
-    public static Gson provideGson(LoginResponseStatusDeserializer loginResponseStatusDeserializer) {
+    public static Gson provideGson(ResponseStatusDeserializer responseStatusDeserializer) {
         return new GsonBuilder()
-                .registerTypeAdapter(LoginResponse.Status.class, loginResponseStatusDeserializer)
+                .registerTypeAdapter(ResponseStatus.class, responseStatusDeserializer)
                 .create();
     }
 }
