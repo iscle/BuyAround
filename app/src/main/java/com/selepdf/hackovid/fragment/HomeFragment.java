@@ -32,10 +32,10 @@ public class HomeFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        binding.button.setOnClickListener(v -> {
+        /*binding.button.setOnClickListener(v -> {
             NavDirections action =
                     HomeFragmentDirections.actionHomeFragmentToLoginFragment();
             Navigation.findNavController(v).navigate(action);
-        });
+        });*/
     }
 }
