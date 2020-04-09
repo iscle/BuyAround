@@ -4,8 +4,12 @@ import androidx.annotation.NonNull;
 import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.selepdf.hackovid.model.Order;
 import com.selepdf.hackovid.repository.HackovidRepository;
+import com.selepdf.hackovid.viewmodel.HomeViewModel;
 import com.selepdf.hackovid.viewmodel.LoginViewModel;
+import com.selepdf.hackovid.viewmodel.OrdersViewModel;
+import com.selepdf.hackovid.viewmodel.SearchViewModel;
 
 import javax.inject.Inject;
 
@@ -26,6 +30,15 @@ public class ViewModelFactory implements ViewModelProvider.Factory {
     public <T extends ViewModel> T create(@NonNull Class<T> modelClass) {
         if (modelClass.isAssignableFrom(LoginViewModel.class)) {
             return (T) new LoginViewModel(hackovidRepository);
+        }
+        if (modelClass.isAssignableFrom(HomeViewModel.class)) {
+            return (T) new HomeViewModel(hackovidRepository);
+        }
+        if (modelClass.isAssignableFrom(SearchViewModel.class)) {
+            return (T) new SearchViewModel(hackovidRepository);
+        }
+        if (modelClass.isAssignableFrom(OrdersViewModel.class)) {
+            return (T) new OrdersViewModel(hackovidRepository);
         }
 
         throw new IllegalArgumentException("Unknown class!");
