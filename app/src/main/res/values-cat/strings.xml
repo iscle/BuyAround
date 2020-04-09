@@ -37,9 +37,9 @@
     <string name="use_conditions">Condicions d\'us</string>
 
     <!-- HOME -->
-    <string name="home_shops_around">Shops around you</string>
+    <string name="home_shops_around">Botigues al teu voltant</string>
     <string name="home_top_packs">Top Packs</string>
-    <string name="home_top_products">Top Products</string>
+    <string name="home_top_products">Top Productes</string>
 
     <!-- RECYCLER_VIEW ITEM -->
     <string name="item_content_title">Titol contingut</string>
@@ -48,13 +48,30 @@
     <string name="item_content_date">Data</string>
     <string name="item_content_stars">4,2</string>
 
+    <!-- SEARCH -->
+    <string name="search_top_search">Mes buscat</string>
+    <string name="search_nav_categories">Navega per les categories</string>
+
+    <!-- ORDERS -->
+    <string name="orders_repeat_order">Repetir comanda</string>
+    <string name="orders_last_orders">Ultimes comandes</string>
+
     <!-- GENERAL PURPOSE -->
     <string name="show_more">Veure mes</string>
+    <string name="search_hint">Que estas buscant?</string>
 
     <!-- NAVBAR -->
     <string name="nv_home">Inici</string>
     <string name="location">Localitzacio</string>
     <string name="orders">Comandes</string>
     <string name="notifications">Notificacions</string>
+    <string name="favourites">Preferits</string>
+    <string name="categories">Categories</string>
+    <string name="my_account">Compte Personal</string>
+    <string name="jobs">Feina</string>
+    <string name="log_out">Desconnectar</string>
+    <string name="settings">Configuracio</string>
+    <string name="customer_support">Atencio al client</string>
+    <string name="legal">Legal</string>
 
 </resources>
