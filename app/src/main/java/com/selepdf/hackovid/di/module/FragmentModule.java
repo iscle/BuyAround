@@ -30,5 +30,8 @@ public abstract class FragmentModule {
     @ContributesAndroidInjector
     abstract OrdersFragment ordersFragment();
 
+    @ContributesAndroidInjector
+    abstract AccountFragment accountFragment();
+
 
 }

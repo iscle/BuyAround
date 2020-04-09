@@ -29,7 +29,9 @@ import java.util.List;
 
 import javax.inject.Inject;
 
-public class AccountFragment extends Fragment implements IListAdapter {
+import dagger.android.support.DaggerFragment;
+
+public class AccountFragment extends DaggerFragment implements IListAdapter {
 
     private FragmentAccountBinding binding;
     private final List<String> mContents = new ArrayList<>(
