@@ -10,6 +10,12 @@
 
     <style name="Toolbar" parent="ThemeOverlay.AppCompat.Dark" />
 
+    <style name="TitlesThemeLarge">
+        <item name="android:textSize">25sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="color">@android:color/black</item>
+    </style>
+
     <style name="TitlesTheme">
         <item name="android:textSize">20sp</item>
         <item name="android:textStyle">bold</item>
