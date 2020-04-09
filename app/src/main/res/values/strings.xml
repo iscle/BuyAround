@@ -52,6 +52,9 @@
     <string name="search_top_search">Top Search</string>
     <string name="search_nav_categories">Navigate through categories</string>
     
+    <!-- ORDERS -->
+    <string name="orders_repeat_order">Repeat Order</string>
+    <string name="orders_last_orders">Last Orders</string>
 
     <!-- GENERAL PURPOSE -->
     <string name="show_more">Show More</string>
