@@ -9,6 +9,9 @@ import androidx.navigation.NavAction;
 import androidx.navigation.NavController;
 import androidx.navigation.NavDirections;
 import androidx.navigation.Navigation;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,9 +20,12 @@ import android.view.ViewGroup;
 import com.selepdf.hackovid.R;
 import com.selepdf.hackovid.databinding.FragmentHomeBinding;
 
-public class HomeFragment extends Fragment {
+import dagger.android.support.DaggerFragment;
+
+public class HomeFragment extends DaggerFragment {
 
     private FragmentHomeBinding binding;
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -32,10 +38,8 @@ public class HomeFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        binding.button.setOnClickListener(v -> {
-            NavDirections action =
-                    HomeFragmentDirections.actionHomeFragmentToLoginFragment();
-            Navigation.findNavController(v).navigate(action);
-        });
+        binding.homeShopsRecyclerView.setLayoutManager(new GridLayoutManager(getContext(), 2));
+        binding.homePacksRecyclerView.setLayoutManager(new LinearLayoutManager(getContext(), RecyclerView.HORIZONTAL, false));
+        binding.homeProductsRecyclerView.setLayoutManager(new LinearLayoutManager(getContext(), RecyclerView.HORIZONTAL, false));
     }
 }
