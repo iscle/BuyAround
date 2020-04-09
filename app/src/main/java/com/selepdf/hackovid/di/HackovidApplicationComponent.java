@@ -4,6 +4,7 @@ import android.content.Context;
 
 import com.selepdf.hackovid.HackovidApplication;
 import com.selepdf.hackovid.di.module.FragmentModule;
+import com.selepdf.hackovid.di.module.HackovidModule;
 import com.selepdf.hackovid.di.module.NetworkModule;
 
 import javax.inject.Singleton;
@@ -16,6 +17,7 @@ import dagger.android.AndroidInjector;
 @Singleton
 @Component(modules = {
         AndroidInjectionModule.class,
+        HackovidModule.class,
         NetworkModule.class,
         FragmentModule.class,
 })

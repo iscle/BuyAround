@@ -1,5 +1,6 @@
 package com.selepdf.hackovid.di.module;
 
+import com.google.gson.Gson;
 import com.selepdf.hackovid.HackovidApplication;
 import com.selepdf.hackovid.auth.TokenManager;
 import com.selepdf.hackovid.network.TokenInterceptor;
@@ -30,10 +31,10 @@ public class NetworkModule {
 
     @Singleton
     @Provides
-    public static HackovidService provideHackovidService(OkHttpClient client) {
+    public static HackovidService provideHackovidService(OkHttpClient client, Gson gson) {
         return new Retrofit.Builder()
                 .baseUrl(HackovidApplication.BASE_URL)
-                .addConverterFactory(GsonConverterFactory.create())
+                .addConverterFactory(GsonConverterFactory.create(gson))
                 .client(client)
                 .build()
                 .create(HackovidService.class);

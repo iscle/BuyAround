@@ -1,22 +1,20 @@
 package com.selepdf.hackovid.model;
 
 public class LoginResponse {
-    private boolean auth;
+    private Status status;
     private String token;
 
-    public boolean isAuth() {
-        return auth;
+    public Status getStatus() {
+        return status;
     }
 
     public String getToken() {
         return token;
     }
 
-    @Override
-    public String toString() {
-        return "LoginResponse{" +
-                "auth=" + auth +
-                ", token='" + token + '\'' +
-                '}';
+    public enum Status {
+        OK,
+        INTERNAL_ERROR,
+        WRONG_PASSWORD,
     }
 }

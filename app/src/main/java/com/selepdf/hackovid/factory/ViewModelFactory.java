@@ -4,7 +4,6 @@ import androidx.annotation.NonNull;
 import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.selepdf.hackovid.model.Order;
 import com.selepdf.hackovid.repository.HackovidRepository;
 import com.selepdf.hackovid.viewmodel.HomeViewModel;
 import com.selepdf.hackovid.viewmodel.LoginViewModel;
@@ -28,6 +27,7 @@ public class ViewModelFactory implements ViewModelProvider.Factory {
 
     @NonNull
     @Override
+    @SuppressWarnings("unchecked")
     public <T extends ViewModel> T create(@NonNull Class<T> modelClass) {
         if (modelClass.isAssignableFrom(LoginViewModel.class)) {
             return (T) new LoginViewModel(hackovidRepository);

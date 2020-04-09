@@ -25,7 +25,6 @@ import javax.inject.Inject;
 import dagger.android.support.DaggerFragment;
 
 public class LoginFragment extends DaggerFragment implements LoginCallback {
-    private static final String TAG = "LoginFragment";
 
     private FragmentLoginBinding binding;
     @Inject
@@ -59,8 +58,7 @@ public class LoginFragment extends DaggerFragment implements LoginCallback {
     }
 
     @Override
-    public void onSuccess(String token) {
-        Log.d(TAG, "onSuccess: token = " + token);
+    public void onSuccess() {
         NavHostFragment.findNavController(this).popBackStack();
     }
 

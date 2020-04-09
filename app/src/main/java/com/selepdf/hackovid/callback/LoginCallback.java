@@ -1,7 +1,7 @@
 package com.selepdf.hackovid.callback;
 
 public interface LoginCallback {
-    void onSuccess(String token);
+    void onSuccess();
     void onFailure(LoginError loginError);
 
     enum LoginError {

@@ -2,6 +2,7 @@ package com.selepdf.hackovid.repository;
 
 import android.util.Log;
 
+import com.selepdf.hackovid.auth.TokenManager;
 import com.selepdf.hackovid.callback.LoginCallback;
 import com.selepdf.hackovid.callback.RegisterCallback;
 import com.selepdf.hackovid.model.LoginResponse;
@@ -21,9 +22,10 @@ public class HackovidRepository {
     private static final String TAG = "HackovidRepository";
 
     private HackovidService service;
+    private TokenManager tokenManager;
 
     @Inject
-    public HackovidRepository(HackovidService service) {
+    public HackovidRepository(HackovidService service, TokenManager tokenManager) {
         this.service = service;
     }
 
@@ -55,21 +57,25 @@ public class HackovidRepository {
             public void onResponse(Call<LoginResponse> call, Response<LoginResponse> response) {
                 if (response.isSuccessful()) {
                     LoginResponse loginResponse = response.body();
-                    if (loginResponse.isAuth()) {
-                        loginCallback.onSuccess(response.body().getToken());
-                        return;
+                    switch (loginResponse.getStatus()) {
+                        case OK:
+                            tokenManager.setToken(loginResponse.getToken());
+                            loginCallback.onSuccess();
+                            break;
+                        case INTERNAL_ERROR:
+                            loginCallback.onFailure(LoginCallback.LoginError.INTERNAL_ERROR);
+                            break;
+                        case WRONG_PASSWORD:
+                            loginCallback.onFailure(LoginCallback.LoginError.WRONG_PASSWORD);
+                            break;
                     }
-
-                    Log.d(TAG, "LoginResponse: " + loginResponse.toString());
                 }
 
-                Log.d(TAG, "onResponse: not susesful " + response.code() + " " + response.raw().toString());
                 loginCallback.onFailure(LoginCallback.LoginError.INTERNAL_ERROR);
             }
 
             @Override
             public void onFailure(Call<LoginResponse> call, Throwable t) {
-                t.printStackTrace();
                 loginCallback.onFailure(LoginCallback.LoginError.INTERNAL_ERROR);
             }
         });
