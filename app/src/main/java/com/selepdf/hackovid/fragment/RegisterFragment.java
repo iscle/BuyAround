@@ -4,7 +4,9 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.Navigation;
+import androidx.navigation.fragment.NavHostFragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,12 +16,19 @@ import android.widget.Toast;
 import com.selepdf.hackovid.R;
 import com.selepdf.hackovid.callback.RegisterCallback;
 import com.selepdf.hackovid.databinding.FragmentRegisterBinding;
+import com.selepdf.hackovid.factory.ViewModelFactory;
+import com.selepdf.hackovid.viewmodel.RegisterViewModel;
+
+import javax.inject.Inject;
 
 import dagger.android.support.DaggerFragment;
 
 public class RegisterFragment extends DaggerFragment implements RegisterCallback {
 
     private FragmentRegisterBinding binding;
+    @Inject
+    protected ViewModelFactory viewModelFactory;
+    private RegisterViewModel registerViewModel;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -32,19 +41,24 @@ public class RegisterFragment extends DaggerFragment implements RegisterCallback
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+        registerViewModel = new ViewModelProvider(this, viewModelFactory).get(RegisterViewModel.class);
+
         binding.registerRegisterToLogin.setOnClickListener(v -> {
             Navigation.findNavController(v).popBackStack();
         });
 
         binding.registerBtnRegister.setOnClickListener(v -> {
-            // TODO: API CALL TO REGISTER
-            
+            String name = binding.registerUser.getText().toString();
+            String email = binding.registerMail.getText().toString();
+            String password = binding.registerPassword.getText().toString();
+
+            registerViewModel.register(email, password, this);
         });
     }
 
     @Override
     public void onSuccess() {
-        // TODO: LOG IN USER AND GO TO MAIN FRAGMENT
+        NavHostFragment.findNavController(this).popBackStack();
     }
 
     @Override

@@ -1,17 +1,77 @@
 package com.selepdf.hackovid.repository;
 
+import android.util.Log;
+
+import com.selepdf.hackovid.callback.LoginCallback;
+import com.selepdf.hackovid.callback.RegisterCallback;
+import com.selepdf.hackovid.model.LoginResponse;
+import com.selepdf.hackovid.model.RegisterResponse;
+import com.selepdf.hackovid.model.User;
 import com.selepdf.hackovid.service.HackovidService;
 
 import javax.inject.Inject;
 import javax.inject.Singleton;
 
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
 @Singleton
 public class HackovidRepository {
+    private static final String TAG = "HackovidRepository";
 
     private HackovidService service;
 
     @Inject
     public HackovidRepository(HackovidService service) {
         this.service = service;
+    }
+
+    public void register(User user, RegisterCallback registerCallback) {
+        service.register(user).enqueue(new Callback<RegisterResponse>() {
+            @Override
+            public void onResponse(Call<RegisterResponse> call, Response<RegisterResponse> response) {
+                if (response.isSuccessful()) {
+                    RegisterResponse registerResponse = response.body();
+                    if (registerResponse.isAuth()) {
+                        registerCallback.onSuccess();
+                        return;
+                    }
+                }
+
+                registerCallback.onFailure(RegisterCallback.RegisterError.INTERNAL_ERROR);
+            }
+
+            @Override
+            public void onFailure(Call<RegisterResponse> call, Throwable t) {
+                registerCallback.onFailure(RegisterCallback.RegisterError.INTERNAL_ERROR);
+            }
+        });
+    }
+
+    public void login(User user, LoginCallback loginCallback) {
+        service.login(user).enqueue(new Callback<LoginResponse>() {
+            @Override
+            public void onResponse(Call<LoginResponse> call, Response<LoginResponse> response) {
+                if (response.isSuccessful()) {
+                    LoginResponse loginResponse = response.body();
+                    if (loginResponse.isAuth()) {
+                        loginCallback.onSuccess(response.body().getToken());
+                        return;
+                    }
+
+                    Log.d(TAG, "LoginResponse: " + loginResponse.toString());
+                }
+
+                Log.d(TAG, "onResponse: not susesful " + response.code() + " " + response.raw().toString());
+                loginCallback.onFailure(LoginCallback.LoginError.INTERNAL_ERROR);
+            }
+
+            @Override
+            public void onFailure(Call<LoginResponse> call, Throwable t) {
+                t.printStackTrace();
+                loginCallback.onFailure(LoginCallback.LoginError.INTERNAL_ERROR);
+            }
+        });
     }
 }

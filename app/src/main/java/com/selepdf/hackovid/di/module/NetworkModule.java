@@ -1,9 +1,13 @@
 package com.selepdf.hackovid.di.module;
 
 import com.selepdf.hackovid.HackovidApplication;
+import com.selepdf.hackovid.auth.TokenManager;
+import com.selepdf.hackovid.network.TokenInterceptor;
 import com.selepdf.hackovid.service.HackovidService;
 
 import javax.inject.Singleton;
+import javax.net.ssl.HostnameVerifier;
+import javax.net.ssl.SSLSession;
 
 import dagger.Module;
 import dagger.Provides;
@@ -18,20 +22,7 @@ public class NetworkModule {
 
     @Singleton
     @Provides
-    public static Interceptor provideInterceptor() {
-        return chain -> {
-            Request request = chain.request()
-                    .newBuilder()
-                    .addHeader("Authorization", "NoTokenYet") // TODO: Change this
-                    .build();
-
-            return chain.proceed(request);
-        };
-    }
-
-    @Singleton
-    @Provides
-    public static OkHttpClient provideOkHttpClient(Interceptor interceptor) {
+    public static OkHttpClient provideOkHttpClient(TokenInterceptor interceptor) {
         return new OkHttpClient.Builder()
                 .addInterceptor(interceptor)
                 .build();

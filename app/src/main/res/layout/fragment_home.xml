@@ -36,7 +36,6 @@
                 android:layout_weight="8"
                 android:layout_height="wrap_content"
                 android:focusable="false"
-                android:background="none"
                 android:backgroundTint="@color/colorPrimaryDark"
                 android:textColor="@color/colorPrimaryDark"
                 android:hint="@string/search_hint"/>
