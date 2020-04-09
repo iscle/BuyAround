@@ -34,17 +34,16 @@ public class HomeViewModel extends ViewModel {
         this.mProducts = new MutableLiveData<>();
     }
 
-    public void requestShopsAround(String username, StoreCallback storeCallback) {
-        // Handle petition here
-        storeCallback.onStoresReceived(new ArrayList<>());
+    public void requestShopsAround(String username) {
+        // Handle request
     }
 
-    public void requestPacks(PackCallback packCallback) {
-        packCallback.onPacksReceived(new ArrayList<>());
+    public void requestPacks() {
+        // Handle request
     }
 
-    public void requestProducts(ProductCallback productCallback) {
-        productCallback.onProductsReceived(new ArrayList<>());
+    public void requestProducts() {
+        // Handle request
     }
 
     public LiveData<List<Store>> getStores() {
