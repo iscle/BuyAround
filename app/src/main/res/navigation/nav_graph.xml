@@ -159,4 +159,19 @@
         android:name="com.selepdf.hackovid.fragment.UseConditionsFragment"
         android:label="@string/use_conditions"
         tools:layout="@layout/fragment_use_conditions" />
+    <fragment
+        android:id="@+id/productFragment"
+        android:name="com.selepdf.hackovid.fragment.ProductFragment"
+        android:label="@string/product_label"
+        tools:layout="@layout/fragment_product" />
+    <fragment
+        android:id="@+id/storeFragment"
+        android:name="com.selepdf.hackovid.fragment.StoreFragment"
+        android:label="@string/store_label"
+        tools:layout="@layout/fragment_store" />
+    <fragment
+        android:id="@+id/addressFragment"
+        android:name="com.selepdf.hackovid.fragment.AddressFragment"
+        android:label="@string/address_label"
+        tools:layout="@layout/fragment_address" />
 </navigation>

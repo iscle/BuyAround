@@ -5,6 +5,7 @@ import com.selepdf.hackovid.callback.FailureCallback;
 import com.selepdf.hackovid.callback.LoginCallback;
 import com.selepdf.hackovid.callback.ProductCallback;
 import com.selepdf.hackovid.callback.RegisterCallback;
+import com.selepdf.hackovid.model.Product;
 import com.selepdf.hackovid.network.model.LoginResponse;
 import com.selepdf.hackovid.network.model.ProductResponse;
 import com.selepdf.hackovid.network.model.RegisterResponse;
@@ -44,7 +45,13 @@ public class HackovidRepository {
                             registerCallback.onFailure(RegisterCallback.RegisterError.INTERNAL_ERROR);
                             break;
                         case EXISTING_EMAIL:
-                            registerCallback.onFailure(RegisterCallback.RegisterError.ALREADY_EXISTS);
+                            registerCallback.onFailure(RegisterCallback.RegisterError.EXISTING_EMAIL);
+                            break;
+                        case MISSING_PARAMETERS:
+                            registerCallback.onFailure(RegisterCallback.RegisterError.MISSING_PARAMETERS);
+                            break;
+                        case WEAK_PASSWORD:
+                            registerCallback.onFailure(RegisterCallback.RegisterError.WEAK_PASSWORD);
                             break;
                     }
                 } else {
@@ -75,6 +82,9 @@ public class HackovidRepository {
                             break;
                         case WRONG_PASSWORD:
                             loginCallback.onFailure(LoginCallback.LoginError.WRONG_PASSWORD);
+                            break;
+                        case MISSING_PARAMETERS:
+                            loginCallback.onFailure(LoginCallback.LoginError.MISSING_PARAMETERS);
                             break;
                     }
                 } else {
@@ -110,5 +120,9 @@ public class HackovidRepository {
                 callback.onFailure(FailureCallback.FailureError.NETWORK_ERROR);
             }
         });
+    }
+
+    public void addProduct(Product product, ProductCallback productCallback) {
+        // TODO: IMPLEMENT
     }
 }

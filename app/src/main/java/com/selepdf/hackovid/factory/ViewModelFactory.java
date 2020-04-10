@@ -6,14 +6,17 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.selepdf.hackovid.network.HackovidRepository;
 import com.selepdf.hackovid.viewmodel.AccountViewModel;
+import com.selepdf.hackovid.viewmodel.AddressViewModel;
 import com.selepdf.hackovid.viewmodel.AddressesViewModel;
 import com.selepdf.hackovid.viewmodel.HomeViewModel;
 import com.selepdf.hackovid.viewmodel.LoginViewModel;
 import com.selepdf.hackovid.viewmodel.OrdersViewModel;
 import com.selepdf.hackovid.viewmodel.PaymentViewModel;
 import com.selepdf.hackovid.viewmodel.PersonalInfoViewModel;
+import com.selepdf.hackovid.viewmodel.ProductViewModel;
 import com.selepdf.hackovid.viewmodel.RegisterViewModel;
 import com.selepdf.hackovid.viewmodel.SearchViewModel;
+import com.selepdf.hackovid.viewmodel.StoreViewModel;
 import com.selepdf.hackovid.viewmodel.UseConditionsViewModel;
 
 import javax.inject.Inject;
@@ -63,6 +66,15 @@ public class ViewModelFactory implements ViewModelProvider.Factory {
         }
         if (modelClass.isAssignableFrom(UseConditionsViewModel.class)) {
             return (T) new UseConditionsViewModel(hackovidRepository);
+        }
+        if (modelClass.isAssignableFrom(ProductViewModel.class)) {
+            return (T) new ProductViewModel(hackovidRepository);
+        }
+        if (modelClass.isAssignableFrom(StoreViewModel.class)) {
+            return (T) new StoreViewModel(hackovidRepository);
+        }
+        if (modelClass.isAssignableFrom(AddressViewModel.class)) {
+            return (T) new AddressViewModel(hackovidRepository);
         }
 
         throw new IllegalArgumentException("Unknown class!");

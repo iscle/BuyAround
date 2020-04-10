@@ -2,13 +2,15 @@
     <string name="app_name">Hackovid</string>
 
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="hello_blank_fragment">Hola fragment en blanc</string>
 
     <!-- TOASTS -->
-    <string name="wrong_password">Wrong passowrd!</string>
-    <string name="internal_error">Internal error!</string>
-    <string name="network_error">Network error!</string>
-    <string name="already_exists">User already exists!</string>
+    <string name="wrong_password">Contrassenya incorrecta!</string>
+    <string name="internal_error">Error intern!</string>
+    <string name="network_error">Error de xarxa!</string>
+    <string name="existing_email">L\'usuari ja està registrat!</string>
+    <string name="weak_password">La contrassenya és massa poc segura!</string>
+    <string name="missing_parameters">Hi ha camps buits!</string>
 
     <!-- LOGIN AND REGISTER -->
     <string name="login_welcome_tv">Benvingut/a</string>
@@ -17,13 +19,13 @@
     <string name="user_hint">Introdueix el teu nom</string>
     <string name="mail_tv">Email</string>
     <string name="mail_hint">Introdueix el teu email</string>
-    <string name="password_tv">Password</string>
-    <string name="password_hint">Enter your password</string>
-    <string name="login_button">Log in</string>
+    <string name="password_tv">Contrassenya</string>
+    <string name="password_hint">Introdueix la teva contrassenya</string>
+    <string name="login_button">Iniciar Sessió</string>
     <string name="register_button">Continuar</string>
     <string name="login_goto_register_tv">Registre</string>
-    <string name="register_goto_login_tv">Iniciar Sessio</string>
-    <string name="login">Iniciar Sessio</string>
+    <string name="register_goto_login_tv">Iniciar Sessió</string>
+    <string name="login">Iniciar Sessió</string>
     <string name="register">Registre</string>
     <string name="home">Inici</string>
 
@@ -31,10 +33,10 @@
     <string name="username">Usuari</string>
     <string name="email">Email</string>
     <string name="account_job_reference">Converteix-te en repartidor!</string>
-    <string name="account_personal_info">Informacio Personal</string>
-    <string name="addresses">Adresses</string>
+    <string name="account_personal_info">Informació Personal</string>
+    <string name="addresses">Adreces</string>
     <string name="payment">Pagament</string>
-    <string name="use_conditions">Condicions d\'us</string>
+    <string name="use_conditions">Condicions d\'ús</string>
 
     <!-- HOME -->
     <string name="home_shops_around">Botigues al teu voltant</string>
@@ -42,37 +44,56 @@
     <string name="home_top_products">Top Productes</string>
 
     <!-- RECYCLER_VIEW ITEM -->
-    <string name="item_content_title">Titol contingut</string>
-    <string name="item_content_subtitle">Subtitol contingut</string>
+    <string name="item_content_title">Títol contingut</string>
+    <string name="item_content_subtitle">Subtítol contingut</string>
     <string name="item_content_cost">Cost</string>
     <string name="item_content_date">Data</string>
     <string name="item_content_stars">4,2</string>
 
     <!-- SEARCH -->
-    <string name="search_top_search">Mes buscat</string>
+    <string name="search_top_search">Més buscat</string>
     <string name="search_nav_categories">Navega per les categories</string>
 
     <!-- ORDERS -->
     <string name="orders_repeat_order">Repetir comanda</string>
-    <string name="orders_last_orders">Ultimes comandes</string>
+    <string name="orders_last_orders">Últimes comandes</string>
 
     <!-- GENERAL PURPOSE -->
-    <string name="show_more">Veure mes</string>
-    <string name="search_hint">Que estas buscant?</string>
+    <string name="show_more">Veure més</string>
+    <string name="search_hint">Què estàs buscant?</string>
+    <string name="accept">Acceptar</string>
+    <string name="cancel">Cancelar</string>
 
     <!-- NAVBAR -->
     <string name="nv_home">Inici</string>
-    <string name="location">Localitzacio</string>
+    <string name="location">Localització</string>
     <string name="orders">Comandes</string>
     <string name="notifications">Notificacions</string>
     <string name="favourites">Preferits</string>
     <string name="categories">Categories</string>
     <string name="my_account">Compte Personal</string>
-    <string name="jobs">Feina</string>
+    <string name="jobs">Feines</string>
     <string name="log_out">Desconnectar</string>
-    <string name="settings">Configuracio</string>
-    <string name="customer_support">Atencio al client</string>
+    <string name="settings">Configuració</string>
+    <string name="customer_support">Atenció al client</string>
     <string name="legal">Legal</string>
     <string name="cart">Cistell</string>
+
+    <!-- PRODUCT -->
+    <string name="product_label">Producte</string>
+    <string name="product_tv">Producte</string>
+    <string name="product_hint">Introdueix el nom del producte</string>
+    <string name="category_tv">Categoria</string>
+    <string name="price_tv">Preu</string>
+    <string name="currency_tv">Divisa</string>
+    <string name="description_tv">Descripció</string>
+    <string name="description_hint">Introdueix una breu descripció</string>
+    <string name="images_tv">Imatges</string>
+
+    <!-- STORE -->
+    <string name="store_label">Botiga</string>
+
+    <!-- ADDRESS -->
+    <string name="address_label">Adreça</string>
 
 </resources>

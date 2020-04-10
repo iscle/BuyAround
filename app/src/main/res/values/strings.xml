@@ -8,7 +8,9 @@
     <string name="wrong_password">Wrong passowrd!</string>
     <string name="internal_error">Internal error!</string>
     <string name="network_error">Network error!</string>
-    <string name="already_exists">User already exists!</string>
+    <string name="existing_email">User already exists!</string>
+    <string name="weak_password">The password is too weak!</string>
+    <string name="missing_parameters">There are missing parameters!</string>
 
     <!-- LOGIN AND REGISTER -->
     <string name="login_welcome_tv">Welcome</string>
@@ -59,6 +61,8 @@
     <!-- GENERAL PURPOSE -->
     <string name="show_more">Show More</string>
     <string name="search_hint">What are you looking for?</string>
+    <string name="accept">Accept</string>
+    <string name="cancel">Cancel</string>
 
     <!-- NAVBAR -->
     <string name="nv_home">Home</string>
@@ -74,5 +78,22 @@
     <string name="customer_support">Customer support</string>
     <string name="legal">Legal</string>
     <string name="cart">Cart</string>
+
+    <!-- PRODUCT -->
+    <string name="product_label">Product</string>
+    <string name="product_tv">Product</string>
+    <string name="product_hint">Enter the product name</string>
+    <string name="category_tv">Category</string>
+    <string name="price_tv">Price</string>
+    <string name="currency_tv">Currency</string>
+    <string name="description_tv">Description</string>
+    <string name="description_hint">Enter a brief description</string>
+    <string name="images_tv">Images</string>
+
+    <!-- STORE -->
+    <string name="store_label">Store</string>
+
+    <!-- ADDRESS -->
+    <string name="address_label">Address</string>
 
 </resources>

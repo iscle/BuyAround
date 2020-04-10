@@ -70,17 +70,14 @@ public class AccountFragment extends DaggerFragment implements IListAdapter {
     }
 
     private void subscribeObservers() {
-        viewModel.getUser().observe(getViewLifecycleOwner(), new Observer<User>() {
-            @Override
-            public void onChanged(User user) {
-                binding.profileUsername.setText(user.getName());
-                binding.profileEmail.setText(user.getEmail());
-                Glide.with(AccountFragment.this)
-                        .asBitmap()
-                        .placeholder(R.drawable.ic_thumbnail)
-                        .load(user.getProfilePicture())
-                        .into(binding.profileThumbnail);
-            }
+        viewModel.getUser().observe(getViewLifecycleOwner(), user -> {
+            binding.profileUsername.setText(user.getName());
+            binding.profileEmail.setText(user.getEmail());
+            Glide.with(AccountFragment.this)
+                    .asBitmap()
+                    .placeholder(R.drawable.ic_thumbnail)
+                    .load(user.getProfilePicture())
+                    .into(binding.profileThumbnail);
         });
     }
 
