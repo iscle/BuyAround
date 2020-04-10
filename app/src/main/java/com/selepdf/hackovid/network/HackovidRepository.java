@@ -31,7 +31,7 @@ public class HackovidRepository {
         this.tokenManager = tokenManager;
     }
 
-    public void register(User user, RegisterCallback registerCallback) {
+    public void register(User user, RegisterCallback callback) {
         service.register(user).enqueue(new Callback<RegisterResponse>() {
             @Override
             public void onResponse(Call<RegisterResponse> call, Response<RegisterResponse> response) {
@@ -39,34 +39,34 @@ public class HackovidRepository {
                     RegisterResponse registerResponse = response.body();
                     switch (registerResponse.getStatus()) {
                         case OK:
-                            registerCallback.onSuccess();
+                            callback.onSuccess();
                             break;
                         case INTERNAL_ERROR:
-                            registerCallback.onFailure(RegisterCallback.RegisterError.INTERNAL_ERROR);
+                            callback.onFailure(RegisterCallback.RegisterError.INTERNAL_ERROR);
                             break;
                         case EXISTING_EMAIL:
-                            registerCallback.onFailure(RegisterCallback.RegisterError.EXISTING_EMAIL);
+                            callback.onFailure(RegisterCallback.RegisterError.EXISTING_EMAIL);
                             break;
                         case MISSING_PARAMETERS:
-                            registerCallback.onFailure(RegisterCallback.RegisterError.MISSING_PARAMETERS);
+                            callback.onFailure(RegisterCallback.RegisterError.MISSING_PARAMETERS);
                             break;
                         case WEAK_PASSWORD:
-                            registerCallback.onFailure(RegisterCallback.RegisterError.WEAK_PASSWORD);
+                            callback.onFailure(RegisterCallback.RegisterError.WEAK_PASSWORD);
                             break;
                     }
                 } else {
-                    registerCallback.onFailure(RegisterCallback.RegisterError.INTERNAL_ERROR);
+                    callback.onFailure(RegisterCallback.RegisterError.INTERNAL_ERROR);
                 }
             }
 
             @Override
             public void onFailure(Call<RegisterResponse> call, Throwable t) {
-                registerCallback.onFailure(RegisterCallback.RegisterError.NETWORK_ERROR);
+                callback.onFailure(RegisterCallback.RegisterError.NETWORK_ERROR);
             }
         });
     }
 
-    public void login(User user, LoginCallback loginCallback) {
+    public void login(User user, LoginCallback callback) {
         service.login(user).enqueue(new Callback<LoginResponse>() {
             @Override
             public void onResponse(Call<LoginResponse> call, Response<LoginResponse> response) {
@@ -75,26 +75,26 @@ public class HackovidRepository {
                     switch (loginResponse.getStatus()) {
                         case OK:
                             tokenManager.setToken(loginResponse.getToken());
-                            loginCallback.onSuccess();
+                            callback.onSuccess();
                             break;
                         case INTERNAL_ERROR:
-                            loginCallback.onFailure(LoginCallback.LoginError.INTERNAL_ERROR);
+                            callback.onFailure(LoginCallback.LoginError.INTERNAL_ERROR);
                             break;
                         case WRONG_PASSWORD:
-                            loginCallback.onFailure(LoginCallback.LoginError.WRONG_PASSWORD);
+                            callback.onFailure(LoginCallback.LoginError.WRONG_PASSWORD);
                             break;
                         case MISSING_PARAMETERS:
-                            loginCallback.onFailure(LoginCallback.LoginError.MISSING_PARAMETERS);
+                            callback.onFailure(LoginCallback.LoginError.MISSING_PARAMETERS);
                             break;
                     }
                 } else {
-                    loginCallback.onFailure(LoginCallback.LoginError.INTERNAL_ERROR);
+                    callback.onFailure(LoginCallback.LoginError.INTERNAL_ERROR);
                 }
             }
 
             @Override
             public void onFailure(Call<LoginResponse> call, Throwable t) {
-                loginCallback.onFailure(LoginCallback.LoginError.NETWORK_ERROR);
+                callback.onFailure(LoginCallback.LoginError.NETWORK_ERROR);
             }
         });
     }
@@ -122,7 +122,7 @@ public class HackovidRepository {
         });
     }
 
-    public void addProduct(Product product, ProductCallback productCallback) {
+    public void addProduct(Product product, ProductCallback callback) {
         // TODO: IMPLEMENT
     }
 }
