@@ -28,6 +28,7 @@ import com.selepdf.hackovid.viewmodel.AccountViewModel;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Objects;
 
 import javax.inject.Inject;
 
@@ -84,12 +85,16 @@ public class AccountFragment extends DaggerFragment implements IListAdapter {
 
     @Override
     public void onItemSelected(Object item) {
+        NavDirections action = null;
+
         switch ((String) item) {
             case "Personal Info":
-                // TODO: GO TO PERSONAL INFO FRAGMENT
+                action = AccountFragmentDirections
+                        .actionAccountFragmentToPersonalInfoFragment();
                 break;
             case "Addresses":
-                // TODO: GO TO ADDRESSES FRAGMENT
+                action = AccountFragmentDirections
+                        .actionAccountFragmentToAddressesFragment();
                 break;
             case "Payment":
                 // TODO: GO TO PAYMENT FRAGMENT
@@ -101,6 +106,8 @@ public class AccountFragment extends DaggerFragment implements IListAdapter {
                 // TODO: GO TO USE CONDITIONS FRAGMENT
                 break;
         }
-        System.out.println("Item: " +  (String)item);
+
+        assert action != null;
+        Navigation.findNavController(this.requireView()).navigate(action);
     }
 }

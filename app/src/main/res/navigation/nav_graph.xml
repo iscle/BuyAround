@@ -78,6 +78,9 @@
         <action
             android:id="@+id/action_accountFragment_to_personalInfoFragment"
             app:destination="@id/personalInfoFragment" />
+        <action
+            android:id="@+id/action_accountFragment_to_addressesFragment"
+            app:destination="@id/addressesFragment" />
     </fragment>
     <fragment
         android:id="@+id/categoriesFragment"
@@ -129,4 +132,9 @@
         android:name="com.selepdf.hackovid.fragment.PersonalInfoFragment"
         android:label="@string/account_personal_info"
         tools:layout="@layout/fragment_personal_info" />
+    <fragment
+        android:id="@+id/addressesFragment"
+        android:name="com.selepdf.hackovid.fragment.AddressesFragment"
+        android:label="@string/addresses"
+        tools:layout="@layout/fragment_addresses" />
 </navigation>

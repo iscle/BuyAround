@@ -3,6 +3,7 @@ package com.selepdf.hackovid.di.module;
 import android.accounts.Account;
 
 import com.selepdf.hackovid.fragment.AccountFragment;
+import com.selepdf.hackovid.fragment.AddressesFragment;
 import com.selepdf.hackovid.fragment.HomeFragment;
 import com.selepdf.hackovid.fragment.LoginFragment;
 import com.selepdf.hackovid.fragment.OrdersFragment;
@@ -37,4 +38,6 @@ public abstract class FragmentModule {
     @ContributesAndroidInjector
     abstract PersonalInfoFragment personalInfoFragment();
 
+    @ContributesAndroidInjector
+    abstract AddressesFragment addressesFragment();
 }
