@@ -97,7 +97,8 @@ public class AccountFragment extends DaggerFragment implements IListAdapter {
                         .actionAccountFragmentToAddressesFragment();
                 break;
             case "Payment":
-                // TODO: GO TO PAYMENT FRAGMENT
+                action = AccountFragmentDirections
+                        .actionAccountFragmentToPaymentFragment();
                 break;
             case "Notifications":
                 // TODO: GO TO NOTIFICATIONS FRAGMENT
