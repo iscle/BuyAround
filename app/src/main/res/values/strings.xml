@@ -63,6 +63,7 @@
     <string name="search_hint">What are you looking for?</string>
     <string name="accept">Accept</string>
     <string name="cancel">Cancel</string>
+    <string name="add">Add</string>
 
     <!-- NAVBAR -->
     <string name="nv_home">Home</string>
@@ -92,6 +93,10 @@
 
     <!-- STORE -->
     <string name="store_label">Store</string>
+    <string name="store_tv">Name</string>
+    <string name="store_hint">Enter the store name</string>
+    <string name="address_tv">Address</string>
+    <string name="address_btn">Add new Address</string>
 
     <!-- ADDRESS -->
     <string name="address_label">Address</string>
