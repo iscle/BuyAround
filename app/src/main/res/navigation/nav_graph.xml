@@ -159,4 +159,9 @@
         android:name="com.selepdf.hackovid.fragment.UseConditionsFragment"
         android:label="@string/use_conditions"
         tools:layout="@layout/fragment_use_conditions" />
+    <fragment
+        android:id="@+id/productFragment"
+        android:name="com.selepdf.hackovid.fragment.ProductFragment"
+        android:label="@string/product_label"
+        tools:layout="@layout/fragment_product" />
 </navigation>

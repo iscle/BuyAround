@@ -75,4 +75,7 @@
     <string name="legal">Legal</string>
     <string name="cart">Cart</string>
 
+    <!-- PRODUCT -->
+    <string name="product_label">Product</string>
+
 </resources>

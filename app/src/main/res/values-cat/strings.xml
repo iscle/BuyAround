@@ -75,4 +75,7 @@
     <string name="legal">Legal</string>
     <string name="cart">Cistell</string>
 
+    <!-- PRODUCT -->
+    <string name="product_label">Producte</string>
+
 </resources>

@@ -9,6 +9,7 @@ import com.selepdf.hackovid.fragment.LoginFragment;
 import com.selepdf.hackovid.fragment.OrdersFragment;
 import com.selepdf.hackovid.fragment.PaymentFragment;
 import com.selepdf.hackovid.fragment.PersonalInfoFragment;
+import com.selepdf.hackovid.fragment.ProductFragment;
 import com.selepdf.hackovid.fragment.RegisterFragment;
 import com.selepdf.hackovid.fragment.SearchFragment;
 import com.selepdf.hackovid.fragment.UseConditionsFragment;
@@ -48,4 +49,7 @@ public abstract class FragmentModule {
 
     @ContributesAndroidInjector
     abstract UseConditionsFragment useConditionsFragment();
+
+    @ContributesAndroidInjector
+    abstract ProductFragment productFragment();
 }
