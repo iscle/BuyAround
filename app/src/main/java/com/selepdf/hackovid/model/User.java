@@ -17,6 +17,15 @@ public class User {
         this.email = email;
     }
 
+    public User(String name, String password) {
+        this.name = name;
+        this.password = password;
+        this.direction = null;
+        this.profilePicture = null;
+        this.birthday = -1;
+        this.email = null;
+    }
+
     public String getName() {
         return name;
     }
