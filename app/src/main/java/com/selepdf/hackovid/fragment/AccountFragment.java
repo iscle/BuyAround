@@ -61,6 +61,12 @@ public class AccountFragment extends DaggerFragment implements IListAdapter {
         binding.accountRecyclerView.setLayoutManager(new LinearLayoutManager(getContext(), RecyclerView.VERTICAL, false));
         binding.accountRecyclerView.setAdapter(new ContentListAdapter(this, mContents));
 
+        binding.profileJobReference.setOnClickListener(v -> {
+            NavDirections action = AccountFragmentDirections
+                    .actionAccountFragmentToJobsFragment();
+            Navigation.findNavController(v).navigate(action);
+        });
+
     }
 
     private void subscribeObservers() {
@@ -101,7 +107,8 @@ public class AccountFragment extends DaggerFragment implements IListAdapter {
                         .actionAccountFragmentToPaymentFragment();
                 break;
             case "Notifications":
-                // TODO: GO TO NOTIFICATIONS FRAGMENT
+                action = AccountFragmentDirections
+                        .actionAccountFragmentToNotificationsFragment();
                 break;
             case "Use conditions":
                 action = AccountFragmentDirections

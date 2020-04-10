@@ -87,6 +87,12 @@
         <action
             android:id="@+id/action_accountFragment_to_useConditionsFragment"
             app:destination="@id/useConditionsFragment" />
+        <action
+            android:id="@+id/action_accountFragment_to_notificationsFragment"
+            app:destination="@id/notificationsFragment" />
+        <action
+            android:id="@+id/action_accountFragment_to_jobsFragment"
+            app:destination="@id/jobsFragment" />
     </fragment>
     <fragment
         android:id="@+id/categoriesFragment"
