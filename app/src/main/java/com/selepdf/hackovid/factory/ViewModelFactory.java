@@ -15,6 +15,7 @@ import com.selepdf.hackovid.viewmodel.PersonalInfoViewModel;
 import com.selepdf.hackovid.viewmodel.ProductViewModel;
 import com.selepdf.hackovid.viewmodel.RegisterViewModel;
 import com.selepdf.hackovid.viewmodel.SearchViewModel;
+import com.selepdf.hackovid.viewmodel.StoreViewModel;
 import com.selepdf.hackovid.viewmodel.UseConditionsViewModel;
 
 import javax.inject.Inject;
@@ -67,6 +68,9 @@ public class ViewModelFactory implements ViewModelProvider.Factory {
         }
         if (modelClass.isAssignableFrom(ProductViewModel.class)) {
             return (T) new ProductViewModel(hackovidRepository);
+        }
+        if (modelClass.isAssignableFrom(StoreViewModel.class)) {
+            return (T) new StoreViewModel(hackovidRepository);
         }
 
         throw new IllegalArgumentException("Unknown class!");

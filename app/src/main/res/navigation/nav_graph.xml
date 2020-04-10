@@ -164,4 +164,9 @@
         android:name="com.selepdf.hackovid.fragment.ProductFragment"
         android:label="@string/product_label"
         tools:layout="@layout/fragment_product" />
+    <fragment
+        android:id="@+id/storeFragment"
+        android:name="com.selepdf.hackovid.fragment.StoreFragment"
+        android:label="@string/store_label"
+        tools:layout="@layout/fragment_store" />
 </navigation>

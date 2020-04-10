@@ -78,4 +78,7 @@
     <!-- PRODUCT -->
     <string name="product_label">Producte</string>
 
+    <!-- STORE -->
+    <string name="store_label">Botiga</string>
+
 </resources>

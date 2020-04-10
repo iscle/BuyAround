@@ -78,4 +78,7 @@
     <!-- PRODUCT -->
     <string name="product_label">Product</string>
 
+    <!-- STORE -->
+    <string name="store_label">Store</string>
+
 </resources>

@@ -12,6 +12,7 @@ import com.selepdf.hackovid.fragment.PersonalInfoFragment;
 import com.selepdf.hackovid.fragment.ProductFragment;
 import com.selepdf.hackovid.fragment.RegisterFragment;
 import com.selepdf.hackovid.fragment.SearchFragment;
+import com.selepdf.hackovid.fragment.StoreFragment;
 import com.selepdf.hackovid.fragment.UseConditionsFragment;
 
 import dagger.Module;
@@ -52,4 +53,7 @@ public abstract class FragmentModule {
 
     @ContributesAndroidInjector
     abstract ProductFragment productFragment();
+
+    @ContributesAndroidInjector
+    abstract StoreFragment storeFragment();
 }
