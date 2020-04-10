@@ -5,6 +5,7 @@ import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.selepdf.hackovid.repository.HackovidRepository;
+import com.selepdf.hackovid.viewmodel.AccountViewModel;
 import com.selepdf.hackovid.viewmodel.HomeViewModel;
 import com.selepdf.hackovid.viewmodel.LoginViewModel;
 import com.selepdf.hackovid.viewmodel.OrdersViewModel;
@@ -43,6 +44,9 @@ public class ViewModelFactory implements ViewModelProvider.Factory {
         }
         if (modelClass.isAssignableFrom(RegisterViewModel.class)) {
             return (T) new RegisterViewModel(hackovidRepository);
+        }
+        if (modelClass.isAssignableFrom(AccountViewModel.class)) {
+            return (T) new AccountViewModel(hackovidRepository);
         }
 
         throw new IllegalArgumentException("Unknown class!");
