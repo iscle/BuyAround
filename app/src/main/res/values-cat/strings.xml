@@ -61,6 +61,8 @@
     <!-- GENERAL PURPOSE -->
     <string name="show_more">Veure més</string>
     <string name="search_hint">Què estàs buscant?</string>
+    <string name="accept">Acceptar</string>
+    <string name="cancel">Cancelar</string>
 
     <!-- NAVBAR -->
     <string name="nv_home">Inici</string>
@@ -79,6 +81,14 @@
 
     <!-- PRODUCT -->
     <string name="product_label">Producte</string>
+    <string name="product_tv">Producte</string>
+    <string name="product_hint">Introdueix el nom del producte</string>
+    <string name="category_tv">Categoria</string>
+    <string name="price_tv">Preu</string>
+    <string name="currency_tv">Divisa</string>
+    <string name="description_tv">Descripció</string>
+    <string name="description_hint">Introdueix una breu descripció</string>
+    <string name="images_tv">Imatges</string>
 
     <!-- STORE -->
     <string name="store_label">Botiga</string>

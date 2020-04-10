@@ -61,6 +61,8 @@
     <!-- GENERAL PURPOSE -->
     <string name="show_more">Show More</string>
     <string name="search_hint">What are you looking for?</string>
+    <string name="accept">Accept</string>
+    <string name="cancel">Cancel</string>
 
     <!-- NAVBAR -->
     <string name="nv_home">Home</string>
@@ -79,6 +81,14 @@
 
     <!-- PRODUCT -->
     <string name="product_label">Product</string>
+    <string name="product_tv">Product</string>
+    <string name="product_hint">Enter the product name</string>
+    <string name="category_tv">Category</string>
+    <string name="price_tv">Price</string>
+    <string name="currency_tv">Currency</string>
+    <string name="description_tv">Description</string>
+    <string name="description_hint">Enter a brief description</string>
+    <string name="images_tv">Images</string>
 
     <!-- STORE -->
     <string name="store_label">Store</string>
