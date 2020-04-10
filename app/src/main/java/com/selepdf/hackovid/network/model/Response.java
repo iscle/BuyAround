@@ -15,5 +15,6 @@ public abstract class Response {
         MISSING_PARAMETERS,
         WEAK_PASSWORD,
         EXISTING_EMAIL,
+        INVALID_TOKEN,
     }
 }

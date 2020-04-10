@@ -1,4 +1,4 @@
-package com.selepdf.hackovid.service;
+package com.selepdf.hackovid.network;
 
 import com.selepdf.hackovid.network.model.LoginResponse;
 import com.selepdf.hackovid.network.model.RegisterResponse;

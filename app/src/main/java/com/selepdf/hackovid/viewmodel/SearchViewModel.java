@@ -3,7 +3,7 @@ package com.selepdf.hackovid.viewmodel;
 import androidx.lifecycle.ViewModel;
 
 import com.selepdf.hackovid.callback.SearchCallback;
-import com.selepdf.hackovid.repository.HackovidRepository;
+import com.selepdf.hackovid.network.HackovidRepository;
 
 import java.util.ArrayList;
 

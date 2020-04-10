@@ -2,19 +2,14 @@ package com.selepdf.hackovid.di.module;
 
 import com.google.gson.Gson;
 import com.selepdf.hackovid.HackovidApplication;
-import com.selepdf.hackovid.auth.TokenManager;
 import com.selepdf.hackovid.network.TokenInterceptor;
-import com.selepdf.hackovid.service.HackovidService;
+import com.selepdf.hackovid.network.HackovidService;
 
 import javax.inject.Singleton;
-import javax.net.ssl.HostnameVerifier;
-import javax.net.ssl.SSLSession;
 
 import dagger.Module;
 import dagger.Provides;
-import okhttp3.Interceptor;
 import okhttp3.OkHttpClient;
-import okhttp3.Request;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 

@@ -4,7 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.selepdf.hackovid.repository.HackovidRepository;
+import com.selepdf.hackovid.network.HackovidRepository;
 import com.selepdf.hackovid.viewmodel.AccountViewModel;
 import com.selepdf.hackovid.viewmodel.AddressesViewModel;
 import com.selepdf.hackovid.viewmodel.HomeViewModel;

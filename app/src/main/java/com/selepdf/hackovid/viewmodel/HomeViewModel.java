@@ -4,17 +4,11 @@ import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-import com.selepdf.hackovid.callback.LoginCallback;
-import com.selepdf.hackovid.callback.PackCallback;
-import com.selepdf.hackovid.callback.ProductCallback;
-import com.selepdf.hackovid.callback.StoreCallback;
-import com.selepdf.hackovid.factory.ViewModelFactory;
 import com.selepdf.hackovid.model.Pack;
 import com.selepdf.hackovid.model.Product;
 import com.selepdf.hackovid.model.Store;
-import com.selepdf.hackovid.repository.HackovidRepository;
+import com.selepdf.hackovid.network.HackovidRepository;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.inject.Inject;

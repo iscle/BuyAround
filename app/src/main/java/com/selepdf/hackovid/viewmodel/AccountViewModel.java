@@ -5,7 +5,7 @@ import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
 import com.selepdf.hackovid.model.User;
-import com.selepdf.hackovid.repository.HackovidRepository;
+import com.selepdf.hackovid.network.HackovidRepository;
 
 import javax.inject.Inject;
 
