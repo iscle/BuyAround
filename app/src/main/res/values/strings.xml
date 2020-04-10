@@ -83,4 +83,7 @@
     <!-- STORE -->
     <string name="store_label">Store</string>
 
+    <!-- ADDRESS -->
+    <string name="address_label">Address</string>
+
 </resources>
