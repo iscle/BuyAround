@@ -70,8 +70,14 @@ public class RegisterFragment extends DaggerFragment implements RegisterCallback
             case INTERNAL_ERROR:
                 Toast.makeText(getContext(), R.string.internal_error, Toast.LENGTH_LONG).show();
                 break;
-            case ALREADY_EXISTS:
-                Toast.makeText(getContext(), R.string.already_exists, Toast.LENGTH_LONG).show();
+            case EXISTING_EMAIL:
+                Toast.makeText(getContext(), R.string.existing_email, Toast.LENGTH_LONG).show();
+                break;
+            case WEAK_PASSWORD:
+                Toast.makeText(getContext(), R.string.weak_password, Toast.LENGTH_LONG).show();
+                break;
+            case MISSING_PARAMETERS:
+                Toast.makeText(getContext(), R.string.missing_parameters, Toast.LENGTH_LONG).show();
                 break;
         }
     }

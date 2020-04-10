@@ -74,6 +74,9 @@ public class LoginFragment extends DaggerFragment implements LoginCallback {
             case WRONG_PASSWORD:
                 Toast.makeText(getContext(), R.string.wrong_password, Toast.LENGTH_LONG).show();
                 break;
+            case MISSING_PARAMETERS:
+                Toast.makeText(getContext(), R.string.missing_parameters, Toast.LENGTH_LONG).show();
+                break;
         }
     }
 }

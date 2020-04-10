@@ -41,7 +41,7 @@ public class HackovidRepository {
                             registerCallback.onFailure(RegisterCallback.RegisterError.INTERNAL_ERROR);
                             break;
                         case EXISTING_EMAIL:
-                            registerCallback.onFailure(RegisterCallback.RegisterError.ALREADY_EXISTS);
+                            registerCallback.onFailure(RegisterCallback.RegisterError.EXISTING_EMAIL);
                             break;
                     }
                 } else {

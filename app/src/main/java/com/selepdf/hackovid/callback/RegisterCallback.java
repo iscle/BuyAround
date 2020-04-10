@@ -5,8 +5,10 @@ public interface RegisterCallback {
     void onFailure(RegisterError registerError);
 
     enum RegisterError {
-        ALREADY_EXISTS,
+        EXISTING_EMAIL,
         INTERNAL_ERROR,
-        NETWORK_ERROR
+        NETWORK_ERROR,
+        MISSING_PARAMETERS,
+        WEAK_PASSWORD
     }
 }

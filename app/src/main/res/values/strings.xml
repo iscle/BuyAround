@@ -8,7 +8,9 @@
     <string name="wrong_password">Wrong passowrd!</string>
     <string name="internal_error">Internal error!</string>
     <string name="network_error">Network error!</string>
-    <string name="already_exists">User already exists!</string>
+    <string name="existing_email">User already exists!</string>
+    <string name="weak_password">The password is too weak!</string>
+    <string name="missing_parameters">There are missing parameters!</string>
 
     <!-- LOGIN AND REGISTER -->
     <string name="login_welcome_tv">Welcome</string>

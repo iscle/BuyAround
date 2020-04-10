@@ -7,6 +7,7 @@ public interface LoginCallback {
     enum LoginError {
         WRONG_PASSWORD,
         INTERNAL_ERROR,
-        NETWORK_ERROR
+        NETWORK_ERROR,
+        MISSING_PARAMETERS
     }
 }
