@@ -11,6 +11,7 @@ import com.selepdf.hackovid.fragment.PaymentFragment;
 import com.selepdf.hackovid.fragment.PersonalInfoFragment;
 import com.selepdf.hackovid.fragment.RegisterFragment;
 import com.selepdf.hackovid.fragment.SearchFragment;
+import com.selepdf.hackovid.fragment.UseConditionsFragment;
 
 import dagger.Module;
 import dagger.android.ContributesAndroidInjector;
@@ -44,4 +45,7 @@ public abstract class FragmentModule {
 
     @ContributesAndroidInjector
     abstract PaymentFragment paymentFragment();
+
+    @ContributesAndroidInjector
+    abstract UseConditionsFragment useConditionsFragment();
 }

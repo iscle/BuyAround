@@ -104,7 +104,8 @@ public class AccountFragment extends DaggerFragment implements IListAdapter {
                 // TODO: GO TO NOTIFICATIONS FRAGMENT
                 break;
             case "Use conditions":
-                // TODO: GO TO USE CONDITIONS FRAGMENT
+                action = AccountFragmentDirections
+                        .actionAccountFragmentToUseConditionsFragment();
                 break;
         }
 
