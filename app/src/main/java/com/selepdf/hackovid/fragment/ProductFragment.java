@@ -18,7 +18,6 @@ import com.selepdf.hackovid.model.ProductCategory;
 import com.selepdf.hackovid.viewmodel.ProductViewModel;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import javax.inject.Inject;
 
@@ -71,12 +70,12 @@ public class ProductFragment extends DaggerFragment implements ProductCallback {
     }
 
     @Override
-    public void onProductsReceived(List<Product> products) {
-        // UNUSED
+    public void onFailure(FailureError error) {
+        // TODO: TOAST WITH THE ERROR
     }
 
     @Override
-    public void onFailure(FailureError error) {
-        // TODO: TOAST WITH THE ERROR
+    public void onProductsReceived(Product[] products) {
+
     }
 }
