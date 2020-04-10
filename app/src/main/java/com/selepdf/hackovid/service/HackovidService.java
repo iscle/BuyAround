@@ -1,7 +1,7 @@
 package com.selepdf.hackovid.service;
 
-import com.selepdf.hackovid.model.LoginResponse;
-import com.selepdf.hackovid.model.RegisterResponse;
+import com.selepdf.hackovid.network.model.LoginResponse;
+import com.selepdf.hackovid.network.model.RegisterResponse;
 import com.selepdf.hackovid.model.User;
 
 import retrofit2.Call;

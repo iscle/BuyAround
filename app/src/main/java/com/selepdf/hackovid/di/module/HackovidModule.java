@@ -2,8 +2,8 @@ package com.selepdf.hackovid.di.module;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import com.selepdf.hackovid.model.ResponseStatus;
 import com.selepdf.hackovid.network.ResponseStatusDeserializer;
+import com.selepdf.hackovid.network.model.Response;
 
 import javax.inject.Singleton;
 
@@ -23,7 +23,7 @@ public class HackovidModule {
     @Singleton
     public static Gson provideGson(ResponseStatusDeserializer responseStatusDeserializer) {
         return new GsonBuilder()
-                .registerTypeAdapter(ResponseStatus.class, responseStatusDeserializer)
+                .registerTypeAdapter(Response.Status.class, responseStatusDeserializer)
                 .create();
     }
 }

@@ -1,12 +1,10 @@
 package com.selepdf.hackovid.repository;
 
-import android.util.Log;
-
 import com.selepdf.hackovid.auth.TokenManager;
 import com.selepdf.hackovid.callback.LoginCallback;
 import com.selepdf.hackovid.callback.RegisterCallback;
-import com.selepdf.hackovid.model.LoginResponse;
-import com.selepdf.hackovid.model.RegisterResponse;
+import com.selepdf.hackovid.network.model.LoginResponse;
+import com.selepdf.hackovid.network.model.RegisterResponse;
 import com.selepdf.hackovid.model.User;
 import com.selepdf.hackovid.service.HackovidService;
 
