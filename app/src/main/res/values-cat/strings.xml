@@ -63,6 +63,7 @@
     <string name="search_hint">Què estàs buscant?</string>
     <string name="accept">Acceptar</string>
     <string name="cancel">Cancelar</string>
+    <string name="add">Afegeix</string>
 
     <!-- NAVBAR -->
     <string name="nv_home">Inici</string>
@@ -92,6 +93,10 @@
 
     <!-- STORE -->
     <string name="store_label">Botiga</string>
+    <string name="store_tv">Nom</string>
+    <string name="store_hint">Introdueix el nom de la botiga</string>
+    <string name="address_tv">Adreça</string>
+    <string name="address_btn">Afegeix una nova adreça</string>
 
     <!-- ADDRESS -->
     <string name="address_label">Adreça</string>

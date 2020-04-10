@@ -7,8 +7,6 @@
     android:layout_height="match_parent"
     tools:context=".fragment.ProductFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-
     <TextView
         android:id="@+id/product_tv"
         android:layout_width="wrap_content"
