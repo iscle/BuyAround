@@ -2,7 +2,9 @@ package com.selepdf.hackovid.network;
 
 import com.selepdf.hackovid.auth.TokenManager;
 import com.selepdf.hackovid.callback.LoginCallback;
+import com.selepdf.hackovid.callback.ProductCallback;
 import com.selepdf.hackovid.callback.RegisterCallback;
+import com.selepdf.hackovid.model.Product;
 import com.selepdf.hackovid.network.model.LoginResponse;
 import com.selepdf.hackovid.network.model.RegisterResponse;
 import com.selepdf.hackovid.model.User;
@@ -43,6 +45,12 @@ public class HackovidRepository {
                         case EXISTING_EMAIL:
                             registerCallback.onFailure(RegisterCallback.RegisterError.EXISTING_EMAIL);
                             break;
+                        case MISSING_PARAMETERS:
+                            registerCallback.onFailure(RegisterCallback.RegisterError.MISSING_PARAMETERS);
+                            break;
+                        case WEAK_PASSWORD:
+                            registerCallback.onFailure(RegisterCallback.RegisterError.WEAK_PASSWORD);
+                            break;
                     }
                 } else {
                     registerCallback.onFailure(RegisterCallback.RegisterError.INTERNAL_ERROR);
@@ -73,6 +81,9 @@ public class HackovidRepository {
                         case WRONG_PASSWORD:
                             loginCallback.onFailure(LoginCallback.LoginError.WRONG_PASSWORD);
                             break;
+                        case MISSING_PARAMETERS:
+                            loginCallback.onFailure(LoginCallback.LoginError.MISSING_PARAMETERS);
+                            break;
                     }
                 } else {
                     loginCallback.onFailure(LoginCallback.LoginError.INTERNAL_ERROR);
@@ -85,4 +96,9 @@ public class HackovidRepository {
             }
         });
     }
+
+    public void addProduct(Product product, ProductCallback productCallback) {
+        // TODO: IMPLEMENT
+    }
+
 }
