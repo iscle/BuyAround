@@ -61,6 +61,7 @@
     <string name="search_hint">What are you looking for?</string>
 
     <!-- NAVBAR -->
+    <string name="nv_home">Home</string>
     <string name="location">Location</string>
     <string name="orders">Orders</string>
     <string name="notifications">Notifications</string>

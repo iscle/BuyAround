@@ -7,6 +7,8 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.navigation.NavDirections;
+import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -35,7 +37,7 @@ public class AccountFragment extends DaggerFragment implements IListAdapter {
 
     private FragmentAccountBinding binding;
     private final List<String> mContents = new ArrayList<>(
-            Arrays.asList("Personal Info", "Adresses", "Payment", "Notifications", "Use conditions"));
+            Arrays.asList("Personal Info", "Addresses", "Payment", "Notifications", "Use conditions"));
 
     @Inject
     protected ViewModelFactory viewModelFactory;
@@ -82,6 +84,23 @@ public class AccountFragment extends DaggerFragment implements IListAdapter {
 
     @Override
     public void onItemSelected(Object item) {
+        switch ((String) item) {
+            case "Personal Info":
+                // TODO: GO TO PERSONAL INFO FRAGMENT
+                break;
+            case "Addresses":
+                // TODO: GO TO ADDRESSES FRAGMENT
+                break;
+            case "Payment":
+                // TODO: GO TO PAYMENT FRAGMENT
+                break;
+            case "Notifications":
+                // TODO: GO TO NOTIFICATIONS FRAGMENT
+                break;
+            case "Use conditions":
+                // TODO: GO TO USE CONDITIONS FRAGMENT
+                break;
+        }
         System.out.println("Item: " +  (String)item);
     }
 }

@@ -73,5 +73,6 @@
     <string name="settings">Configuracio</string>
     <string name="customer_support">Atencio al client</string>
     <string name="legal">Legal</string>
+    <string name="cart">Cistell</string>
 
 </resources>

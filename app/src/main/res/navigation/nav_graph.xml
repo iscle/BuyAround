@@ -74,7 +74,11 @@
         android:id="@+id/accountFragment"
         android:name="com.selepdf.hackovid.fragment.AccountFragment"
         android:label="@string/my_account"
-        tools:layout="@layout/fragment_account" />
+        tools:layout="@layout/fragment_account" >
+        <action
+            android:id="@+id/action_accountFragment_to_personalInfoFragment"
+            app:destination="@id/personalInfoFragment" />
+    </fragment>
     <fragment
         android:id="@+id/categoriesFragment"
         android:name="com.selepdf.hackovid.fragment.CategoriesFragment"
@@ -120,4 +124,9 @@
         android:name="com.selepdf.hackovid.fragment.NotificationsFragment"
         android:label="@string/notifications"
         tools:layout="@layout/fragment_notifications" />
+    <fragment
+        android:id="@+id/personalInfoFragment"
+        android:name="com.selepdf.hackovid.fragment.PersonalInfoFragment"
+        android:label="@string/account_personal_info"
+        tools:layout="@layout/fragment_personal_info" />
 </navigation>
