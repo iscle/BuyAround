@@ -123,6 +123,25 @@ public class HackovidRepository {
     }
 
     public void addProduct(Product product, ProductCallback callback) {
-        // TODO: IMPLEMENT
+        service.addProduct(product).enqueue(new Callback<ProductResponse>() {
+            @Override
+            public void onResponse(Call<ProductResponse> call, Response<ProductResponse> response) {
+                if (response.isSuccessful()) {
+                    ProductResponse productResponse = response.body();
+                    switch (productResponse.getStatus()) {
+                        case OK:
+                            callback.onProductsReceived(response.body().getProducts());
+                            break;
+                    }
+                } else {
+                    callback.onFailure(FailureCallback.FailureError.INTERNAL_ERROR);
+                }
+            }
+
+            @Override
+            public void onFailure(Call<ProductResponse> call, Throwable t) {
+                callback.onFailure(FailureCallback.FailureError.NETWORK_ERROR);
+            }
+        });
     }
 }

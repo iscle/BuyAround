@@ -1,6 +1,6 @@
 package com.selepdf.hackovid.model;
 
-public class Product extends GeneralItem{
+public class Product extends GeneralItem {
 
     private Category category;
     private Store store;

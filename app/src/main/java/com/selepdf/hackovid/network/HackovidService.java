@@ -1,5 +1,6 @@
 package com.selepdf.hackovid.network;
 
+import com.selepdf.hackovid.model.Product;
 import com.selepdf.hackovid.model.User;
 import com.selepdf.hackovid.network.model.LoginResponse;
 import com.selepdf.hackovid.network.model.ProductResponse;
@@ -22,5 +23,8 @@ public interface HackovidService {
     // Product
     @GET("product")
     Call<ProductResponse> getAllProducts();
+
+    @POST("product")
+    Call<ProductResponse> addProduct(@Body Product product);
 
 }
