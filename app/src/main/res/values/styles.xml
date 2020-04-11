@@ -20,24 +20,39 @@
         <item name="android:layout_marginEnd">16dp</item>
     </style>
 
+    <style name="ParentLayoutInnerPadding">
+        <item name="paddingStart">16dp</item>
+        <item name="paddingEnd">16dp</item>
+    </style>
+
     <style name="SingleLineItem">
         <item name="height">48dp</item>
+        <item name="paddingStart">16dp</item>
+        <item name="paddingEnd">16dp</item>
     </style>
     
     <style name="SingleLineItemWithIcon">
         <item name="height">56dp</item>
+        <item name="paddingStart">16dp</item>
+        <item name="paddingEnd">16dp</item>
     </style>
 
     <style name="DoubleLineItem">
         <item name="height">64dp</item>
+        <item name="paddingStart">16dp</item>
+        <item name="paddingEnd">16dp</item>
     </style>
 
     <style name="DoubleLineItemWithIcon">
         <item name="height">72dp</item>
+        <item name="paddingStart">16dp</item>
+        <item name="paddingEnd">16dp</item>
     </style>
 
     <style name="ThreeLineItem">
         <item name="height">88dp</item>
+        <item name="paddingStart">16dp</item>
+        <item name="paddingEnd">16dp</item>
     </style>
 
 
