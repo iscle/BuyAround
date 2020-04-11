@@ -1,20 +1,17 @@
 package com.selepdf.hackovid.fragment;
 
 import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavDirections;
 import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
 
 import com.bumptech.glide.Glide;
 import com.selepdf.hackovid.R;
@@ -22,13 +19,11 @@ import com.selepdf.hackovid.adapter.ContentListAdapter;
 import com.selepdf.hackovid.adapter.callback.IListAdapter;
 import com.selepdf.hackovid.databinding.FragmentAccountBinding;
 import com.selepdf.hackovid.factory.ViewModelFactory;
-import com.selepdf.hackovid.model.User;
 import com.selepdf.hackovid.viewmodel.AccountViewModel;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.Objects;
 
 import javax.inject.Inject;
 
@@ -38,7 +33,7 @@ public class AccountFragment extends DaggerFragment implements IListAdapter {
 
     private FragmentAccountBinding binding;
     private final List<String> mContents = new ArrayList<>(
-            Arrays.asList("Personal Info", "Addresses", "Payment", "Notifications", "Use conditions"));
+            Arrays.asList("Personal Info", "Addresses", "Payment", "Use conditions"));
 
     @Inject
     protected ViewModelFactory viewModelFactory;
@@ -102,10 +97,6 @@ public class AccountFragment extends DaggerFragment implements IListAdapter {
             case "Payment":
                 action = AccountFragmentDirections
                         .actionAccountFragmentToPaymentFragment();
-                break;
-            case "Notifications":
-                action = AccountFragmentDirections
-                        .actionAccountFragmentToNotificationsFragment();
                 break;
             case "Use conditions":
                 action = AccountFragmentDirections
