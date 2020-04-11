@@ -2,9 +2,10 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
+    android:layout_height="32dp"
     android:gravity="center"
-    android:padding="15dp"
+    android:paddingStart="12dp"
+    android:paddingEnd="12dp"
     android:background="@drawable/backg_round_corners">
 
     <TextView
@@ -13,6 +14,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/item_content_title"
+        android:textSize="14sp"
         android:textColor="@android:color/white"/>
 
 </LinearLayout>

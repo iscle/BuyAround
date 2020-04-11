@@ -38,6 +38,21 @@
     <string name="payment">Pagament</string>
     <string name="use_conditions">Condicions d\'ús</string>
 
+    <!-- PAYMENT -->
+    <string name="payment_cards">Targetes</string>
+    <string name="payment_bank_accounts">Comptes bancaris</string>
+    <string name="payment_add_card">Add Card</string>
+    <string name="payment_add_bank_account">Add Bank account</string>
+    <string name="payment_set_predetermined">Set Predetermined</string>
+    <string name="payment_card_number">Number: </string>
+    <string name="payment_card_type">Card Type</string>
+
+    <!-- STORE CONFIGURATION -->
+    <string name="store_config_use_limit">Use limit</string>
+    <string name="store_config_assign_name">Assign name</string>
+    <string name="store_config_security">Security</string>
+    <string name="store_config_delete_card">Delete Card</string>
+
     <!-- HOME -->
     <string name="home_shops_around">Botigues al teu voltant</string>
     <string name="home_top_packs">Top Packs</string>

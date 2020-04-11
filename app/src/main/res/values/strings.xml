@@ -38,6 +38,25 @@
     <string name="payment">Payment</string>
     <string name="use_conditions">Use Conditions</string>
 
+    <!-- PAYMENT -->
+    <string name="payment_cards">Cards</string>
+    <string name="payment_bank_accounts">Bank Accounts</string>
+    <string name="payment_add_card">Add Card</string>
+    <string name="payment_add_bank_account">Add Bank account</string>
+    <string name="payment_set_predetermined">Set Predetermined</string>
+    <string name="payment_card_number">Number: </string>
+    <string name="payment_card_type">Card Type</string>
+    <string name="payment_bank_number">ETMS XXXX XXXX XXXX</string>
+    <string name="payment_bank_com">Bank Company</string>
+
+    <!-- STORE CONFIGURATION -->
+    <string name="store_config_use_limit">Use limit</string>
+    <string name="store_config_assign_name">Assign name</string>
+    <string name="store_config_security">Security</string>
+    <string name="store_config_delete_card">Delete Card</string>
+
+
+
     <!-- RECYCLER_VIEW ITEM -->
     <string name="item_content_title">Content title</string>
     <string name="item_content_subtitle">Content subtitle</string>
@@ -64,6 +83,9 @@
     <string name="accept">Accept</string>
     <string name="cancel">Cancel</string>
     <string name="add">Add</string>
+    <string name="configuration">Configuration</string>
+    <string name="item_predefined">Predetermined</string>
+    <string name="owner">Owner</string>
 
     <!-- NAVBAR -->
     <string name="nv_home">Home</string>
