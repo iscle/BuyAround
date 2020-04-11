@@ -48,14 +48,24 @@
     <string name="payment_card_type">Card Type</string>
     <string name="payment_bank_number">ETMS XXXX XXXX XXXX</string>
     <string name="payment_bank_com">Bank Company</string>
-
+    
+    <!-- STORE -->
+    <string name="store_location">Location</string>
+    <string name="store_location_label">Carrer de Sant Joan de la Salle, 42</string>
+    <string name="store_show_map">Show in map</string>
+    <string name="store_stock">Stock</string>
+    <string name="store_packs_offers">Packs and Offers</string>
+    <string name="store_label">Store</string>
+    <string name="store_tv">Name</string>
+    <string name="store_hint">Enter the store name</string>
+    <string name="address_tv">Address</string>
+    <string name="address_btn">Add new Address</string>
+    
     <!-- STORE CONFIGURATION -->
     <string name="store_config_use_limit">Use limit</string>
     <string name="store_config_assign_name">Assign name</string>
     <string name="store_config_security">Security</string>
     <string name="store_config_delete_card">Delete Card</string>
-
-
 
     <!-- RECYCLER_VIEW ITEM -->
     <string name="item_content_title">Content title</string>
@@ -86,6 +96,9 @@
     <string name="configuration">Configuration</string>
     <string name="item_predefined">Predetermined</string>
     <string name="owner">Owner</string>
+    <string name="location">Location</string>
+    <string name="categories">Categories</string>
+    
 
     <!-- NAVBAR -->
     <string name="nv_home">Home</string>
@@ -113,12 +126,7 @@
     <string name="description_hint">Enter a brief description</string>
     <string name="images_tv">Images</string>
 
-    <!-- STORE -->
-    <string name="store_label">Store</string>
-    <string name="store_tv">Name</string>
-    <string name="store_hint">Enter the store name</string>
-    <string name="address_tv">Address</string>
-    <string name="address_btn">Add new Address</string>
+
 
     <!-- ADDRESS -->
     <string name="address_label">Address</string>
