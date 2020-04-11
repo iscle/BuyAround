@@ -66,7 +66,6 @@
     <string name="store_config_assign_name">Assign name</string>
     <string name="store_config_security">Security</string>
     <string name="store_config_delete_card">Delete Card</string>
-    
 
     <!-- RECYCLER_VIEW ITEM -->
     <string name="item_content_title">Content title</string>
@@ -99,7 +98,6 @@
     <string name="owner">Owner</string>
     <string name="categories">Categories</string>
     <string name="add_to_cart">Add to cart</string>
-    
 
     <!-- NAVBAR -->
     <string name="nv_home">Home</string>
@@ -132,5 +130,10 @@
 
     <!-- ADDRESS -->
     <string name="address_label">Address</string>
+
+    <!-- FAVOURITE -->
+    <string name="fav_stores">Favourite stores</string>
+    <string name="fav_products">Favourite products</string>
+    <string name="fav_packs">Favourite packs</string>
 
 </resources>

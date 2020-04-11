@@ -131,4 +131,9 @@
     <!-- ADDRESS -->
     <string name="address_label">Adreça</string>
 
+    <!-- FAVOURITE -->
+    <string name="fav_stores">Botigues preferides</string>
+    <string name="fav_products">Productes preferits</string>
+    <string name="fav_packs">Packs preferits</string>
+
 </resources>
