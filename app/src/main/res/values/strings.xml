@@ -66,6 +66,7 @@
     <string name="store_config_assign_name">Assign name</string>
     <string name="store_config_security">Security</string>
     <string name="store_config_delete_card">Delete Card</string>
+    
 
     <!-- RECYCLER_VIEW ITEM -->
     <string name="item_content_title">Content title</string>
@@ -97,6 +98,7 @@
     <string name="item_predefined">Predetermined</string>
     <string name="owner">Owner</string>
     <string name="categories">Categories</string>
+    <string name="add_to_cart">Add to cart</string>
     
 
     <!-- NAVBAR -->
@@ -119,6 +121,10 @@
     <string name="product_hint">Enter the product name</string>
     <string name="category_tv">Category</string>
     <string name="price_tv">Price</string>
+    <string name="points">Points</string>
+    <string name="product_other_info">Other info</string>
+    <string name="product_size">Size</string>
+    <string name="product_size_value">Value</string>
     <string name="currency_tv">Currency</string>
     <string name="description_tv">Description</string>
     <string name="description_hint">Enter a brief description</string>
