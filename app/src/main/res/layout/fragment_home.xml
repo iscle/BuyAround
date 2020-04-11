@@ -60,7 +60,7 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/home_stores_recyclerView"
             android:layout_width="match_parent"
-            android:layout_height="270dp"
+            android:layout_height="wrap_content"
             android:layout_marginTop="8dp" />
 
         <TextView
@@ -75,7 +75,7 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/home_packs_recyclerView"
             android:layout_width="match_parent"
-            android:layout_height="270dp"
+            android:layout_height="wrap_content"
             android:layout_marginTop="8dp" />
 
         <TextView
@@ -90,7 +90,7 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/home_products_recyclerView"
             android:layout_width="match_parent"
-            android:layout_height="270dp"
+            android:layout_height="wrap_content"
             android:layout_marginTop="8dp" />
 
     </LinearLayout>

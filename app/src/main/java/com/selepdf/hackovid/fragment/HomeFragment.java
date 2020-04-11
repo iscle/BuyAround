@@ -10,7 +10,6 @@ import androidx.annotation.Nullable;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavDirections;
 import androidx.navigation.Navigation;
-import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -59,7 +58,7 @@ public class HomeFragment extends DaggerFragment implements IListAdapter {
         storesRecyclerView = binding.homeStoresRecyclerView;
         storeListAdapter = new StoreListAdapter(getContext(), this);
         storesRecyclerView.setAdapter(storeListAdapter);
-        storesRecyclerView.setLayoutManager(new GridLayoutManager(getContext(), 2));
+        storesRecyclerView.setLayoutManager(new LinearLayoutManager(getContext(), RecyclerView.HORIZONTAL, false));
 
         packsRecyclerView = binding.homePacksRecyclerView;
         packListAdapter = new PackListAdapter(getContext(), this);
