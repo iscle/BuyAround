@@ -8,12 +8,12 @@ import com.selepdf.hackovid.network.HackovidRepository;
 
 import javax.inject.Inject;
 
-public class StoreViewModel extends ViewModel {
+public class AddStoreViewModel extends ViewModel {
 
     private HackovidRepository hackovidRepository;
 
     @Inject
-    public StoreViewModel(HackovidRepository hackovidRepository) {
+    public AddStoreViewModel(HackovidRepository hackovidRepository) {
         this.hackovidRepository = hackovidRepository;
     }
 

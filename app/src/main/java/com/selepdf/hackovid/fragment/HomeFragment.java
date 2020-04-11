@@ -77,12 +77,12 @@ public class HomeFragment extends DaggerFragment implements IListAdapter {
         productsRecyclerView.addItemDecoration(decorator);
 
         binding.textView2.setOnClickListener(v -> {
-            NavDirections action = HomeFragmentDirections.actionHomeFragmentToStoreFragment();
+            NavDirections action = HomeFragmentDirections.actionHomeFragmentToAddStoreFragment();
             Navigation.findNavController(getView()).navigate(action);
         });
 
         binding.textView4.setOnClickListener(v -> {
-            NavDirections action = HomeFragmentDirections.actionHomeFragmentToProductFragment();
+            NavDirections action = HomeFragmentDirections.actionHomeFragmentToAddProductFragment();
             Navigation.findNavController(getView()).navigate(action);
         });
 

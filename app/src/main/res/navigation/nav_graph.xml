@@ -76,11 +76,11 @@
             android:id="@+id/action_homeFragment_to_searchFragment"
             app:destination="@id/searchFragment" />
         <action
-            android:id="@+id/action_homeFragment_to_productFragment"
-            app:destination="@id/productFragment" />
+            android:id="@+id/action_homeFragment_to_addProductFragment"
+            app:destination="@id/addProductFragment" />
         <action
-            android:id="@+id/action_homeFragment_to_storeFragment"
-            app:destination="@id/storeFragment" />
+            android:id="@+id/action_homeFragment_to_addStoreFragment"
+            app:destination="@id/addStoreFragment" />
     </fragment>
     <fragment
         android:id="@+id/accountFragment"
@@ -172,13 +172,13 @@
         android:label="@string/use_conditions"
         tools:layout="@layout/fragment_use_conditions" />
     <fragment
-        android:id="@+id/productFragment"
-        android:name="com.selepdf.hackovid.fragment.ProductFragment"
+        android:id="@+id/addProductFragment"
+        android:name="com.selepdf.hackovid.fragment.AddProductFragment"
         android:label="@string/product_label"
         tools:layout="@layout/fragment_add_product" />
     <fragment
-        android:id="@+id/storeFragment"
-        android:name="com.selepdf.hackovid.fragment.StoreFragment"
+        android:id="@+id/addStoreFragment"
+        android:name="com.selepdf.hackovid.fragment.AddStoreFragment"
         android:label="@string/store_label"
         tools:layout="@layout/fragment_add_store" />
     <fragment

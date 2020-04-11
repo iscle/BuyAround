@@ -12,26 +12,26 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.Navigation;
 
 import com.selepdf.hackovid.callback.StoreCallback;
-import com.selepdf.hackovid.databinding.FragmentStoreBinding;
+import com.selepdf.hackovid.databinding.FragmentAddStoreBinding;
 import com.selepdf.hackovid.factory.ViewModelFactory;
 import com.selepdf.hackovid.model.Store;
-import com.selepdf.hackovid.viewmodel.StoreViewModel;
+import com.selepdf.hackovid.viewmodel.AddStoreViewModel;
 
 import javax.inject.Inject;
 
 import dagger.android.support.DaggerFragment;
 
-public class StoreFragment extends DaggerFragment implements StoreCallback {
+public class AddStoreFragment extends DaggerFragment implements StoreCallback {
 
-    private FragmentStoreBinding binding;
+    private FragmentAddStoreBinding binding;
     @Inject
     protected ViewModelFactory viewModelFactory;
-    private StoreViewModel storeViewModel;
+    private AddStoreViewModel addStoreViewModel;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        binding = FragmentStoreBinding.inflate(inflater, container, false);
+        binding = FragmentAddStoreBinding.inflate(inflater, container, false);
         return binding.getRoot();
     }
 
@@ -39,7 +39,7 @@ public class StoreFragment extends DaggerFragment implements StoreCallback {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        storeViewModel = new ViewModelProvider(this, viewModelFactory).get(StoreViewModel.class);
+        addStoreViewModel = new ViewModelProvider(this, viewModelFactory).get(AddStoreViewModel.class);
 
         /*binding.acceptBtn.setOnClickListener(v -> {
             String name = binding.storeEt.getText().toString();
