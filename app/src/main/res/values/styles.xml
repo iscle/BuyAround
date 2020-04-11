@@ -20,6 +20,12 @@
         <item name="android:layout_marginEnd">16dp</item>
     </style>
 
+    <style name="ParentLayoutLarge">
+        <item name="android:layout_marginTop">16dp</item>
+        <item name="android:layout_marginStart">32dp</item>
+        <item name="android:layout_marginEnd">32dp</item>
+    </style>
+
     <style name="ParentLayoutInnerPadding">
         <item name="paddingStart">16dp</item>
         <item name="paddingEnd">16dp</item>
