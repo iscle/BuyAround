@@ -27,11 +27,13 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
+            android:id="@+id/item_card_number"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/payment_card_number" />
 
         <TextView
+            android:id="@+id/item_card_type"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/payment_card_type" />
@@ -39,6 +41,7 @@
     </LinearLayout>
 
     <TextView
+        android:id="@+id/item_card_predetermined"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/backg_round_corners"
