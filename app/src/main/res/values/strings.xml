@@ -96,7 +96,6 @@
     <string name="configuration">Configuration</string>
     <string name="item_predefined">Predetermined</string>
     <string name="owner">Owner</string>
-    <string name="location">Location</string>
     <string name="categories">Categories</string>
     
 
@@ -106,7 +105,6 @@
     <string name="orders">Orders</string>
     <string name="notifications">Notifications</string>
     <string name="favourites">Favourites</string>
-    <string name="categories">Categories</string>
     <string name="my_account">My account</string>
     <string name="jobs">Jobs</string>
     <string name="log_out">Log out</string>

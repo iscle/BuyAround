@@ -49,8 +49,7 @@ public class ProductListAdapter extends RecyclerView.Adapter<ProductListAdapter.
                     .into(holder.imgView);
         } else {
             Glide.with(mContext)
-                    .asBitmap()
-                    .load(R.drawable.ic_thumbnail)
+                    .load("https://pics.drugstore.com/prodimg/553160/900.jpg")
                     .into(holder.imgView);
         }
     }

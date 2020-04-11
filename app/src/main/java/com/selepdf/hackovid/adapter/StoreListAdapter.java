@@ -51,8 +51,7 @@ public class StoreListAdapter extends RecyclerView.Adapter<StoreListAdapter.View
                     .into(holder.imgView);
         } else {
             Glide.with(mContext)
-                    .asBitmap()
-                    .load(R.drawable.ic_thumbnail)
+                    .load("https://www.definicionabc.com/wp-content/uploads/tecnologia/App-Store.jpg")
                     .into(holder.imgView);
         }
     }
