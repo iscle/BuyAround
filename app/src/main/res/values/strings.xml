@@ -46,6 +46,8 @@
     <string name="payment_set_predetermined">Set Predetermined</string>
     <string name="payment_card_number">Number: </string>
     <string name="payment_card_type">Card Type</string>
+    <string name="payment_bank_number">ETMS XXXX XXXX XXXX</string>
+    <string name="payment_bank_com">Bank Company</string>
 
     <!-- STORE CONFIGURATION -->
     <string name="store_config_use_limit">Use limit</string>
