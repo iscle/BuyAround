@@ -1,6 +1,6 @@
 package com.selepdf.hackovid.model;
 
-public class Product extends GeneralItem{
+public class Product extends GeneralItem {
 
     private Category category;
     private Store store;
@@ -9,6 +9,10 @@ public class Product extends GeneralItem{
         super(name, description, thumbnail, price, rating, images);
         this.category = category;
         this.store = store;
+    }
+
+    public Product(String name, String description, String price) {
+        super(name, description, price);
     }
 
     public Category getCategory() {

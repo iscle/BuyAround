@@ -1,5 +1,7 @@
 package com.selepdf.hackovid.network;
 
+import android.util.Log;
+
 import com.selepdf.hackovid.auth.TokenManager;
 import com.selepdf.hackovid.callback.FailureCallback;
 import com.selepdf.hackovid.callback.LoginCallback;
@@ -123,6 +125,26 @@ public class HackovidRepository {
     }
 
     public void addProduct(Product product, ProductCallback callback) {
-        // TODO: IMPLEMENT
+        service.addProduct(product).enqueue(new Callback<ProductResponse>() {
+            @Override
+            public void onResponse(Call<ProductResponse> call, Response<ProductResponse> response) {
+                if (response.isSuccessful()) {
+                    Log.d(TAG, "onResponse: " + response.raw().toString());
+                    ProductResponse productResponse = response.body();
+                    switch (productResponse.getStatus()) {
+                        case OK:
+                            callback.onProductsReceived(productResponse.getProducts());
+                            break;
+                    }
+                } else {
+                    callback.onFailure(FailureCallback.FailureError.INTERNAL_ERROR);
+                }
+            }
+
+            @Override
+            public void onFailure(Call<ProductResponse> call, Throwable t) {
+                callback.onFailure(FailureCallback.FailureError.NETWORK_ERROR);
+            }
+        });
     }
 }

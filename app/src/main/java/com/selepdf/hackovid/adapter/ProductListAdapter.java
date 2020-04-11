@@ -13,22 +13,18 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.selepdf.hackovid.R;
 import com.selepdf.hackovid.adapter.callback.IListAdapter;
-import com.selepdf.hackovid.model.GeneralItem;
 import com.selepdf.hackovid.model.Product;
-import com.selepdf.hackovid.model.Store;
-
-import java.util.List;
 
 public class ProductListAdapter extends RecyclerView.Adapter<ProductListAdapter.ViewHolder> {
 
     private Context mContext;
     private IListAdapter mCallback;
-    private List<Product> mItems;
+    private Product[] mItems;
 
-    public ProductListAdapter(Context context, IListAdapter callback, List<Product> items) {
+    public ProductListAdapter(Context context, IListAdapter callback) {
         mContext = context;
         mCallback = callback;
-        mItems = items;
+        mItems = null;
     }
 
     @NonNull
@@ -40,20 +36,33 @@ public class ProductListAdapter extends RecyclerView.Adapter<ProductListAdapter.
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        holder.itemView.setOnClickListener(view -> mCallback.onItemSelected(mItems.get(position)));
-        holder.tvTitle.setText(mItems.get(position).getName());
-        holder.tvSubtitle.setText(mItems.get(position).getDescription());
-        holder.tvRating.setText(Float.toString(mItems.get(position).getRating()));
-        Glide.with(mContext)
-                .asBitmap()
-                .placeholder(R.drawable.ic_thumbnail)
-                .load(mItems.get(position).getThumbnail())
-                .into(holder.imgView);
+        Product product = mItems[position];
+        holder.itemView.setOnClickListener(view -> mCallback.onItemSelected(product));
+        holder.tvTitle.setText(product.getName());
+        holder.tvSubtitle.setText(product.getDescription());
+        holder.tvRating.setText(String.valueOf(product.getRating()));
+        if (product.getThumbnail() != null) {
+            Glide.with(mContext)
+                    .asBitmap()
+                    .placeholder(R.drawable.ic_thumbnail)
+                    .load(product.getThumbnail())
+                    .into(holder.imgView);
+        } else {
+            Glide.with(mContext)
+                    .asBitmap()
+                    .load(R.drawable.ic_thumbnail)
+                    .into(holder.imgView);
+        }
+    }
+
+    public void setProducts(Product[] products) {
+        this.mItems = products;
+        notifyDataSetChanged();
     }
 
     @Override
     public int getItemCount() {
-        return mItems != null ? mItems.size():0;
+        return mItems != null ? mItems.length : 0;
     }
 
     class ViewHolder extends RecyclerView.ViewHolder {

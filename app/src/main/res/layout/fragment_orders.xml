@@ -1,44 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginStart="20dp"
-    android:layout_marginEnd="20dp"
+    android:orientation="vertical"
     tools:context=".fragment.OrdersFragment">
 
-    <TextView
-        android:id="@+id/textView2"
-        style="@style/TitlesThemeLarge"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/orders_repeat_order"
-        android:textColor="@color/colorPrimaryDark"
-        android:layout_marginTop="20dp"
-        android:layout_alignParentTop="true" />
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/orders_repeated_recyclerView"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="150dp"
-        android:layout_marginTop="20dp"
-        android:layout_below="@+id/textView2"
-        />
-
-    <TextView
-        android:id="@+id/textView3"
-        style="@style/TitlesThemeLarge"
-        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="@string/orders_last_orders"
-        android:textColor="@color/colorPrimaryDark"
-        android:layout_below="@id/orders_repeated_recyclerView" />
+        android:orientation="vertical"
+        android:paddingStart="8dp"
+        android:paddingTop="8dp"
+        android:paddingEnd="8dp"
+        android:paddingBottom="8dp">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/orders_last_recyclerView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="20dp"
-        android:layout_below="@+id/textView3" />
-</RelativeLayout>
+        <TextView
+            android:id="@+id/textView2"
+            style="@style/TitlesThemeLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/orders_repeat_order"
+            android:textColor="@color/colorPrimaryDark" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/orders_repeated_recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_marginTop="8dp" />
+
+        <TextView
+            android:id="@+id/textView3"
+            style="@style/TitlesThemeLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/orders_last_orders"
+            android:textColor="@color/colorPrimaryDark" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/orders_last_recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="8dp" />
+    </LinearLayout>
+
+</ScrollView>

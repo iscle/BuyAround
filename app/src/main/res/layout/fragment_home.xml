@@ -2,50 +2,48 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/frameLayout"
+    android:id="@+id/scroll_view"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginStart="20dp"
-    android:layout_marginEnd="20dp"
-    android:layout_marginBottom="20dp"
     tools:context=".fragment.HomeFragment">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingStart="8dp"
+        android:paddingTop="8dp"
+        android:paddingEnd="8dp"
+        android:paddingBottom="8dp">
 
         <LinearLayout
             android:id="@+id/home_search_header"
             android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_marginTop="20dp"
-            android:padding="5dp"
+            android:layout_height="wrap_content"
             android:background="@drawable/backg_search_header"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            android:padding="5dp">
 
             <ImageView
-            android:layout_width="0dp"
-            android:layout_weight="2"
-            android:layout_height="match_parent"
-            android:tint="@color/colorPrimaryDark"
-            android:src="@drawable/ic_search"/>
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:src="@drawable/ic_search"
+                android:tint="@color/colorPrimaryDark" />
 
             <EditText
                 android:layout_width="0dp"
-                android:layout_weight="8"
                 android:layout_height="wrap_content"
-                android:focusable="false"
+                android:layout_weight="8"
                 android:backgroundTint="@color/colorPrimaryDark"
-                android:textColor="@color/colorPrimaryDark"
-                android:hint="@string/search_hint"/>
+                android:hint="@string/search_hint"
+                android:textColor="@color/colorPrimaryDark" />
 
             <ImageView
-                android:layout_width="0dp"
-                android:layout_weight="2"
+                android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:tint="@color/colorPrimaryDark"
-                android:src="@drawable/ic_filter"/>
+                android:layout_weight="2"
+                android:src="@drawable/ic_filter"
+                android:tint="@color/colorPrimaryDark" />
 
 
         </LinearLayout>
@@ -55,56 +53,47 @@
             style="@style/TitlesThemeLarge"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
             android:text="@string/home_shops_around"
-            android:textColor="@color/colorPrimaryDark"
-            android:layout_marginTop="20dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/home_search_header" />
+            android:textColor="@color/colorPrimaryDark" />
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/home_shops_recyclerView"
+            android:id="@+id/home_stores_recyclerView"
             android:layout_width="match_parent"
             android:layout_height="270dp"
-            android:layout_marginTop="20dp"
-            app:layout_constraintTop_toBottomOf="@+id/textView2" />
+            android:layout_marginTop="8dp" />
 
         <TextView
             android:id="@+id/textView3"
             style="@style/TitlesThemeLarge"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="8dp"
             android:text="@string/home_top_packs"
-            android:textColor="@color/colorPrimaryDark"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/home_shops_recyclerView" />
+            android:textColor="@color/colorPrimaryDark" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/home_packs_recyclerView"
             android:layout_width="match_parent"
-            android:layout_height="150dp"
-            android:layout_marginTop="20dp"
-            app:layout_constraintTop_toBottomOf="@+id/textView3" />
+            android:layout_height="270dp"
+            android:layout_marginTop="8dp" />
 
         <TextView
             android:id="@+id/textView4"
             style="@style/TitlesThemeLarge"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="8dp"
             android:text="@string/home_top_products"
-            android:textColor="@color/colorPrimaryDark"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/home_packs_recyclerView" />
+            android:textColor="@color/colorPrimaryDark" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/home_products_recyclerView"
             android:layout_width="match_parent"
-            android:layout_height="150dp"
-            android:layout_marginTop="20dp"
-            app:layout_constraintTop_toBottomOf="@+id/textView4" />
+            android:layout_height="270dp"
+            android:layout_marginTop="8dp" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
 
 
 </ScrollView>

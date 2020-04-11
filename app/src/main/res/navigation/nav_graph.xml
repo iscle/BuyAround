@@ -69,6 +69,18 @@
         <action
             android:id="@+id/action_homeFragment_to_notificationsFragment2"
             app:destination="@id/notificationsFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_cartFragment2"
+            app:destination="@id/cartFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_searchFragment"
+            app:destination="@id/searchFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_productFragment"
+            app:destination="@id/productFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_storeFragment"
+            app:destination="@id/storeFragment" />
     </fragment>
     <fragment
         android:id="@+id/accountFragment"
@@ -174,4 +186,14 @@
         android:name="com.selepdf.hackovid.fragment.AddressFragment"
         android:label="@string/address_label"
         tools:layout="@layout/fragment_address" />
+    <fragment
+        android:id="@+id/cartFragment"
+        android:name="com.selepdf.hackovid.fragment.CartFragment"
+        android:label="@string/cart"
+        tools:layout="@layout/fragment_cart" />
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="com.selepdf.hackovid.fragment.SearchFragment"
+        android:label="fragment_search"
+        tools:layout="@layout/fragment_search" />
 </navigation>

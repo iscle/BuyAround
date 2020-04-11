@@ -8,14 +8,12 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.lifecycle.Observer;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.selepdf.hackovid.R;
 import com.selepdf.hackovid.adapter.callback.IListAdapter;
 import com.selepdf.hackovid.model.Pack;
-import com.selepdf.hackovid.model.Product;
 
 import java.util.List;
 
@@ -25,10 +23,10 @@ public class PackListAdapter extends RecyclerView.Adapter<PackListAdapter.ViewHo
     private IListAdapter mCallback;
     private List<Pack> mItems;
 
-    public PackListAdapter(Context context, IListAdapter callback, List<Pack> items) {
+    public PackListAdapter(Context context, IListAdapter callback) {
         mContext = context;
         mCallback = callback;
-        mItems = items;
+        mItems = null;
     }
 
     @NonNull
@@ -51,9 +49,14 @@ public class PackListAdapter extends RecyclerView.Adapter<PackListAdapter.ViewHo
                 .into(holder.imgView);
     }
 
+    public void setPacks(List<Pack> packs) {
+        this.mItems = packs;
+        notifyDataSetChanged();
+    }
+
     @Override
     public int getItemCount() {
-        return mItems != null ? mItems.size():0;
+        return mItems != null ? mItems.size() : 0;
     }
 
     class ViewHolder extends RecyclerView.ViewHolder {

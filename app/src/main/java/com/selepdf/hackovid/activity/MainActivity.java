@@ -14,6 +14,7 @@ import androidx.navigation.ui.NavigationUI;
 
 import com.selepdf.hackovid.R;
 import com.selepdf.hackovid.databinding.ActivityMainBinding;
+import com.selepdf.hackovid.databinding.DrawerHeaderBinding;
 import com.selepdf.hackovid.fragment.HomeFragmentDirections;
 
 import java.util.HashSet;
@@ -63,8 +64,16 @@ public class MainActivity extends AppCompatActivity {
             return false;
         });
 
-        View headerView = binding.navView.getHeaderView(0);
 
+
+    }
+
+    private void setupDrawerHeader() {
+        View headerView = binding.navView.getHeaderView(0);
+        if (headerView != null) {
+            DrawerHeaderBinding drawerHeaderBinding = DrawerHeaderBinding.bind(headerView);
+
+        }
     }
 
     @Override

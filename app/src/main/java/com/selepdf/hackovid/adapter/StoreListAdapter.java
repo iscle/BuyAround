@@ -23,10 +23,10 @@ public class StoreListAdapter extends RecyclerView.Adapter<StoreListAdapter.View
     private IListAdapter mCallback;
     private List<Store> mItems;
 
-    public StoreListAdapter(Context context, IListAdapter callback, List<Store> items) {
+    public StoreListAdapter(Context context, IListAdapter callback) {
         mContext = context;
         mCallback = callback;
-        mItems = items;
+        mItems = null;
     }
 
     @NonNull
@@ -49,9 +49,14 @@ public class StoreListAdapter extends RecyclerView.Adapter<StoreListAdapter.View
                 .into(holder.imgView);
     }
 
+    public void setStores(List<Store> stores) {
+        this.mItems = stores;
+        notifyDataSetChanged();
+    }
+
     @Override
     public int getItemCount() {
-        return mItems != null ? mItems.size():0;
+        return mItems != null ? mItems.size() : 0;
     }
 
     class ViewHolder extends RecyclerView.ViewHolder {

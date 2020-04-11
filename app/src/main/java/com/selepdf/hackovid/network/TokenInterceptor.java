@@ -23,7 +23,7 @@ public class TokenInterceptor implements Interceptor {
     @Override
     public Response intercept(Chain chain) throws IOException {
         String token = tokenManager.getToken();
-        if (token != null) {
+        if (TokenManager.isTokenValid(token)) {
             Request request = chain.request()
                     .newBuilder()
                     .addHeader("Authorization", token)
