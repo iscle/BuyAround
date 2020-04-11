@@ -15,13 +15,11 @@ import com.selepdf.hackovid.R;
 import com.selepdf.hackovid.adapter.callback.IListAdapter;
 import com.selepdf.hackovid.model.Pack;
 
-import java.util.List;
-
 public class PackListAdapter extends RecyclerView.Adapter<PackListAdapter.ViewHolder> {
 
     private Context mContext;
     private IListAdapter mCallback;
-    private List<Pack> mItems;
+    private Pack[] mItems;
 
     public PackListAdapter(Context context, IListAdapter callback) {
         mContext = context;
@@ -38,25 +36,25 @@ public class PackListAdapter extends RecyclerView.Adapter<PackListAdapter.ViewHo
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        holder.itemView.setOnClickListener(view -> mCallback.onItemSelected(mItems.get(position)));
-        holder.tvTitle.setText(mItems.get(position).getName());
-        holder.tvSubtitle.setText(mItems.get(position).getDescription());
-        holder.tvRating.setText(Float.toString(mItems.get(position).getRating()));
+        holder.itemView.setOnClickListener(view -> mCallback.onItemSelected(mItems[position]));
+        holder.tvTitle.setText(mItems[position].getName());
+        holder.tvSubtitle.setText(mItems[position].getDescription());
+        holder.tvRating.setText(Float.toString(mItems[position].getRating()));
         Glide.with(mContext)
                 .asBitmap()
                 .placeholder(R.drawable.ic_thumbnail)
-                .load(mItems.get(position).getThumbnail())
+                .load(mItems[position].getThumbnail())
                 .into(holder.imgView);
     }
 
-    public void setPacks(List<Pack> packs) {
+    public void setPacks(Pack[] packs) {
         this.mItems = packs;
         notifyDataSetChanged();
     }
 
     @Override
     public int getItemCount() {
-        return mItems != null ? mItems.size() : 0;
+        return mItems != null ? mItems.length : 0;
     }
 
     class ViewHolder extends RecyclerView.ViewHolder {

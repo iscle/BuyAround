@@ -20,6 +20,11 @@ public class Store {
         this.since = since;
     }
 
+    public Store(String name, String description) {
+        this.name = name;
+        this.description = description;
+    }
+
     public String getName() {
         return name;
     }

@@ -5,20 +5,19 @@ import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
 import com.selepdf.hackovid.callback.ProductCallback;
+import com.selepdf.hackovid.callback.StoreCallback;
 import com.selepdf.hackovid.model.Pack;
 import com.selepdf.hackovid.model.Product;
 import com.selepdf.hackovid.model.Store;
 import com.selepdf.hackovid.network.HackovidRepository;
-
-import java.util.List;
 
 import javax.inject.Inject;
 
 public class HomeViewModel extends ViewModel {
 
     private HackovidRepository hackovidRepository;
-    private MutableLiveData<List<Store>> mStores;
-    private MutableLiveData<List<Pack>> mPacks;
+    private MutableLiveData<Store[]> mStores;
+    private MutableLiveData<Pack[]> mPacks;
     private MutableLiveData<Product[]> mProducts;
 
     @Inject
@@ -29,8 +28,19 @@ public class HomeViewModel extends ViewModel {
         this.mProducts = new MutableLiveData<>();
     }
 
-    public void requestShopsAround(String username) {
+    public void requestStoresAround(String username) {
         // Handle request
+        hackovidRepository.getAllStores(new StoreCallback() {
+            @Override
+            public void onStoresReceived(Store[] stores) {
+                mStores.postValue(stores);
+            }
+
+            @Override
+            public void onFailure(FailureError error) {
+
+            }
+        });
 
     }
 
@@ -53,11 +63,13 @@ public class HomeViewModel extends ViewModel {
         });
     }
 
-    public LiveData<List<Store>> getStores() {
+    public LiveData<Store[]> getStores() {
+        requestStoresAround(null);
         return mStores;
     }
 
-    public LiveData<List<Pack>> getPacks() {
+    public LiveData<Pack[]> getPacks() {
+        requestPacks();
         return mPacks;
     }
 
