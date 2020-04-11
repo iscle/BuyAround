@@ -5,11 +5,11 @@
     <string name="hello_blank_fragment">Hola fragment en blanc</string>
 
     <!-- TOASTS -->
-    <string name="wrong_password">Contrassenya incorrecta!</string>
+    <string name="wrong_password">Contrasenya incorrecta!</string>
     <string name="internal_error">Error intern!</string>
     <string name="network_error">Error de xarxa!</string>
     <string name="existing_email">L\'usuari ja està registrat!</string>
-    <string name="weak_password">La contrassenya és massa poc segura!</string>
+    <string name="weak_password">La contrasenya és massa poc segura!</string>
     <string name="missing_parameters">Hi ha camps buits!</string>
 
     <!-- LOGIN AND REGISTER -->
@@ -19,8 +19,8 @@
     <string name="user_hint">Introdueix el teu nom</string>
     <string name="mail_tv">Email</string>
     <string name="mail_hint">Introdueix el teu email</string>
-    <string name="password_tv">Contrassenya</string>
-    <string name="password_hint">Introdueix la teva contrassenya</string>
+    <string name="password_tv">Contrasenya</string>
+    <string name="password_hint">Introdueix la teva contrasenya</string>
     <string name="login_button">Iniciar Sessió</string>
     <string name="register_button">Continuar</string>
     <string name="login_goto_register_tv">Registre</string>
@@ -46,12 +46,19 @@
     <string name="payment_set_predetermined">Set Predetermined</string>
     <string name="payment_card_number">Number: </string>
     <string name="payment_card_type">Card Type</string>
+    <string name="payment_bank_number">ETMS XXXX XXXX XXXX</string>
+    <string name="payment_bank_com">Entitat bancària</string>
 
-    <!-- STORE CONFIGURATION -->
-    <string name="store_config_use_limit">Use limit</string>
-    <string name="store_config_assign_name">Assign name</string>
-    <string name="store_config_security">Security</string>
-    <string name="store_config_delete_card">Delete Card</string>
+    <!-- STORE -->
+    <string name="store_location">Ubicació</string>
+    <string name="store_location_label">Carrer de Sant Joan de la Salle, 42</string>
+    <string name="store_show_map">Mostra en el mapa</string>
+    <string name="store_stock">Stock</string>
+    <string name="store_packs_offers">Packs i Ofertes</string>
+    <string name="store_config_use_limit">Límit d\'usos</string>
+    <string name="store_config_assign_name">Assignar nom</string>
+    <string name="store_config_security">Seguretat</string>
+    <string name="store_config_delete_card">Eliminar Cistell</string>
 
     <!-- HOME -->
     <string name="home_shops_around">Botigues al teu voltant</string>
@@ -79,6 +86,11 @@
     <string name="accept">Acceptar</string>
     <string name="cancel">Cancelar</string>
     <string name="add">Afegeix</string>
+    <string name="configuration">Configuració</string>
+    <string name="item_predefined">Predeterminat</string>
+    <string name="owner">Propietari</string>
+    <string name="categories">Categories</string>
+    <string name="add_to_cart">Afegir al cistell</string>
 
     <!-- NAVBAR -->
     <string name="nv_home">Inici</string>
@@ -86,7 +98,6 @@
     <string name="orders">Comandes</string>
     <string name="notifications">Notificacions</string>
     <string name="favourites">Preferits</string>
-    <string name="categories">Categories</string>
     <string name="my_account">Compte Personal</string>
     <string name="jobs">Feines</string>
     <string name="log_out">Desconnectar</string>
@@ -101,6 +112,10 @@
     <string name="product_hint">Introdueix el nom del producte</string>
     <string name="category_tv">Categoria</string>
     <string name="price_tv">Preu</string>
+    <string name="points">Punts</string>
+    <string name="product_other_info">Informació addicional</string>
+    <string name="product_size">Mida</string>
+    <string name="product_size_value">Valor</string>
     <string name="currency_tv">Divisa</string>
     <string name="description_tv">Descripció</string>
     <string name="description_hint">Introdueix una breu descripció</string>
