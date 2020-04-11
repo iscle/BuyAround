@@ -3,6 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    style="@style/ParentLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".fragment.ProductFragment">
@@ -11,9 +12,9 @@
         android:id="@+id/product_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
         android:layout_marginTop="24dp"
         android:text="@string/product_tv"
+        android:textColor="@color/colorPrimaryDark"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -21,8 +22,6 @@
         android:id="@+id/product_et"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginEnd="32dp"
         android:ems="10"
         android:hint="@string/product_hint"
         android:inputType="textPersonName"
@@ -34,9 +33,9 @@
         android:id="@+id/category_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
         android:layout_marginTop="16dp"
         android:text="@string/category_tv"
+        android:textColor="@color/colorPrimaryDark"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/product_et" />
 
@@ -44,8 +43,6 @@
         android:id="@+id/category_spin"
         android:layout_width="0dp"
         android:layout_height="44dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginEnd="32dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/category_tv" />
@@ -54,9 +51,7 @@
         android:id="@+id/price_layout"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="32dp"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -73,7 +68,8 @@
                 android:id="@+id/price_tv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/price_tv" />
+                android:text="@string/price_tv"
+                android:textColor="@color/colorPrimaryDark"/>
 
             <EditText
                 android:id="@+id/price_et"
@@ -96,6 +92,7 @@
                 android:id="@+id/currency_tv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="@color/colorPrimaryDark"
                 android:text="@string/currency_tv" />
 
             <Spinner
@@ -111,9 +108,9 @@
         android:id="@+id/description_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
         android:layout_marginTop="16dp"
         android:text="@string/description_tv"
+        android:textColor="@color/colorPrimaryDark"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/price_layout" />
 
@@ -121,8 +118,6 @@
         android:id="@+id/description_et"
         android:layout_width="0dp"
         android:layout_height="140dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginEnd="32dp"
         android:ems="10"
         android:hint="@string/description_hint"
         android:inputType="textPersonName"
@@ -134,9 +129,9 @@
         android:id="@+id/images_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
         android:layout_marginTop="16dp"
         android:text="@string/images_tv"
+        android:textColor="@color/colorPrimaryDark"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/description_et" />
 
@@ -144,7 +139,6 @@
         android:id="@+id/images_spin"
         android:layout_width="0dp"
         android:layout_height="44dp"
-        android:layout_marginStart="32dp"
         android:layout_marginEnd="64dp"
         app:layout_constraintEnd_toStartOf="@+id/add_image_btn"
         app:layout_constraintStart_toStartOf="parent"
@@ -154,28 +148,34 @@
         android:id="@+id/add_image_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="32dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/images_tv" />
 
-    <Button
-        android:id="@+id/accept_btn"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="32dp"
-        android:layout_marginBottom="32dp"
-        android:text="@string/accept"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        android:gravity="center"
+        android:layout_marginBottom="16dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent">
 
-    <Button
-        android:id="@+id/cancel_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginBottom="32dp"
-        android:text="@string/cancel"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        <Button
+            android:id="@+id/accept_btn"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/colorPrimaryDark"
+            android:textColor="@color/white"
+            android:text="@string/accept"/>
+
+        <Button
+            android:id="@+id/cancel_btn"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:backgroundTint="@color/colorError"
+            android:text="@string/cancel" />
+
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
