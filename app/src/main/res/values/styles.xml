@@ -15,15 +15,15 @@
     <style name="Toolbar" parent="ThemeOverlay.AppCompat.Dark" />
 
     <style name="ParentLayout">
-        <item name="android:layout_marginTop">16dp</item>
         <item name="android:layout_marginStart">16dp</item>
         <item name="android:layout_marginEnd">16dp</item>
+        <item name="android:layout_marginBottom">16dp</item>
     </style>
 
     <style name="ParentLayoutLarge">
-        <item name="android:layout_marginTop">16dp</item>
         <item name="android:layout_marginStart">32dp</item>
         <item name="android:layout_marginEnd">32dp</item>
+        <item name="android:layout_marginBottom">16dp</item>
     </style>
 
     <style name="ParentLayoutInnerPadding">

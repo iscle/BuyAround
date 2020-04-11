@@ -2,6 +2,7 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    style="@style/ParentLayout"
     android:id="@+id/scroll_view"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -10,18 +11,15 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:paddingStart="8dp"
-        android:paddingTop="8dp"
-        android:paddingEnd="8dp"
-        android:paddingBottom="8dp">
+        android:orientation="vertical">
 
         <LinearLayout
             android:id="@+id/home_search_header"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/backg_search_header"
-            android:padding="5dp">
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp">
 
             <ImageView
                 android:layout_width="wrap_content"
@@ -34,6 +32,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="8"
+                android:background="@null"
                 android:backgroundTint="@color/colorPrimaryDark"
                 android:hint="@string/search_hint"
                 android:textColor="@color/colorPrimaryDark" />
@@ -61,7 +60,7 @@
             android:id="@+id/home_stores_recyclerView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp" />
+            android:layout_marginTop="16dp" />
 
         <TextView
             android:id="@+id/textView3"
@@ -76,14 +75,14 @@
             android:id="@+id/home_packs_recyclerView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp" />
+            android:layout_marginTop="16dp" />
 
         <TextView
             android:id="@+id/textView4"
             style="@style/TitlesThemeLarge"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="16dp"
             android:text="@string/home_top_products"
             android:textColor="@color/colorPrimaryDark" />
 
@@ -91,7 +90,7 @@
             android:id="@+id/home_products_recyclerView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp" />
+            android:layout_marginTop="16dp" />
 
     </LinearLayout>
 
