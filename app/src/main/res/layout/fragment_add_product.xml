@@ -25,6 +25,7 @@
         android:ems="10"
         android:hint="@string/product_hint"
         android:inputType="textPersonName"
+        android:backgroundTint="@color/colorPrimaryDark"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/product_tv" />
@@ -43,6 +44,7 @@
         android:id="@+id/category_spin"
         android:layout_width="0dp"
         android:layout_height="44dp"
+        android:backgroundTint="@color/colorPrimaryDark"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/category_tv" />
@@ -76,6 +78,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:ems="10"
+                android:backgroundTint="@color/colorPrimaryDark"
                 android:inputType="numberDecimal" />
 
         </LinearLayout>
@@ -99,6 +102,7 @@
                 android:layout_gravity="end"
                 android:id="@+id/currency_spin"
                 android:layout_width="92dp"
+                android:backgroundTint="@color/colorPrimaryDark"
                 android:layout_height="match_parent"/>
 
         </LinearLayout>
@@ -121,6 +125,7 @@
         android:ems="10"
         android:hint="@string/description_hint"
         android:inputType="textPersonName"
+        android:backgroundTint="@color/colorPrimaryDark"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/description_tv" />
@@ -140,6 +145,7 @@
         android:layout_width="0dp"
         android:layout_height="44dp"
         android:layout_marginEnd="64dp"
+        android:backgroundTint="@color/colorPrimaryDark"
         app:layout_constraintEnd_toStartOf="@+id/add_image_btn"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/images_tv" />

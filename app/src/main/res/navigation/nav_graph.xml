@@ -175,7 +175,7 @@
         android:id="@+id/productFragment"
         android:name="com.selepdf.hackovid.fragment.ProductFragment"
         android:label="@string/product_label"
-        tools:layout="@layout/fragment_product" />
+        tools:layout="@layout/fragment_add_product" />
     <fragment
         android:id="@+id/storeFragment"
         android:name="com.selepdf.hackovid.fragment.StoreFragment"
