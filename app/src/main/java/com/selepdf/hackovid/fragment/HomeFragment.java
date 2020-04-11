@@ -13,6 +13,7 @@ import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.selepdf.hackovid.MarginItemDecorator;
 import com.selepdf.hackovid.adapter.PackListAdapter;
 import com.selepdf.hackovid.adapter.ProductListAdapter;
 import com.selepdf.hackovid.adapter.StoreListAdapter;
@@ -33,6 +34,8 @@ public class HomeFragment extends DaggerFragment implements IListAdapter {
 
     @Inject
     protected ViewModelFactory viewModelFactory;
+    @Inject
+    protected MarginItemDecorator decorator;
     private HomeViewModel homeViewModel;
 
     private RecyclerView storesRecyclerView;
@@ -59,16 +62,19 @@ public class HomeFragment extends DaggerFragment implements IListAdapter {
         storeListAdapter = new StoreListAdapter(getContext(), this);
         storesRecyclerView.setAdapter(storeListAdapter);
         storesRecyclerView.setLayoutManager(new LinearLayoutManager(getContext(), RecyclerView.HORIZONTAL, false));
+        storesRecyclerView.addItemDecoration(decorator);
 
         packsRecyclerView = binding.homePacksRecyclerView;
         packListAdapter = new PackListAdapter(getContext(), this);
         packsRecyclerView.setAdapter(packListAdapter);
         packsRecyclerView.setLayoutManager(new LinearLayoutManager(getContext(), RecyclerView.HORIZONTAL, false));
+        packsRecyclerView.addItemDecoration(decorator);
 
         productsRecyclerView = binding.homeProductsRecyclerView;
         productListAdapter = new ProductListAdapter(getContext(), this);
         productsRecyclerView.setAdapter(productListAdapter);
         productsRecyclerView.setLayoutManager(new LinearLayoutManager(getContext(), RecyclerView.HORIZONTAL, false));
+        productsRecyclerView.addItemDecoration(decorator);
 
         binding.textView2.setOnClickListener(v -> {
             NavDirections action = HomeFragmentDirections.actionHomeFragmentToStoreFragment();

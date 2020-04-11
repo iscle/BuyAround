@@ -25,6 +25,6 @@ public interface HackovidApplicationComponent extends AndroidInjector<HackovidAp
 
     @Component.Factory
     interface Factory {
-        HackovidApplicationComponent create(@BindsInstance Context applicationContext);
+        HackovidApplicationComponent create(@BindsInstance Context context);
     }
 }
