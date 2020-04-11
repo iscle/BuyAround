@@ -105,7 +105,6 @@
     <string name="categories">Categories</string>
     <string name="add_to_cart">Add to cart</string>
     <string name="quantity">Quantity</string>
-    <string name="payment">Payment</string>
 
     <!-- NAVBAR -->
     <string name="nv_home">Home</string>
