@@ -180,7 +180,7 @@
         android:id="@+id/storeFragment"
         android:name="com.selepdf.hackovid.fragment.StoreFragment"
         android:label="@string/store_label"
-        tools:layout="@layout/fragment_store" />
+        tools:layout="@layout/fragment_add_store" />
     <fragment
         android:id="@+id/addressFragment"
         android:name="com.selepdf.hackovid.fragment.AddressFragment"
