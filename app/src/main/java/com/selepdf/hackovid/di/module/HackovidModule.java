@@ -1,5 +1,8 @@
 package com.selepdf.hackovid.di.module;
 
+import android.content.Context;
+import android.util.DisplayMetrics;
+
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.selepdf.hackovid.network.ResponseStatusDeserializer;
@@ -12,6 +15,12 @@ import dagger.Provides;
 
 @Module
 public class HackovidModule {
+
+    @Provides
+    @Singleton
+    public static DisplayMetrics provideDisplayMetrics(Context context) {
+        return context.getResources().getDisplayMetrics();
+    }
 
     @Provides
     @Singleton
