@@ -9,9 +9,11 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.selepdf.hackovid.MarginItemDecorator;
 import com.selepdf.hackovid.adapter.CategoryListAdapter;
 import com.selepdf.hackovid.adapter.callback.IListAdapter;
 import com.selepdf.hackovid.databinding.FragmentCategoriesBinding;
@@ -29,6 +31,7 @@ public class CategoriesFragment extends DaggerFragment implements IListAdapter {
     protected ViewModelFactory viewModelFactory;
     private CategoriesViewModel categoriesViewModel;
 
+    RecyclerView recyclerView;
     CategoryListAdapter categoryListAdapter;
 
     @Override
@@ -46,9 +49,12 @@ public class CategoriesFragment extends DaggerFragment implements IListAdapter {
 
         categoriesViewModel.getAllProductCategories();
 
+        recyclerView = binding.categoriesRecyclerView;
         categoryListAdapter = new CategoryListAdapter(getContext(), this);
-        binding.categoriesRecyclerView.setAdapter(categoryListAdapter);
-        binding.categoriesRecyclerView.setLayoutManager(new LinearLayoutManager(getContext(), RecyclerView.VERTICAL, false));
+        recyclerView.setAdapter(categoryListAdapter);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getContext(), RecyclerView.VERTICAL, false));
+        DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(recyclerView.getContext(), RecyclerView.VERTICAL);
+        recyclerView.addItemDecoration(dividerItemDecoration);
         subscribeObserver();
     }
 
