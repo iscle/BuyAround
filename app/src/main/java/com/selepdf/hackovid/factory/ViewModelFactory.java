@@ -10,6 +10,7 @@ import com.selepdf.hackovid.viewmodel.AddProductViewModel;
 import com.selepdf.hackovid.viewmodel.AddStoreViewModel;
 import com.selepdf.hackovid.viewmodel.AddressViewModel;
 import com.selepdf.hackovid.viewmodel.AddressesViewModel;
+import com.selepdf.hackovid.viewmodel.CategoriesViewModel;
 import com.selepdf.hackovid.viewmodel.HomeViewModel;
 import com.selepdf.hackovid.viewmodel.LoginViewModel;
 import com.selepdf.hackovid.viewmodel.OrdersViewModel;
@@ -75,6 +76,9 @@ public class ViewModelFactory implements ViewModelProvider.Factory {
         }
         if (modelClass.isAssignableFrom(AddressViewModel.class)) {
             return (T) new AddressViewModel(hackovidRepository);
+        }
+        if (modelClass.isAssignableFrom(CategoriesViewModel.class)) {
+            return (T) new CategoriesViewModel(hackovidRepository);
         }
 
         throw new IllegalArgumentException("Unknown class!");
