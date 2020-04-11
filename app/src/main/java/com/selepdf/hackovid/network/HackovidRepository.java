@@ -7,11 +7,14 @@ import com.selepdf.hackovid.callback.FailureCallback;
 import com.selepdf.hackovid.callback.LoginCallback;
 import com.selepdf.hackovid.callback.ProductCallback;
 import com.selepdf.hackovid.callback.RegisterCallback;
+import com.selepdf.hackovid.callback.StoreCallback;
 import com.selepdf.hackovid.model.Product;
+import com.selepdf.hackovid.model.Store;
+import com.selepdf.hackovid.model.User;
 import com.selepdf.hackovid.network.model.LoginResponse;
 import com.selepdf.hackovid.network.model.ProductResponse;
 import com.selepdf.hackovid.network.model.RegisterResponse;
-import com.selepdf.hackovid.model.User;
+import com.selepdf.hackovid.network.model.StoreResponse;
 
 import javax.inject.Inject;
 import javax.inject.Singleton;
@@ -143,6 +146,54 @@ public class HackovidRepository {
 
             @Override
             public void onFailure(Call<ProductResponse> call, Throwable t) {
+                callback.onFailure(FailureCallback.FailureError.NETWORK_ERROR);
+            }
+        });
+    }
+
+    public void getAllStores(StoreCallback callback) {
+        service.getAllStores().enqueue(new Callback<StoreResponse>() {
+            @Override
+            public void onResponse(Call<StoreResponse> call, Response<StoreResponse> response) {
+                if (response.isSuccessful()) {
+                    Log.d(TAG, "onResponse: " + response.raw().toString());
+                    StoreResponse storeResponse = response.body();
+                    switch (storeResponse.getStatus()) {
+                        case OK:
+                            callback.onStoresReceived(storeResponse.getStores());
+                            break;
+                    }
+                } else {
+                    callback.onFailure(FailureCallback.FailureError.INTERNAL_ERROR);
+                }
+            }
+
+            @Override
+            public void onFailure(Call<StoreResponse> call, Throwable t) {
+                callback.onFailure(FailureCallback.FailureError.NETWORK_ERROR);
+            }
+        });
+    }
+
+    public void addStore(Store store, StoreCallback callback) {
+        service.addStore(store).enqueue(new Callback<StoreResponse>() {
+            @Override
+            public void onResponse(Call<StoreResponse> call, Response<StoreResponse> response) {
+                if (response.isSuccessful()) {
+                    Log.d(TAG, "onResponse: " + response.raw().toString());
+                    StoreResponse storeResponse = response.body();
+                    switch (storeResponse.getStatus()) {
+                        case OK:
+                            callback.onStoresReceived(storeResponse.getStores());
+                            break;
+                    }
+                } else {
+                    callback.onFailure(FailureCallback.FailureError.INTERNAL_ERROR);
+                }
+            }
+
+            @Override
+            public void onFailure(Call<StoreResponse> call, Throwable t) {
                 callback.onFailure(FailureCallback.FailureError.NETWORK_ERROR);
             }
         });

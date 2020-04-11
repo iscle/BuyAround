@@ -1,5 +1,7 @@
 package com.selepdf.hackovid.model;
 
+import android.text.TextUtils;
+
 public class Product {
 
     private String name;
@@ -20,6 +22,14 @@ public class Product {
         this.images = images;
         this.category = category;
         this.store = store;
+    }
+
+    public Product(String name, String description, String price) {
+        this.name = name;
+        this.description = description;
+        if (!TextUtils.isEmpty(price)) {
+            this.price = Float.parseFloat(price);
+        }
     }
 
     public String getName() {
