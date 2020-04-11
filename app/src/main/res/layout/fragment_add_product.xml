@@ -3,7 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    style="@style/ParentLayout"
+    style="@style/ParentLayoutLarge"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".fragment.ProductFragment">
@@ -19,7 +19,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/product_et"
+        android:id="@+id/product_add_name"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -38,10 +38,10 @@
         android:text="@string/category_tv"
         android:textColor="@color/colorPrimaryDark"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/product_et" />
+        app:layout_constraintTop_toBottomOf="@+id/product_add_name" />
 
     <Spinner
-        android:id="@+id/category_spin"
+        android:id="@+id/product_add_category"
         android:layout_width="0dp"
         android:layout_height="44dp"
         android:backgroundTint="@color/colorPrimaryDark"
@@ -57,7 +57,7 @@
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/category_spin">
+        app:layout_constraintTop_toBottomOf="@+id/product_add_category">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -74,7 +74,7 @@
                 android:textColor="@color/colorPrimaryDark"/>
 
             <EditText
-                android:id="@+id/price_et"
+                android:id="@+id/product_add_price"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:ems="10"
@@ -99,8 +99,8 @@
                 android:text="@string/currency_tv" />
 
             <Spinner
+                android:id="@+id/product_add_currency"
                 android:layout_gravity="end"
-                android:id="@+id/currency_spin"
                 android:layout_width="92dp"
                 android:backgroundTint="@color/colorPrimaryDark"
                 android:layout_height="match_parent"/>
@@ -119,7 +119,7 @@
         app:layout_constraintTop_toBottomOf="@+id/price_layout" />
 
     <EditText
-        android:id="@+id/description_et"
+        android:id="@+id/product_add_description"
         android:layout_width="0dp"
         android:layout_height="140dp"
         android:ems="10"
@@ -138,7 +138,7 @@
         android:text="@string/images_tv"
         android:textColor="@color/colorPrimaryDark"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/description_et" />
+        app:layout_constraintTop_toBottomOf="@+id/product_add_description" />
 
     <Spinner
         android:id="@+id/images_spin"
@@ -146,12 +146,12 @@
         android:layout_height="44dp"
         android:layout_marginEnd="64dp"
         android:backgroundTint="@color/colorPrimaryDark"
-        app:layout_constraintEnd_toStartOf="@+id/add_image_btn"
+        app:layout_constraintEnd_toStartOf="@+id/product_add_imgs_btn"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/images_tv" />
 
     <Button
-        android:id="@+id/add_image_btn"
+        android:id="@+id/product_add_imgs_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
