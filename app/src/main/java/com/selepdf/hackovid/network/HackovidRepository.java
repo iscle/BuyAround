@@ -3,6 +3,7 @@ package com.selepdf.hackovid.network;
 import android.util.Log;
 
 import com.selepdf.hackovid.auth.TokenManager;
+import com.selepdf.hackovid.callback.CategoryCallback;
 import com.selepdf.hackovid.callback.FailureCallback;
 import com.selepdf.hackovid.callback.LoginCallback;
 import com.selepdf.hackovid.callback.ProductCallback;
@@ -11,6 +12,7 @@ import com.selepdf.hackovid.callback.StoreCallback;
 import com.selepdf.hackovid.model.Product;
 import com.selepdf.hackovid.model.Store;
 import com.selepdf.hackovid.model.User;
+import com.selepdf.hackovid.network.model.CategoryResponse;
 import com.selepdf.hackovid.network.model.LoginResponse;
 import com.selepdf.hackovid.network.model.ProductResponse;
 import com.selepdf.hackovid.network.model.RegisterResponse;
@@ -122,6 +124,29 @@ public class HackovidRepository {
 
             @Override
             public void onFailure(Call<ProductResponse> call, Throwable t) {
+                callback.onFailure(FailureCallback.FailureError.NETWORK_ERROR);
+            }
+        });
+    }
+
+    public void getAllProductCategories(CategoryCallback callback) {
+        service.getAllProductCategories().enqueue(new Callback<CategoryResponse>() {
+            @Override
+            public void onResponse(Call<CategoryResponse> call, Response<CategoryResponse> response) {
+                if (response.isSuccessful()) {
+                    CategoryResponse categoryResponse = response.body();
+                    switch (categoryResponse.getStatus()) {
+                        case OK:
+                            callback.onCategoriesReceived(response.body().getCategories());
+                            break;
+                    }
+                } else {
+                    callback.onFailure(FailureCallback.FailureError.INTERNAL_ERROR);
+                }
+            }
+
+            @Override
+            public void onFailure(Call<CategoryResponse> call, Throwable t) {
                 callback.onFailure(FailureCallback.FailureError.NETWORK_ERROR);
             }
         });
