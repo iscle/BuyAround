@@ -21,10 +21,10 @@ public class CategoryListAdapter extends RecyclerView.Adapter<CategoryListAdapte
     private IListAdapter mCallback;
     private Category[] mCategories;
 
-    public CategoryListAdapter(Context context, IListAdapter callback, Category[] categories) {
+    public CategoryListAdapter(Context context, IListAdapter callback) {
         mContext = context;
         mCallback = callback;
-        mCategories = categories;
+        mCategories = null;
     }
 
     @NonNull
@@ -50,6 +50,11 @@ public class CategoryListAdapter extends RecyclerView.Adapter<CategoryListAdapte
                     .load("https://chango88.com.ar/wp-content/uploads/2017/10/icono-congelados.png")
                     .into(holder.imgView);
         }
+    }
+
+    public void setCategories(Category[] categories) {
+        mCategories = categories;
+        notifyDataSetChanged();
     }
 
     @Override
