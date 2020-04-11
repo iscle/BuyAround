@@ -18,6 +18,12 @@ public class GeneralItem {
         this.images = images;
     }
 
+    public GeneralItem(String name, String description, String price) {
+        this.name = name;
+        this.description = description;
+        this.price = Float.parseFloat(price);
+    }
+
     public String getName() {
         return name;
     }

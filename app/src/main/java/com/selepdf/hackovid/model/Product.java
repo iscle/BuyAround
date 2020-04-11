@@ -11,6 +11,10 @@ public class Product extends GeneralItem {
         this.store = store;
     }
 
+    public Product(String name, String description, String price) {
+        super(name, description, price);
+    }
+
     public Category getCategory() {
         return category;
     }

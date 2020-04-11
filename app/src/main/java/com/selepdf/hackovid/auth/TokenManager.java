@@ -24,10 +24,10 @@ public class TokenManager {
     }
 
     public String getToken() {
-        return sharedPreferences.getString(TOKEN_PREF, null);
+        return sharedPreferences.getString(TOKEN_PREF, "");
     }
 
     public static boolean isTokenValid(String token) {
-        return token != null;
+        return token != null && !token.isEmpty();
     }
 }

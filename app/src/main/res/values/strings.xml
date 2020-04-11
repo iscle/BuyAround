@@ -49,11 +49,11 @@
     <string name="home_shops_around">Shops around you</string>
     <string name="home_top_packs">Top Packs</string>
     <string name="home_top_products">Top Products</string>
-    
+
     <!-- SEARCH -->
     <string name="search_top_search">Top Search</string>
     <string name="search_nav_categories">Navigate through categories</string>
-    
+
     <!-- ORDERS -->
     <string name="orders_repeat_order">Repeat Order</string>
     <string name="orders_last_orders">Last Orders</string>

@@ -1,5 +1,7 @@
 package com.selepdf.hackovid.network;
 
+import android.util.Log;
+
 import com.selepdf.hackovid.auth.TokenManager;
 import com.selepdf.hackovid.callback.FailureCallback;
 import com.selepdf.hackovid.callback.LoginCallback;
@@ -127,10 +129,11 @@ public class HackovidRepository {
             @Override
             public void onResponse(Call<ProductResponse> call, Response<ProductResponse> response) {
                 if (response.isSuccessful()) {
+                    Log.d(TAG, "onResponse: " + response.raw().toString());
                     ProductResponse productResponse = response.body();
                     switch (productResponse.getStatus()) {
                         case OK:
-                            callback.onProductsReceived(response.body().getProducts());
+                            callback.onProductsReceived(productResponse.getProducts());
                             break;
                     }
                 } else {

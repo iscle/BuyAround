@@ -17,13 +17,13 @@ public class User {
         this.email = email;
     }
 
-    public User(String name, String password) {
-        this.name = name;
+    public User(String email, String password) {
+        this.name = null;
         this.password = password;
         this.direction = null;
         this.profilePicture = null;
         this.birthday = -1;
-        this.email = null;
+        this.email = email;
     }
 
     public String getName() {
