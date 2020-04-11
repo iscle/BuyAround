@@ -4,6 +4,7 @@ import com.selepdf.hackovid.model.Pack;
 import com.selepdf.hackovid.model.Product;
 import com.selepdf.hackovid.model.Store;
 import com.selepdf.hackovid.model.User;
+import com.selepdf.hackovid.network.model.CategoryResponse;
 import com.selepdf.hackovid.network.model.LoginResponse;
 import com.selepdf.hackovid.network.model.PackResponse;
 import com.selepdf.hackovid.network.model.ProductResponse;
@@ -53,5 +54,18 @@ public interface HackovidService {
 
     @GET("user/{id}")
     Call<UserResponse> getUser(@Path(value = "id", encoded = true) String id);
+
+    // Category
+    @GET("category/product")
+    Call<CategoryResponse> getAllProductCategories();
+
+    @POST("category/product")
+    Call<CategoryResponse> addProductCategory();
+
+    @GET("category/store")
+    Call<CategoryResponse> getAllStoreCategories();
+
+    @POST("category/store")
+    Call<CategoryResponse> addStoreCategory();
 
 }
