@@ -77,7 +77,6 @@ public class AddProductFragment extends DaggerFragment implements ProductCallbac
 
     @Override
     public void onFailure(FailureError error) {
-        // TODO: TOAST WITH THE ERROR
         Toast.makeText(getContext(), error.toString(), Toast.LENGTH_SHORT).show();
     }
 
@@ -91,11 +90,11 @@ public class AddProductFragment extends DaggerFragment implements ProductCallbac
     @Override
     public void onCategoriesReceived(Category[] categories) {
         List<String> spinnerArray = new ArrayList<>();
-        for (int i = 0; i < categories.length; ++i) {
-            spinnerArray.add(categories[i].getName());
+        for (Category category : categories) {
+            spinnerArray.add(category.getName());
         }
 
-        ArrayAdapter adapter = new ArrayAdapter<String>(getContext(), android.R.layout.simple_spinner_dropdown_item, spinnerArray);
+        ArrayAdapter adapter = new ArrayAdapter<>(getContext(), android.R.layout.simple_spinner_dropdown_item, spinnerArray);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
         binding.productAddCategory.setAdapter(adapter);
