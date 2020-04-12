@@ -84,6 +84,9 @@
         <action
             android:id="@+id/action_homeFragment_to_aboutUsFragment"
             app:destination="@id/aboutUsFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_addPackFragment"
+            app:destination="@id/addPackFragment" />
     </fragment>
     <fragment
         android:id="@+id/accountFragment"
@@ -204,4 +207,9 @@
         android:name="com.selepdf.buyaround.fragment.AboutUsFragment"
         android:label="@string/about_us"
         tools:layout="@layout/fragment_about_us" />
+    <fragment
+        android:id="@+id/addPackFragment"
+        android:name="com.selepdf.buyaround.fragment.AddPackFragment"
+        android:label="@string/add_pack"
+        tools:layout="@layout/fragment_add_pack" />
 </navigation>
