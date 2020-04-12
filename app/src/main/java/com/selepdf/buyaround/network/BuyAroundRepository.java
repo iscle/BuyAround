@@ -265,7 +265,7 @@ public class BuyAroundRepository {
 
             @Override
             public void onFailure(Call<OrderResponse> call, Throwable t) {
-
+                callback.onFailure(FailureCallback.FailureError.INTERNAL_ERROR);
             }
         });
     }
@@ -291,7 +291,7 @@ public class BuyAroundRepository {
 
             @Override
             public void onFailure(Call<OrderResponse> call, Throwable t) {
-
+                callback.onFailure(FailureCallback.FailureError.INTERNAL_ERROR);
             }
         });
     }
@@ -317,7 +317,7 @@ public class BuyAroundRepository {
 
             @Override
             public void onFailure(Call<StoreResponse> call, Throwable t) {
-
+                callback.onFailure(FailureCallback.FailureError.INTERNAL_ERROR);
             }
         });
     }
@@ -343,7 +343,7 @@ public class BuyAroundRepository {
 
             @Override
             public void onFailure(Call<PackResponse> call, Throwable t) {
-
+                callback.onFailure(FailureCallback.FailureError.INTERNAL_ERROR);
             }
         });
     }
@@ -369,7 +369,7 @@ public class BuyAroundRepository {
 
             @Override
             public void onFailure(Call<ProductResponse> call, Throwable t) {
-
+                callback.onFailure(FailureCallback.FailureError.INTERNAL_ERROR);
             }
         });
     }
