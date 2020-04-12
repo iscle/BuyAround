@@ -18,7 +18,7 @@ public class User {
     }
 
     public User(String email, String password) {
-        this.name = null;
+        this.name = email;
         this.password = password;
         this.direction = null;
         this.profilePicture = null;

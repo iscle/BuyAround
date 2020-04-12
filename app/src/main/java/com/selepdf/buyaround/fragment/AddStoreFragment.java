@@ -41,12 +41,12 @@ public class AddStoreFragment extends DaggerFragment implements StoreCallback {
 
         addStoreViewModel = new ViewModelProvider(this, viewModelFactory).get(AddStoreViewModel.class);
 
-        /*binding.acceptBtn.setOnClickListener(v -> {
+        binding.acceptBtn.setOnClickListener(v -> {
             String name = binding.storeEt.getText().toString();
             String description = binding.descriptionEt.getText().toString();
 
-            storeViewModel.addStore(name, description, this);
-        });*/
+            addStoreViewModel.addStore(name, description, this);
+        });
     }
 
     @Override
