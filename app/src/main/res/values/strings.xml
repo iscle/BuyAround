@@ -2,7 +2,7 @@
     <string name="app_name">BuyAround</string>
 
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="hello_blank_fragment">This will be implemented in future updates!</string>
 
     <!-- TOASTS -->
     <string name="wrong_password">Wrong passowrd!</string>
@@ -78,6 +78,9 @@
     <string name="home_shops_around">Shops around you</string>
     <string name="home_top_packs">Top Packs</string>
     <string name="home_top_products">Top Products</string>
+    <string name="no_stores_around">Sorry…\nThere are no stores around you yet!</string>
+    <string name="no_packs_around">Sorry…\nThere are no packs around you yet!</string>
+    <string name="no_products_around">Sorry…\nThere are no products around you yet!</string>
 
     <!-- SEARCH -->
     <string name="search_top_search">Top Search</string>

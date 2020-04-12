@@ -2,7 +2,7 @@
     <string name="app_name">BuyAround</string>
 
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hola fragment en blanc</string>
+    <string name="hello_blank_fragment">Això s\'implementarà en futures actualitzacions</string>
 
     <!-- TOASTS -->
     <string name="wrong_password">Contrasenya incorrecta!</string>
@@ -64,6 +64,9 @@
     <string name="home_shops_around">Botigues al teu voltant</string>
     <string name="home_top_packs">Top Packs</string>
     <string name="home_top_products">Top Productes</string>
+    <string name="no_stores_around">Ho sentim…\nNo hi ha cap botiga al teu voltant encara!</string>
+    <string name="no_packs_around">Ho sentim…\nNo hi ha cap pack al teu voltant encara!</string>
+    <string name="no_products_around">Ho sentim…\nNo hi ha cap producte al teu voltant encara!</string>
 
     <!-- RECYCLER_VIEW ITEM -->
     <string name="item_content_title">Títol contingut</string>

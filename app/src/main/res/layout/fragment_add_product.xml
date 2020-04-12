@@ -1,187 +1,195 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    style="@style/ParentLayoutLarge"
+    style="@style/ParentLayout"
+    android:id="@+id/scroll_view"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".fragment.AddProductFragment">
 
-    <TextView
-        android:id="@+id/product_tv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:text="@string/product_tv"
-        android:textColor="@color/colorPrimaryDark"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
-        android:id="@+id/product_add_name"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="@string/product_hint"
-        android:inputType="textPersonName"
-        android:backgroundTint="@color/colorPrimaryDark"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/product_tv" />
-
-    <TextView
-        android:id="@+id/category_tv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="@string/category_tv"
-        android:textColor="@color/colorPrimaryDark"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/product_add_name" />
-
-    <Spinner
-        android:id="@+id/product_add_category"
-        android:layout_width="0dp"
-        android:layout_height="44dp"
-        android:backgroundTint="@color/colorPrimaryDark"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/category_tv" />
-
-    <LinearLayout
-        android:id="@+id/price_layout"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/product_add_category">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:layout_gravity="start"
-            android:layout_weight="1">
-
-            <TextView
-                android:id="@+id/price_tv"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/price_tv"
-                android:textColor="@color/colorPrimaryDark"/>
-
-            <EditText
-                android:id="@+id/product_add_price"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:ems="10"
-                android:backgroundTint="@color/colorPrimaryDark"
-                android:inputType="numberDecimal" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:layout_gravity="end"
-            android:layout_weight="1">
-
-            <TextView
-                android:layout_gravity="end"
-                android:id="@+id/currency_tv"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="@color/colorPrimaryDark"
-                android:text="@string/currency_tv" />
-
-            <Spinner
-                android:id="@+id/product_add_currency"
-                android:layout_gravity="end"
-                android:layout_width="92dp"
-                android:backgroundTint="@color/colorPrimaryDark"
-                android:layout_height="match_parent"/>
-
-        </LinearLayout>
-    </LinearLayout>
-
-    <TextView
-        android:id="@+id/description_tv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="@string/description_tv"
-        android:textColor="@color/colorPrimaryDark"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/price_layout" />
-
-    <EditText
-        android:id="@+id/product_add_description"
-        android:layout_width="0dp"
-        android:layout_height="140dp"
-        android:ems="10"
-        android:hint="@string/description_hint"
-        android:inputType="textPersonName"
-        android:backgroundTint="@color/colorPrimaryDark"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/description_tv" />
-
-    <TextView
-        android:id="@+id/images_tv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="@string/images_tv"
-        android:textColor="@color/colorPrimaryDark"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/product_add_description" />
-
-    <Spinner
-        android:id="@+id/images_spin"
-        android:layout_width="0dp"
-        android:layout_height="44dp"
-        android:layout_marginEnd="64dp"
-        android:backgroundTint="@color/colorPrimaryDark"
-        app:layout_constraintEnd_toStartOf="@+id/product_add_imgs_btn"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/images_tv" />
-
-    <Button
-        android:id="@+id/product_add_imgs_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/images_tv" />
-
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:layout_marginBottom="16dp"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="parent">
+        android:layout_height="wrap_content">
 
-        <Button
-            android:id="@+id/accept_btn"
-            android:layout_width="0dp"
-            android:layout_weight="1"
+        <TextView
+            android:id="@+id/product_tv"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="@string/product_tv"
+            android:textColor="@color/colorPrimaryDark"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/product_add_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/product_hint"
+            android:inputType="textPersonName"
             android:backgroundTint="@color/colorPrimaryDark"
-            android:textColor="@color/white"
-            android:text="@string/accept"/>
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/product_tv" />
+
+        <TextView
+            android:id="@+id/category_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/category_tv"
+            android:textColor="@color/colorPrimaryDark"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/product_add_name" />
+
+        <Spinner
+            android:id="@+id/product_add_category"
+            android:layout_width="0dp"
+            android:layout_height="44dp"
+            android:backgroundTint="@color/colorPrimaryDark"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/category_tv" />
+
+        <LinearLayout
+            android:id="@+id/price_layout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/product_add_category">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_gravity="start"
+                android:layout_weight="1">
+
+                <TextView
+                    android:id="@+id/price_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/price_tv"
+                    android:textColor="@color/colorPrimaryDark"/>
+
+                <EditText
+                    android:id="@+id/product_add_price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:ems="10"
+                    android:backgroundTint="@color/colorPrimaryDark"
+                    android:inputType="numberDecimal" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_gravity="end"
+                android:layout_weight="1">
+
+                <TextView
+                    android:layout_gravity="end"
+                    android:id="@+id/currency_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:text="@string/currency_tv" />
+
+                <Spinner
+                    android:id="@+id/product_add_currency"
+                    android:layout_gravity="end"
+                    android:layout_width="92dp"
+                    android:backgroundTint="@color/colorPrimaryDark"
+                    android:layout_height="match_parent"/>
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/description_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/description_tv"
+            android:textColor="@color/colorPrimaryDark"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/price_layout" />
+
+        <EditText
+            android:id="@+id/product_add_description"
+            android:layout_width="0dp"
+            android:layout_height="140dp"
+            android:ems="10"
+            android:hint="@string/description_hint"
+            android:inputType="textPersonName"
+            android:backgroundTint="@color/colorPrimaryDark"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/description_tv" />
+
+        <TextView
+            android:id="@+id/images_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/images_tv"
+            android:textColor="@color/colorPrimaryDark"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/product_add_description" />
+
+        <Spinner
+            android:id="@+id/images_spin"
+            android:layout_width="0dp"
+            android:layout_height="44dp"
+            android:layout_marginEnd="64dp"
+            android:backgroundTint="@color/colorPrimaryDark"
+            app:layout_constraintEnd_toStartOf="@+id/product_add_imgs_btn"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/images_tv" />
 
         <Button
-            android:id="@+id/cancel_btn"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="match_parent"
-            android:backgroundTint="@color/colorError"
-            android:text="@string/cancel" />
+            android:id="@+id/product_add_imgs_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/images_tv" />
 
-    </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="16dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/product_add_imgs_btn">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+            <Button
+                android:id="@+id/accept_btn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:backgroundTint="@color/colorPrimaryDark"
+                android:text="@string/accept"
+                android:textColor="@color/white" />
+
+            <Button
+                android:id="@+id/cancel_btn"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:backgroundTint="@color/colorError"
+                android:text="@string/cancel" />
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
