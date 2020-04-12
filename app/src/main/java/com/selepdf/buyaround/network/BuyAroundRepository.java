@@ -1,5 +1,7 @@
 package com.selepdf.buyaround.network;
 
+import android.util.Log;
+
 import com.selepdf.buyaround.auth.TokenManager;
 import com.selepdf.buyaround.callback.CategoryCallback;
 import com.selepdf.buyaround.callback.FailureCallback;
@@ -49,6 +51,7 @@ public class BuyAroundRepository {
             public void onResponse(Call<RegisterResponse> call, Response<RegisterResponse> response) {
                 if (response.isSuccessful()) {
                     RegisterResponse registerResponse = response.body();
+                    Log.d(TAG, "onResponse: " + registerResponse.getStatus());
                     switch (registerResponse.getStatus()) {
                         case OK:
                             callback.onSuccess();
@@ -74,6 +77,7 @@ public class BuyAroundRepository {
             @Override
             public void onFailure(Call<RegisterResponse> call, Throwable t) {
                 callback.onFailure(RegisterCallback.RegisterError.NETWORK_ERROR);
+                t.printStackTrace();
             }
         });
     }
@@ -84,6 +88,7 @@ public class BuyAroundRepository {
             public void onResponse(Call<LoginResponse> call, Response<LoginResponse> response) {
                 if (response.isSuccessful()) {
                     LoginResponse loginResponse = response.body();
+                    Log.d(TAG, "onResponse: " + loginResponse.getStatus());
                     switch (loginResponse.getStatus()) {
                         case OK:
                             tokenManager.setToken(loginResponse.getToken());
@@ -107,6 +112,7 @@ public class BuyAroundRepository {
             @Override
             public void onFailure(Call<LoginResponse> call, Throwable t) {
                 callback.onFailure(LoginCallback.LoginError.NETWORK_ERROR);
+                t.printStackTrace();
             }
         });
     }
@@ -117,6 +123,7 @@ public class BuyAroundRepository {
             public void onResponse(Call<ProductResponse> call, Response<ProductResponse> response) {
                 if (response.isSuccessful()) {
                     ProductResponse productResponse = response.body();
+                    Log.d(TAG, "onResponse: " + productResponse.getStatus());
                     switch (productResponse.getStatus()) {
                         case OK:
                             callback.onProductsReceived(productResponse.getProducts());
@@ -133,6 +140,7 @@ public class BuyAroundRepository {
             @Override
             public void onFailure(Call<ProductResponse> call, Throwable t) {
                 callback.onFailure(FailureCallback.FailureError.NETWORK_ERROR);
+                t.printStackTrace();
             }
         });
     }
@@ -143,6 +151,7 @@ public class BuyAroundRepository {
             public void onResponse(Call<CategoryResponse> call, Response<CategoryResponse> response) {
                 if (response.isSuccessful()) {
                     CategoryResponse categoryResponse = response.body();
+                    Log.d(TAG, "onResponse: " + categoryResponse.getStatus());
                     switch (categoryResponse.getStatus()) {
                         case OK:
                             callback.onCategoriesReceived(categoryResponse.getCategories());
@@ -160,6 +169,7 @@ public class BuyAroundRepository {
             public void onFailure(Call<CategoryResponse> call, Throwable t) {
                 t.printStackTrace();
                 callback.onFailure(FailureCallback.FailureError.NETWORK_ERROR);
+                t.printStackTrace();
             }
         });
     }
@@ -170,6 +180,7 @@ public class BuyAroundRepository {
             public void onResponse(Call<ProductResponse> call, Response<ProductResponse> response) {
                 if (response.isSuccessful()) {
                     ProductResponse productResponse = response.body();
+                    Log.d(TAG, "onResponse: " + productResponse.getStatus());
                     switch (productResponse.getStatus()) {
                         case OK:
                             callback.onProductsReceived(productResponse.getProducts());
@@ -186,6 +197,7 @@ public class BuyAroundRepository {
             @Override
             public void onFailure(Call<ProductResponse> call, Throwable t) {
                 callback.onFailure(FailureCallback.FailureError.NETWORK_ERROR);
+                t.printStackTrace();
             }
         });
     }
@@ -196,6 +208,7 @@ public class BuyAroundRepository {
             public void onResponse(Call<StoreResponse> call, Response<StoreResponse> response) {
                 if (response.isSuccessful()) {
                     StoreResponse storeResponse = response.body();
+                    Log.d(TAG, "onResponse: " + storeResponse.getStatus());
                     switch (storeResponse.getStatus()) {
                         case OK:
                             callback.onStoresReceived(storeResponse.getStores());
@@ -212,6 +225,7 @@ public class BuyAroundRepository {
             @Override
             public void onFailure(Call<StoreResponse> call, Throwable t) {
                 callback.onFailure(FailureCallback.FailureError.NETWORK_ERROR);
+                t.printStackTrace();
             }
         });
     }
@@ -222,6 +236,7 @@ public class BuyAroundRepository {
             public void onResponse(Call<StoreResponse> call, Response<StoreResponse> response) {
                 if (response.isSuccessful()) {
                     StoreResponse storeResponse = response.body();
+                    Log.d(TAG, "onResponse: " + storeResponse.getStatus());
                     switch (storeResponse.getStatus()) {
                         case OK:
                             callback.onStoresReceived(storeResponse.getStores());
@@ -238,6 +253,7 @@ public class BuyAroundRepository {
             @Override
             public void onFailure(Call<StoreResponse> call, Throwable t) {
                 callback.onFailure(FailureCallback.FailureError.NETWORK_ERROR);
+                t.printStackTrace();
             }
         });
     }
@@ -252,6 +268,7 @@ public class BuyAroundRepository {
             public void onResponse(Call<OrderResponse> call, Response<OrderResponse> response) {
                 if (response.isSuccessful()) {
                     OrderResponse orderResponse = response.body();
+                    Log.d(TAG, "onResponse: " + orderResponse.getStatus());
                     switch (orderResponse.getStatus()) {
                         case OK:
                             callback.onOrdersReceived(orderResponse.getOrders());
@@ -268,6 +285,7 @@ public class BuyAroundRepository {
             @Override
             public void onFailure(Call<OrderResponse> call, Throwable t) {
                 callback.onFailure(FailureCallback.FailureError.NETWORK_ERROR);
+                t.printStackTrace();
             }
         });
     }
@@ -278,6 +296,7 @@ public class BuyAroundRepository {
             public void onResponse(Call<OrderResponse> call, Response<OrderResponse> response) {
                 if (response.isSuccessful()) {
                     OrderResponse orderResponse = response.body();
+                    Log.d(TAG, "onResponse: " + orderResponse.getStatus());
                     switch (orderResponse.getStatus()) {
                         case OK:
                             callback.onOrdersReceived(orderResponse.getOrders());
@@ -294,6 +313,7 @@ public class BuyAroundRepository {
             @Override
             public void onFailure(Call<OrderResponse> call, Throwable t) {
                 callback.onFailure(FailureCallback.FailureError.NETWORK_ERROR);
+                t.printStackTrace();
             }
         });
     }
@@ -304,6 +324,7 @@ public class BuyAroundRepository {
             public void onResponse(Call<StoreResponse> call, Response<StoreResponse> response) {
                 if (response.isSuccessful()) {
                     StoreResponse storeResponse = response.body();
+                    Log.d(TAG, "onResponse: " + storeResponse.getStatus());
                     switch (storeResponse.getStatus()) {
                         case OK:
                             callback.onStoresReceived(storeResponse.getStores());
@@ -320,6 +341,7 @@ public class BuyAroundRepository {
             @Override
             public void onFailure(Call<StoreResponse> call, Throwable t) {
                 callback.onFailure(FailureCallback.FailureError.NETWORK_ERROR);
+                t.printStackTrace();
             }
         });
     }
@@ -330,6 +352,7 @@ public class BuyAroundRepository {
             public void onResponse(Call<PackResponse> call, Response<PackResponse> response) {
                 if (response.isSuccessful()) {
                     PackResponse packResponse = response.body();
+                    Log.d(TAG, "onResponse: " + packResponse.getStatus());
                     switch (packResponse.getStatus()) {
                         case OK:
                             callback.onPacksReceived(packResponse.getPacks());
@@ -346,6 +369,7 @@ public class BuyAroundRepository {
             @Override
             public void onFailure(Call<PackResponse> call, Throwable t) {
                 callback.onFailure(FailureCallback.FailureError.NETWORK_ERROR);
+                t.printStackTrace();
             }
         });
     }
@@ -356,6 +380,7 @@ public class BuyAroundRepository {
             public void onResponse(Call<ProductResponse> call, Response<ProductResponse> response) {
                 if (response.isSuccessful()) {
                     ProductResponse productResponse = response.body();
+                    Log.d(TAG, "onResponse: " + productResponse.getStatus());
                     switch (productResponse.getStatus()) {
                         case OK:
                             callback.onProductsReceived(productResponse.getProducts());
@@ -372,6 +397,7 @@ public class BuyAroundRepository {
             @Override
             public void onFailure(Call<ProductResponse> call, Throwable t) {
                 callback.onFailure(FailureCallback.FailureError.NETWORK_ERROR);
+                t.printStackTrace();
             }
         });
     }
@@ -382,6 +408,7 @@ public class BuyAroundRepository {
             public void onResponse(Call<PackResponse> call, Response<PackResponse> response) {
                 if (response.isSuccessful()) {
                     PackResponse packResponse = response.body();
+                    Log.d(TAG, "onResponse: " + packResponse.getStatus());
                     switch (packResponse.getStatus()) {
                         case OK:
                             callback.onPacksReceived(packResponse.getPacks());
@@ -398,6 +425,7 @@ public class BuyAroundRepository {
             @Override
             public void onFailure(Call<PackResponse> call, Throwable t) {
                 callback.onFailure(FailureCallback.FailureError.NETWORK_ERROR);
+                t.printStackTrace();
             }
         });
     }
@@ -408,6 +436,7 @@ public class BuyAroundRepository {
             public void onResponse(Call<UserResponse> call, Response<UserResponse> response) {
                 if (response.isSuccessful()) {
                     UserResponse userResponse = response.body();
+                    Log.d(TAG, "onResponse: " + userResponse.getStatus());
                     switch (userResponse.getStatus()) {
                         case OK:
                             callback.onUserReceived(userResponse.getUser());
@@ -424,6 +453,7 @@ public class BuyAroundRepository {
             @Override
             public void onFailure(Call<UserResponse> call, Throwable t) {
                 callback.onFailure(FailureCallback.FailureError.NETWORK_ERROR);
+                t.printStackTrace();
             }
         });
     }
