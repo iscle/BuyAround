@@ -24,7 +24,6 @@
         android:layout_marginEnd="24dp"
         android:gravity="center"
         android:text="@string/no_notifications_yet"
-        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

@@ -6,6 +6,7 @@ import com.selepdf.hackovid.auth.TokenManager;
 import com.selepdf.hackovid.callback.CategoryCallback;
 import com.selepdf.hackovid.callback.FailureCallback;
 import com.selepdf.hackovid.callback.LoginCallback;
+import com.selepdf.hackovid.callback.NotificationCallback;
 import com.selepdf.hackovid.callback.ProductCallback;
 import com.selepdf.hackovid.callback.RegisterCallback;
 import com.selepdf.hackovid.callback.StoreCallback;
@@ -223,5 +224,9 @@ public class HackovidRepository {
                 callback.onFailure(FailureCallback.FailureError.NETWORK_ERROR);
             }
         });
+    }
+
+    public void getUserNotifications(NotificationCallback notificationCallback) {
+        // TODO
     }
 }
