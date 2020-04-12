@@ -12,9 +12,11 @@ import com.selepdf.buyaround.model.Product;
 import com.selepdf.buyaround.model.Store;
 import com.selepdf.buyaround.network.BuyAroundRepository;
 
+import java.util.List;
+
 import javax.inject.Inject;
 
-public class HomeViewModel extends ViewModel {
+public class FavouritesViewModel extends ViewModel {
 
     private BuyAroundRepository buyAroundRepository;
     private MutableLiveData<Store[]> mStores;
@@ -22,16 +24,16 @@ public class HomeViewModel extends ViewModel {
     private MutableLiveData<Product[]> mProducts;
 
     @Inject
-    public HomeViewModel(BuyAroundRepository buyAroundRepository) {
+    public FavouritesViewModel(BuyAroundRepository buyAroundRepository) {
         this.buyAroundRepository = buyAroundRepository;
         this.mStores = new MutableLiveData<>();
         this.mPacks = new MutableLiveData<>();
         this.mProducts = new MutableLiveData<>();
     }
 
-    public void requestStoresAround(String username) {
+    public void requestFavouriteStores() {
         // Handle request
-        buyAroundRepository.getAllStores(new StoreCallback() {
+        buyAroundRepository.getFavouriteStores(new StoreCallback() {
             @Override
             public void onStoresReceived(Store[] stores) {
                 mStores.postValue(stores);
@@ -45,9 +47,9 @@ public class HomeViewModel extends ViewModel {
 
     }
 
-    public void requestPacks() {
+    public void requestFavouritePacks() {
         // Handle request
-        buyAroundRepository.getAllPacks(new PackCallback() {
+        buyAroundRepository.getFavouritePacks(new PackCallback() {
             @Override
             public void onPacksReceived(Pack[] packs) {
                 mPacks.postValue(packs);
@@ -60,9 +62,9 @@ public class HomeViewModel extends ViewModel {
         });
     }
 
-    public void requestProducts() {
+    public void requestFavouriteProducts() {
         // Handle request
-        buyAroundRepository.getAllProducts(new ProductCallback() {
+        buyAroundRepository.getFavouriteProducts(new ProductCallback() {
             @Override
             public void onProductsReceived(Product[] products) {
                 mProducts.postValue(products);
@@ -75,18 +77,18 @@ public class HomeViewModel extends ViewModel {
         });
     }
 
-    public LiveData<Store[]> getStores() {
-        requestStoresAround(null);
+    public LiveData<Store[]> getFavouriteStores() {
+        requestFavouriteStores();;
         return mStores;
     }
 
-    public LiveData<Pack[]> getPacks() {
-        requestPacks();
+    public LiveData<Pack[]> getFavouritePacks() {
+        requestFavouritePacks();
         return mPacks;
     }
 
-    public LiveData<Product[]> getProducts() {
-        requestProducts();
+    public LiveData<Product[]> getFavouriteProducts() {
+        requestFavouriteProducts();
         return mProducts;
     }
 }

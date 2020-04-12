@@ -11,6 +11,7 @@ import com.selepdf.buyaround.viewmodel.AddStoreViewModel;
 import com.selepdf.buyaround.viewmodel.AddressViewModel;
 import com.selepdf.buyaround.viewmodel.AddressesViewModel;
 import com.selepdf.buyaround.viewmodel.CategoriesViewModel;
+import com.selepdf.buyaround.viewmodel.FavouritesViewModel;
 import com.selepdf.buyaround.viewmodel.HomeViewModel;
 import com.selepdf.buyaround.viewmodel.LoginViewModel;
 import com.selepdf.buyaround.viewmodel.NotificationsViewModel;
@@ -83,6 +84,9 @@ public class ViewModelFactory implements ViewModelProvider.Factory {
         }
         if (modelClass.isAssignableFrom(NotificationsViewModel.class)) {
             return (T) new NotificationsViewModel(buyAroundRepository);
+        }
+        if (modelClass.isAssignableFrom(FavouritesViewModel.class)) {
+            return (T) new FavouritesViewModel(buyAroundRepository);
         }
 
         throw new IllegalArgumentException("Unknown class!");

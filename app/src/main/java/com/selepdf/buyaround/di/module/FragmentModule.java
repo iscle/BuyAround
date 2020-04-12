@@ -5,6 +5,7 @@ import com.selepdf.buyaround.fragment.AddStoreFragment;
 import com.selepdf.buyaround.fragment.AddressFragment;
 import com.selepdf.buyaround.fragment.AddressesFragment;
 import com.selepdf.buyaround.fragment.CategoriesFragment;
+import com.selepdf.buyaround.fragment.FavouritesFragment;
 import com.selepdf.buyaround.fragment.HomeFragment;
 import com.selepdf.buyaround.fragment.LoginFragment;
 import com.selepdf.buyaround.fragment.NotificationsFragment;
@@ -66,4 +67,7 @@ public abstract class FragmentModule {
 
     @ContributesAndroidInjector
     abstract NotificationsFragment notificationsFragment();
+
+    @ContributesAndroidInjector
+    abstract FavouritesFragment favouritesFragment();
 }

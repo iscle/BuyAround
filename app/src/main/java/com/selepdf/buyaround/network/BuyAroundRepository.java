@@ -8,6 +8,7 @@ import com.selepdf.buyaround.callback.FailureCallback;
 import com.selepdf.buyaround.callback.LoginCallback;
 import com.selepdf.buyaround.callback.NotificationCallback;
 import com.selepdf.buyaround.callback.OrderCallback;
+import com.selepdf.buyaround.callback.PackCallback;
 import com.selepdf.buyaround.callback.ProductCallback;
 import com.selepdf.buyaround.callback.RegisterCallback;
 import com.selepdf.buyaround.callback.StoreCallback;
@@ -227,15 +228,31 @@ public class BuyAroundRepository {
         });
     }
 
-    public void getUserNotifications(NotificationCallback notificationCallback) {
+    public void getUserNotifications(NotificationCallback callback) {
         // TODO
     }
 
-    public void getLastUserOrders(OrderCallback orderCallback) {
+    public void getLastUserOrders(OrderCallback callback) {
         // TODO
     }
 
-    public void getRepeatedUserOrders(OrderCallback orderCallback) {
+    public void getRepeatedUserOrders(OrderCallback callback) {
+        // TODO
+    }
+
+    public void getFavouriteStores(StoreCallback callback) {
+        // TODO
+    }
+
+    public void getFavouritePacks(PackCallback callback) {
+        // TODO
+    }
+
+    public void getFavouriteProducts(ProductCallback callback) {
+        // TODO
+    }
+
+    public void getAllPacks(PackCallback callback) {
         // TODO
     }
 }
