@@ -3,9 +3,11 @@ package com.selepdf.buyaround.auth;
 import android.content.Context;
 import android.content.Intent;
 
+import androidx.lifecycle.MutableLiveData;
 import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 
 import com.selepdf.buyaround.callback.UserCallback;
+import com.selepdf.buyaround.model.OrderProduct;
 import com.selepdf.buyaround.model.User;
 import com.selepdf.buyaround.network.BuyAroundRepository;
 
@@ -19,6 +21,7 @@ public class UserManager {
     private User user;
     private BuyAroundRepository buyAroundRepository;
     private LocalBroadcastManager localBroadcastManager;
+    private MutableLiveData<OrderProduct[]> cartProducts;
 
     @Inject
     public UserManager(TokenManager tokenManager, BuyAroundRepository buyAroundRepository, Context context) {
@@ -52,5 +55,17 @@ public class UserManager {
 
     public TokenManager getTokenManager() {
         return tokenManager;
+    }
+
+    public MutableLiveData<OrderProduct[]> getCartProducts() {
+        if (cartProducts == null) {
+            cartProducts = new MutableLiveData<>();
+        }
+
+        return cartProducts;
+    }
+
+    public void setCartProducts(MutableLiveData<OrderProduct[]> cartProducts) {
+        this.cartProducts = cartProducts;
     }
 }
