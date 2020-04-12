@@ -172,4 +172,8 @@
     <string name="who_are_we">Qui som?</string>
     <string name="who_are_we_text">L\'equip de BuyAround està format per 4 estudiants d\'enginyeria de La Salle - URL i FIB - UPC.\n\nA la vista de la crisi econòmica provocada per la pandèmia global del 2020 i, per intentar aportar el nostre granet d\'arena en la restauracó de la normalitat, vam decidir afegir-nos a la iniciativa de Hackovid, on va sorgir la idea d\'aquest projecte.</string>
 
+    <!-- LOCATION -->
+    <string name="nearby_stores_tv">Nombre de botigues properes:</string>
+    <string name="nearby_stores_num_tv">0</string>
+
 </resources>
