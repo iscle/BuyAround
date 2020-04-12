@@ -2,7 +2,9 @@ package com.selepdf.hackovid.adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -38,6 +40,7 @@ public class StoreListAdapter extends RecyclerView.Adapter<StoreListAdapter.View
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         Store store = mItems[position];
+        holder.btnAdd.setVisibility(View.GONE);
         holder.itemView.setOnClickListener(view -> mCallback.onItemSelected(store));
         holder.tvTitle.setText(store.getName());
         if (store.getDirection() != null)
@@ -70,6 +73,7 @@ public class StoreListAdapter extends RecyclerView.Adapter<StoreListAdapter.View
 
         ImageView imgView;
         TextView tvTitle, tvSubtitle, tvRating;
+        Button btnAdd;
 
         ViewHolder(ItemProductBinding binding) {
             super(binding.getRoot());
@@ -77,6 +81,7 @@ public class StoreListAdapter extends RecyclerView.Adapter<StoreListAdapter.View
             tvTitle = binding.itemProductTitle;
             tvSubtitle = binding.itemProductSubtitle;
             tvRating = binding.itemProductRating;
+            btnAdd = binding.itemProductAddBtn;
         }
     }
 }

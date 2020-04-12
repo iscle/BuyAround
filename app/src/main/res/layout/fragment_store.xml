@@ -82,6 +82,7 @@
             android:layout_height="wrap_content"
             android:text="@string/store_show_map"
             android:backgroundTint="@color/colorPrimaryDark"
+            android:layout_marginTop="6dp"
             android:textColor="@color/white"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/store_direction" />

@@ -73,7 +73,7 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        android:background="@color/colorPrimaryDark"
+        android:backgroundTint="@color/colorPrimaryDark"
         android:textColor="@android:color/white"
         android:text="@string/login_button"
         android:textAllCaps="true"
