@@ -7,6 +7,7 @@ import com.selepdf.hackovid.callback.CategoryCallback;
 import com.selepdf.hackovid.callback.FailureCallback;
 import com.selepdf.hackovid.callback.LoginCallback;
 import com.selepdf.hackovid.callback.NotificationCallback;
+import com.selepdf.hackovid.callback.OrderCallback;
 import com.selepdf.hackovid.callback.ProductCallback;
 import com.selepdf.hackovid.callback.RegisterCallback;
 import com.selepdf.hackovid.callback.StoreCallback;
@@ -227,6 +228,14 @@ public class HackovidRepository {
     }
 
     public void getUserNotifications(NotificationCallback notificationCallback) {
+        // TODO
+    }
+
+    public void getLastUserOrders(OrderCallback orderCallback) {
+        // TODO
+    }
+
+    public void getRepeatedUserOrders(OrderCallback orderCallback) {
         // TODO
     }
 }
