@@ -4,6 +4,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -29,7 +30,7 @@ public class CartItemsAdapter extends RecyclerView.Adapter<CartItemsAdapter.View
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_cart_order,parent);
+        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_cart_order,parent, false);
         return new ViewHolder(v);
     }
 
@@ -54,7 +55,7 @@ public class CartItemsAdapter extends RecyclerView.Adapter<CartItemsAdapter.View
     public class ViewHolder extends RecyclerView.ViewHolder {
 
         TextView tvTitle, tvPrice, tvQuantity;
-        Button btnDelete;
+        ImageView btnDelete;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
