@@ -16,7 +16,7 @@
     <string name="login_welcome_tv">Welcome</string>
     <string name="register_welcome_tv">Register</string>
     <string name="user_tv">User</string>
-    <string name="user_hint">Enter your name</string>
+    <string name="user_hint">Enter your email</string>
     <string name="mail_tv">Email</string>
     <string name="mail_hint">Enter your email</string>
     <string name="password_tv">Password</string>
@@ -175,5 +175,6 @@
     <!-- LOCATION -->
     <string name="nearby_stores_tv">Number of nearby stores:</string>
     <string name="nearby_stores_num_tv">0</string>
+    <string name="name">Name</string>
 
 </resources>

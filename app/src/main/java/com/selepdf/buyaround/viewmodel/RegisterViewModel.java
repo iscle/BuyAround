@@ -17,8 +17,8 @@ public class RegisterViewModel extends ViewModel {
         this.buyAroundRepository = buyAroundRepository;
     }
 
-    public void register(String username, String password, RegisterCallback registerCallback) {
-        User user = new User(username, password);
+    public void register(String name, String email, String password, RegisterCallback registerCallback) {
+        User user = new User(name, email, password);
         buyAroundRepository.register(user, registerCallback);
     }
 }
