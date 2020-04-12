@@ -26,6 +26,7 @@ public class CartViewModel extends ViewModel {
     @Inject
     public CartViewModel(BuyAroundRepository buyAroundRepository, UserManager userManager) {
         this.buyAroundRepository = buyAroundRepository;
+        this.userManager = userManager;
     }
 
     private void requestrProducts() {

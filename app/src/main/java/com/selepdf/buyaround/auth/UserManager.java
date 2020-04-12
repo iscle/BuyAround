@@ -68,6 +68,10 @@ public class UserManager {
     }
 
     public LiveData<List<OrderProduct>> getProducts() {
+        if (mProducts == null) {
+            mProducts = new MutableLiveData<>();
+            mProducts.postValue(new OrderProduct[0]);
+        }
         List<OrderProduct> list = Arrays.asList(mProducts.getValue());
         MutableLiveData<List<OrderProduct>> liveData = new MutableLiveData<>();
         liveData.setValue(list);

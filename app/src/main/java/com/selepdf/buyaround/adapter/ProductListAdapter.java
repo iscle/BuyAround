@@ -13,16 +13,17 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.selepdf.buyaround.R;
+import com.selepdf.buyaround.adapter.callback.IAddItemCallback;
 import com.selepdf.buyaround.adapter.callback.IListAdapter;
 import com.selepdf.buyaround.model.Product;
 
 public class ProductListAdapter extends RecyclerView.Adapter<ProductListAdapter.ViewHolder> {
 
     private Context mContext;
-    private IListAdapter mCallback;
+    private IAddItemCallback mCallback;
     private Product[] mItems;
 
-    public ProductListAdapter(Context context, IListAdapter callback) {
+    public ProductListAdapter(Context context, IAddItemCallback callback) {
         mContext = context;
         mCallback = callback;
         mItems = null;
@@ -38,7 +39,8 @@ public class ProductListAdapter extends RecyclerView.Adapter<ProductListAdapter.
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         Product product = mItems[position];
-        holder.btnAdd.setOnClickListener(view -> mCallback.onItemSelected(product));
+        holder.itemView.setOnClickListener(view -> mCallback.onItemSelected(product));
+        holder.btnAdd.setOnClickListener(view -> mCallback.onAddItemTo(product));
         holder.tvTitle.setText(product.getName());
         holder.tvSubtitle.setText(product.getDescription());
         holder.tvRating.setText(String.valueOf(product.getRating()));

@@ -15,6 +15,7 @@ import com.selepdf.buyaround.MarginItemDecorator;
 import com.selepdf.buyaround.adapter.PackListAdapter;
 import com.selepdf.buyaround.adapter.ProductListAdapter;
 import com.selepdf.buyaround.adapter.StoreListAdapter;
+import com.selepdf.buyaround.adapter.callback.IAddItemCallback;
 import com.selepdf.buyaround.adapter.callback.IListAdapter;
 import com.selepdf.buyaround.databinding.FragmentFavouritesBinding;
 import com.selepdf.buyaround.factory.ViewModelFactory;
@@ -26,7 +27,7 @@ import javax.inject.Inject;
 
 import dagger.android.support.DaggerFragment;
 
-public class FavouritesFragment extends DaggerFragment implements IListAdapter {
+public class FavouritesFragment extends DaggerFragment implements IListAdapter, IAddItemCallback {
 
     private FragmentFavouritesBinding binding;
 
@@ -119,6 +120,11 @@ public class FavouritesFragment extends DaggerFragment implements IListAdapter {
 
             }
         }
+
+    }
+
+    @Override
+    public void onAddItemTo(Object item) {
 
     }
 }

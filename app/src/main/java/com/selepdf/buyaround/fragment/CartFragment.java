@@ -54,8 +54,8 @@ public class CartFragment extends DaggerFragment implements IListAdapter {
         super.onViewCreated(view, savedInstanceState);
 
         cartViewModel = new ViewModelProvider(this, viewModelFactory).get(CartViewModel.class);
-        subscribeObservers();
         binding.cartItemsRecyclerview.setLayoutManager(new LinearLayoutManager(getContext(), RecyclerView.VERTICAL, false));
+        subscribeObservers();
         binding.cartToPayBtn.setOnClickListener(v -> {
             NavDirections action = CartFragmentDirections
                     .actionCartFragmentToPayFragment();
