@@ -36,15 +36,22 @@ public class PackListAdapter extends RecyclerView.Adapter<PackListAdapter.ViewHo
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        holder.itemView.setOnClickListener(view -> mCallback.onItemSelected(mItems[position]));
-        holder.tvTitle.setText(mItems[position].getName());
-        holder.tvSubtitle.setText(mItems[position].getDescription());
-        holder.tvRating.setText(Float.toString(mItems[position].getRating()));
-        Glide.with(mContext)
-                .asBitmap()
-                .placeholder(R.drawable.ic_thumbnail)
-                .load(mItems[position].getThumbnail())
-                .into(holder.imgView);
+        Pack pack = mItems[position];
+        holder.itemView.setOnClickListener(view -> mCallback.onItemSelected(pack));
+        holder.tvTitle.setText(pack.getName());
+        holder.tvSubtitle.setText(pack.getDescription());
+        holder.tvRating.setText(String.valueOf(pack.getRating()));
+        if (pack.getThumbnail() != null) {
+            Glide.with(mContext)
+                    .asBitmap()
+                    .placeholder(R.drawable.ic_thumbnail)
+                    .load(pack.getThumbnail())
+                    .into(holder.imgView);
+        } else {
+            Glide.with(mContext)
+                    .load("https://www.plasticboxshop.co.uk/images/pack-of-5-eco-archive-cardboard-boxes-p4817-13301_zoom.jpg")
+                    .into(holder.imgView);
+        }
     }
 
     public void setPacks(Pack[] packs) {

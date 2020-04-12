@@ -26,7 +26,7 @@ public class NetworkModule {
 
     @Singleton
     @Provides
-    public static BuyAroundService provideHackovidService(OkHttpClient client, Gson gson) {
+    public static BuyAroundService provideBuyAroundService(OkHttpClient client, Gson gson) {
         return new Retrofit.Builder()
                 .baseUrl(BuyAroundApplication.BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create(gson))
