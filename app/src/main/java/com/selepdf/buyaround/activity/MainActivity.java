@@ -30,6 +30,8 @@ import javax.inject.Inject;
 
 import dagger.android.support.DaggerAppCompatActivity;
 
+import static android.view.View.GONE;
+
 public class MainActivity extends DaggerAppCompatActivity {
     private static final String TAG = "MainActivity";
 
@@ -67,23 +69,13 @@ public class MainActivity extends DaggerAppCompatActivity {
         // Set up bottom navigation
         NavigationUI.setupWithNavController(binding.bottomNavigationView, navController);
 
-        binding.navView.getMenu().findItem(R.id.logout).setOnMenuItemClickListener(item -> {
-            if (item.getItemId() == R.id.logout) {
-                NavDirections action = HomeFragmentDirections.actionHomeFragmentToLoginFragment();
-                Navigation.findNavController(MainActivity.this, R.id.nav_host_fragment).navigate(action);
-                return true;
-            }
-
-            return false;
-        });
-
         setupDrawerHeader();
 
         IntentFilter intentFilter = new IntentFilter();
         intentFilter.addAction("com.selepdf.buyaround.action.USER_UPDATED");
         LocalBroadcastManager.getInstance(this).registerReceiver(receiver, intentFilter);
 
-        //userManager.setUser();
+        userManager.setUser();
     }
 
     @Override
@@ -98,7 +90,8 @@ public class MainActivity extends DaggerAppCompatActivity {
             if (intent.getAction().equals("com.selepdf.buyaround.action.USER_UPDATED")) {
                 if (drawerHeaderBinding != null) {
                     if (TokenManager.isTokenValid(userManager.getTokenManager().getToken())) {
-                        userManager.setUser(null);
+                        drawerHeaderBinding.button.setVisibility(GONE);
+                        drawerHeaderBinding.textView.setText("Hello " + userManager.getUser().getEmail());
                     }
                 }
             }
@@ -109,6 +102,10 @@ public class MainActivity extends DaggerAppCompatActivity {
         View headerView = binding.navView.getHeaderView(0);
         if (headerView != null) {
             drawerHeaderBinding = DrawerHeaderBinding.bind(headerView);
+            drawerHeaderBinding.button.setOnClickListener(v -> {
+                NavDirections action = HomeFragmentDirections.actionHomeFragmentToLoginFragment();
+                Navigation.findNavController(MainActivity.this, R.id.nav_host_fragment).navigate(action);
+            });
         }
     }
 
