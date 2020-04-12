@@ -17,6 +17,7 @@ import com.selepdf.buyaround.MarginItemDecorator;
 import com.selepdf.buyaround.adapter.PackListAdapter;
 import com.selepdf.buyaround.adapter.ProductListAdapter;
 import com.selepdf.buyaround.adapter.StoreListAdapter;
+import com.selepdf.buyaround.adapter.callback.IAddItemCallback;
 import com.selepdf.buyaround.adapter.callback.IListAdapter;
 import com.selepdf.buyaround.databinding.FragmentHomeBinding;
 import com.selepdf.buyaround.factory.ViewModelFactory;
@@ -31,7 +32,7 @@ import javax.inject.Inject;
 
 import dagger.android.support.DaggerFragment;
 
-public class HomeFragment extends DaggerFragment implements IListAdapter {
+public class HomeFragment extends DaggerFragment implements IListAdapter, IAddItemCallback {
 
     private FragmentHomeBinding binding;
 
@@ -80,6 +81,11 @@ public class HomeFragment extends DaggerFragment implements IListAdapter {
         productsRecyclerView.setAdapter(productListAdapter);
         productsRecyclerView.setLayoutManager(new LinearLayoutManager(getContext(), RecyclerView.HORIZONTAL, false));
         productsRecyclerView.addItemDecoration(decorator);
+
+        binding.homeSearchHeader.setOnClickListener(v -> {
+            NavDirections action = HomeFragmentDirections.actionHomeFragmentToSearchFragment();
+            Navigation.findNavController(v).navigate(action);
+        });
 
         binding.addStoreTv.setOnClickListener(v -> {
             NavDirections action = HomeFragmentDirections.actionHomeFragmentToAddStoreFragment();
@@ -138,18 +144,24 @@ public class HomeFragment extends DaggerFragment implements IListAdapter {
             if (item instanceof Pack) {
 
             } else {
-                Product product = (Product) item;
-                String img = "";
-                if (((Product) item).getImages() != null) {
-                    if (((Product) item).getImages().length > 0) {
-                        img = ((Product) item).getImages()[0];
-                    }
-                }
-                OrderProduct op = new OrderProduct("0", ((Product) item).getName(),
-                        ((Product) item).getPrice(), img, 1);
-                cartViewModel.addProduct(op);
+                NavDirections action = HomeFragmentDirections.actionHomeFragmentToProductFragment();
+                Navigation.findNavController(binding.getRoot()).navigate(action);
             }
         }
 
+    }
+
+    @Override
+    public void onAddItemTo(Object item) {
+        Product product = (Product) item;
+        String img = "";
+        if (((Product) item).getImages() != null) {
+            if (((Product) item).getImages().length > 0) {
+                img = ((Product) item).getImages()[0];
+            }
+        }
+        OrderProduct op = new OrderProduct("0", ((Product) item).getName(),
+                ((Product) item).getPrice(), img, 1);
+        cartViewModel.addProduct(op);
     }
 }
