@@ -76,6 +76,11 @@
     <string name="search_top_search">Més buscat</string>
     <string name="search_nav_categories">Navega per les categories</string>
 
+    <!-- CART -->
+    <string name="cart_items">Items</string>
+    <string name="cart_clear">Buidar Cistell</string>
+    <string name="cart_to_pay">Procedir al pagament</string>
+
     <!-- ORDERS -->
     <string name="orders_repeat_order">Repetir comanda</string>
     <string name="orders_last_orders">Últimes comandes</string>
