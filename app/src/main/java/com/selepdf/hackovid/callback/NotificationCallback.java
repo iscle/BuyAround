@@ -1,6 +1,6 @@
 package com.selepdf.hackovid.callback;
 
-import android.app.Notification;
+import com.selepdf.hackovid.model.Notification;
 
 public interface NotificationCallback extends FailureCallback {
     void onNotificationsReceived(Notification[] notifications);

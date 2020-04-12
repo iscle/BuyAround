@@ -31,8 +31,8 @@ public class CategoriesFragment extends DaggerFragment implements IListAdapter {
     protected ViewModelFactory viewModelFactory;
     private CategoriesViewModel categoriesViewModel;
 
-    RecyclerView recyclerView;
-    CategoryListAdapter categoryListAdapter;
+    private RecyclerView recyclerView;
+    private CategoryListAdapter categoryListAdapter;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
