@@ -7,7 +7,6 @@ import android.content.IntentFilter;
 import android.os.Bundle;
 import android.view.View;
 
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.localbroadcastmanager.content.LocalBroadcastManager;
@@ -19,6 +18,7 @@ import androidx.navigation.ui.NavigationUI;
 
 import com.selepdf.buyaround.R;
 import com.selepdf.buyaround.auth.TokenManager;
+import com.selepdf.buyaround.auth.UserManager;
 import com.selepdf.buyaround.databinding.ActivityMainBinding;
 import com.selepdf.buyaround.databinding.DrawerHeaderBinding;
 import com.selepdf.buyaround.fragment.HomeFragmentDirections;
@@ -28,13 +28,15 @@ import java.util.Set;
 
 import javax.inject.Inject;
 
-public class MainActivity extends AppCompatActivity {
+import dagger.android.support.DaggerAppCompatActivity;
+
+public class MainActivity extends DaggerAppCompatActivity {
     private static final String TAG = "MainActivity";
 
     private ActivityMainBinding binding;
     private DrawerHeaderBinding drawerHeaderBinding;
     @Inject
-    protected TokenManager tokenManager;
+    protected UserManager userManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -75,9 +77,13 @@ public class MainActivity extends AppCompatActivity {
             return false;
         });
 
+        setupDrawerHeader();
+
         IntentFilter intentFilter = new IntentFilter();
         intentFilter.addAction("com.selepdf.buyaround.action.USER_UPDATED");
         LocalBroadcastManager.getInstance(this).registerReceiver(receiver, intentFilter);
+
+        //userManager.setUser();
     }
 
     @Override
@@ -91,8 +97,8 @@ public class MainActivity extends AppCompatActivity {
         public void onReceive(Context context, Intent intent) {
             if (intent.getAction().equals("com.selepdf.buyaround.action.USER_UPDATED")) {
                 if (drawerHeaderBinding != null) {
-                    if (TokenManager.isTokenValid(tokenManager.getToken())) {
-
+                    if (TokenManager.isTokenValid(userManager.getTokenManager().getToken())) {
+                        userManager.setUser(null);
                     }
                 }
             }
@@ -103,7 +109,6 @@ public class MainActivity extends AppCompatActivity {
         View headerView = binding.navView.getHeaderView(0);
         if (headerView != null) {
             drawerHeaderBinding = DrawerHeaderBinding.bind(headerView);
-            
         }
     }
 

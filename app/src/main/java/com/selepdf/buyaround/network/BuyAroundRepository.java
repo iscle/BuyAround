@@ -10,6 +10,7 @@ import com.selepdf.buyaround.callback.PackCallback;
 import com.selepdf.buyaround.callback.ProductCallback;
 import com.selepdf.buyaround.callback.RegisterCallback;
 import com.selepdf.buyaround.callback.StoreCallback;
+import com.selepdf.buyaround.callback.UserCallback;
 import com.selepdf.buyaround.model.Product;
 import com.selepdf.buyaround.model.Store;
 import com.selepdf.buyaround.model.User;
@@ -20,6 +21,7 @@ import com.selepdf.buyaround.network.model.PackResponse;
 import com.selepdf.buyaround.network.model.ProductResponse;
 import com.selepdf.buyaround.network.model.RegisterResponse;
 import com.selepdf.buyaround.network.model.StoreResponse;
+import com.selepdf.buyaround.network.model.UserResponse;
 
 import javax.inject.Inject;
 import javax.inject.Singleton;
@@ -265,7 +267,7 @@ public class BuyAroundRepository {
 
             @Override
             public void onFailure(Call<OrderResponse> call, Throwable t) {
-                callback.onFailure(FailureCallback.FailureError.INTERNAL_ERROR);
+                callback.onFailure(FailureCallback.FailureError.NETWORK_ERROR);
             }
         });
     }
@@ -291,7 +293,7 @@ public class BuyAroundRepository {
 
             @Override
             public void onFailure(Call<OrderResponse> call, Throwable t) {
-                callback.onFailure(FailureCallback.FailureError.INTERNAL_ERROR);
+                callback.onFailure(FailureCallback.FailureError.NETWORK_ERROR);
             }
         });
     }
@@ -317,7 +319,7 @@ public class BuyAroundRepository {
 
             @Override
             public void onFailure(Call<StoreResponse> call, Throwable t) {
-                callback.onFailure(FailureCallback.FailureError.INTERNAL_ERROR);
+                callback.onFailure(FailureCallback.FailureError.NETWORK_ERROR);
             }
         });
     }
@@ -343,7 +345,7 @@ public class BuyAroundRepository {
 
             @Override
             public void onFailure(Call<PackResponse> call, Throwable t) {
-                callback.onFailure(FailureCallback.FailureError.INTERNAL_ERROR);
+                callback.onFailure(FailureCallback.FailureError.NETWORK_ERROR);
             }
         });
     }
@@ -369,7 +371,7 @@ public class BuyAroundRepository {
 
             @Override
             public void onFailure(Call<ProductResponse> call, Throwable t) {
-                callback.onFailure(FailureCallback.FailureError.INTERNAL_ERROR);
+                callback.onFailure(FailureCallback.FailureError.NETWORK_ERROR);
             }
         });
     }
@@ -395,6 +397,32 @@ public class BuyAroundRepository {
 
             @Override
             public void onFailure(Call<PackResponse> call, Throwable t) {
+                callback.onFailure(FailureCallback.FailureError.NETWORK_ERROR);
+            }
+        });
+    }
+
+    public void getUser(UserCallback callback) {
+        service.getUser().enqueue(new Callback<UserResponse>() {
+            @Override
+            public void onResponse(Call<UserResponse> call, Response<UserResponse> response) {
+                if (response.isSuccessful()) {
+                    UserResponse userResponse = response.body();
+                    switch (userResponse.getStatus()) {
+                        case OK:
+                            callback.onUserReceived(userResponse.getUser());
+                            break;
+                        case INTERNAL_ERROR:
+                            callback.onFailure(FailureCallback.FailureError.INTERNAL_ERROR);
+                            break;
+                    }
+                } else {
+                    callback.onFailure(FailureCallback.FailureError.INTERNAL_ERROR);
+                }
+            }
+
+            @Override
+            public void onFailure(Call<UserResponse> call, Throwable t) {
                 callback.onFailure(FailureCallback.FailureError.NETWORK_ERROR);
             }
         });

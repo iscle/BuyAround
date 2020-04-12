@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.selepdf.buyaround.auth.UserManager;
 import com.selepdf.buyaround.network.BuyAroundRepository;
 import com.selepdf.buyaround.viewmodel.AccountViewModel;
 import com.selepdf.buyaround.viewmodel.AddProductViewModel;
@@ -31,10 +32,12 @@ import dagger.Module;
 public class ViewModelFactory implements ViewModelProvider.Factory {
 
     private BuyAroundRepository buyAroundRepository;
+    private UserManager userManager;
 
     @Inject
-    public ViewModelFactory(BuyAroundRepository buyAroundRepository) {
+    public ViewModelFactory(BuyAroundRepository buyAroundRepository, UserManager userManager) {
         this.buyAroundRepository = buyAroundRepository;
+        this.userManager = userManager;
     }
 
     @NonNull
@@ -90,7 +93,7 @@ public class ViewModelFactory implements ViewModelProvider.Factory {
             return (T) new FavouritesViewModel(buyAroundRepository);
         }
         if (modelClass.isAssignableFrom(CartViewModel.class)) {
-            return (T) new CartViewModel((buyAroundRepository));
+            return (T) new CartViewModel(buyAroundRepository, userManager);
         }
 
         throw new IllegalArgumentException("Unknown class!");

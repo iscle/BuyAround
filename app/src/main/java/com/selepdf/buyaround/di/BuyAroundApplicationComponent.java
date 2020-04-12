@@ -3,6 +3,7 @@ package com.selepdf.buyaround.di;
 import android.content.Context;
 
 import com.selepdf.buyaround.BuyAroundApplication;
+import com.selepdf.buyaround.di.module.ActivityModule;
 import com.selepdf.buyaround.di.module.BuyAroundModule;
 import com.selepdf.buyaround.di.module.FragmentModule;
 import com.selepdf.buyaround.di.module.NetworkModule;
@@ -20,6 +21,7 @@ import dagger.android.AndroidInjector;
         BuyAroundModule.class,
         NetworkModule.class,
         FragmentModule.class,
+        ActivityModule.class,
 })
 public interface BuyAroundApplicationComponent extends AndroidInjector<BuyAroundApplication> {
 

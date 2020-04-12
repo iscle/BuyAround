@@ -6,7 +6,7 @@ import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
 import com.selepdf.buyaround.auth.UserManager;
-import com.selepdf.buyaround.model.Order;
+
 import com.selepdf.buyaround.model.OrderProduct;
 import com.selepdf.buyaround.network.BuyAroundRepository;
 
@@ -14,23 +14,18 @@ import java.util.Arrays;
 import java.util.List;
 
 import javax.inject.Inject;
-import javax.inject.Singleton;
 
-@Singleton
 public class CartViewModel extends ViewModel {
 
     @Inject
     UserManager userManager;
     
-    private MutableLiveData<OrderProduct[]> mProducts;
 
     private BuyAroundRepository buyAroundRepository;
 
     @Inject
-    public CartViewModel(BuyAroundRepository buyAroundRepository) {
+    public CartViewModel(BuyAroundRepository buyAroundRepository, UserManager userManager) {
         this.buyAroundRepository = buyAroundRepository;
-        mProducts = new MutableLiveData<>();
-        mProducts.setValue(new OrderProduct[0]);
     }
 
     private void requestrProducts() {
@@ -42,17 +37,17 @@ public class CartViewModel extends ViewModel {
     }
 
     public void addProduct(OrderProduct product) {
-        int size = mProducts.getValue().length;
+        int size = userManager.getProducts().getValue().size();
         OrderProduct[] newList = new OrderProduct[size+1];
         for (int i = 0; i < size;i++) {
-            newList[i] = mProducts.getValue()[i];
+            newList[i] = userManager.getProducts().getValue().get(i);
         }
         newList[size] = product;
         userManager.setProducts(newList);
-        mProducts.setValue(newList);
+        userManager.setProducts(newList);
     }
 
     public void clearProductList() {
-        mProducts.postValue(new OrderProduct[0]);
+        userManager.clearProducts();
     }
 }
