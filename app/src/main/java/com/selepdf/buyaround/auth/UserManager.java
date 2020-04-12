@@ -36,6 +36,8 @@ public class UserManager {
         this.tokenManager = tokenManager;
         this.buyAroundRepository = buyAroundRepository;
         this.localBroadcastManager = LocalBroadcastManager.getInstance(context);
+        mProducts = new MutableLiveData<>();
+        mProducts.postValue(new OrderProduct[0]);
     }
 
     public User getUser() {
@@ -70,6 +72,18 @@ public class UserManager {
         MutableLiveData<List<OrderProduct>> liveData = new MutableLiveData<>();
         liveData.setValue(list);
         return liveData;
+    }
+
+    public void addProduct(OrderProduct product) {
+        int size = mProducts.getValue().length;
+
+        OrderProduct[] newList = new OrderProduct[size+1];
+        for (int i = 0; i < size;i++) {
+            newList[i] = mProducts.getValue()[i];
+        }
+        newList[size] = product;
+        mProducts = new MutableLiveData<>();
+        mProducts.setValue(newList);
     }
 
     public void setProducts(OrderProduct[] products) {
