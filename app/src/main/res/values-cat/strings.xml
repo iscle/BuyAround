@@ -61,7 +61,7 @@
     <string name="store_config_delete_card">Eliminar Cistell</string>
 
     <!-- HOME -->
-    <string name="home_shops_around">Botigues al teu voltant</string>
+    <string name="home_stores_around">Botigues al teu voltant</string>
     <string name="home_top_packs">Top Packs</string>
     <string name="home_top_products">Top Productes</string>
     <string name="no_stores_around">Ho sentim…\nNo hi ha cap botiga al teu voltant encara!</string>

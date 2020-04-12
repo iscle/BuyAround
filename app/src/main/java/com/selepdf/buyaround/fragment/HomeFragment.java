@@ -91,14 +91,26 @@ public class HomeFragment extends DaggerFragment implements IListAdapter {
 
     private void subscribeObservers() {
         homeViewModel.getStores().observe(getViewLifecycleOwner(), stores -> {
+            if (stores != null && stores.length > 0) {
+                storesRecyclerView.setVisibility(View.VISIBLE);
+                binding.storesEmptyView.setVisibility(View.GONE);
+            }
             storeListAdapter.setStores(stores);
         });
 
         homeViewModel.getPacks().observe(getViewLifecycleOwner(), packs -> {
+            if (packs != null && packs.length > 0) {
+                packsRecyclerView.setVisibility(View.VISIBLE);
+                binding.packsEmptyView.setVisibility(View.GONE);
+            }
             packListAdapter.setPacks(packs);
         });
 
         homeViewModel.getProducts().observe(getViewLifecycleOwner(), products -> {
+            if (products != null && products.length > 0) {
+                productsRecyclerView.setVisibility(View.VISIBLE);
+                binding.productsEmptyView.setVisibility(View.GONE);
+            }
             productListAdapter.setProducts(products);
         });
     }
