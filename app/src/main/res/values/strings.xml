@@ -75,7 +75,7 @@
     <string name="item_content_stars">4,2</string>
 
     <!-- HOME -->
-    <string name="home_shops_around">Shops around you</string>
+    <string name="home_stores_around">Stores around you</string>
     <string name="home_top_packs">Top Packs</string>
     <string name="home_top_products">Top Products</string>
     <string name="no_stores_around">Sorry…\nThere are no stores around you yet!</string>
