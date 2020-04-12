@@ -4,6 +4,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -37,7 +38,7 @@ public class ProductListAdapter extends RecyclerView.Adapter<ProductListAdapter.
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         Product product = mItems[position];
-        holder.itemView.setOnClickListener(view -> mCallback.onItemSelected(product));
+        holder.btnAdd.setOnClickListener(view -> mCallback.onItemSelected(product));
         holder.tvTitle.setText(product.getName());
         holder.tvSubtitle.setText(product.getDescription());
         holder.tvRating.setText(String.valueOf(product.getRating()));
@@ -68,6 +69,8 @@ public class ProductListAdapter extends RecyclerView.Adapter<ProductListAdapter.
 
         ImageView imgView;
         TextView tvTitle, tvSubtitle, tvRating;
+        Button btnAdd;
+
 
         ViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -75,6 +78,7 @@ public class ProductListAdapter extends RecyclerView.Adapter<ProductListAdapter.
             tvTitle = itemView.findViewById(R.id.item_product_title);
             tvSubtitle = itemView.findViewById(R.id.item_product_subtitle);
             tvRating = itemView.findViewById(R.id.item_product_rating);
+            btnAdd = itemView.findViewById(R.id.item_product_add_btn);
         }
     }
 }
