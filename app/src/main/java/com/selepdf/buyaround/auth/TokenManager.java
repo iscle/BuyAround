@@ -3,6 +3,8 @@ package com.selepdf.buyaround.auth;
 import android.content.Context;
 import android.content.SharedPreferences;
 
+import com.selepdf.buyaround.model.User;
+
 import javax.inject.Inject;
 
 // Inspired by Glovo jeje
@@ -12,11 +14,12 @@ public class TokenManager {
 
     private final SharedPreferences sharedPreferences;
     private String token;
+    private User user;
 
     @Inject
     public TokenManager(Context context) {
         this.sharedPreferences = context.getSharedPreferences(TOKEN_MANAGER_PREF_NAME, Context.MODE_PRIVATE);
-        this.token = null;
+        this.token = this.sharedPreferences.getString(TOKEN_PREF, "");
     }
 
     public void setToken(String token) {
@@ -27,10 +30,6 @@ public class TokenManager {
     }
 
     public String getToken() {
-        if (token == null) {
-            token = sharedPreferences.getString(TOKEN_PREF, "");
-        }
-
         return token;
     }
 
