@@ -21,6 +21,8 @@ import org.osmdroid.config.Configuration;
 import org.osmdroid.tileprovider.tilesource.TileSourceFactory;
 import org.osmdroid.util.GeoPoint;
 import org.osmdroid.views.MapView;
+import org.osmdroid.views.overlay.mylocation.GpsMyLocationProvider;
+import org.osmdroid.views.overlay.mylocation.MyLocationNewOverlay;
 
 import java.util.ArrayList;
 
@@ -28,6 +30,7 @@ public class LocationFragment extends Fragment {
 
     private final int REQUEST_PERMISSIONS_REQUEST_CODE = 1;
     private MapView map = null;
+    private MyLocationNewOverlay mLocationOverlay;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -50,6 +53,12 @@ public class LocationFragment extends Fragment {
 
         IMapController mapController = map.getController();
         mapController.setZoom(9.5);
+
+        mLocationOverlay = new MyLocationNewOverlay(new GpsMyLocationProvider(getContext()), map);
+        mLocationOverlay.enableMyLocation();
+        mLocationOverlay.enableFollowLocation();
+        map.getOverlays().add(this.mLocationOverlay);
+
         GeoPoint startPoint = new GeoPoint(48.8583, 2.2944);
         mapController.setCenter(startPoint);
 
@@ -64,12 +73,14 @@ public class LocationFragment extends Fragment {
     @Override
     public void onResume() {
         super.onResume();
+        mLocationOverlay.enableMyLocation();
         map.onResume();
     }
 
     @Override
     public void onPause() {
         super.onPause();
+        mLocationOverlay.disableMyLocation();
         map.onPause();
     }
 
