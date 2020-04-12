@@ -4,15 +4,18 @@ import com.selepdf.buyaround.fragment.AccountFragment;
 import com.selepdf.buyaround.fragment.AddStoreFragment;
 import com.selepdf.buyaround.fragment.AddressFragment;
 import com.selepdf.buyaround.fragment.AddressesFragment;
+import com.selepdf.buyaround.fragment.CartFragment;
 import com.selepdf.buyaround.fragment.CategoriesFragment;
 import com.selepdf.buyaround.fragment.FavouritesFragment;
 import com.selepdf.buyaround.fragment.HomeFragment;
 import com.selepdf.buyaround.fragment.LoginFragment;
 import com.selepdf.buyaround.fragment.NotificationsFragment;
 import com.selepdf.buyaround.fragment.OrdersFragment;
+import com.selepdf.buyaround.fragment.PayFragment;
 import com.selepdf.buyaround.fragment.PaymentFragment;
 import com.selepdf.buyaround.fragment.PersonalInfoFragment;
 import com.selepdf.buyaround.fragment.AddProductFragment;
+import com.selepdf.buyaround.fragment.ProductFragment;
 import com.selepdf.buyaround.fragment.RegisterFragment;
 import com.selepdf.buyaround.fragment.SearchFragment;
 import com.selepdf.buyaround.fragment.UseConditionsFragment;
@@ -54,7 +57,7 @@ public abstract class FragmentModule {
     abstract UseConditionsFragment useConditionsFragment();
 
     @ContributesAndroidInjector
-    abstract AddProductFragment productFragment();
+    abstract AddProductFragment addProductFragment();
 
     @ContributesAndroidInjector
     abstract AddStoreFragment storeFragment();
@@ -70,4 +73,13 @@ public abstract class FragmentModule {
 
     @ContributesAndroidInjector
     abstract FavouritesFragment favouritesFragment();
+
+    @ContributesAndroidInjector
+    abstract CartFragment cartFragment();
+    
+    @ContributesAndroidInjector
+    abstract ProductFragment productFragment();
+
+    @ContributesAndroidInjector
+    abstract PayFragment payFragment();
 }
