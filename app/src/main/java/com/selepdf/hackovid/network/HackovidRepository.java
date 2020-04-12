@@ -114,7 +114,7 @@ public class HackovidRepository {
                     ProductResponse productResponse = response.body();
                     switch (productResponse.getStatus()) {
                         case OK:
-                            callback.onProductsReceived(response.body().getProducts());
+                            callback.onProductsReceived(productResponse.getProducts());
                             break;
                     }
                 } else {
@@ -137,7 +137,7 @@ public class HackovidRepository {
                     CategoryResponse categoryResponse = response.body();
                     switch (categoryResponse.getStatus()) {
                         case OK:
-                            callback.onCategoriesReceived(response.body().getCategories());
+                            callback.onCategoriesReceived(categoryResponse.getCategories());
                             break;
                     }
                 } else {
@@ -147,6 +147,7 @@ public class HackovidRepository {
 
             @Override
             public void onFailure(Call<CategoryResponse> call, Throwable t) {
+                t.printStackTrace();
                 callback.onFailure(FailureCallback.FailureError.NETWORK_ERROR);
             }
         });
