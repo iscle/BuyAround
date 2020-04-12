@@ -172,4 +172,8 @@
     <string name="who_are_we">Who are we?</string>
     <string name="who_are_we_text">The BuyAround team is formed by 4 engineering students of La Salle - URL and FIB - UPC.\n\nIn view of the economic crisis caused by the global pandemic of 2020, and in an attempt to contribute our bit in restoring normality, we decided to join the Hackovid initiative, where the idea of this project arose.</string>
 
+    <!-- LOCATION -->
+    <string name="nearby_stores_tv">Number of nearby stores:</string>
+    <string name="nearby_stores_num_tv">0</string>
+
 </resources>

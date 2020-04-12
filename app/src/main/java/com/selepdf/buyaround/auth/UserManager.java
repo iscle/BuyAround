@@ -1,5 +1,8 @@
 package com.selepdf.buyaround.auth;
 
+import androidx.lifecycle.LiveData;
+import androidx.lifecycle.MutableLiveData;
+
 import android.content.Context;
 import android.content.Intent;
 
@@ -11,6 +14,9 @@ import com.selepdf.buyaround.model.OrderProduct;
 import com.selepdf.buyaround.model.User;
 import com.selepdf.buyaround.network.BuyAroundRepository;
 
+import java.util.Arrays;
+import java.util.List;
+
 import javax.inject.Inject;
 import javax.inject.Singleton;
 
@@ -19,15 +25,19 @@ public class UserManager {
 
     private TokenManager tokenManager;
     private User user;
+
     private BuyAroundRepository buyAroundRepository;
     private LocalBroadcastManager localBroadcastManager;
-    private MutableLiveData<OrderProduct[]> cartProducts;
+    private MutableLiveData<OrderProduct[]> mProducts;
+
 
     @Inject
     public UserManager(TokenManager tokenManager, BuyAroundRepository buyAroundRepository, Context context) {
         this.tokenManager = tokenManager;
         this.buyAroundRepository = buyAroundRepository;
         this.localBroadcastManager = LocalBroadcastManager.getInstance(context);
+        mProducts = new MutableLiveData<>();
+        mProducts.postValue(new OrderProduct[0]);
     }
 
     public User getUser() {
@@ -57,15 +67,31 @@ public class UserManager {
         return tokenManager;
     }
 
-    public MutableLiveData<OrderProduct[]> getCartProducts() {
-        if (cartProducts == null) {
-            cartProducts = new MutableLiveData<>();
-        }
-
-        return cartProducts;
+    public LiveData<List<OrderProduct>> getProducts() {
+        List<OrderProduct> list = Arrays.asList(mProducts.getValue());
+        MutableLiveData<List<OrderProduct>> liveData = new MutableLiveData<>();
+        liveData.setValue(list);
+        return liveData;
     }
 
-    public void setCartProducts(MutableLiveData<OrderProduct[]> cartProducts) {
-        this.cartProducts = cartProducts;
+    public void addProduct(OrderProduct product) {
+        int size = mProducts.getValue().length;
+
+        OrderProduct[] newList = new OrderProduct[size+1];
+        for (int i = 0; i < size;i++) {
+            newList[i] = mProducts.getValue()[i];
+        }
+        newList[size] = product;
+        mProducts = new MutableLiveData<>();
+        mProducts.setValue(newList);
+    }
+
+    public void setProducts(OrderProduct[] products) {
+        mProducts = new MutableLiveData<>();
+        mProducts.setValue(products);
+    }
+
+    public void clearProducts() {
+        mProducts.postValue(new OrderProduct[0]);
     }
 }

@@ -47,7 +47,7 @@ public class CategoryListAdapter extends RecyclerView.Adapter<CategoryListAdapte
                     .into(holder.imgView);
         } else {
             Glide.with(mContext)
-                    .load("https://chango88.com.ar/wp-content/uploads/2017/10/icono-congelados.png")
+                    .load(R.drawable.app_logo_transparent)
                     .into(holder.imgView);
         }
     }
