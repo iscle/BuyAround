@@ -6,6 +6,7 @@ import com.selepdf.buyaround.model.Store;
 import com.selepdf.buyaround.model.User;
 import com.selepdf.buyaround.network.model.CategoryResponse;
 import com.selepdf.buyaround.network.model.LoginResponse;
+import com.selepdf.buyaround.network.model.OrderResponse;
 import com.selepdf.buyaround.network.model.PackResponse;
 import com.selepdf.buyaround.network.model.ProductResponse;
 import com.selepdf.buyaround.network.model.RegisterResponse;
@@ -34,6 +35,9 @@ public interface BuyAroundService {
     @POST("product")
     Call<ProductResponse> addProduct(@Body Product product);
 
+    @GET("product/favourites")
+    Call<ProductResponse> getFavouriteProducts();
+
     // Stores
     @GET("store")
     Call<StoreResponse> getAllStores();
@@ -41,12 +45,18 @@ public interface BuyAroundService {
     @POST("store")
     Call<StoreResponse> addStore(@Body Store store);
 
+    @GET("store/favourites")
+    Call<StoreResponse> getFavouriteStores();
+
     // Packs
     @GET("pack")
     Call<PackResponse> getAllPacks();
 
     @POST("pack")
     Call<PackResponse> addPack(@Body Pack pack);
+
+    @GET("pack/favourites")
+    Call<PackResponse> getFavouritePacks();
 
     // Users
     @GET("user")
@@ -67,5 +77,12 @@ public interface BuyAroundService {
 
     @POST("category/store")
     Call<CategoryResponse> addStoreCategory();
+
+    // Orders
+    @GET("order")
+    Call<OrderResponse> getLastUserOrders();
+
+    @GET
+    Call<OrderResponse> getRepeatedUserOrders();
 
 }

@@ -1,7 +1,5 @@
 package com.selepdf.buyaround.network;
 
-import android.util.Log;
-
 import com.selepdf.buyaround.auth.TokenManager;
 import com.selepdf.buyaround.callback.CategoryCallback;
 import com.selepdf.buyaround.callback.FailureCallback;
@@ -17,6 +15,8 @@ import com.selepdf.buyaround.model.Store;
 import com.selepdf.buyaround.model.User;
 import com.selepdf.buyaround.network.model.CategoryResponse;
 import com.selepdf.buyaround.network.model.LoginResponse;
+import com.selepdf.buyaround.network.model.OrderResponse;
+import com.selepdf.buyaround.network.model.PackResponse;
 import com.selepdf.buyaround.network.model.ProductResponse;
 import com.selepdf.buyaround.network.model.RegisterResponse;
 import com.selepdf.buyaround.network.model.StoreResponse;
@@ -119,6 +119,9 @@ public class BuyAroundRepository {
                         case OK:
                             callback.onProductsReceived(productResponse.getProducts());
                             break;
+                        case INTERNAL_ERROR:
+                            callback.onFailure(FailureCallback.FailureError.INTERNAL_ERROR);
+                            break;
                     }
                 } else {
                     callback.onFailure(FailureCallback.FailureError.INTERNAL_ERROR);
@@ -142,6 +145,9 @@ public class BuyAroundRepository {
                         case OK:
                             callback.onCategoriesReceived(categoryResponse.getCategories());
                             break;
+                        case INTERNAL_ERROR:
+                            callback.onFailure(FailureCallback.FailureError.INTERNAL_ERROR);
+                            break;
                     }
                 } else {
                     callback.onFailure(FailureCallback.FailureError.INTERNAL_ERROR);
@@ -161,11 +167,13 @@ public class BuyAroundRepository {
             @Override
             public void onResponse(Call<ProductResponse> call, Response<ProductResponse> response) {
                 if (response.isSuccessful()) {
-                    Log.d(TAG, "onResponse: " + response.raw().toString());
                     ProductResponse productResponse = response.body();
                     switch (productResponse.getStatus()) {
                         case OK:
                             callback.onProductsReceived(productResponse.getProducts());
+                            break;
+                        case INTERNAL_ERROR:
+                            callback.onFailure(FailureCallback.FailureError.INTERNAL_ERROR);
                             break;
                     }
                 } else {
@@ -185,11 +193,13 @@ public class BuyAroundRepository {
             @Override
             public void onResponse(Call<StoreResponse> call, Response<StoreResponse> response) {
                 if (response.isSuccessful()) {
-                    Log.d(TAG, "onResponse: " + response.raw().toString());
                     StoreResponse storeResponse = response.body();
                     switch (storeResponse.getStatus()) {
                         case OK:
                             callback.onStoresReceived(storeResponse.getStores());
+                            break;
+                        case INTERNAL_ERROR:
+                            callback.onFailure(FailureCallback.FailureError.INTERNAL_ERROR);
                             break;
                     }
                 } else {
@@ -209,11 +219,13 @@ public class BuyAroundRepository {
             @Override
             public void onResponse(Call<StoreResponse> call, Response<StoreResponse> response) {
                 if (response.isSuccessful()) {
-                    Log.d(TAG, "onResponse: " + response.raw().toString());
                     StoreResponse storeResponse = response.body();
                     switch (storeResponse.getStatus()) {
                         case OK:
                             callback.onStoresReceived(storeResponse.getStores());
+                            break;
+                        case INTERNAL_ERROR:
+                            callback.onFailure(FailureCallback.FailureError.INTERNAL_ERROR);
                             break;
                     }
                 } else {
@@ -233,26 +245,158 @@ public class BuyAroundRepository {
     }
 
     public void getLastUserOrders(OrderCallback callback) {
-        // TODO
+        service.getLastUserOrders().enqueue(new Callback<OrderResponse>() {
+            @Override
+            public void onResponse(Call<OrderResponse> call, Response<OrderResponse> response) {
+                if (response.isSuccessful()) {
+                    OrderResponse orderResponse = response.body();
+                    switch (orderResponse.getStatus()) {
+                        case OK:
+                            callback.onOrdersReceived(orderResponse.getOrders());
+                            break;
+                        case INTERNAL_ERROR:
+                            callback.onFailure(FailureCallback.FailureError.INTERNAL_ERROR);
+                            break;
+                    }
+                } else {
+                    callback.onFailure(FailureCallback.FailureError.INTERNAL_ERROR);
+                }
+            }
+
+            @Override
+            public void onFailure(Call<OrderResponse> call, Throwable t) {
+                callback.onFailure(FailureCallback.FailureError.INTERNAL_ERROR);
+            }
+        });
     }
 
     public void getRepeatedUserOrders(OrderCallback callback) {
-        // TODO
+        service.getRepeatedUserOrders().enqueue(new Callback<OrderResponse>() {
+            @Override
+            public void onResponse(Call<OrderResponse> call, Response<OrderResponse> response) {
+                if (response.isSuccessful()) {
+                    OrderResponse orderResponse = response.body();
+                    switch (orderResponse.getStatus()) {
+                        case OK:
+                            callback.onOrdersReceived(orderResponse.getOrders());
+                            break;
+                        case INTERNAL_ERROR:
+                            callback.onFailure(FailureCallback.FailureError.INTERNAL_ERROR);
+                            break;
+                    }
+                } else {
+                    callback.onFailure(FailureCallback.FailureError.INTERNAL_ERROR);
+                }
+            }
+
+            @Override
+            public void onFailure(Call<OrderResponse> call, Throwable t) {
+                callback.onFailure(FailureCallback.FailureError.INTERNAL_ERROR);
+            }
+        });
     }
 
     public void getFavouriteStores(StoreCallback callback) {
-        // TODO
+        service.getFavouriteStores().enqueue(new Callback<StoreResponse>() {
+            @Override
+            public void onResponse(Call<StoreResponse> call, Response<StoreResponse> response) {
+                if (response.isSuccessful()) {
+                    StoreResponse storeResponse = response.body();
+                    switch (storeResponse.getStatus()) {
+                        case OK:
+                            callback.onStoresReceived(storeResponse.getStores());
+                            break;
+                        case INTERNAL_ERROR:
+                            callback.onFailure(FailureCallback.FailureError.INTERNAL_ERROR);
+                            break;
+                    }
+                } else {
+                    callback.onFailure(FailureCallback.FailureError.INTERNAL_ERROR);
+                }
+            }
+
+            @Override
+            public void onFailure(Call<StoreResponse> call, Throwable t) {
+                callback.onFailure(FailureCallback.FailureError.INTERNAL_ERROR);
+            }
+        });
     }
 
     public void getFavouritePacks(PackCallback callback) {
-        // TODO
+        service.getFavouritePacks().enqueue(new Callback<PackResponse>() {
+            @Override
+            public void onResponse(Call<PackResponse> call, Response<PackResponse> response) {
+                if (response.isSuccessful()) {
+                    PackResponse packResponse = response.body();
+                    switch (packResponse.getStatus()) {
+                        case OK:
+                            callback.onPacksReceived(packResponse.getPacks());
+                            break;
+                        case INTERNAL_ERROR:
+                            callback.onFailure(FailureCallback.FailureError.INTERNAL_ERROR);
+                            break;
+                    }
+                } else {
+                    callback.onFailure(FailureCallback.FailureError.INTERNAL_ERROR);
+                }
+            }
+
+            @Override
+            public void onFailure(Call<PackResponse> call, Throwable t) {
+                callback.onFailure(FailureCallback.FailureError.INTERNAL_ERROR);
+            }
+        });
     }
 
     public void getFavouriteProducts(ProductCallback callback) {
-        // TODO
+        service.getFavouriteProducts().enqueue(new Callback<ProductResponse>() {
+            @Override
+            public void onResponse(Call<ProductResponse> call, Response<ProductResponse> response) {
+                if (response.isSuccessful()) {
+                    ProductResponse productResponse = response.body();
+                    switch (productResponse.getStatus()) {
+                        case OK:
+                            callback.onProductsReceived(productResponse.getProducts());
+                            break;
+                        case INTERNAL_ERROR:
+                            callback.onFailure(FailureCallback.FailureError.INTERNAL_ERROR);
+                            break;
+                    }
+                } else {
+                    callback.onFailure(FailureCallback.FailureError.INTERNAL_ERROR);
+                }
+            }
+
+            @Override
+            public void onFailure(Call<ProductResponse> call, Throwable t) {
+                callback.onFailure(FailureCallback.FailureError.INTERNAL_ERROR);
+            }
+        });
     }
 
     public void getAllPacks(PackCallback callback) {
-        // TODO
+        service.getAllPacks().enqueue(new Callback<PackResponse>() {
+            @Override
+            public void onResponse(Call<PackResponse> call, Response<PackResponse> response) {
+                if (response.isSuccessful()) {
+                    PackResponse packResponse = response.body();
+                    switch (packResponse.getStatus()) {
+                        case OK:
+                            callback.onPacksReceived(packResponse.getPacks());
+                            break;
+                        case INTERNAL_ERROR:
+                            callback.onFailure(FailureCallback.FailureError.INTERNAL_ERROR);
+                            break;
+                    }
+                } else {
+                    callback.onFailure(FailureCallback.FailureError.INTERNAL_ERROR);
+                }
+            }
+
+            @Override
+            public void onFailure(Call<PackResponse> call, Throwable t) {
+                callback.onFailure(FailureCallback.FailureError.NETWORK_ERROR);
+            }
+        });
     }
 }
