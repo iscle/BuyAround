@@ -193,6 +193,11 @@
         android:label="@string/address_label"
         tools:layout="@layout/fragment_address" />
     <fragment
+        android:id="@+id/payFragment"
+        android:name="com.selepdf.buyaround.fragment.PayFragment"
+        android:label="@string/payment"
+        tools:layout="@layout/fragment_pay"/>
+    <fragment
         android:id="@+id/productFragment"
         android:name="com.selepdf.buyaround.fragment.ProductFragment"
         android:label="@string/product_tv"
@@ -206,6 +211,14 @@
         <action
             android:id="@+id/action_cartFragment_to_productFragment"
             app:destination="@id/productFragment"
+            app:enterAnim="@anim/fragment_open_enter"
+            app:exitAnim="@anim/fragment_open_exit"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+
+        <action
+            android:id="@+id/action_cartFragment_to_payFragment"
+            app:destination="@id/payFragment"
             app:enterAnim="@anim/fragment_open_enter"
             app:exitAnim="@anim/fragment_open_exit"
             app:popEnterAnim="@anim/nav_default_pop_enter_anim"
