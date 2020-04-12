@@ -83,6 +83,11 @@
     <string name="search_top_search">Top Search</string>
     <string name="search_nav_categories">Navigate through categories</string>
 
+    <!-- CART -->
+    <string name="cart_items">Items</string>
+    <string name="cart_clear">Clear Cart</string>
+    <string name="cart_to_pay">Proceed to Pay</string>
+
     <!-- ORDERS -->
     <string name="orders_repeat_order">Repeat Order</string>
     <string name="orders_last_orders">Last Orders</string>
