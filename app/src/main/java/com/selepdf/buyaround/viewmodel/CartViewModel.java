@@ -1,11 +1,11 @@
 package com.selepdf.buyaround.viewmodel;
 
-import android.os.UserManager;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
+import com.selepdf.buyaround.auth.UserManager;
 import com.selepdf.buyaround.model.Order;
 import com.selepdf.buyaround.model.OrderProduct;
 import com.selepdf.buyaround.network.BuyAroundRepository;
@@ -21,9 +21,10 @@ public class CartViewModel extends ViewModel {
 
     @Inject
     UserManager userManager;
+    
+    private MutableLiveData<OrderProduct[]> mProducts;
 
     private BuyAroundRepository buyAroundRepository;
-    private MutableLiveData<OrderProduct[]> mProducts;
 
     @Inject
     public CartViewModel(BuyAroundRepository buyAroundRepository) {
@@ -37,11 +38,7 @@ public class CartViewModel extends ViewModel {
     }
 
     public LiveData<List<OrderProduct>> getOrderProducts() {
-        requestrProducts();
-        List<OrderProduct> list = Arrays.asList(mProducts.getValue());
-        MutableLiveData<List<OrderProduct>> liveData = new MutableLiveData<>();
-        liveData.setValue(list);
-        return liveData;
+        return userManager.getProducts();
     }
 
     public void addProduct(OrderProduct product) {
@@ -51,6 +48,7 @@ public class CartViewModel extends ViewModel {
             newList[i] = mProducts.getValue()[i];
         }
         newList[size] = product;
+        userManager.setProducts(newList);
         mProducts.setValue(newList);
     }
 
