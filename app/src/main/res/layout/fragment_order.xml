@@ -29,7 +29,7 @@
                 style="@style/ItemTitlesTheme"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/item_content_title"/>
+                android:text="@string/item_content_date"/>
 
             <TextView
                 android:id="@+id/order_date"
