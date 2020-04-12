@@ -174,6 +174,35 @@ public class BuyAroundRepository {
         });
     }
 
+    public void getAllStoreCategories(CategoryCallback callback) {
+        service.getAllStoreCategories().enqueue(new Callback<CategoryResponse>() {
+            @Override
+            public void onResponse(Call<CategoryResponse> call, Response<CategoryResponse> response) {
+                if (response.isSuccessful()) {
+                    CategoryResponse categoryResponse = response.body();
+                    Log.d(TAG, "onResponse: " + categoryResponse.getStatus());
+                    switch (categoryResponse.getStatus()) {
+                        case OK:
+                            callback.onCategoriesReceived(categoryResponse.getCategories());
+                            break;
+                        case INTERNAL_ERROR:
+                            callback.onFailure(FailureCallback.FailureError.INTERNAL_ERROR);
+                            break;
+                    }
+                } else {
+                    callback.onFailure(FailureCallback.FailureError.INTERNAL_ERROR);
+                }
+            }
+
+            @Override
+            public void onFailure(Call<CategoryResponse> call, Throwable t) {
+                t.printStackTrace();
+                callback.onFailure(FailureCallback.FailureError.NETWORK_ERROR);
+                t.printStackTrace();
+            }
+        });
+    }
+
     public void addProduct(Product product, ProductCallback callback) {
         service.addProduct(product).enqueue(new Callback<ProductResponse>() {
             @Override

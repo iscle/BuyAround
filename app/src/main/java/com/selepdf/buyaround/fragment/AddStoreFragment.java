@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -11,17 +12,22 @@ import androidx.annotation.Nullable;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.Navigation;
 
+import com.selepdf.buyaround.callback.CategoryCallback;
 import com.selepdf.buyaround.callback.StoreCallback;
 import com.selepdf.buyaround.databinding.FragmentAddStoreBinding;
 import com.selepdf.buyaround.factory.ViewModelFactory;
+import com.selepdf.buyaround.model.Category;
 import com.selepdf.buyaround.model.Store;
 import com.selepdf.buyaround.viewmodel.AddStoreViewModel;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.inject.Inject;
 
 import dagger.android.support.DaggerFragment;
 
-public class AddStoreFragment extends DaggerFragment implements StoreCallback {
+public class AddStoreFragment extends DaggerFragment implements StoreCallback, CategoryCallback {
 
     private FragmentAddStoreBinding binding;
     @Inject
@@ -41,6 +47,8 @@ public class AddStoreFragment extends DaggerFragment implements StoreCallback {
 
         addStoreViewModel = new ViewModelProvider(this, viewModelFactory).get(AddStoreViewModel.class);
 
+        addStoreViewModel.getStoreCategories(this);
+
         binding.acceptBtn.setOnClickListener(v -> {
             String name = binding.storeEt.getText().toString();
             String description = binding.descriptionEt.getText().toString();
@@ -57,5 +65,18 @@ public class AddStoreFragment extends DaggerFragment implements StoreCallback {
     @Override
     public void onFailure(FailureError error) {
         Toast.makeText(getContext(), error.toString(), Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void onCategoriesReceived(Category[] categories) {
+        List<String> spinnerArray = new ArrayList<>();
+        for (Category category : categories) {
+            spinnerArray.add(category.getName());
+        }
+
+        ArrayAdapter adapter = new ArrayAdapter<>(getContext(), android.R.layout.simple_spinner_dropdown_item, spinnerArray);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+        binding.categorySpin.setAdapter(adapter);
     }
 }
