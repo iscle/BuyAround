@@ -39,5 +39,8 @@
         <item
             android:id="@+id/legalFragment"
             android:title="@string/legal" />
+        <item
+            android:id="@+id/aboutUsFragment"
+            android:title="@string/about_us" />
     </group>
 </menu>

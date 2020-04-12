@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Hackovid</string>
+    <string name="app_name">BuyAround</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hola fragment en blanc</string>
@@ -104,7 +104,7 @@
     <string name="categories">Categories</string>
     <string name="add_to_cart">Afegir al cistell</string>
     <string name="quantity">Quantitat</string>
-
+    <string name="search">Cerca</string>
 
     <!-- NAVBAR -->
     <string name="nv_home">Inici</string>
@@ -119,6 +119,7 @@
     <string name="customer_support">Atenció al client</string>
     <string name="legal">Legal</string>
     <string name="cart">Cistell</string>
+    <string name="about_us">Sobre nosaltres</string>
 
     <!-- PRODUCT -->
     <string name="product_label">Producte</string>
@@ -155,4 +156,9 @@
     <string name="item_notification_time">X minuts.</string>
     <string name="no_notifications_yet">Encara no tens cap notificació.\nFes la teva primera compra!</string>
 
+    <!-- ABOUT US -->
+    <string name="what_is_buyaround">Què és BuyAround?</string>
+    <string name="what_is_buyaround_text">BuyAround és una aplicació per fer la compra en establiments propers de manera fàcil, ràpida i segura.\n\nAquesta app ha estat creada arran de la crisis de Covid-19, que va posar en greu perill al comerç local i de proximitat. Per tal de reactivar-lo, es va buscar la manera més còmoda de donar visibilitat a les botigues que cadascú té al seu voltant, on pot aconseguir tot el que necessita sense necessitat d\'acudir a les grans plataformes.\n\nTambé, en vista de la gran quantitat de gent que s\'havia quedat sense feina, hem trobat una manera de donar a aquestes persones l\'oportunitat de tenir uns ingressos fent de repartidors dins de l\'aplicació.</string>
+    <string name="who_are_we">Qui som?</string>
+    <string name="who_are_we_text">L\'equip de BuyAround està format per 4 estudiants d\'enginyeria de La Salle - URL i FIB - UPC.\n\nA la vista de la crisis econòmica provocada per la pandèmia global del 2020 i, per intentar aportar el nostre granet d\'arena en la restauracó de la normalitat, vam decidir afegir-nos a la iniciativa de Hackovid, on va sorgir la idea d\'aquest projecte.</string>
 </resources>

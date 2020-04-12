@@ -7,8 +7,7 @@
     <item android:id="@+id/locationFragment"
         android:title="@string/location"
         android:icon="@drawable/ic_location" />
-    <item
-        android:id="@+id/cartFragment"
+    <item android:id="@+id/cartFragment"
         android:icon="@drawable/ic_local_grocery_store_white_24dp"
         android:title="@string/cart" />
     <item android:id="@+id/ordersFragment"
