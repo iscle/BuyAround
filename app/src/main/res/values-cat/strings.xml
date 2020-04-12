@@ -150,6 +150,9 @@
     <string name="fav_stores">Botigues preferides</string>
     <string name="fav_products">Productes preferits</string>
     <string name="fav_packs">Packs preferits</string>
+    <string name="no_fav_stores_yet">Encara no has marcat cap botiga com a preferida!</string>
+    <string name="no_fav_packs_yet">Encara no has marcat cap pack com a preferit!</string>
+    <string name="no_fav_products_yet">YEncara no has marcat cap producte com a preferit!</string>
 
     <!-- NOTIFICATIONS -->
     <string name="item_notification_text">El repartidor ha acabat de fer la compra i s\'està dirigint al seu portal. Estarà allà en aproximadament</string>
@@ -161,4 +164,5 @@
     <string name="what_is_buyaround_text">BuyAround és una aplicació per fer la compra en establiments propers de manera fàcil, ràpida i segura.\n\nAquesta app ha estat creada arran de la crisi de Covid-19, que va posar en greu perill al comerç local i de proximitat. Per tal de reactivar-lo, es va buscar la manera més còmoda de donar visibilitat a les botigues que cadascú té al seu voltant, on pot aconseguir tot el que necessita sense necessitat d\'acudir a les grans plataformes.\n\nTambé, en vista de la gran quantitat de gent que s\'havia quedat sense feina, hem trobat una manera de donar a aquestes persones l\'oportunitat de tenir uns ingressos fent de repartidors dins de l\'aplicació.</string>
     <string name="who_are_we">Qui som?</string>
     <string name="who_are_we_text">L\'equip de BuyAround està format per 4 estudiants d\'enginyeria de La Salle - URL i FIB - UPC.\n\nA la vista de la crisi econòmica provocada per la pandèmia global del 2020 i, per intentar aportar el nostre granet d\'arena en la restauracó de la normalitat, vam decidir afegir-nos a la iniciativa de Hackovid, on va sorgir la idea d\'aquest projecte.</string>
+
 </resources>

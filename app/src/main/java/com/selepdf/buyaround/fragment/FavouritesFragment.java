@@ -79,14 +79,26 @@ public class FavouritesFragment extends DaggerFragment implements IListAdapter {
 
     private void subscribeObservers() {
         favouritesViewModel.getFavouriteStores().observe(getViewLifecycleOwner(), stores -> {
+            if (stores != null && stores.length > 0) {
+                storesRecyclerView.setVisibility(View.VISIBLE);
+                binding.storesEmptyView.setVisibility(View.GONE);
+            }
             storeListAdapter.setStores(stores);
         });
 
         favouritesViewModel.getFavouritePacks().observe(getViewLifecycleOwner(), packs -> {
+            if (packs != null && packs.length > 0) {
+                packsRecyclerView.setVisibility(View.VISIBLE);
+                binding.packsEmptyView.setVisibility(View.GONE);
+            }
             packListAdapter.setPacks(packs);
         });
 
         favouritesViewModel.getFavouriteProducts().observe(getViewLifecycleOwner(), products -> {
+            if (products != null && products.length > 0) {
+                productsRecyclerView.setVisibility(View.VISIBLE);
+                binding.productsEmptyView.setVisibility(View.GONE);
+            }
             productListAdapter.setProducts(products);
         });
     }

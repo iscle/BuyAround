@@ -26,7 +26,17 @@
             android:id="@+id/fav_stores_recyclerView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp" />
+            android:layout_marginTop="8dp"
+            android:visibility="gone"/>
+
+        <TextView
+            android:id="@+id/stores_empty_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="24dp"
+            android:gravity="center"
+            android:visibility="visible"
+            android:text="@string/no_fav_stores_yet" />
 
         <TextView
             android:id="@+id/fav_packs_tv"
@@ -41,7 +51,17 @@
             android:id="@+id/fav_packs_recyclerView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp" />
+            android:layout_marginTop="8dp"
+            android:visibility="gone"/>
+
+        <TextView
+            android:id="@+id/packs_empty_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="24dp"
+            android:gravity="center"
+            android:visibility="visible"
+            android:text="@string/no_fav_packs_yet" />
 
         <TextView
             android:id="@+id/fav_products_tv"
@@ -56,7 +76,17 @@
             android:id="@+id/fav_products_recyclerView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp" />
+            android:layout_marginTop="8dp"
+            android:visibility="gone"/>
+
+        <TextView
+            android:id="@+id/products_empty_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="24dp"
+            android:gravity="center"
+            android:visibility="visible"
+            android:text="@string/no_fav_products_yet" />
 
     </LinearLayout>
 

@@ -150,6 +150,9 @@
     <string name="fav_stores">Favourite stores</string>
     <string name="fav_products">Favourite products</string>
     <string name="fav_packs">Favourite packs</string>
+    <string name="no_fav_stores_yet">You haven\'t marked any store as favourite yet!</string>
+    <string name="no_fav_packs_yet">You haven\'t marked any pack as favourite yet!</string>
+    <string name="no_fav_products_yet">You haven\'t marked any product as favourite yet!</string>
 
     <!-- NOTIFICATIONS -->
     <string name="item_notification_text">The deliveryman has finished purchasing goods and is heading to your portal. He/She will be there in approximately</string>
@@ -161,4 +164,5 @@
     <string name="what_is_buyaround_text">BuyAround is an app for making purchases at nearby stores easily, quickly and safely.\n\nThis app was created in the wake of the Covid-19 crisis, which threatened local and local commerce. In order to reactivate it, we sought the most convenient way to give visibility to the shops around us, where we can get everything we need without having to go to the big platforms.\n\nAlso, in view of the large number of people who were out of work, we have come up with a way to give these people a chance to make a living by working as deliverymen within the application.</string>
     <string name="who_are_we">Who are we?</string>
     <string name="who_are_we_text">The BuyAround team is formed by 4 engineering students of La Salle - URL and FIB - UPC.\n\nIn view of the economic crisis caused by the global pandemic of 2020, and in an attempt to contribute our bit in restoring normality, we decided to join the Hackovid initiative, where the idea of this project arose.</string>
+
 </resources>
