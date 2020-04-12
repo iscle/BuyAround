@@ -82,7 +82,7 @@ public interface BuyAroundService {
     @GET("order")
     Call<OrderResponse> getLastUserOrders();
 
-    @GET
+    @GET("order/repeated")
     Call<OrderResponse> getRepeatedUserOrders();
 
 }
