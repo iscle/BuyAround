@@ -35,6 +35,7 @@
                 android:layout_weight="10"
                 android:background="@null"
                 android:inputType="text"
+                android:focusable="false"
                 android:backgroundTint="@color/colorPrimaryDark"
                 android:hint="@string/search_hint"
                 android:textColor="@color/colorPrimaryDark" />
