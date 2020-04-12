@@ -20,8 +20,11 @@ import com.selepdf.buyaround.adapter.StoreListAdapter;
 import com.selepdf.buyaround.adapter.callback.IListAdapter;
 import com.selepdf.buyaround.databinding.FragmentHomeBinding;
 import com.selepdf.buyaround.factory.ViewModelFactory;
+import com.selepdf.buyaround.model.OrderProduct;
 import com.selepdf.buyaround.model.Pack;
+import com.selepdf.buyaround.model.Product;
 import com.selepdf.buyaround.model.Store;
+import com.selepdf.buyaround.viewmodel.CartViewModel;
 import com.selepdf.buyaround.viewmodel.HomeViewModel;
 
 import javax.inject.Inject;
@@ -37,6 +40,7 @@ public class HomeFragment extends DaggerFragment implements IListAdapter {
     @Inject
     protected MarginItemDecorator decorator;
     private HomeViewModel homeViewModel;
+    private CartViewModel cartViewModel;
 
     private RecyclerView storesRecyclerView;
     private StoreListAdapter storeListAdapter;
@@ -57,6 +61,7 @@ public class HomeFragment extends DaggerFragment implements IListAdapter {
         super.onViewCreated(view, savedInstanceState);
 
         homeViewModel = new ViewModelProvider(this, viewModelFactory).get(HomeViewModel.class);
+        cartViewModel = new ViewModelProvider(this, viewModelFactory).get(CartViewModel.class);
 
         storesRecyclerView = binding.homeStoresRecyclerView;
         storeListAdapter = new StoreListAdapter(getContext(), this);
@@ -133,7 +138,16 @@ public class HomeFragment extends DaggerFragment implements IListAdapter {
             if (item instanceof Pack) {
 
             } else {
-
+                Product product = (Product) item;
+                String img = "";
+                if (((Product) item).getImages() != null) {
+                    if (((Product) item).getImages().length > 0) {
+                        img = ((Product) item).getImages()[0];
+                    }
+                }
+                OrderProduct op = new OrderProduct("0", ((Product) item).getName(),
+                        ((Product) item).getPrice(), img, 1);
+                cartViewModel.addProduct(op);
             }
         }
 

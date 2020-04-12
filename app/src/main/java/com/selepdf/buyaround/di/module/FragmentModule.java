@@ -76,7 +76,7 @@ public abstract class FragmentModule {
 
     @ContributesAndroidInjector
     abstract CartFragment cartFragment();
-    
+
     @ContributesAndroidInjector
     abstract ProductFragment productFragment();
 

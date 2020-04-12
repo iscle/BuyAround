@@ -1,11 +1,15 @@
 package com.selepdf.buyaround.activity;
 
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.Intent;
+import android.content.IntentFilter;
 import android.os.Bundle;
 import android.view.View;
 
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 import androidx.navigation.NavController;
 import androidx.navigation.NavDirections;
 import androidx.navigation.Navigation;
@@ -13,6 +17,8 @@ import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
 import com.selepdf.buyaround.R;
+import com.selepdf.buyaround.auth.TokenManager;
+import com.selepdf.buyaround.auth.UserManager;
 import com.selepdf.buyaround.databinding.ActivityMainBinding;
 import com.selepdf.buyaround.databinding.DrawerHeaderBinding;
 import com.selepdf.buyaround.fragment.HomeFragmentDirections;
@@ -20,10 +26,17 @@ import com.selepdf.buyaround.fragment.HomeFragmentDirections;
 import java.util.HashSet;
 import java.util.Set;
 
-public class MainActivity extends AppCompatActivity {
+import javax.inject.Inject;
+
+import dagger.android.support.DaggerAppCompatActivity;
+
+public class MainActivity extends DaggerAppCompatActivity {
     private static final String TAG = "MainActivity";
 
     private ActivityMainBinding binding;
+    private DrawerHeaderBinding drawerHeaderBinding;
+    @Inject
+    protected UserManager userManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,13 +76,39 @@ public class MainActivity extends AppCompatActivity {
 
             return false;
         });
+
+        setupDrawerHeader();
+
+        IntentFilter intentFilter = new IntentFilter();
+        intentFilter.addAction("com.selepdf.buyaround.action.USER_UPDATED");
+        LocalBroadcastManager.getInstance(this).registerReceiver(receiver, intentFilter);
+
+        //userManager.setUser();
     }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        LocalBroadcastManager.getInstance(this).unregisterReceiver(receiver);
+    }
+
+    private BroadcastReceiver receiver = new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            if (intent.getAction().equals("com.selepdf.buyaround.action.USER_UPDATED")) {
+                if (drawerHeaderBinding != null) {
+                    if (TokenManager.isTokenValid(userManager.getTokenManager().getToken())) {
+                        userManager.setUser(null);
+                    }
+                }
+            }
+        }
+    };
 
     private void setupDrawerHeader() {
         View headerView = binding.navView.getHeaderView(0);
         if (headerView != null) {
-            DrawerHeaderBinding drawerHeaderBinding = DrawerHeaderBinding.bind(headerView);
-
+            drawerHeaderBinding = DrawerHeaderBinding.bind(headerView);
         }
     }
 

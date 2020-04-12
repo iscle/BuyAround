@@ -35,6 +35,9 @@ public interface BuyAroundService {
     @POST("product")
     Call<ProductResponse> addProduct(@Body Product product);
 
+    @POST("user/favouriteProducts")
+    Call<UserResponse> addFavouriteProduct(@Body Product product);
+
     @GET("user/favouriteProducts")
     Call<ProductResponse> getFavouriteProducts();
 
@@ -45,6 +48,9 @@ public interface BuyAroundService {
     @POST("store")
     Call<StoreResponse> addStore(@Body Store store);
 
+    @POST("user/favouriteStore")
+    Call<UserResponse> addFavouriteStore(@Body Store store);
+
     @GET("user/favouriteStores")
     Call<StoreResponse> getFavouriteStores();
 
@@ -54,6 +60,9 @@ public interface BuyAroundService {
 
     @POST("pack")
     Call<PackResponse> addPack(@Body Pack pack);
+
+    @POST("user/favouritePacks")
+    Call<UserResponse> addFavouritePack(@Body Pack pack);
 
     @GET("user/favouritePacks")
     Call<PackResponse> getFavouritePacks();
