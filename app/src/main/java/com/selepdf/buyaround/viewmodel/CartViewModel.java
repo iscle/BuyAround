@@ -37,14 +37,7 @@ public class CartViewModel extends ViewModel {
     }
 
     public void addProduct(OrderProduct product) {
-        int size = userManager.getProducts().getValue().size();
-        OrderProduct[] newList = new OrderProduct[size+1];
-        for (int i = 0; i < size;i++) {
-            newList[i] = userManager.getProducts().getValue().get(i);
-        }
-        newList[size] = product;
-        userManager.setProducts(newList);
-        userManager.setProducts(newList);
+        userManager.addProduct(product);
     }
 
     public void clearProductList() {
