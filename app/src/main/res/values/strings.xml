@@ -148,4 +148,9 @@
     <string name="fav_products">Favourite products</string>
     <string name="fav_packs">Favourite packs</string>
 
+    <!-- NOTIFICATIONS -->
+    <string name="item_notification_text">The deliveryman has finished purchasing goods and is heading to your portal. He/She will be there in approximately</string>
+    <string name="item_notification_time">X minutes.</string>
+    <string name="no_notifications_yet">Encara no tens cap notificació.\nFes la teva primera compra!</string>
+
 </resources>

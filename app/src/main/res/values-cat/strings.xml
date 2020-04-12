@@ -149,4 +149,9 @@
     <string name="fav_products">Productes preferits</string>
     <string name="fav_packs">Packs preferits</string>
 
+    <!-- NOTIFICATIONS -->
+    <string name="item_notification_text">El repartidor ha acabat de fer la compra i s\'està dirigint al seu portal. Estarà allà en aproximadament</string>
+    <string name="item_notification_time">X minuts.</string>
+    <string name="no_notifications_yet">You don\t have any notifications yet.\nMake your first purchase!</string>
+
 </resources>
