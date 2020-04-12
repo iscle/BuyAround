@@ -30,7 +30,7 @@ import retrofit2.Response;
 
 @Singleton
 public class BuyAroundRepository {
-    private static final String TAG = "HackovidRepository";
+    private static final String TAG = "BuyAroundRepository";
 
     private BuyAroundService service;
     private TokenManager tokenManager;
