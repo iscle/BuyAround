@@ -31,12 +31,14 @@ import java.util.List;
 
 import javax.inject.Inject;
 
-public class CartFragment extends Fragment implements IListAdapter {
+import dagger.android.support.DaggerFragment;
+
+public class CartFragment extends DaggerFragment implements IListAdapter {
 
     private FragmentCartBinding binding;
 
     @Inject
-    private ViewModelFactory viewModelFactory;
+    protected ViewModelFactory viewModelFactory;
     private CartViewModel cartViewModel;
 
     @Override
