@@ -1,12 +1,10 @@
 package com.selepdf.buyaround.viewmodel;
 
-import android.os.UserManager;
-
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-import com.selepdf.buyaround.model.Order;
+import com.selepdf.buyaround.auth.UserManager;
 import com.selepdf.buyaround.model.OrderProduct;
 import com.selepdf.buyaround.network.BuyAroundRepository;
 
@@ -14,21 +12,16 @@ import java.util.Arrays;
 import java.util.List;
 
 import javax.inject.Inject;
-import javax.inject.Singleton;
 
-@Singleton
 public class CartViewModel extends ViewModel {
-
-    @Inject
-    UserManager userManager;
 
     private BuyAroundRepository buyAroundRepository;
     private MutableLiveData<OrderProduct[]> mProducts;
 
     @Inject
-    public CartViewModel(BuyAroundRepository buyAroundRepository) {
+    public CartViewModel(BuyAroundRepository buyAroundRepository, UserManager userManager) {
         this.buyAroundRepository = buyAroundRepository;
-        mProducts = new MutableLiveData<>();
+        mProducts = userManager.getCartProducts();
         mProducts.setValue(new OrderProduct[0]);
     }
 
