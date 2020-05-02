@@ -97,7 +97,7 @@
     <!-- ORDERS -->
     <string name="orders_repeat_order">Repeat Order</string>
     <string name="orders_last_orders">Last Orders</string>
-    <string name="no_orders_yet">You don\t have any orders yet.\nMake your first purchase!</string>
+    <string name="no_orders_yet">You don\'t have any orders yet.\nMake your first purchase!</string>
     
     <!-- ORDER DETAIL -->
     <string name="order_title">Order title</string>
@@ -164,7 +164,7 @@
     <!-- NOTIFICATIONS -->
     <string name="item_notification_text">The deliveryman has finished purchasing goods and is heading to your portal. He/She will be there in approximately</string>
     <string name="item_notification_time">X minutes.</string>
-    <string name="no_notifications_yet">You don\t have any notifications yet.\nMake your first purchase!</string>
+    <string name="no_notifications_yet">You don\'t have any notifications yet.\nMake your first purchase!</string>
 
     <!-- ABOUT US -->
     <string name="what_is_buyaround">What is BuyAround?</string>
