@@ -29,7 +29,7 @@ public class HomeViewModel extends ViewModel {
         this.mProducts = new MutableLiveData<>();
     }
 
-    public void requestStoresAround(String username) {
+    private void requestStoresAround(String username) {
         // Handle request
         buyAroundRepository.getAllStores(new StoreCallback() {
             @Override
@@ -42,10 +42,9 @@ public class HomeViewModel extends ViewModel {
 
             }
         });
-
     }
 
-    public void requestPacks() {
+    private void requestPacks() {
         // Handle request
         buyAroundRepository.getAllPacks(new PackCallback() {
             @Override
@@ -60,7 +59,7 @@ public class HomeViewModel extends ViewModel {
         });
     }
 
-    public void requestProducts() {
+    private void requestProducts() {
         // Handle request
         buyAroundRepository.getAllProducts(new ProductCallback() {
             @Override

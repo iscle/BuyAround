@@ -148,7 +148,6 @@ public class HomeFragment extends DaggerFragment implements IListAdapter, IAddIt
                 Navigation.findNavController(binding.getRoot()).navigate(action);
             }
         }
-
     }
 
     @Override

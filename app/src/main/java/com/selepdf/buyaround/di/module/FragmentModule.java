@@ -8,6 +8,7 @@ import com.selepdf.buyaround.fragment.CartFragment;
 import com.selepdf.buyaround.fragment.CategoriesFragment;
 import com.selepdf.buyaround.fragment.FavouritesFragment;
 import com.selepdf.buyaround.fragment.HomeFragment;
+import com.selepdf.buyaround.fragment.LocationFragment;
 import com.selepdf.buyaround.fragment.LoginFragment;
 import com.selepdf.buyaround.fragment.NotificationsFragment;
 import com.selepdf.buyaround.fragment.OrdersFragment;
@@ -82,4 +83,7 @@ public abstract class FragmentModule {
 
     @ContributesAndroidInjector
     abstract PayFragment payFragment();
+
+    @ContributesAndroidInjector
+    abstract LocationFragment locationFragment();
 }

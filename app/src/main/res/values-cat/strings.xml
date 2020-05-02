@@ -175,5 +175,11 @@
     <!-- LOCATION -->
     <string name="nearby_stores_tv">Nombre de botigues properes:</string>
     <string name="nearby_stores_num_tv">0</string>
+    <string name="name">Nom</string>
+    <string name="radius_number">Introdueix el radi en metres:</string>
+    <string name="radius_selected">500</string>
+    <string name="radius_meters">m</string>
 
+    <!-- LEGAL -->
+    <string name="legal_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin hendrerit imperdiet mollis. Morbi egestas bibendum metus, dapibus elementum sem egestas sit amet. Donec vehicula rhoncus nibh, non consectetur ligula varius id. Suspendisse placerat mauris non leo pulvinar, id scelerisque leo finibus. In pharetra augue non vehicula scelerisque. Nunc accumsan sollicitudin est nec vulputate. Sed efficitur felis id enim finibus interdum. Curabitur at finibus ex. Nulla vel dictum odio. Quisque rutrum eleifend nunc semper porta. Morbi vitae venenatis massa, eget viverra nulla. Sed sapien dolor, placerat in tristique in, feugiat sit amet lacus. Vestibulum pharetra efficitur leo ac vulputate. Fusce efficitur, ipsum eget scelerisque consequat, est velit vehicula sapien, eu aliquet est lectus in purus. Donec tincidunt nunc in vulputate tristique. Nam tincidunt tempor mauris rhoncus varius.</string>
 </resources>

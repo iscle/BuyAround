@@ -16,6 +16,7 @@ import com.selepdf.buyaround.callback.UserCallback;
 import com.selepdf.buyaround.model.Product;
 import com.selepdf.buyaround.model.Store;
 import com.selepdf.buyaround.model.User;
+import com.selepdf.buyaround.model.UserRadius;
 import com.selepdf.buyaround.network.model.CategoryResponse;
 import com.selepdf.buyaround.network.model.LoginResponse;
 import com.selepdf.buyaround.network.model.OrderResponse;
@@ -233,6 +234,34 @@ public class BuyAroundRepository {
 
     public void getAllStores(StoreCallback callback) {
         service.getAllStores().enqueue(new Callback<StoreResponse>() {
+            @Override
+            public void onResponse(Call<StoreResponse> call, Response<StoreResponse> response) {
+                if (response.isSuccessful()) {
+                    StoreResponse storeResponse = response.body();
+                    Log.d(TAG, "onResponse: " + storeResponse.getStatus());
+                    switch (storeResponse.getStatus()) {
+                        case OK:
+                            callback.onStoresReceived(storeResponse.getStores());
+                            break;
+                        case INTERNAL_ERROR:
+                            callback.onFailure(FailureCallback.FailureError.INTERNAL_ERROR);
+                            break;
+                    }
+                } else {
+                    callback.onFailure(FailureCallback.FailureError.INTERNAL_ERROR);
+                }
+            }
+
+            @Override
+            public void onFailure(Call<StoreResponse> call, Throwable t) {
+                callback.onFailure(FailureCallback.FailureError.NETWORK_ERROR);
+                t.printStackTrace();
+            }
+        });
+    }
+
+    public void getNearbyStores(UserRadius userRadius, StoreCallback callback) {
+        service.getNearbyStores(userRadius).enqueue(new Callback<StoreResponse>() {
             @Override
             public void onResponse(Call<StoreResponse> call, Response<StoreResponse> response) {
                 if (response.isSuccessful()) {

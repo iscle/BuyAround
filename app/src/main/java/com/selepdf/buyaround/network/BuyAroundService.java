@@ -4,6 +4,7 @@ import com.selepdf.buyaround.model.Pack;
 import com.selepdf.buyaround.model.Product;
 import com.selepdf.buyaround.model.Store;
 import com.selepdf.buyaround.model.User;
+import com.selepdf.buyaround.model.UserRadius;
 import com.selepdf.buyaround.network.model.CategoryResponse;
 import com.selepdf.buyaround.network.model.LoginResponse;
 import com.selepdf.buyaround.network.model.OrderResponse;
@@ -53,6 +54,9 @@ public interface BuyAroundService {
 
     @GET("user/favouriteStores")
     Call<StoreResponse> getFavouriteStores();
+
+    @GET("store")
+    Call<StoreResponse> getNearbyStores(@Body UserRadius userRadius);
 
     // Packs
     @GET("pack")
