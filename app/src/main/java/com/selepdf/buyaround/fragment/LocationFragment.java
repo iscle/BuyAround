@@ -1,7 +1,6 @@
 package com.selepdf.buyaround.fragment;
 
 import android.Manifest;
-import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.pm.PackageManager;
 import android.location.Criteria;
@@ -38,6 +37,9 @@ import org.osmdroid.config.Configuration;
 import org.osmdroid.tileprovider.tilesource.TileSourceFactory;
 import org.osmdroid.util.GeoPoint;
 import org.osmdroid.views.MapView;
+import org.osmdroid.views.overlay.ItemizedIconOverlay;
+import org.osmdroid.views.overlay.ItemizedOverlayWithFocus;
+import org.osmdroid.views.overlay.OverlayItem;
 import org.osmdroid.views.overlay.Polygon;
 import org.osmdroid.views.overlay.mylocation.GpsMyLocationProvider;
 import org.osmdroid.views.overlay.mylocation.MyLocationNewOverlay;
@@ -65,6 +67,7 @@ public class LocationFragment extends DaggerFragment implements IListAdapter {
     private LocationManager locationManager;
     private MapView map = null;
     private MyLocationNewOverlay mLocationOverlay;
+    private ItemizedOverlayWithFocus<OverlayItem> mOverlay;
     private Polygon p;
 
     private RecyclerView storesRecyclerView;
@@ -176,7 +179,41 @@ public class LocationFragment extends DaggerFragment implements IListAdapter {
                 binding.storesEmptyView.setVisibility(View.GONE);
             }
             storeListAdapter.setStores(stores);
+
+            setStoreOverlays(stores);
+
         });
+    }
+
+    private void setStoreOverlays(Store[] stores) {
+        if (mOverlay != null) {
+            map.getOverlays().remove(mOverlay);
+        }
+
+        ArrayList<OverlayItem> items = new ArrayList<>();
+
+        for (Store store : stores) {
+            items.add(new OverlayItem(store.getName(),
+                    store.getDescription(),
+                    new GeoPoint(store.getDirection().getLatitude(),
+                            store.getDirection().getLongitude())));
+        }
+
+        mOverlay = new ItemizedOverlayWithFocus<OverlayItem>(requireContext(), items, new ItemizedIconOverlay.OnItemGestureListener<OverlayItem>() {
+            @Override
+            public boolean onItemSingleTapUp(int index, OverlayItem item) {
+                // TODO: OPEN SPECIFIC STORE FRAGMENT
+                return false;
+            }
+
+            @Override
+            public boolean onItemLongPress(int index, OverlayItem item) {
+                return false;
+            }
+        });
+
+        mOverlay.setFocusItemsOnTap(true);
+        map.getOverlayManager().add(mOverlay);
     }
 
     private void initMap() {

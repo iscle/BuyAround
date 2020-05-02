@@ -2,13 +2,13 @@ package com.selepdf.buyaround.model;
 
 public class UserRadius {
     private double latitude;
-    private double altitude;
+    private double longitude;
     private int radiusMeters;
 
 
-    public UserRadius(double latitude, double altitude, int radiusMeters) {
+    public UserRadius(double latitude, double longitude, int radiusMeters) {
         this.latitude = latitude;
-        this.altitude = altitude;
+        this.longitude = longitude;
         this.radiusMeters = radiusMeters;
     }
 
@@ -20,12 +20,12 @@ public class UserRadius {
         this.latitude = latitude;
     }
 
-    public double getAltitude() {
-        return altitude;
+    public double getLongitude() {
+        return longitude;
     }
 
-    public void setAltitude(double altitude) {
-        this.altitude = altitude;
+    public void setLongitude(double longitude) {
+        this.longitude = longitude;
     }
 
     public int getRadiusMeters() {
