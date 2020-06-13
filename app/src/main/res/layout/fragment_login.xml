@@ -1,78 +1,85 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    style="@style/ParentLayoutLarge"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:layout_height="match_parent">
 
-    <TextView
-        style="@style/TitlesThemeLarge"
+    <LinearLayout
+        android:padding="8dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:gravity="center"
-        android:text="@string/log_in_acc" />
+        android:orientation="vertical">
 
-    <TextView
-        style="@style/TitlesTheme"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:gravity="center"
-        android:text="@string/email" />
+        <TextView
+            style="@style/TitlesThemeLarge"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:gravity="center"
+            android:text="@string/log_in_acc" />
 
-    <EditText
-        android:id="@+id/login_mail"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:ems="10"
-        android:hint="@string/login_email_hint"
-        android:inputType="textEmailAddress" />
-
-    <TextView
-        style="@style/TitlesTheme"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:gravity="center"
-        android:text="@string/password_tv" />
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:passwordToggleEnabled="true">
+        <TextView
+            style="@style/TitlesTheme"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:gravity="center"
+            android:text="@string/email" />
 
         <EditText
-            android:id="@+id/login_password"
+            android:id="@+id/login_mail"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
             android:ems="10"
+            android:hint="@string/login_email_hint"
+            android:inputType="textEmailAddress" />
+
+        <TextView
+            style="@style/TitlesTheme"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:gravity="center"
+            android:text="@string/password_tv" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:hint="@string/login_password_hint"
-            android:inputType="textPassword" />
+            app:counterEnabled="true"
+            app:counterMaxLength="69"
+            app:helperText="helper text"
+            app:passwordToggleEnabled="true">
 
-    </com.google.android.material.textfield.TextInputLayout>
+            <EditText
+                android:id="@+id/login_password"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:ems="10"
+                android:inputType="textPassword" />
 
+        </com.google.android.material.textfield.TextInputLayout>
 
+        <Button
+            android:id="@+id/login_btn"
+            style="@style/GreenButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="@string/login_button" />
 
-    <Button
-        android:id="@+id/login_btn"
-        style="@style/GreenButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:text="@string/login_button" />
+        <TextView
+            android:id="@+id/login_to_register"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:gravity="center"
+            android:text="@string/login_goto_register_tv"
+            android:textAllCaps="true"
+            android:textStyle="bold" />
 
-    <TextView
-        android:id="@+id/login_to_register"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:gravity="center"
-        android:text="@string/login_goto_register_tv"
-        android:textAllCaps="true"
-        android:textStyle="bold" />
+    </LinearLayout>
 
-</LinearLayout>
+</ScrollView>
