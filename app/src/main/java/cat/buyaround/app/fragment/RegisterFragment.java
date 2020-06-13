@@ -12,14 +12,13 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.Navigation;
 import androidx.navigation.fragment.NavHostFragment;
 
+import javax.inject.Inject;
+
 import cat.buyaround.app.R;
 import cat.buyaround.app.callback.RegisterCallback;
 import cat.buyaround.app.databinding.FragmentRegisterBinding;
 import cat.buyaround.app.factory.ViewModelFactory;
 import cat.buyaround.app.viewmodel.RegisterViewModel;
-
-import javax.inject.Inject;
-
 import dagger.android.support.DaggerFragment;
 
 public class RegisterFragment extends DaggerFragment implements RegisterCallback {
@@ -47,11 +46,44 @@ public class RegisterFragment extends DaggerFragment implements RegisterCallback
         });
 
         binding.registerBtn.setOnClickListener(v -> {
-            String name = binding.registerName.getText().toString();
-            String email = binding.registerMail.getText().toString();
+            String name = binding.registerName.getText().toString().trim();
+            String email = binding.registerMail.getText().toString().trim();
             String password = binding.registerPassword.getText().toString();
+            String passwordVerification = binding.registerPasswordVerification.getText().toString();
 
-            registerViewModel.register(name, email, password, this);
+            if (name.isEmpty()) {
+                Toast.makeText(getContext(), R.string.register_empty_name, Toast.LENGTH_LONG).show();
+                binding.registerName.requestFocus();
+
+            } else if (email.isEmpty()) {
+                Toast.makeText(getContext(), R.string.register_empty_email, Toast.LENGTH_LONG).show();
+                binding.registerMail.requestFocus();
+
+            } else if (password.isEmpty()) {
+                Toast.makeText(getContext(), R.string.register_empty_password, Toast.LENGTH_LONG).show();
+                binding.registerMail.requestFocus();
+
+            } else if (passwordVerification.isEmpty()) {
+                Toast.makeText(getContext(), R.string.register_empty_password_verification, Toast.LENGTH_LONG).show();
+                binding.registerMail.requestFocus();
+
+            } else if (password.equals(passwordVerification)) {
+                if (registerViewModel.isValidEmail(email)) {
+                    if (registerViewModel.isValidPassword(password)) {
+                        registerViewModel.register(name, email, password, this);
+                    } else {
+                        Toast.makeText(getContext(), R.string.register_password_not_secure, Toast.LENGTH_LONG).show();
+                        binding.registerPassword.requestFocus();
+                    }
+                } else {
+                    Toast.makeText(getContext(), R.string.register_empty_email, Toast.LENGTH_LONG).show();
+                    binding.registerMail.requestFocus();
+                }
+            } else {
+                Toast.makeText(getContext(), R.string.register_passwords_dont_match, Toast.LENGTH_LONG).show();
+                binding.registerPassword.requestFocus();
+            }
+
         });
     }
 

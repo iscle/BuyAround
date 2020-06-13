@@ -15,13 +15,21 @@
     <string name="login_name_hint">Enter your name</string>
     <string name="login_email_hint">Enter your email</string>
     <string name="password_tv">Password</string>
+    <string name="password_verification_tv">Password verification</string>
     <string name="login_password_hint">Enter your password</string>
+    <string name="login_password_hint_again">Enter your password again</string>
     <string name="login_button">Log in</string>
     <string name="login_goto_register_tv">Register</string>
     <string name="register_goto_login_tv">Log in</string>
     <string name="login">Login</string>
     <string name="register">Register</string>
     <string name="home">Home</string>
+    <string name="register_empty_name">Error! You must enter a name.</string>
+    <string name="register_empty_email">Error! You must enter a valid email.</string>
+    <string name="register_empty_password">Error! You must enter a password.</string>
+    <string name="register_empty_password_verification">Error! You must enter the password again.</string>
+    <string name="register_passwords_dont_match">Error! The passwords don\'t match.</string>
+    <string name="register_password_not_secure">The password must contain at least 8 characters: 1 lowercase letter, 1 uppercase letter and one number.</string>
 
     <!-- ACCOUNT -->
     <string name="username">Username</string>
