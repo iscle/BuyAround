@@ -33,6 +33,6 @@ public class MainActivity extends DaggerAppCompatActivity {
         NavigationUI.setupWithNavController(binding.toolbar, navController);
 
         // Set up bottom navigation
-        NavigationUI.setupWithNavController(binding.bottomNavigationView, navController);
+        NavigationUI.setupWithNavController(binding.contentMain.bottomNavigationView, navController);
     }
 }
