@@ -13,7 +13,7 @@
             <corners android:radius="6dp" />
         </shape>
     </item>
-    <item android:left="34dp">
+    <item android:left="46dp">
         <shape>
             <solid android:color="@android:color/white" />
             <corners

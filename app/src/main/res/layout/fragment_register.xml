@@ -11,7 +11,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
         android:gravity="center"
-        android:text="@string/login_welcome_tv" />
+        android:text="@string/register" />
 
     <TextView
         style="@style/TitlesTheme"
@@ -28,7 +28,7 @@
         android:layout_marginTop="4dp"
         android:background="@drawable/bg_edittext_icon"
         android:drawableStart="@drawable/ic_account"
-        android:drawablePadding="8dp"
+        android:drawablePadding="16dp"
         android:drawableTint="@color/white"
         android:ems="10"
         android:hint="@string/login_name_hint"
@@ -75,7 +75,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
-        android:text="@string/register_button" />
+        android:text="@string/register" />
 
     <TextView
         android:id="@+id/register_to_login"

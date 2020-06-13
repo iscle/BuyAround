@@ -11,29 +11,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
         android:gravity="center"
-        android:text="@string/login_welcome_tv" />
-
-    <TextView
-        style="@style/TitlesTheme"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:gravity="center"
-        android:text="@string/name" />
-
-    <EditText
-        android:id="@+id/login_name"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:background="@drawable/bg_edittext_icon"
-        android:drawableStart="@drawable/ic_account"
-        android:drawablePadding="8dp"
-        android:drawableTint="@color/white"
-        android:ems="10"
-        android:hint="@string/login_name_hint"
-        android:inputType="textPersonName"
-        android:padding="12dp" />
+        android:text="@string/log_in_acc" />
 
     <TextView
         style="@style/TitlesTheme"
