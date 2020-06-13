@@ -52,9 +52,29 @@ public class LoginFragment extends DaggerFragment implements LoginCallback {
         });
 
         binding.loginBtn.setOnClickListener(v -> {
-            String username = binding.loginMail.getText().toString();
+            String username = binding.loginMail.getText().toString().trim();
             String password = binding.loginPassword.getText().toString();
-            loginViewModel.login(username, password, this);
+
+            if (username.isEmpty()) {
+                Toast.makeText(getContext(), R.string.register_empty_email, Toast.LENGTH_LONG).show();
+                binding.loginMail.requestFocus();
+
+            } else if (password.isEmpty()) {
+                Toast.makeText(getContext(), R.string.register_empty_password, Toast.LENGTH_LONG).show();
+                binding.loginPassword.requestFocus();
+
+            } else if (loginViewModel.isValidEmail(username)) {
+                if (loginViewModel.isValidPassword(password)) {
+                    loginViewModel.login(username, password, this);
+
+                } else {
+                    Toast.makeText(getContext(), R.string.wrong_password, Toast.LENGTH_LONG).show();
+                    binding.loginPassword.requestFocus();
+                }
+            } else {
+                Toast.makeText(getContext(), R.string.register_empty_email, Toast.LENGTH_LONG).show();
+                binding.loginMail.requestFocus();
+            }
         });
     }
 

@@ -1,5 +1,7 @@
 package cat.buyaround.app.viewmodel;
 
+import android.text.TextUtils;
+
 import androidx.lifecycle.ViewModel;
 
 import javax.inject.Inject;
@@ -20,5 +22,13 @@ public class LoginViewModel extends ViewModel {
     public void login(String username, String password, LoginCallback loginCallback) {
         User user = new User(username, password);
         buyAroundRepository.login(user, loginCallback);
+    }
+
+    public boolean isValidEmail(CharSequence target) {
+        return !TextUtils.isEmpty(target) && android.util.Patterns.EMAIL_ADDRESS.matcher(target).matches();
+    }
+
+    public boolean isValidPassword(String text) {
+        return text.matches("^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{8,}$");
     }
 }

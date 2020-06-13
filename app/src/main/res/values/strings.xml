@@ -4,7 +4,7 @@
     <string name="hello_blank_fragment">This will be implemented in future updates!</string>
 
     <!-- TOASTS -->
-    <string name="wrong_password">Wrong passowrd!</string>
+    <string name="wrong_password">Wrong password!</string>
     <string name="internal_error">Internal error!</string>
     <string name="network_error">Network error!</string>
     <string name="existing_email">User already exists!</string>
