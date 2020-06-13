@@ -14,7 +14,6 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
-import com.selepdf.buyaround.fragment.AccountFragmentDirections;
 
 import cat.buyaround.app.R;
 import cat.buyaround.app.adapter.ContentListAdapter;

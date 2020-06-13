@@ -15,7 +15,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.selepdf.buyaround.fragment.CartFragmentDirections;
+import cat.buyaround.app.fragment.CartFragmentDirections;
 
 import cat.buyaround.app.adapter.CartItemsAdapter;
 import cat.buyaround.app.adapter.callback.IListAdapter;

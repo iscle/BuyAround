@@ -13,7 +13,7 @@ import androidx.navigation.NavDirections;
 import androidx.navigation.Navigation;
 import androidx.navigation.fragment.NavHostFragment;
 
-import com.selepdf.buyaround.fragment.LoginFragmentDirections;
+import cat.buyaround.app.fragment.LoginFragmentDirections;
 
 import cat.buyaround.app.R;
 import cat.buyaround.app.callback.LoginCallback;

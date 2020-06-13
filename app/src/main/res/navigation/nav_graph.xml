@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/loginFragment"
-        android:name="com.selepdf.buyaround.fragment.LoginFragment"
+        android:name="cat.buyaround.app.fragment.LoginFragment"
         android:label="@string/login"
         tools:layout="@layout/fragment_login">
         <action
@@ -21,12 +21,12 @@
 
     <fragment
         android:id="@+id/registerFragment"
-        android:name="com.selepdf.buyaround.fragment.RegisterFragment"
+        android:name="cat.buyaround.app.fragment.RegisterFragment"
         android:label="@string/register"
         tools:layout="@layout/fragment_register"/>
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.selepdf.buyaround.fragment.HomeFragment"
+        android:name="cat.buyaround.app.fragment.HomeFragment"
         android:label="@string/home"
         tools:layout="@layout/fragment_home">
 
@@ -91,7 +91,7 @@
     </fragment>
     <fragment
         android:id="@+id/accountFragment"
-        android:name="com.selepdf.buyaround.fragment.AccountFragment"
+        android:name="cat.buyaround.app.fragment.AccountFragment"
         android:label="@string/my_account"
         tools:layout="@layout/fragment_account" >
         <action
@@ -112,92 +112,92 @@
     </fragment>
     <fragment
         android:id="@+id/categoriesFragment"
-        android:name="com.selepdf.buyaround.fragment.CategoriesFragment"
+        android:name="cat.buyaround.app.fragment.CategoriesFragment"
         android:label="@string/categories"
         tools:layout="@layout/fragment_categories" />
     <fragment
         android:id="@+id/favouritesFragment"
-        android:name="com.selepdf.buyaround.fragment.FavouritesFragment"
+        android:name="cat.buyaround.app.fragment.FavouritesFragment"
         android:label="@string/favourites"
         tools:layout="@layout/fragment_favourites" />
     <fragment
         android:id="@+id/ordersFragment"
-        android:name="com.selepdf.buyaround.fragment.OrdersFragment"
+        android:name="cat.buyaround.app.fragment.OrdersFragment"
         android:label="@string/orders"
         tools:layout="@layout/fragment_orders" />
     <fragment
         android:id="@+id/settingsFragment"
-        android:name="com.selepdf.buyaround.fragment.SettingsFragment"
+        android:name="cat.buyaround.app.fragment.SettingsFragment"
         android:label="@string/settings"
         tools:layout="@layout/fragment_settings" />
     <fragment
         android:id="@+id/legalFragment"
-        android:name="com.selepdf.buyaround.fragment.LegalFragment"
+        android:name="cat.buyaround.app.fragment.LegalFragment"
         android:label="@string/legal"
         tools:layout="@layout/fragment_legal" />
     <fragment
         android:id="@+id/supportFragment"
-        android:name="com.selepdf.buyaround.fragment.SupportFragment"
+        android:name="cat.buyaround.app.fragment.SupportFragment"
         android:label="@string/customer_support"
         tools:layout="@layout/fragment_support" />
     <fragment
         android:id="@+id/locationFragment"
-        android:name="com.selepdf.buyaround.fragment.LocationFragment"
+        android:name="cat.buyaround.app.fragment.LocationFragment"
         android:label="@string/location"
         tools:layout="@layout/fragment_location" />
     <fragment
         android:id="@+id/notificationsFragment"
-        android:name="com.selepdf.buyaround.fragment.NotificationsFragment"
+        android:name="cat.buyaround.app.fragment.NotificationsFragment"
         android:label="@string/notifications"
         tools:layout="@layout/fragment_notifications" />
     <fragment
         android:id="@+id/personalInfoFragment"
-        android:name="com.selepdf.buyaround.fragment.PersonalInfoFragment"
+        android:name="cat.buyaround.app.fragment.PersonalInfoFragment"
         android:label="@string/account_personal_info"
         tools:layout="@layout/fragment_personal_info" />
     <fragment
         android:id="@+id/addressesFragment"
-        android:name="com.selepdf.buyaround.fragment.AddressesFragment"
+        android:name="cat.buyaround.app.fragment.AddressesFragment"
         android:label="@string/addresses"
         tools:layout="@layout/fragment_addresses" />
     <fragment
         android:id="@+id/paymentFragment"
-        android:name="com.selepdf.buyaround.fragment.PaymentFragment"
+        android:name="cat.buyaround.app.fragment.PaymentFragment"
         android:label="@string/payment"
         tools:layout="@layout/fragment_payment" />
     <fragment
         android:id="@+id/useConditionsFragment"
-        android:name="com.selepdf.buyaround.fragment.UseConditionsFragment"
+        android:name="cat.buyaround.app.fragment.UseConditionsFragment"
         android:label="@string/use_conditions"
         tools:layout="@layout/fragment_use_conditions" />
     <fragment
         android:id="@+id/addProductFragment"
-        android:name="com.selepdf.buyaround.fragment.AddProductFragment"
+        android:name="cat.buyaround.app.fragment.AddProductFragment"
         android:label="@string/product_label"
         tools:layout="@layout/fragment_add_product" />
     <fragment
         android:id="@+id/addStoreFragment"
-        android:name="com.selepdf.buyaround.fragment.AddStoreFragment"
+        android:name="cat.buyaround.app.fragment.AddStoreFragment"
         android:label="@string/store_label"
         tools:layout="@layout/fragment_add_store" />
     <fragment
         android:id="@+id/addressFragment"
-        android:name="com.selepdf.buyaround.fragment.AddressFragment"
+        android:name="cat.buyaround.app.fragment.AddressFragment"
         android:label="@string/address_label"
         tools:layout="@layout/fragment_address" />
     <fragment
         android:id="@+id/payFragment"
-        android:name="com.selepdf.buyaround.fragment.PayFragment"
+        android:name="cat.buyaround.app.fragment.PayFragment"
         android:label="@string/payment"
         tools:layout="@layout/fragment_pay"/>
     <fragment
         android:id="@+id/productFragment"
-        android:name="com.selepdf.buyaround.fragment.ProductFragment"
+        android:name="cat.buyaround.app.fragment.ProductFragment"
         android:label="@string/product_tv"
         tools:layout="@layout/fragment_product"/>
     <fragment
         android:id="@+id/cartFragment"
-        android:name="com.selepdf.buyaround.fragment.CartFragment"
+        android:name="cat.buyaround.app.fragment.CartFragment"
         android:label="@string/cart"
         tools:layout="@layout/fragment_cart">
 
@@ -220,17 +220,17 @@
     </fragment>
     <fragment
         android:id="@+id/searchFragment"
-        android:name="com.selepdf.buyaround.fragment.SearchFragment"
+        android:name="cat.buyaround.app.fragment.SearchFragment"
         android:label="@string/search"
         tools:layout="@layout/fragment_search" />
     <fragment
         android:id="@+id/aboutUsFragment"
-        android:name="com.selepdf.buyaround.fragment.AboutUsFragment"
+        android:name="cat.buyaround.app.fragment.AboutUsFragment"
         android:label="@string/about_us"
         tools:layout="@layout/fragment_about_us" />
     <fragment
         android:id="@+id/addPackFragment"
-        android:name="com.selepdf.buyaround.fragment.AddPackFragment"
+        android:name="cat.buyaround.app.fragment.AddPackFragment"
         android:label="@string/add_pack"
         tools:layout="@layout/fragment_add_pack" />
 </navigation>

@@ -13,7 +13,7 @@ import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.selepdf.buyaround.fragment.HomeFragmentDirections;
+import cat.buyaround.app.fragment.HomeFragmentDirections;
 
 import cat.buyaround.app.MarginItemDecorator;
 import cat.buyaround.app.adapter.PackListAdapter;
