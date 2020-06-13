@@ -1,59 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     style="@style/ParentLayoutLarge"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
     <TextView
-        android:id="@+id/register_welcome_tv"
-        android:layout_width="wrap_content"
+        style="@style/TitlesThemeLarge"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
         android:gravity="center"
-        android:text="@string/register_welcome_tv"
-        android:textColor="@color/colorPrimaryDark"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:text="@string/login_welcome_tv" />
 
     <TextView
-        android:id="@+id/register_user_tv"
+        style="@style/TitlesTheme"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:gravity="center"
-        android:text="@string/name"
-        android:textColor="@color/colorPrimaryDark"
-        android:textSize="18sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/register_welcome_tv" />
+        android:text="@string/name" />
 
     <EditText
-        android:id="@+id/register_user"
+        android:id="@+id/register_name"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
+        android:background="@drawable/bg_edittext_icon"
+        android:drawableStart="@drawable/ic_account"
+        android:drawablePadding="8dp"
+        android:drawableTint="@color/white"
         android:ems="10"
-        android:hint="@string/user_hint"
+        android:hint="@string/login_name_hint"
         android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/register_user_tv" />
+        android:padding="12dp" />
 
     <TextView
-        android:id="@+id/register_mail_tv"
+        style="@style/TitlesTheme"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:gravity="center"
-        android:text="@string/mail_tv"
-        android:textColor="@color/colorPrimaryDark"
-        android:textSize="18sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/register_user" />
+        android:text="@string/email" />
 
     <EditText
         android:id="@+id/register_mail"
@@ -61,23 +49,16 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
         android:ems="10"
-        android:hint="@string/mail_hint"
-        android:inputType="textEmailAddress"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/register_mail_tv" />
+        android:hint="@string/login_email_hint"
+        android:inputType="textEmailAddress" />
 
     <TextView
-        android:id="@+id/register_password_tv"
+        style="@style/TitlesTheme"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:gravity="center"
-        android:text="@string/password_tv"
-        android:textColor="@color/colorPrimaryDark"
-        android:textSize="18sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/register_mail" />
+        android:text="@string/password_tv" />
 
     <EditText
         android:id="@+id/register_password"
@@ -85,36 +66,25 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
         android:ems="10"
-        android:hint="@string/password_hint"
-        android:inputType="textPassword"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/register_password_tv" />
+        android:hint="@string/login_password_hint"
+        android:inputType="textPassword" />
 
     <Button
-        android:id="@+id/register_btn_register"
-        android:layout_width="fill_parent"
+        android:id="@+id/register_btn"
+        style="@style/GreenButton"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:backgroundTint="@color/colorPrimaryDark"
-        android:text="@string/register_button"
-        android:textAllCaps="true"
-        android:textColor="@android:color/white"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/register_password" />
+        android:layout_marginTop="24dp"
+        android:text="@string/register_button" />
 
     <TextView
-        android:id="@+id/register_register_to_login"
-        android:layout_width="wrap_content"
+        android:id="@+id/register_to_login"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:gravity="center"
         android:text="@string/register_goto_login_tv"
         android:textAllCaps="true"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/register_btn_register" />
+        android:textStyle="bold" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

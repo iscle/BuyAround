@@ -15,11 +15,12 @@
     <string name="login_welcome_tv">Welcome</string>
     <string name="register_welcome_tv">Register</string>
     <string name="user_tv">User</string>
-    <string name="user_hint">Enter your email</string>
+    <string name="login_name_hint">Enter your name</string>
+    <string name="login_email_hint">Enter your email</string>
     <string name="mail_tv">Email</string>
     <string name="mail_hint">Enter your email</string>
     <string name="password_tv">Password</string>
-    <string name="password_hint">Enter your password</string>
+    <string name="login_password_hint">Enter your password</string>
     <string name="login_button">Log in</string>
     <string name="register_button">Continue</string>
     <string name="login_goto_register_tv">Register</string>

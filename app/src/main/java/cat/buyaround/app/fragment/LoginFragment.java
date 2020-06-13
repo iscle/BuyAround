@@ -45,14 +45,14 @@ public class LoginFragment extends DaggerFragment implements LoginCallback {
 
         loginViewModel = new ViewModelProvider(this, viewModelFactory).get(LoginViewModel.class);
 
-        binding.loginLoginToRegister.setOnClickListener(v -> {
+        binding.loginToRegister.setOnClickListener(v -> {
             NavDirections action = LoginFragmentDirections
                     .actionLoginFragmentToRegisterFragment();
             Navigation.findNavController(v).navigate(action);
         });
 
-        binding.loginBtnLogin.setOnClickListener(v -> {
-            String username = binding.loginUser.getText().toString();
+        binding.loginBtn.setOnClickListener(v -> {
+            String username = binding.loginMail.getText().toString();
             String password = binding.loginPassword.getText().toString();
             loginViewModel.login(username, password, this);
         });

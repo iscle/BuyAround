@@ -42,12 +42,12 @@ public class RegisterFragment extends DaggerFragment implements RegisterCallback
 
         registerViewModel = new ViewModelProvider(this, viewModelFactory).get(RegisterViewModel.class);
 
-        binding.registerRegisterToLogin.setOnClickListener(v -> {
+        binding.registerToLogin.setOnClickListener(v -> {
             Navigation.findNavController(v).popBackStack();
         });
 
-        binding.registerBtnRegister.setOnClickListener(v -> {
-            String name = binding.registerUser.getText().toString();
+        binding.registerBtn.setOnClickListener(v -> {
+            String name = binding.registerName.getText().toString();
             String email = binding.registerMail.getText().toString();
             String password = binding.registerPassword.getText().toString();
 
