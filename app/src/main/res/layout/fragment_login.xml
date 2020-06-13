@@ -5,10 +5,10 @@
     android:layout_height="match_parent">
 
     <LinearLayout
-        android:padding="8dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:padding="8dp">
 
         <TextView
             style="@style/TitlesThemeLarge"
@@ -26,14 +26,23 @@
             android:gravity="center"
             android:text="@string/email" />
 
-        <EditText
-            android:id="@+id/login_mail"
-            android:layout_width="fill_parent"
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
-            android:ems="10"
-            android:hint="@string/login_email_hint"
-            android:inputType="textEmailAddress" />
+            app:hintEnabled="false">
+
+            <EditText
+                android:id="@+id/login_mail"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_edittext_icon"
+                android:drawableStart="@drawable/ic_email_with_bg"
+                android:drawablePadding="8dp"
+                android:ems="10"
+                android:hint="@string/login_email_hint"
+                android:inputType="textEmailAddress" />
+        </com.google.android.material.textfield.TextInputLayout>
 
         <TextView
             style="@style/TitlesTheme"
@@ -46,10 +55,7 @@
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/login_password_hint"
-            app:counterEnabled="true"
-            app:counterMaxLength="69"
-            app:helperText="helper text"
+            app:hintEnabled="false"
             app:passwordToggleEnabled="true">
 
             <EditText
@@ -57,7 +63,11 @@
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
+                android:background="@drawable/bg_edittext_icon"
+                android:drawableStart="@drawable/ic_password_with_bg"
+                android:drawablePadding="8dp"
                 android:ems="10"
+                android:hint="@string/login_password_hint"
                 android:inputType="textPassword" />
 
         </com.google.android.material.textfield.TextInputLayout>
