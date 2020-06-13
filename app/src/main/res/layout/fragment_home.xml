@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/scroll_view"
-    style="@style/ParentLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".fragment.HomeFragment">
@@ -10,81 +8,33 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:padding="8dp">
 
-        <LinearLayout
-            android:id="@+id/home_search_header"
+        <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@drawable/bg_edittext_icon"
+            android:drawableStart="@drawable/ic_search_with_bg"
+            android:drawablePadding="8dp"
+            android:ems="10"
+            android:hint="@string/search_hint"
+            android:inputType="text" />
+
+        <TextView
+            android:id="@+id/textView2"
+            style="@style/TitlesThemeLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:background="@drawable/backg_search_header"
-            android:paddingTop="8dp"
-            android:paddingBottom="8dp">
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:src="@drawable/ic_search"
-                android:tint="@color/colorPrimaryDark" />
-
-            <EditText
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="10"
-                android:background="@null"
-                android:backgroundTint="@color/colorPrimaryDark"
-                android:focusable="false"
-                android:hint="@string/search_hint"
-                android:inputType="text"
-                android:textColor="@color/colorPrimaryDark" />
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:src="@drawable/ic_filter"
-                android:tint="@color/colorPrimaryDark" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
-
-            <TextView
-                android:id="@+id/textView2"
-                style="@style/TitlesThemeLarge"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:text="@string/home_stores_around"
-                android:textColor="@color/colorPrimaryDark" />
-
-            <View
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:layout_weight="1" />
-
-            <TextView
-                android:id="@+id/add_store_tv"
-                style="@style/SubTitlesTheme"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:text="@string/add_store_tv" />
-
-        </LinearLayout>
+            android:text="@string/home_stores_around" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/home_stores_recyclerView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:visibility="gone">
-
-        </androidx.recyclerview.widget.RecyclerView>
+            android:visibility="gone" />
 
         <TextView
             android:id="@+id/stores_empty_view"
@@ -92,37 +42,16 @@
             android:layout_height="match_parent"
             android:layout_margin="24dp"
             android:gravity="center"
-            android:text="@string/no_stores_around"
-            android:visibility="visible" />
+            android:text="@string/no_stores_around" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
 
-            <TextView
-                android:id="@+id/textView3"
-                style="@style/TitlesThemeLarge"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:text="@string/home_top_packs"
-                android:textColor="@color/colorPrimaryDark" />
-
-            <View
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:layout_weight="1" />
-
-            <TextView
-                android:id="@+id/add_pack_tv"
-                style="@style/SubTitlesTheme"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:text="@string/add_pack_tv" />
-
-        </LinearLayout>
+        <TextView
+            android:id="@+id/textView3"
+            style="@style/TitlesThemeLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/home_top_packs" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/home_packs_recyclerView"
@@ -137,37 +66,16 @@
             android:layout_height="match_parent"
             android:layout_margin="24dp"
             android:gravity="center"
-            android:text="@string/no_packs_around"
-            android:visibility="visible" />
+            android:text="@string/no_packs_around" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
+        <TextView
+            android:id="@+id/textView4"
+            style="@style/TitlesThemeLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/home_top_products" />
 
-            <TextView
-                android:id="@+id/textView4"
-                style="@style/TitlesThemeLarge"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:text="@string/home_top_products"
-                android:textColor="@color/colorPrimaryDark" />
-
-            <View
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:layout_weight="1" />
-
-            <TextView
-                android:id="@+id/add_product_tv"
-                style="@style/SubTitlesTheme"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:text="@string/add_product_tv" />
-
-        </LinearLayout>
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/home_products_recyclerView"
@@ -182,8 +90,7 @@
             android:layout_height="match_parent"
             android:layout_margin="24dp"
             android:gravity="center"
-            android:text="@string/no_packs_around"
-            android:visibility="visible" />
+            android:text="@string/no_packs_around" />
 
     </LinearLayout>
 
