@@ -35,6 +35,8 @@
     <string name="addresses">Addresses</string>
     <string name="payment">Payment</string>
     <string name="use_conditions">Use Conditions</string>
+    <string name="log_in_acc">Log In</string>
+    <string name="log_in_text_acc">To be able to buy something,\nyou need to log in.</string>
 
     <!-- PAYMENT -->
     <string name="payment_cards">Cards</string>

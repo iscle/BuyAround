@@ -15,19 +15,18 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 
-import cat.buyaround.app.R;
-import cat.buyaround.app.adapter.ContentListAdapter;
-import cat.buyaround.app.adapter.callback.IListAdapter;
-import cat.buyaround.app.databinding.FragmentAccountBinding;
-import cat.buyaround.app.factory.ViewModelFactory;
-import cat.buyaround.app.viewmodel.AccountViewModel;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 import javax.inject.Inject;
 
+import cat.buyaround.app.R;
+import cat.buyaround.app.adapter.ContentListAdapter;
+import cat.buyaround.app.adapter.callback.IListAdapter;
+import cat.buyaround.app.databinding.FragmentAccountBinding;
+import cat.buyaround.app.factory.ViewModelFactory;
+import cat.buyaround.app.viewmodel.AccountViewModel;
 import dagger.android.support.DaggerFragment;
 
 public class AccountFragment extends DaggerFragment implements IListAdapter {
@@ -53,20 +52,44 @@ public class AccountFragment extends DaggerFragment implements IListAdapter {
         super.onViewCreated(view, savedInstanceState);
 
         viewModel = new ViewModelProvider(this, viewModelFactory).get(AccountViewModel.class);
+
+        initViews();
+
         subscribeObservers();
+    }
+
+    private void initViews() {
+        Glide.with(AccountFragment.this)
+                .asBitmap()
+                .load(R.drawable.ic_thumbnail)
+                .into(binding.profileThumbnail);
+
         binding.accountRecyclerView.setLayoutManager(new LinearLayoutManager(getContext(), RecyclerView.VERTICAL, false));
         binding.accountRecyclerView.setAdapter(new ContentListAdapter(this, mContents));
+
+        binding.loginBtn.setOnClickListener(v -> {
+            NavDirections action = AccountFragmentDirections
+                    .actionAccountFragmentToLoginFragment();
+
+            Navigation.findNavController(v).navigate(action);
+        });
     }
 
     private void subscribeObservers() {
         viewModel.getUser().observe(getViewLifecycleOwner(), user -> {
-            binding.profileUsername.setText(user.getName());
-            binding.profileEmail.setText(user.getEmail());
-            Glide.with(AccountFragment.this)
-                    .asBitmap()
-                    .placeholder(R.drawable.ic_thumbnail)
-                    .load(user.getProfilePicture())
-                    .into(binding.profileThumbnail);
+            if (user!= null) {
+                binding.profileUsername.setText(user.getName());
+                binding.profileEmail.setText(user.getEmail());
+
+                Glide.with(AccountFragment.this)
+                        .asBitmap()
+                        .placeholder(R.drawable.ic_thumbnail)
+                        .load(user.getProfilePicture())
+                        .into(binding.profileThumbnail);
+
+                binding.notLoggedInLayout.setVisibility(View.GONE);
+                binding.loggedInLayout.setVisibility(View.VISIBLE);
+            }
         });
     }
 
