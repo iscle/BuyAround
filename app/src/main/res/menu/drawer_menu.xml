@@ -22,9 +22,6 @@
         <item
             android:id="@+id/accountFragment"
             android:title="@string/my_account" />
-        <item
-            android:id="@+id/jobsFragment"
-            android:title="@string/jobs" />
     </group>
     <group android:id="@+id/bottom">
         <item

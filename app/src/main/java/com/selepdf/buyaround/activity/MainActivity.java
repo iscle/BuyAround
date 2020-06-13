@@ -59,7 +59,6 @@ public class MainActivity extends DaggerAppCompatActivity {
         tlds.add(R.id.favouritesFragment);
         tlds.add(R.id.categoriesFragment);
         tlds.add(R.id.accountFragment);
-        tlds.add(R.id.jobsFragment);
         AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(tlds)
                 .setDrawerLayout(drawerLayout)
                 .build();
