@@ -3,6 +3,8 @@ package cat.buyaround.app.auth;
 import android.content.Context;
 import android.content.SharedPreferences;
 
+import android.text.TextUtils;
+
 import javax.inject.Inject;
 
 import cat.buyaround.app.model.User;
@@ -14,7 +16,6 @@ public class TokenManager {
 
     private final SharedPreferences sharedPreferences;
     private String token;
-    private User user;
 
     @Inject
     public TokenManager(Context context) {
@@ -34,6 +35,6 @@ public class TokenManager {
     }
 
     public static boolean isTokenValid(String token) {
-        return token != null && !token.isEmpty();
+        return !TextUtils.isEmpty(token);
     }
 }

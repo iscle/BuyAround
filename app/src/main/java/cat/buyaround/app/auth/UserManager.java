@@ -28,7 +28,6 @@ public class UserManager {
     private LocalBroadcastManager localBroadcastManager;
     private MutableLiveData<OrderProduct[]> mProducts;
 
-
     @Inject
     public UserManager(TokenManager tokenManager, BuyAroundRepository buyAroundRepository, Context context) {
         this.tokenManager = tokenManager;
