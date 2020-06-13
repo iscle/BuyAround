@@ -51,6 +51,7 @@ public class BuyAroundRepository {
         service.register(user).enqueue(new Callback<RegisterResponse>() {
             @Override
             public void onResponse(Call<RegisterResponse> call, Response<RegisterResponse> response) {
+                Log.d(TAG, "onResponse: " + response.code());
                 if (response.isSuccessful()) {
                     RegisterResponse registerResponse = response.body();
                     Log.d(TAG, "onResponse: " + registerResponse.getStatus());
