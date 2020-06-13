@@ -50,9 +50,6 @@
             android:id="@+id/action_homeFragment_to_favouritesFragment2"
             app:destination="@id/favouritesFragment" />
         <action
-            android:id="@+id/action_homeFragment_to_jobsFragment2"
-            app:destination="@id/jobsFragment" />
-        <action
             android:id="@+id/action_homeFragment_to_ordersFragment2"
             app:destination="@id/ordersFragment" />
         <action
@@ -112,9 +109,6 @@
         <action
             android:id="@+id/action_accountFragment_to_notificationsFragment"
             app:destination="@id/notificationsFragment" />
-        <action
-            android:id="@+id/action_accountFragment_to_jobsFragment"
-            app:destination="@id/jobsFragment" />
     </fragment>
     <fragment
         android:id="@+id/categoriesFragment"
@@ -126,11 +120,6 @@
         android:name="com.selepdf.buyaround.fragment.FavouritesFragment"
         android:label="@string/favourites"
         tools:layout="@layout/fragment_favourites" />
-    <fragment
-        android:id="@+id/jobsFragment"
-        android:name="com.selepdf.buyaround.fragment.JobsFragment"
-        android:label="@string/jobs"
-        tools:layout="@layout/fragment_jobs" />
     <fragment
         android:id="@+id/ordersFragment"
         android:name="com.selepdf.buyaround.fragment.OrdersFragment"

@@ -59,9 +59,7 @@ public class AccountFragment extends DaggerFragment implements IListAdapter {
         binding.accountRecyclerView.setAdapter(new ContentListAdapter(this, mContents));
 
         binding.profileJobReference.setOnClickListener(v -> {
-            NavDirections action = AccountFragmentDirections
-                    .actionAccountFragmentToJobsFragment();
-            Navigation.findNavController(v).navigate(action);
+            // TODO: DELETE
         });
 
     }
