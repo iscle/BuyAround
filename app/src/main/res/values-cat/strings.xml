@@ -1,7 +1,6 @@
 <resources>
     <string name="app_name">BuyAround</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Això s\'implementarà en futures actualitzacions</string>
 
     <!-- TOASTS -->
@@ -32,7 +31,6 @@
     <!-- ACCOUNT -->
     <string name="username">Usuari</string>
     <string name="email">Email</string>
-    <string name="account_job_reference">Converteix-te en repartidor!</string>
     <string name="account_personal_info">Informació Personal</string>
     <string name="addresses">Adreces</string>
     <string name="payment">Pagament</string>

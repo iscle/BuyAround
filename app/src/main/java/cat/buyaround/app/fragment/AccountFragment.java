@@ -56,11 +56,6 @@ public class AccountFragment extends DaggerFragment implements IListAdapter {
         subscribeObservers();
         binding.accountRecyclerView.setLayoutManager(new LinearLayoutManager(getContext(), RecyclerView.VERTICAL, false));
         binding.accountRecyclerView.setAdapter(new ContentListAdapter(this, mContents));
-
-        binding.profileJobReference.setOnClickListener(v -> {
-            // TODO: DELETE
-        });
-
     }
 
     private void subscribeObservers() {
