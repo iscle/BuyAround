@@ -6,7 +6,7 @@ import dagger.android.AndroidInjector;
 import dagger.android.DaggerApplication;
 
 public class BuyAroundApplication extends DaggerApplication {
-    public static final String BASE_URL = "https://hackovid.selepdf.com/api/";
+    public static final String BASE_URL = "https://api.buyaround.cat";
 
     @Override
     protected AndroidInjector<? extends DaggerApplication> applicationInjector() {
