@@ -19,6 +19,7 @@ import cat.buyaround.app.model.User;
 import cat.buyaround.app.model.UserRadius;
 import cat.buyaround.app.network.model.CategoryResponse;
 import cat.buyaround.app.network.model.LoginResponse;
+import cat.buyaround.app.network.model.NotificationResponse;
 import cat.buyaround.app.network.model.OrderResponse;
 import cat.buyaround.app.network.model.PackResponse;
 import cat.buyaround.app.network.model.ProductResponse;
@@ -317,7 +318,31 @@ public class BuyAroundRepository {
     }
 
     public void getUserNotifications(NotificationCallback callback) {
-        // TODO
+        service.getUserNotifications().enqueue(new Callback<NotificationResponse>() {
+            @Override
+            public void onResponse(Call<NotificationResponse> call, Response<NotificationResponse> response) {
+                if (response.isSuccessful()) {
+                    NotificationResponse notificationResponse = response.body();
+                    Log.d(TAG, "onResponse: " + notificationResponse.getStatus());
+                    switch (notificationResponse.getStatus()) {
+                        case OK:
+                            callback.onNotificationsReceived(notificationResponse.getNotifications());
+                            break;
+                        case INTERNAL_ERROR:
+                            callback.onFailure(FailureCallback.FailureError.INTERNAL_ERROR);
+                            break;
+                    }
+                } else {
+                    callback.onFailure(FailureCallback.FailureError.INTERNAL_ERROR);
+                }
+            }
+
+            @Override
+            public void onFailure(Call<NotificationResponse> call, Throwable t) {
+                callback.onFailure(FailureCallback.FailureError.NETWORK_ERROR);
+                t.printStackTrace();
+            }
+        });
     }
 
     public void getLastUserOrders(OrderCallback callback) {
