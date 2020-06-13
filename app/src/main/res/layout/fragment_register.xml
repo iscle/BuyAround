@@ -23,17 +23,15 @@
 
     <EditText
         android:id="@+id/register_name"
-        android:layout_width="fill_parent"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
         android:background="@drawable/bg_edittext_icon"
-        android:drawableStart="@drawable/ic_account"
-        android:drawablePadding="16dp"
-        android:drawableTint="@color/white"
+        android:drawableStart="@drawable/ic_user_with_bg"
+        android:drawablePadding="8dp"
         android:ems="10"
         android:hint="@string/login_name_hint"
-        android:inputType="textPersonName"
-        android:padding="12dp" />
+        android:inputType="textPersonName" />
 
     <TextView
         style="@style/TitlesTheme"
@@ -45,9 +43,12 @@
 
     <EditText
         android:id="@+id/register_mail"
-        android:layout_width="fill_parent"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
+        android:background="@drawable/bg_edittext_icon"
+        android:drawableStart="@drawable/ic_email_with_bg"
+        android:drawablePadding="8dp"
         android:ems="10"
         android:hint="@string/login_email_hint"
         android:inputType="textEmailAddress" />
@@ -62,9 +63,12 @@
 
     <EditText
         android:id="@+id/register_password"
-        android:layout_width="fill_parent"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
+        android:background="@drawable/bg_edittext_icon"
+        android:drawableStart="@drawable/ic_password_with_bg"
+        android:drawablePadding="8dp"
         android:ems="10"
         android:hint="@string/login_password_hint"
         android:inputType="textPassword" />
