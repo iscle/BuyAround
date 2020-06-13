@@ -29,6 +29,9 @@ public class MainActivity extends DaggerAppCompatActivity {
         // Get the NavController
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
 
+        // Set up toolbar
+        NavigationUI.setupWithNavController(binding.toolbar, navController);
+
         // Set up bottom navigation
         NavigationUI.setupWithNavController(binding.bottomNavigationView, navController);
     }
