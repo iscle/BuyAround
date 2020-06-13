@@ -4,6 +4,8 @@ import androidx.annotation.NonNull;
 import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.ViewModelProvider;
 
+import javax.inject.Inject;
+
 import cat.buyaround.app.auth.UserManager;
 import cat.buyaround.app.network.BuyAroundRepository;
 import cat.buyaround.app.viewmodel.AccountViewModel;
@@ -24,9 +26,6 @@ import cat.buyaround.app.viewmodel.PersonalInfoViewModel;
 import cat.buyaround.app.viewmodel.RegisterViewModel;
 import cat.buyaround.app.viewmodel.SearchViewModel;
 import cat.buyaround.app.viewmodel.UseConditionsViewModel;
-
-import javax.inject.Inject;
-
 import dagger.Module;
 
 @Module

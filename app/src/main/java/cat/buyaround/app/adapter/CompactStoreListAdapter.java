@@ -10,10 +10,10 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+
 import cat.buyaround.app.R;
 import cat.buyaround.app.adapter.callback.IListAdapter;
 import cat.buyaround.app.databinding.ItemCompactStoreBinding;
-
 import cat.buyaround.app.model.Store;
 
 public class CompactStoreListAdapter extends RecyclerView.Adapter<CompactStoreListAdapter.ViewHolder> {

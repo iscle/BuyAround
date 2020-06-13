@@ -2,6 +2,7 @@ package cat.buyaround.app.callback;
 
 public interface RegisterCallback {
     void onSuccess();
+
     void onFailure(RegisterError registerError);
 
     enum RegisterError {

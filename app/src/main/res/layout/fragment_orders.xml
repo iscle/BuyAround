@@ -21,45 +21,45 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:visibility="visible"
             android:paddingStart="8dp"
             android:paddingTop="8dp"
             android:paddingEnd="8dp"
             android:paddingBottom="8dp"
-            android:text="@string/no_orders_yet" />
+            android:text="@string/no_orders_yet"
+            android:visibility="visible" />
 
         <TextView
-            android:visibility="gone"
             android:id="@+id/textView2"
             style="@style/TitlesThemeLarge"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/orders_repeat_order"
-            android:textColor="@color/colorPrimaryDark" />
+            android:textColor="@color/colorPrimaryDark"
+            android:visibility="gone" />
 
         <androidx.recyclerview.widget.RecyclerView
-            android:visibility="gone"
             android:id="@+id/orders_repeated_recyclerView"
             android:layout_width="match_parent"
             android:layout_height="150dp"
-            android:layout_marginTop="16dp" />
+            android:layout_marginTop="16dp"
+            android:visibility="gone" />
 
         <TextView
-            android:visibility="gone"
             android:id="@+id/textView3"
             style="@style/TitlesThemeLarge"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:text="@string/orders_last_orders"
-            android:textColor="@color/colorPrimaryDark" />
+            android:textColor="@color/colorPrimaryDark"
+            android:visibility="gone" />
 
         <androidx.recyclerview.widget.RecyclerView
-            android:visibility="gone"
             android:id="@+id/orders_last_recyclerView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginTop="16dp" />
+            android:layout_marginTop="16dp"
+            android:visibility="gone" />
     </LinearLayout>
 
 </ScrollView>

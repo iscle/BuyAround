@@ -5,11 +5,11 @@ import android.util.DisplayMetrics;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import cat.buyaround.app.network.ResponseStatusDeserializer;
-import cat.buyaround.app.network.model.Response;
 
 import javax.inject.Singleton;
 
+import cat.buyaround.app.network.ResponseStatusDeserializer;
+import cat.buyaround.app.network.model.Response;
 import dagger.Module;
 import dagger.Provides;
 

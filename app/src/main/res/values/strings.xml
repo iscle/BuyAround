@@ -46,7 +46,7 @@
     <string name="payment_card_type">Card Type</string>
     <string name="payment_bank_number">ETMS XXXX XXXX XXXX</string>
     <string name="payment_bank_com">Bank Company</string>
-    
+
     <!-- STORE -->
     <string name="store_location">Location</string>
     <string name="store_location_label">Carrer de Sant Joan de la Salle, 42</string>
@@ -58,7 +58,7 @@
     <string name="store_hint">Enter the store name</string>
     <string name="address_tv">Address</string>
     <string name="address_btn">Add new Address</string>
-    
+
     <!-- STORE CONFIGURATION -->
     <string name="store_config_use_limit">Use limit</string>
     <string name="store_config_assign_name">Assign name</string>
@@ -96,7 +96,7 @@
     <string name="orders_repeat_order">Repeat Order</string>
     <string name="orders_last_orders">Last Orders</string>
     <string name="no_orders_yet">You don\'t have any orders yet.\nMake your first purchase!</string>
-    
+
     <!-- ORDER DETAIL -->
     <string name="order_title">Order title</string>
     <string name="order_cost">Total cost</string>

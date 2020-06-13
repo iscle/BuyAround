@@ -2,8 +2,8 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    style="@style/ParentLayout"
     android:id="@+id/scroll_view"
+    style="@style/ParentLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".fragment.SearchFragment">
@@ -13,49 +13,49 @@
         android:layout_height="wrap_content">
 
         <LinearLayout
-        android:id="@+id/search_search_header"
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:layout_marginTop="20dp"
-        android:padding="5dp"
-        android:background="@drawable/backg_search_header"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+            android:id="@+id/search_search_header"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/backg_search_header"
+            android:padding="5dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
-        <ImageView
-            android:layout_width="0dp"
-            android:layout_weight="2"
-            android:layout_height="match_parent"
-            android:tint="@color/colorPrimaryDark"
-            android:src="@drawable/ic_search"/>
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:src="@drawable/ic_search"
+                android:tint="@color/colorPrimaryDark" />
 
-        <EditText
-            android:id="@+id/search_user_input"
-            android:layout_width="0dp"
-            android:layout_weight="8"
-            android:layout_height="match_parent"
-            android:background="@null"
-            android:backgroundTint="@color/colorPrimaryDark"
-            android:textColor="@color/colorPrimaryDark"
-            android:hint="@string/search_hint"/>
+            <EditText
+                android:id="@+id/search_user_input"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="8"
+                android:background="@null"
+                android:backgroundTint="@color/colorPrimaryDark"
+                android:hint="@string/search_hint"
+                android:textColor="@color/colorPrimaryDark" />
 
-        <ImageView
-            android:layout_width="0dp"
-            android:layout_weight="2"
-            android:layout_height="match_parent"
-            android:tint="@color/colorPrimaryDark"
-            android:src="@drawable/ic_filter"/>
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:src="@drawable/ic_filter"
+                android:tint="@color/colorPrimaryDark" />
 
-    </LinearLayout>
+        </LinearLayout>
 
         <TextView
             android:id="@+id/textView2"
             style="@style/TitlesThemeLarge"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
             android:text="@string/search_top_search"
             android:textColor="@color/colorPrimaryDark"
-            android:layout_marginTop="20dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/search_search_header" />
 

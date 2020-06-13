@@ -2,8 +2,8 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    style="@style/ParentLayout"
     android:id="@+id/scroll_view"
+    style="@style/ParentLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".fragment.AddStoreFragment">
@@ -26,10 +26,10 @@
             android:id="@+id/store_et"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:backgroundTint="@color/colorPrimaryDark"
             android:ems="10"
             android:hint="@string/store_hint"
             android:inputType="textPersonName"
-            android:backgroundTint="@color/colorPrimaryDark"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/store_tv" />
@@ -68,9 +68,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/address_btn"
-            app:layout_constraintTop_toBottomOf="@id/address_tv"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"/>
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/address_tv" />
 
         <TextView
             android:id="@+id/description_tv"
@@ -86,10 +86,10 @@
             android:id="@+id/description_et"
             android:layout_width="0dp"
             android:layout_height="140dp"
+            android:backgroundTint="@color/colorPrimaryDark"
             android:ems="10"
             android:hint="@string/description_hint"
             android:inputType="textPersonName"
-            android:backgroundTint="@color/colorPrimaryDark"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/description_tv" />

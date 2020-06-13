@@ -23,7 +23,7 @@
         android:id="@+id/registerFragment"
         android:name="cat.buyaround.app.fragment.RegisterFragment"
         android:label="@string/register"
-        tools:layout="@layout/fragment_register"/>
+        tools:layout="@layout/fragment_register" />
     <fragment
         android:id="@+id/homeFragment"
         android:name="cat.buyaround.app.fragment.HomeFragment"
@@ -93,7 +93,7 @@
         android:id="@+id/accountFragment"
         android:name="cat.buyaround.app.fragment.AccountFragment"
         android:label="@string/my_account"
-        tools:layout="@layout/fragment_account" >
+        tools:layout="@layout/fragment_account">
         <action
             android:id="@+id/action_accountFragment_to_personalInfoFragment"
             app:destination="@id/personalInfoFragment" />
@@ -189,12 +189,12 @@
         android:id="@+id/payFragment"
         android:name="cat.buyaround.app.fragment.PayFragment"
         android:label="@string/payment"
-        tools:layout="@layout/fragment_pay"/>
+        tools:layout="@layout/fragment_pay" />
     <fragment
         android:id="@+id/productFragment"
         android:name="cat.buyaround.app.fragment.ProductFragment"
         android:label="@string/product_tv"
-        tools:layout="@layout/fragment_product"/>
+        tools:layout="@layout/fragment_product" />
     <fragment
         android:id="@+id/cartFragment"
         android:name="cat.buyaround.app.fragment.CartFragment"

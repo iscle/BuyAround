@@ -1,23 +1,22 @@
 package cat.buyaround.app.auth;
 
-import androidx.lifecycle.LiveData;
-import androidx.lifecycle.MutableLiveData;
-
 import android.content.Context;
 import android.content.Intent;
 
+import androidx.lifecycle.LiveData;
+import androidx.lifecycle.MutableLiveData;
 import androidx.localbroadcastmanager.content.LocalBroadcastManager;
-
-import cat.buyaround.app.callback.UserCallback;
-import cat.buyaround.app.model.OrderProduct;
-import cat.buyaround.app.model.User;
-import cat.buyaround.app.network.BuyAroundRepository;
 
 import java.util.Arrays;
 import java.util.List;
 
 import javax.inject.Inject;
 import javax.inject.Singleton;
+
+import cat.buyaround.app.callback.UserCallback;
+import cat.buyaround.app.model.OrderProduct;
+import cat.buyaround.app.model.User;
+import cat.buyaround.app.network.BuyAroundRepository;
 
 @Singleton
 public class UserManager {
@@ -80,8 +79,8 @@ public class UserManager {
     public void addProduct(OrderProduct product) {
         int size = mProducts.getValue().length;
 
-        OrderProduct[] newList = new OrderProduct[size+1];
-        for (int i = 0; i < size;i++) {
+        OrderProduct[] newList = new OrderProduct[size + 1];
+        for (int i = 0; i < size; i++) {
             newList[i] = mProducts.getValue()[i];
         }
         newList[size] = product;

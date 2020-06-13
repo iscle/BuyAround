@@ -1,6 +1,7 @@
 package cat.buyaround.app.di.module;
 
 import cat.buyaround.app.fragment.AccountFragment;
+import cat.buyaround.app.fragment.AddProductFragment;
 import cat.buyaround.app.fragment.AddStoreFragment;
 import cat.buyaround.app.fragment.AddressFragment;
 import cat.buyaround.app.fragment.AddressesFragment;
@@ -15,12 +16,10 @@ import cat.buyaround.app.fragment.OrdersFragment;
 import cat.buyaround.app.fragment.PayFragment;
 import cat.buyaround.app.fragment.PaymentFragment;
 import cat.buyaround.app.fragment.PersonalInfoFragment;
-import cat.buyaround.app.fragment.AddProductFragment;
 import cat.buyaround.app.fragment.ProductFragment;
 import cat.buyaround.app.fragment.RegisterFragment;
 import cat.buyaround.app.fragment.SearchFragment;
 import cat.buyaround.app.fragment.UseConditionsFragment;
-
 import dagger.Module;
 import dagger.android.ContributesAndroidInjector;
 

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView    xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     style="@style/ParentLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
@@ -21,28 +21,28 @@
             android:id="@+id/order_l1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
+            android:layout_below="@id/order_title"
             android:layout_marginTop="32dp"
-            android:layout_below="@id/order_title">
+            android:orientation="vertical">
 
             <TextView
                 style="@style/ItemTitlesTheme"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/item_content_date"/>
+                android:text="@string/item_content_date" />
 
             <TextView
                 android:id="@+id/order_date"
                 style="@style/ItemSubTitlesTheme"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/item_content_date"/>
+                android:text="@string/item_content_date" />
 
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:layout_marginTop="16dp"
-                android:background="@android:color/darker_gray"/>
+                android:background="@android:color/darker_gray" />
 
         </LinearLayout>
 
@@ -50,28 +50,28 @@
             android:id="@+id/order_l2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
+            android:layout_below="@id/order_l1"
             android:layout_marginTop="16dp"
-            android:layout_below="@id/order_l1">
+            android:orientation="vertical">
 
             <TextView
                 style="@style/ItemTitlesTheme"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/order_cost"/>
+                android:text="@string/order_cost" />
 
             <TextView
                 android:id="@+id/order_cost"
                 style="@style/ItemSubTitlesTheme"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/order_cost"/>
+                android:text="@string/order_cost" />
 
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:layout_marginTop="16dp"
-                android:background="@android:color/darker_gray"/>
+                android:background="@android:color/darker_gray" />
 
         </LinearLayout>
 
@@ -79,28 +79,28 @@
             android:id="@+id/order_l3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
+            android:layout_below="@id/order_l2"
             android:layout_marginTop="16dp"
-            android:layout_below="@id/order_l2">
+            android:orientation="vertical">
 
             <TextView
                 style="@style/ItemTitlesTheme"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/order_delivery_place"/>
+                android:text="@string/order_delivery_place" />
 
             <TextView
                 android:id="@+id/order_delivery_place"
                 style="@style/ItemSubTitlesTheme"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/order_delivery_place"/>
+                android:text="@string/order_delivery_place" />
 
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:layout_marginTop="16dp"
-                android:background="@android:color/darker_gray"/>
+                android:background="@android:color/darker_gray" />
 
         </LinearLayout>
 
@@ -108,28 +108,28 @@
             android:id="@+id/order_l4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
+            android:layout_below="@id/order_l3"
             android:layout_marginTop="16dp"
-            android:layout_below="@id/order_l3">
+            android:orientation="vertical">
 
             <TextView
                 style="@style/ItemTitlesTheme"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/payment"/>
+                android:text="@string/payment" />
 
             <TextView
                 android:id="@+id/order_payment"
                 style="@style/ItemSubTitlesTheme"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/payment"/>
+                android:text="@string/payment" />
 
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:layout_marginTop="16dp"
-                android:background="@android:color/darker_gray"/>
+                android:background="@android:color/darker_gray" />
 
         </LinearLayout>
 
@@ -137,21 +137,21 @@
             android:id="@+id/order_product_list_row"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
+            android:layout_below="@id/order_l4"
             android:layout_marginTop="16dp"
-            android:layout_below="@id/order_l4">
+            android:orientation="vertical">
 
             <TextView
                 style="@style/ItemTitlesTheme"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/order_product_list"/>
+                android:text="@string/order_product_list" />
 
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:layout_marginTop="16dp"
-                android:background="@android:color/darker_gray"/>
+                android:background="@android:color/darker_gray" />
 
         </LinearLayout>
 
@@ -159,11 +159,11 @@
             android:id="@+id/order_rpt_btn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_below="@id/order_product_list_row"
             android:layout_marginTop="16dp"
             android:backgroundTint="@color/colorPrimaryDark"
-            android:textColor="@color/white"
             android:text="@string/orders_repeat_order"
-            android:layout_below="@id/order_product_list_row"/>
+            android:textColor="@color/white" />
 
     </RelativeLayout>
 

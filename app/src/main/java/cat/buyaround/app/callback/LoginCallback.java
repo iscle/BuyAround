@@ -2,6 +2,7 @@ package cat.buyaround.app.callback;
 
 public interface LoginCallback {
     void onSuccess();
+
     void onFailure(LoginError loginError);
 
     enum LoginError {

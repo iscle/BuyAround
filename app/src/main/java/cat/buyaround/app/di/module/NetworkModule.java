@@ -1,12 +1,12 @@
 package cat.buyaround.app.di.module;
 
 import com.google.gson.Gson;
-import cat.buyaround.app.BuyAroundApplication;
-import cat.buyaround.app.network.BuyAroundService;
-import cat.buyaround.app.network.TokenInterceptor;
 
 import javax.inject.Singleton;
 
+import cat.buyaround.app.BuyAroundApplication;
+import cat.buyaround.app.network.BuyAroundService;
+import cat.buyaround.app.network.TokenInterceptor;
 import dagger.Module;
 import dagger.Provides;
 import okhttp3.OkHttpClient;

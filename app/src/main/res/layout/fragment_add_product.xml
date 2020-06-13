@@ -2,8 +2,8 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    style="@style/ParentLayout"
     android:id="@+id/scroll_view"
+    style="@style/ParentLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".fragment.AddProductFragment">
@@ -26,10 +26,10 @@
             android:id="@+id/product_add_name"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:backgroundTint="@color/colorPrimaryDark"
             android:ems="10"
             android:hint="@string/product_hint"
             android:inputType="textPersonName"
-            android:backgroundTint="@color/colorPrimaryDark"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/product_tv" />
@@ -66,23 +66,23 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="vertical"
                 android:layout_gravity="start"
-                android:layout_weight="1">
+                android:layout_weight="1"
+                android:orientation="vertical">
 
                 <TextView
                     android:id="@+id/price_tv"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/price_tv"
-                    android:textColor="@color/colorPrimaryDark"/>
+                    android:textColor="@color/colorPrimaryDark" />
 
                 <EditText
                     android:id="@+id/product_add_price"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:ems="10"
                     android:backgroundTint="@color/colorPrimaryDark"
+                    android:ems="10"
                     android:inputType="numberDecimal" />
 
             </LinearLayout>
@@ -90,24 +90,24 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="vertical"
                 android:layout_gravity="end"
-                android:layout_weight="1">
+                android:layout_weight="1"
+                android:orientation="vertical">
 
                 <TextView
-                    android:layout_gravity="end"
                     android:id="@+id/currency_tv"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/colorPrimaryDark"
-                    android:text="@string/currency_tv" />
+                    android:layout_gravity="end"
+                    android:text="@string/currency_tv"
+                    android:textColor="@color/colorPrimaryDark" />
 
                 <Spinner
                     android:id="@+id/product_add_currency"
-                    android:layout_gravity="end"
                     android:layout_width="92dp"
-                    android:backgroundTint="@color/colorPrimaryDark"
-                    android:layout_height="match_parent"/>
+                    android:layout_height="match_parent"
+                    android:layout_gravity="end"
+                    android:backgroundTint="@color/colorPrimaryDark" />
 
             </LinearLayout>
         </LinearLayout>
@@ -126,10 +126,10 @@
             android:id="@+id/product_add_description"
             android:layout_width="0dp"
             android:layout_height="140dp"
+            android:backgroundTint="@color/colorPrimaryDark"
             android:ems="10"
             android:hint="@string/description_hint"
             android:inputType="textPersonName"
-            android:backgroundTint="@color/colorPrimaryDark"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/description_tv" />

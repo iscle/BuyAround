@@ -11,6 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+
 import cat.buyaround.app.R;
 import cat.buyaround.app.adapter.callback.IListAdapter;
 import cat.buyaround.app.model.Pack;
@@ -30,7 +31,7 @@ public class PackListAdapter extends RecyclerView.Adapter<PackListAdapter.ViewHo
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_product,parent, false);
+        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_product, parent, false);
         return new PackListAdapter.ViewHolder(v);
     }
 

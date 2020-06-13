@@ -9,11 +9,11 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.util.List;
+
 import cat.buyaround.app.R;
 import cat.buyaround.app.adapter.callback.IListAdapter;
 import cat.buyaround.app.model.OrderProduct;
-
-import java.util.List;
 
 public class CartItemsAdapter extends RecyclerView.Adapter<CartItemsAdapter.ViewHolder> {
 
@@ -28,7 +28,7 @@ public class CartItemsAdapter extends RecyclerView.Adapter<CartItemsAdapter.View
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_cart_order,parent, false);
+        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_cart_order, parent, false);
         return new ViewHolder(v);
     }
 
@@ -47,7 +47,7 @@ public class CartItemsAdapter extends RecyclerView.Adapter<CartItemsAdapter.View
 
     @Override
     public int getItemCount() {
-        return mProducts != null ? mProducts.size():0;
+        return mProducts != null ? mProducts.size() : 0;
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {

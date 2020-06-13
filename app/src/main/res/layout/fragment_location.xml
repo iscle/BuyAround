@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
@@ -8,33 +7,33 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:context=".fragment.LocationFragment"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        tools:context=".fragment.LocationFragment">
 
         <TextView
-            style="@style/TitlesThemeLarge"
             android:id="@+id/my_location_tv"
+            style="@style/TitlesThemeLarge"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
             android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
             android:text="@string/my_location" />
 
         <org.osmdroid.views.MapView
             android:id="@+id/map_view"
-            android:layout_marginTop="8dp"
-            android:layout_marginHorizontal="32dp"
             android:layout_width="match_parent"
-            android:layout_height="300dp">
+            android:layout_height="300dp"
+            android:layout_marginHorizontal="32dp"
+            android:layout_marginTop="8dp">
 
         </org.osmdroid.views.MapView>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp">
+            android:layout_marginTop="16dp"
+            android:orientation="horizontal">
 
             <TextView
                 android:id="@+id/radius_tv"
@@ -50,7 +49,7 @@
                 android:layout_marginStart="8dp"
                 android:ems="10"
                 android:hint="@string/radius_selected"
-                android:inputType="number"/>
+                android:inputType="number" />
 
             <TextView
                 android:id="@+id/radius_meters_tv"
@@ -65,9 +64,9 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp">
+            android:layout_marginTop="16dp"
+            android:orientation="horizontal">
 
             <TextView
                 android:id="@+id/nearby_stores_tv"
@@ -89,7 +88,7 @@
             android:id="@+id/nearby_stores_rv"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:visibility="gone"/>
+            android:visibility="gone" />
 
         <TextView
             android:id="@+id/stores_empty_view"

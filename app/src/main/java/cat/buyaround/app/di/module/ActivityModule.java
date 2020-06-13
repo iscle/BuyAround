@@ -1,7 +1,6 @@
 package cat.buyaround.app.di.module;
 
 import cat.buyaround.app.activity.MainActivity;
-
 import dagger.Module;
 import dagger.android.ContributesAndroidInjector;
 

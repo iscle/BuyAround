@@ -8,10 +8,10 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.util.List;
+
 import cat.buyaround.app.R;
 import cat.buyaround.app.adapter.callback.IListAdapter;
-
-import java.util.List;
 
 public class ContentListAdapter extends RecyclerView.Adapter<ContentListAdapter.ViewHolder> {
 
@@ -26,7 +26,7 @@ public class ContentListAdapter extends RecyclerView.Adapter<ContentListAdapter.
     @NonNull
     @Override
     public ContentListAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_content,parent, false);
+        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_content, parent, false);
         return new ContentListAdapter.ViewHolder(v);
     }
 
@@ -38,7 +38,7 @@ public class ContentListAdapter extends RecyclerView.Adapter<ContentListAdapter.
 
     @Override
     public int getItemCount() {
-        return mItems != null ? mItems.size():0;
+        return mItems != null ? mItems.size() : 0;
     }
 
     class ViewHolder extends RecyclerView.ViewHolder {

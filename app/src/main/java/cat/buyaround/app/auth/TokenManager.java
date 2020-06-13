@@ -3,9 +3,9 @@ package cat.buyaround.app.auth;
 import android.content.Context;
 import android.content.SharedPreferences;
 
-import cat.buyaround.app.model.User;
-
 import javax.inject.Inject;
+
+import cat.buyaround.app.model.User;
 
 // Inspired by Glovo jeje
 public class TokenManager {

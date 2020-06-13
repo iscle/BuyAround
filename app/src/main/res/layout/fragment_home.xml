@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    style="@style/ParentLayout"
     android:id="@+id/scroll_view"
+    style="@style/ParentLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".fragment.HomeFragment">
@@ -34,10 +33,10 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="10"
                 android:background="@null"
-                android:inputType="text"
-                android:focusable="false"
                 android:backgroundTint="@color/colorPrimaryDark"
+                android:focusable="false"
                 android:hint="@string/search_hint"
+                android:inputType="text"
                 android:textColor="@color/colorPrimaryDark" />
 
             <ImageView
@@ -74,7 +73,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:text="@string/add_store_tv"/>
+                android:text="@string/add_store_tv" />
 
         </LinearLayout>
 
@@ -93,8 +92,8 @@
             android:layout_height="match_parent"
             android:layout_margin="24dp"
             android:gravity="center"
-            android:visibility="visible"
-            android:text="@string/no_stores_around" />
+            android:text="@string/no_stores_around"
+            android:visibility="visible" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -121,7 +120,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:text="@string/add_pack_tv"/>
+                android:text="@string/add_pack_tv" />
 
         </LinearLayout>
 
@@ -130,7 +129,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:visibility="gone"/>
+            android:visibility="gone" />
 
         <TextView
             android:id="@+id/packs_empty_view"
@@ -138,8 +137,8 @@
             android:layout_height="match_parent"
             android:layout_margin="24dp"
             android:gravity="center"
-            android:visibility="visible"
-            android:text="@string/no_packs_around" />
+            android:text="@string/no_packs_around"
+            android:visibility="visible" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -166,7 +165,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:text="@string/add_product_tv"/>
+                android:text="@string/add_product_tv" />
 
         </LinearLayout>
 
@@ -175,7 +174,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:visibility="gone"/>
+            android:visibility="gone" />
 
         <TextView
             android:id="@+id/products_empty_view"
@@ -183,8 +182,8 @@
             android:layout_height="match_parent"
             android:layout_margin="24dp"
             android:gravity="center"
-            android:visibility="visible"
-            android:text="@string/no_packs_around" />
+            android:text="@string/no_packs_around"
+            android:visibility="visible" />
 
     </LinearLayout>
 

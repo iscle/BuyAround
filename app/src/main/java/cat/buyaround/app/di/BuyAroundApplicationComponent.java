@@ -2,14 +2,13 @@ package cat.buyaround.app.di;
 
 import android.content.Context;
 
+import javax.inject.Singleton;
+
 import cat.buyaround.app.BuyAroundApplication;
 import cat.buyaround.app.di.module.ActivityModule;
 import cat.buyaround.app.di.module.BuyAroundModule;
 import cat.buyaround.app.di.module.FragmentModule;
 import cat.buyaround.app.di.module.NetworkModule;
-
-import javax.inject.Singleton;
-
 import dagger.BindsInstance;
 import dagger.Component;
 import dagger.android.AndroidInjectionModule;

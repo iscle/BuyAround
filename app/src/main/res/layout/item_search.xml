@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
     android:layout_height="32dp"
+    android:background="@drawable/backg_round_corners"
     android:gravity="center"
     android:paddingStart="12dp"
-    android:paddingEnd="12dp"
-    android:background="@drawable/backg_round_corners">
+    android:paddingEnd="12dp">
 
     <TextView
         android:id="@+id/item_search_title"
@@ -14,7 +13,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/item_content_title"
-        android:textSize="14sp"
-        android:textColor="@android:color/white"/>
+        android:textColor="@android:color/white"
+        android:textSize="14sp" />
 
 </LinearLayout>
