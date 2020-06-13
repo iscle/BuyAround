@@ -33,8 +33,6 @@ import dagger.android.support.DaggerAppCompatActivity;
 import static android.view.View.GONE;
 
 public class MainActivity extends DaggerAppCompatActivity {
-    private static final String TAG = "MainActivity";
-
     private ActivityMainBinding binding;
     private DrawerHeaderBinding drawerHeaderBinding;
     @Inject
@@ -51,24 +49,8 @@ public class MainActivity extends DaggerAppCompatActivity {
         // Get the NavController
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
 
-        // Set up the toolbar
-        Set<Integer> tlds = new HashSet<>();
-        tlds.add(R.id.homeFragment);
-        tlds.add(R.id.ordersFragment);
-        tlds.add(R.id.notificationsFragment);
-        tlds.add(R.id.favouritesFragment);
-        tlds.add(R.id.categoriesFragment);
-        tlds.add(R.id.accountFragment);
-        AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(tlds)
-                .setDrawerLayout(drawerLayout)
-                .build();
-        NavigationUI.setupWithNavController(binding.toolbar, navController, appBarConfiguration);
-        // Set up the drawer
-        NavigationUI.setupWithNavController(binding.navView, navController);
         // Set up bottom navigation
         NavigationUI.setupWithNavController(binding.bottomNavigationView, navController);
-
-        setupDrawerHeader();
 
         IntentFilter intentFilter = new IntentFilter();
         intentFilter.addAction("com.selepdf.buyaround.action.USER_UPDATED");
@@ -96,17 +78,6 @@ public class MainActivity extends DaggerAppCompatActivity {
             }
         }
     };
-
-    private void setupDrawerHeader() {
-        View headerView = binding.navView.getHeaderView(0);
-        if (headerView != null) {
-            drawerHeaderBinding = DrawerHeaderBinding.bind(headerView);
-            drawerHeaderBinding.button.setOnClickListener(v -> {
-                NavDirections action = HomeFragmentDirections.actionHomeFragmentToLoginFragment();
-                Navigation.findNavController(MainActivity.this, R.id.nav_host_fragment).navigate(action);
-            });
-        }
-    }
 
     @Override
     public void onBackPressed() {

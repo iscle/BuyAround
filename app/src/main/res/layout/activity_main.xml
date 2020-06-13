@@ -21,16 +21,7 @@
             android:layout_height="wrap_content"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-
-            <androidx.appcompat.widget.Toolbar
-                android:id="@+id/toolbar"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:minHeight="?attr/actionBarSize"
-                android:theme="@style/Toolbar"
-                app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
-        </com.google.android.material.appbar.AppBarLayout>
+            app:layout_constraintTop_toTopOf="parent" />
 
         <!-- Layout to contain contents of main body of screen (drawer will slide over this) -->
         <fragment
@@ -58,15 +49,5 @@
             app:menu="@menu/bottom_nav_menu" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <!-- Container for contents of drawer - use NavigationView to make configuration easier -->
-    <com.google.android.material.navigation.NavigationView
-        android:id="@+id/nav_view"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:layout_gravity="start"
-        android:fitsSystemWindows="true"
-        app:menu="@menu/drawer_menu"
-        app:headerLayout="@layout/drawer_header" />
 
 </androidx.drawerlayout.widget.DrawerLayout>
