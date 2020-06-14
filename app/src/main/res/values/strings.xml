@@ -36,6 +36,10 @@
     <string name="password_helper">At least 8 characters long, including numbers and lowercase and uppercase letters.</string>
     <string name="password_verification_helper">The passwords must match.</string>
     <string name="register_success">Account created successfully.</string>
+    <string name="surname">Surnames</string>
+    <string name="login_surname_hint">Enter your surnames here</string>
+    <string name="birthday">Birthday</string>
+    <string name="login_birthday_hint">dd/mm/yyyy</string>
 
     <!-- ACCOUNT -->
     <string name="username">Username</string>

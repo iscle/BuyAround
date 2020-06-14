@@ -1,9 +1,11 @@
 package cat.buyaround.app.fragment;
 
+import android.app.DatePickerDialog;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.DatePicker;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -45,46 +47,62 @@ public class RegisterFragment extends DaggerFragment implements RegisterCallback
             Navigation.findNavController(v).popBackStack();
         });
 
+        binding.registerBirthday.setOnClickListener(v -> {
+            showDatePickerDialog();
+        });
+
         binding.registerBtn.setOnClickListener(v -> {
-            String name = binding.registerName.getText().toString().trim();
-            String email = binding.registerMail.getText().toString().trim();
-            String password = binding.registerPassword.getText().toString();
-            String passwordVerification = binding.registerPasswordVerification.getText().toString();
+            registerUser();
+        });
+    }
 
-            if (name.isEmpty()) {
-                Toast.makeText(getContext(), R.string.register_empty_name, Toast.LENGTH_LONG).show();
-                binding.registerName.requestFocus();
+    private void showDatePickerDialog() {
+        DatePickerFragment newFragment = DatePickerFragment.newInstance((datePicker, year, month, day) -> {
+            // +1 because January is zero
+            binding.registerBirthday.setText(day + " / " + (month + 1) + " / " + year);
+        });
 
-            } else if (email.isEmpty()) {
-                Toast.makeText(getContext(), R.string.register_empty_email, Toast.LENGTH_LONG).show();
-                binding.registerMail.requestFocus();
+        newFragment.show(requireActivity().getSupportFragmentManager(), "datePicker");
+    }
 
-            } else if (password.isEmpty()) {
-                Toast.makeText(getContext(), R.string.register_empty_password, Toast.LENGTH_LONG).show();
-                binding.registerMail.requestFocus();
+    private void registerUser() {
+        String name = binding.registerName.getText().toString().trim();
+        String email = binding.registerMail.getText().toString().trim();
+        String password = binding.registerPassword.getText().toString();
+        String passwordVerification = binding.registerPasswordVerification.getText().toString();
 
-            } else if (passwordVerification.isEmpty()) {
-                Toast.makeText(getContext(), R.string.register_empty_password_verification, Toast.LENGTH_LONG).show();
-                binding.registerMail.requestFocus();
+        if (name.isEmpty()) {
+            Toast.makeText(getContext(), R.string.register_empty_name, Toast.LENGTH_LONG).show();
+            binding.registerName.requestFocus();
 
-            } else if (password.equals(passwordVerification)) {
-                if (registerViewModel.isValidEmail(email)) {
-                    if (registerViewModel.isValidPassword(password)) {
-                        registerViewModel.register(name, email, password, this);
-                    } else {
-                        Toast.makeText(getContext(), R.string.register_password_not_secure, Toast.LENGTH_LONG).show();
-                        binding.registerPassword.requestFocus();
-                    }
+        } else if (email.isEmpty()) {
+            Toast.makeText(getContext(), R.string.register_empty_email, Toast.LENGTH_LONG).show();
+            binding.registerMail.requestFocus();
+
+        } else if (password.isEmpty()) {
+            Toast.makeText(getContext(), R.string.register_empty_password, Toast.LENGTH_LONG).show();
+            binding.registerMail.requestFocus();
+
+        } else if (passwordVerification.isEmpty()) {
+            Toast.makeText(getContext(), R.string.register_empty_password_verification, Toast.LENGTH_LONG).show();
+            binding.registerMail.requestFocus();
+
+        } else if (password.equals(passwordVerification)) {
+            if (registerViewModel.isValidEmail(email)) {
+                if (registerViewModel.isValidPassword(password)) {
+                    registerViewModel.register(name, email, password, this);
                 } else {
-                    Toast.makeText(getContext(), R.string.register_empty_email, Toast.LENGTH_LONG).show();
-                    binding.registerMail.requestFocus();
+                    Toast.makeText(getContext(), R.string.register_password_not_secure, Toast.LENGTH_LONG).show();
+                    binding.registerPassword.requestFocus();
                 }
             } else {
-                Toast.makeText(getContext(), R.string.register_passwords_dont_match, Toast.LENGTH_LONG).show();
-                binding.registerPassword.requestFocus();
+                Toast.makeText(getContext(), R.string.register_empty_email, Toast.LENGTH_LONG).show();
+                binding.registerMail.requestFocus();
             }
-
-        });
+        } else {
+            Toast.makeText(getContext(), R.string.register_passwords_dont_match, Toast.LENGTH_LONG).show();
+            binding.registerPassword.requestFocus();
+        }
     }
 
     @Override

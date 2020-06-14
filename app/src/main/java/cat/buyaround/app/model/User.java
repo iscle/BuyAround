@@ -5,15 +5,15 @@ import java.io.Serializable;
 public class User implements Serializable {
     private String name;
     private String password;
-    private Direction direction;
+    private Direction[] directions;
     private String profilePicture;
     private long birthday;
     private String email;
 
-    public User(String name, String password, Direction direction, String profilePicture, long birthday, String email) {
+    public User(String name, String password, Direction[] directions, String profilePicture, long birthday, String email) {
         this.name = name;
         this.password = password;
-        this.direction = direction;
+        this.directions = directions;
         this.profilePicture = profilePicture;
         this.birthday = birthday;
         this.email = email;
@@ -27,7 +27,7 @@ public class User implements Serializable {
     public User(String name, String email, String password) {
         this.name = name;
         this.password = password;
-        this.direction = null;
+        this.directions = null;
         this.profilePicture = null;
         this.birthday = -1;
         this.email = email;
@@ -49,12 +49,12 @@ public class User implements Serializable {
         this.password = password;
     }
 
-    public Direction getDirection() {
-        return direction;
+    public Direction[] getDirections() {
+        return directions;
     }
 
-    public void setDirection(Direction direction) {
-        this.direction = direction;
+    public void setDirections(Direction[] directions) {
+        this.directions = directions;
     }
 
     public String getProfilePicture() {
