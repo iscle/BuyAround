@@ -1,11 +1,9 @@
 package cat.buyaround.app.fragment;
 
-import android.app.DatePickerDialog;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.DatePicker;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -68,12 +66,22 @@ public class RegisterFragment extends DaggerFragment implements RegisterCallback
     private void registerUser() {
         String name = binding.registerName.getText().toString().trim();
         String email = binding.registerMail.getText().toString().trim();
+        String surname = binding.registerSurname.getText().toString().trim();
+        String birthday = binding.registerBirthday.getText().toString().trim();
         String password = binding.registerPassword.getText().toString();
         String passwordVerification = binding.registerPasswordVerification.getText().toString();
+
 
         if (name.isEmpty()) {
             Toast.makeText(getContext(), R.string.register_empty_name, Toast.LENGTH_LONG).show();
             binding.registerName.requestFocus();
+
+        } else if (surname.isEmpty()) {
+            Toast.makeText(getContext(), R.string.register_empty_surname, Toast.LENGTH_LONG).show();
+            binding.registerSurname.requestFocus();
+
+        } else if (birthday.isEmpty()) {
+            Toast.makeText(getContext(), R.string.register_empty_birthday, Toast.LENGTH_LONG).show();
 
         } else if (email.isEmpty()) {
             Toast.makeText(getContext(), R.string.register_empty_email, Toast.LENGTH_LONG).show();
@@ -81,7 +89,7 @@ public class RegisterFragment extends DaggerFragment implements RegisterCallback
 
         } else if (password.isEmpty()) {
             Toast.makeText(getContext(), R.string.register_empty_password, Toast.LENGTH_LONG).show();
-            binding.registerMail.requestFocus();
+            binding.registerPassword.requestFocus();
 
         } else if (passwordVerification.isEmpty()) {
             Toast.makeText(getContext(), R.string.register_empty_password_verification, Toast.LENGTH_LONG).show();
@@ -90,7 +98,12 @@ public class RegisterFragment extends DaggerFragment implements RegisterCallback
         } else if (password.equals(passwordVerification)) {
             if (registerViewModel.isValidEmail(email)) {
                 if (registerViewModel.isValidPassword(password)) {
-                    registerViewModel.register(name, email, password, this);
+                    if (registerViewModel.isValidBirthday(birthday)) {
+                        registerViewModel.register(name, email, password, this);
+                    } else {
+                        Toast.makeText(getContext(), R.string.register_birthday_not_valid, Toast.LENGTH_LONG).show();
+                    }
+
                 } else {
                     Toast.makeText(getContext(), R.string.register_password_not_secure, Toast.LENGTH_LONG).show();
                     binding.registerPassword.requestFocus();

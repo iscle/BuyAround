@@ -26,12 +26,15 @@
     <string name="login">Login</string>
     <string name="register">Register</string>
     <string name="home">Home</string>
-    <string name="register_empty_name">Error! You must enter a name.</string>
+    <string name="register_empty_name">Error! You must enter your name.</string>
+    <string name="register_empty_surname">Error! You must enter your surname.</string>
     <string name="register_empty_email">Error! You must enter a valid email.</string>
     <string name="register_empty_password">Error! You must enter a password.</string>
+    <string name="register_empty_birthday">Error! You must enter your birthday.</string>
+    <string name="register_birthday_not_valid">Error! You must be over 18 to create an account.</string>
     <string name="register_empty_password_verification">Error! You must enter the password again.</string>
     <string name="register_passwords_dont_match">Error! The passwords don\'t match.</string>
-    <string name="register_password_not_secure">The password must contain at least 8 characters: 1 lowercase letter, 1 uppercase letter and one number.</string>
+    <string name="register_password_not_secure">Error! The password isn\'t secure enough.</string>
     <string name="login_forgot_password">Forgot your password? Click here to recover it.</string>
     <string name="password_helper">At least 8 characters long, including numbers and lowercase and uppercase letters.</string>
     <string name="password_verification_helper">The passwords must match.</string>
