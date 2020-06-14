@@ -32,8 +32,6 @@ public class OrdersFragment extends DaggerFragment implements IListAdapter {
 
     private RecyclerView lastOrdersrecyclerView;
     private OrderListAdapter lastOrderListAdapter;
-    private RecyclerView repeatedOrdersrecyclerView;
-    private OrderListAdapter repeatedOrderListAdapter;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -49,19 +47,12 @@ public class OrdersFragment extends DaggerFragment implements IListAdapter {
         ordersViewModel = new ViewModelProvider(this, viewModelFactory).get(OrdersViewModel.class);
 
         lastOrderListAdapter = new OrderListAdapter(getContext(), this);
-        repeatedOrderListAdapter = new OrderListAdapter(getContext(), this);
 
         lastOrdersrecyclerView = binding.ordersLastRecyclerView;
         lastOrdersrecyclerView.setAdapter(lastOrderListAdapter);
         lastOrdersrecyclerView.setLayoutManager(new LinearLayoutManager(getContext(), RecyclerView.VERTICAL, false));
         DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(lastOrdersrecyclerView.getContext(), RecyclerView.VERTICAL);
         lastOrdersrecyclerView.addItemDecoration(dividerItemDecoration);
-
-        repeatedOrdersrecyclerView = binding.ordersRepeatedRecyclerView;
-        repeatedOrdersrecyclerView.setAdapter(repeatedOrderListAdapter);
-        repeatedOrdersrecyclerView.setLayoutManager(new LinearLayoutManager(getContext(), RecyclerView.VERTICAL, false));
-        DividerItemDecoration dividerItemDecoration2 = new DividerItemDecoration(repeatedOrdersrecyclerView.getContext(), RecyclerView.VERTICAL);
-        repeatedOrdersrecyclerView.addItemDecoration(dividerItemDecoration2);
 
         subscribeObservers();
     }
@@ -70,16 +61,9 @@ public class OrdersFragment extends DaggerFragment implements IListAdapter {
         ordersViewModel.getLastUserOrders().observe(getViewLifecycleOwner(), orders -> {
             if (orders != null && orders.length > 0) {
                 lastOrdersrecyclerView.setVisibility(View.VISIBLE);
-                repeatedOrdersrecyclerView.setVisibility(View.VISIBLE);
-                binding.textView2.setVisibility(View.VISIBLE);
-                binding.textView3.setVisibility(View.VISIBLE);
                 binding.emptyView.setVisibility(View.GONE);
             }
             lastOrderListAdapter.setOrders(orders);
-        });
-
-        ordersViewModel.getRepeatedUserOrders().observe(getViewLifecycleOwner(), orders -> {
-            repeatedOrderListAdapter.setOrders(orders);
         });
     }
 

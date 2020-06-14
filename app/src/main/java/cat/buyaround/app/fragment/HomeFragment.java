@@ -84,27 +84,12 @@ public class HomeFragment extends DaggerFragment implements IListAdapter, IAddIt
         productsRecyclerView.setLayoutManager(new LinearLayoutManager(getContext(), RecyclerView.HORIZONTAL, false));
         productsRecyclerView.addItemDecoration(decorator);
 
-        /*
-        binding.homeSearchHeader.setOnClickListener(v -> {
+
+        binding.searchEt.setOnClickListener(v -> {
             NavDirections action = HomeFragmentDirections.actionHomeFragmentToSearchFragment();
             Navigation.findNavController(v).navigate(action);
         });
 
-        binding.addStoreTv.setOnClickListener(v -> {
-            NavDirections action = HomeFragmentDirections.actionHomeFragmentToAddStoreFragment();
-            Navigation.findNavController(v).navigate(action);
-        });
-
-        binding.addPackTv.setOnClickListener(v -> {
-            NavDirections action = HomeFragmentDirections.actionHomeFragmentToAddPackFragment();
-            Navigation.findNavController(v).navigate(action);
-        });
-
-        binding.addProductTv.setOnClickListener(v -> {
-            NavDirections action = HomeFragmentDirections.actionHomeFragmentToAddProductFragment();
-            Navigation.findNavController(v).navigate(action);
-        });
-        */
         subscribeObservers();
     }
 
