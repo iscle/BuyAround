@@ -40,7 +40,7 @@ public class SplashActivity extends DaggerAppCompatActivity {
 
             userManager.updateUser();
         } else {
-            //startMainActivity();
+            startMainActivity();
         }
     }
 
