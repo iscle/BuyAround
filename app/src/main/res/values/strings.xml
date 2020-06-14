@@ -68,6 +68,7 @@
     <string name="home_top_products">Top Products</string>
     <string name="no_stores_around">Sorry…\nThere are no stores around you yet!</string>
     <string name="no_packs_around">Sorry…\nThere are no packs around you yet!</string>
+    <string name="no_products_around">Sorry…\nThere are no products around you yet!</string>
     <string name="add_store_tv">Add a store</string>
     <string name="add_pack_tv">Add a pack</string>
     <string name="add_product_tv">Add a product</string>
