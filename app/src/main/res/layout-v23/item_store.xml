@@ -72,7 +72,6 @@
                         android:tint="@color/colorPrimaryDark" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
-
         </RelativeLayout>
 
         <LinearLayout
@@ -100,9 +99,45 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:ellipsize="end"
-                android:singleLine="true"
+                android:lines="2"
                 android:text="@string/item_content_subtitle" />
 
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="1dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/title_layout">
+
+            <ImageView
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:layout_marginEnd="1dp"
+                android:elevation="5dp"
+                android:src="@drawable/ic_location"
+                android:tint="@color/colorPrimaryDark" />
+
+            <TextView
+                android:id="@+id/item_store_distance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="1dp"
+                android:elevation="5dp"
+                android:text="500"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/item_store_metric"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:elevation="5dp"
+                android:text="m"
+                android:textSize="12sp" />
         </LinearLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>

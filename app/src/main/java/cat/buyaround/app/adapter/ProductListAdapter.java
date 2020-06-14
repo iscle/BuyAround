@@ -39,11 +39,15 @@ public class ProductListAdapter extends RecyclerView.Adapter<ProductListAdapter.
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         Product product = mItems[position];
+
         holder.itemView.setOnClickListener(view -> mCallback.onItemSelected(product));
+
         holder.btnAdd.setOnClickListener(view -> mCallback.onAddItemTo(product));
+
         holder.tvTitle.setText(product.getName());
         holder.tvSubtitle.setText(product.getDescription());
         holder.tvRating.setText(String.valueOf(product.getRating()));
+
         if (product.getThumbnail() != null) {
             Glide.with(mContext)
                     .asBitmap()
@@ -52,7 +56,8 @@ public class ProductListAdapter extends RecyclerView.Adapter<ProductListAdapter.
                     .into(holder.imgView);
         } else {
             Glide.with(mContext)
-                    .load("https://pics.drugstore.com/prodimg/553160/900.jpg")
+                    .asBitmap()
+                    .load(R.drawable.ic_thumbnail)
                     .into(holder.imgView);
         }
     }

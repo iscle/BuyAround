@@ -2,9 +2,7 @@ package cat.buyaround.app.adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
-import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -15,7 +13,7 @@ import com.bumptech.glide.Glide;
 
 import cat.buyaround.app.R;
 import cat.buyaround.app.adapter.callback.IListAdapter;
-import cat.buyaround.app.databinding.ItemProductBinding;
+import cat.buyaround.app.databinding.ItemStoreBinding;
 import cat.buyaround.app.model.Store;
 
 public class StoreListAdapter extends RecyclerView.Adapter<StoreListAdapter.ViewHolder> {
@@ -33,21 +31,21 @@ public class StoreListAdapter extends RecyclerView.Adapter<StoreListAdapter.View
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        ItemProductBinding binding =
-                ItemProductBinding.inflate(LayoutInflater.from(parent.getContext()), parent, false);
+        ItemStoreBinding binding =
+                ItemStoreBinding.inflate(LayoutInflater.from(parent.getContext()), parent, false);
         return new ViewHolder(binding);
     }
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         Store store = mItems[position];
-        holder.btnAdd.setVisibility(View.GONE);
+
         holder.itemView.setOnClickListener(view -> mCallback.onItemSelected(store));
+
         holder.tvTitle.setText(store.getName());
         holder.tvSubtitle.setText(store.getDescription());
-        if (store.getDirection() != null)
-            holder.tvSubtitle.setText(store.getDirection().getAddress());
         holder.tvRating.setText(String.valueOf(store.getRating()));
+
         if (store.getThumbnail() != null) {
             Glide.with(mContext)
                     .asBitmap()
@@ -56,7 +54,8 @@ public class StoreListAdapter extends RecyclerView.Adapter<StoreListAdapter.View
                     .into(holder.imgView);
         } else {
             Glide.with(mContext)
-                    .load("https://www.definicionabc.com/wp-content/uploads/tecnologia/App-Store.jpg")
+                    .asBitmap()
+                    .load(R.drawable.ic_thumbnail)
                     .into(holder.imgView);
         }
     }
@@ -75,15 +74,13 @@ public class StoreListAdapter extends RecyclerView.Adapter<StoreListAdapter.View
 
         ImageView imgView;
         TextView tvTitle, tvSubtitle, tvRating;
-        Button btnAdd;
 
-        ViewHolder(ItemProductBinding binding) {
+        ViewHolder(ItemStoreBinding binding) {
             super(binding.getRoot());
-            imgView = binding.itemProductImg;
-            tvTitle = binding.itemProductTitle;
-            tvSubtitle = binding.itemProductSubtitle;
-            tvRating = binding.itemProductRating;
-            btnAdd = binding.itemProductAddBtn;
+            imgView = binding.itemStoreImg;
+            tvTitle = binding.itemStoreTitle;
+            tvSubtitle = binding.itemStoreSubtitle;
+            tvRating = binding.itemStoreRating;
         }
     }
 }

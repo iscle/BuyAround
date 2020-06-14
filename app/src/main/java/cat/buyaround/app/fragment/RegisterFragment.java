@@ -90,6 +90,7 @@ public class RegisterFragment extends DaggerFragment implements RegisterCallback
     @Override
     public void onSuccess() {
         NavHostFragment.findNavController(this).popBackStack();
+        Toast.makeText(getContext(), R.string.register_success, Toast.LENGTH_LONG).show();
     }
 
     @Override
