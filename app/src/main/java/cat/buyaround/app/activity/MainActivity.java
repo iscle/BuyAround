@@ -2,6 +2,7 @@ package cat.buyaround.app.activity;
 
 import android.os.Bundle;
 
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -10,18 +11,11 @@ import androidx.navigation.ui.NavigationUI;
 import java.util.HashSet;
 import java.util.Set;
 
-import javax.inject.Inject;
-
 import cat.buyaround.app.R;
-import cat.buyaround.app.auth.UserManager;
 import cat.buyaround.app.databinding.ActivityMainBinding;
-import dagger.android.support.DaggerAppCompatActivity;
 
-public class MainActivity extends DaggerAppCompatActivity {
+public class MainActivity extends AppCompatActivity {
     private ActivityMainBinding binding;
-
-    @Inject
-    protected UserManager userManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

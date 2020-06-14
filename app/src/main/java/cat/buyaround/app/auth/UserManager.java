@@ -20,6 +20,7 @@ import cat.buyaround.app.network.BuyAroundRepository;
 
 @Singleton
 public class UserManager {
+    public static final String ACTION_USER_UPDATED = "cat.buyaround.app.action.USER_UPDATED";
 
     private TokenManager tokenManager;
     private User user;
@@ -37,27 +38,31 @@ public class UserManager {
         mProducts.postValue(new OrderProduct[0]);
     }
 
+    public boolean hasSession() {
+        return false;
+    }
+
     public User getUser() {
         return user;
     }
 
-    public void setUser() {
+    public void updateUser() {
         buyAroundRepository.getUser(new UserCallback() {
             @Override
             public void onUserReceived(User user) {
-                setUser(user);
+                updateUser(user);
             }
 
             @Override
             public void onFailure(FailureError error) {
-                setUser(null);
+                updateUser(null);
             }
         });
     }
 
-    public void setUser(User user) {
+    public void updateUser(User user) {
         this.user = user;
-        localBroadcastManager.sendBroadcast(new Intent("cat.buyaround.app.action.USER_UPDATED"));
+        localBroadcastManager.sendBroadcast(new Intent(ACTION_USER_UPDATED));
     }
 
     public TokenManager getTokenManager() {
