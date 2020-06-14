@@ -29,9 +29,9 @@ public class SplashActivity extends DaggerAppCompatActivity {
         super.onCreate(savedInstanceState);
 
         receiverRegistered = false;
-        setContentView(R.layout.activity_splash);
 
         if (userManager.hasSession()) {
+            setContentView(R.layout.activity_splash);
 
             IntentFilter filter = new IntentFilter();
             filter.addAction(ACTION_USER_UPDATED);
