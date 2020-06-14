@@ -1,6 +1,8 @@
 package cat.buyaround.app.model;
 
-public class Pack {
+import java.io.Serializable;
+
+public class Pack implements Serializable {
 
     private String name;
     private String description;

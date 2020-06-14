@@ -14,11 +14,11 @@
         android:layout_height="match_parent"
         android:padding="10dp">
 
-        <androidx.cardview.widget.CardView
+        <RelativeLayout
             android:id="@+id/item_product_img_container"
             android:layout_width="match_parent"
             android:layout_height="130dp"
-            app:cardCornerRadius="3dp"
+            android:background="@color/superDuperLightGrey"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
@@ -29,7 +29,19 @@
                 android:layout_height="match_parent"
                 android:adjustViewBounds="true"
                 android:src="@drawable/ic_thumbnail" />
-        </androidx.cardview.widget.CardView>
+
+            <CheckBox
+                android:id="@+id/favourite_checkbox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignEnd="@+id/item_product_img"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="5dp"
+                android:button="@drawable/selector_favourite"
+                android:elevation="5dp" />
+
+        </RelativeLayout>
 
         <LinearLayout
             android:id="@+id/layout2"

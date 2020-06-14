@@ -2,7 +2,9 @@ package cat.buyaround.app.model;
 
 import com.google.gson.annotations.SerializedName;
 
-public class Category {
+import java.io.Serializable;
+
+public class Category implements Serializable {
     @SerializedName("_id")
     private String id;
     private String name;
