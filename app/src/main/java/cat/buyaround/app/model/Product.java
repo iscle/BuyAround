@@ -15,8 +15,9 @@ public class Product implements Serializable {
     private Category category;
     private Store store;
     private int points;
+    private Unit unit;
 
-    public Product(String name, String description, String thumbnail, float price, float rating, String[] images, Category category, Store store, int points) {
+    public Product(String name, String description, String thumbnail, float price, float rating, String[] images, Category category, Store store, int points, Unit unit) {
         this.name = name;
         this.description = description;
         this.thumbnail = thumbnail;
@@ -26,6 +27,7 @@ public class Product implements Serializable {
         this.category = category;
         this.store = store;
         this.points = points;
+        this.unit = unit;
     }
 
     public Product(String name, String description, String price) {
@@ -34,6 +36,14 @@ public class Product implements Serializable {
         if (!TextUtils.isEmpty(price)) {
             this.price = Float.parseFloat(price);
         }
+    }
+
+    public Unit getUnit() {
+        return unit;
+    }
+
+    public void setUnit(Unit unit) {
+        this.unit = unit;
     }
 
     public int getPoints() {

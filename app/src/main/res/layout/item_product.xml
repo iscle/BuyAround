@@ -136,7 +136,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:text="@string/product_unity" />
+                android:text="@string/product_unit" />
         </LinearLayout>
 
         <Button

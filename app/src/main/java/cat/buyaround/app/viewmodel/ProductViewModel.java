@@ -41,4 +41,8 @@ public class ProductViewModel extends ViewModel {
     public float getProductPrice() {
         return product.getPrice();
     }
+
+    public String getProductUnit() {
+        return product.getUnit().getName();
+    }
 }

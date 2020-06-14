@@ -138,7 +138,7 @@
     <string name="description_tv">Description</string>
     <string name="description_hint">Enter a brief description</string>
     <string name="images_tv">Images</string>
-    <string name="product_unity">unit</string>
+    <string name="product_unit">unit</string>
 
     <!-- ADDRESS -->
     <string name="address_label">Address</string>
