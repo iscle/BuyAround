@@ -1,8 +1,8 @@
 package cat.buyaround.app.adapter;
 
 import android.content.Context;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
-import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -10,82 +10,91 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.CircularProgressDrawable;
 
 import com.bumptech.glide.Glide;
 
 import cat.buyaround.app.R;
+import cat.buyaround.app.Utils;
 import cat.buyaround.app.adapter.callback.IAddItemCallback;
+import cat.buyaround.app.databinding.ItemProductBinding;
 import cat.buyaround.app.model.Product;
 
 public class ProductListAdapter extends RecyclerView.Adapter<ProductListAdapter.ViewHolder> {
 
-    private Context mContext;
-    private IAddItemCallback mCallback;
-    private Product[] mItems;
+    private Context context;
+    private IAddItemCallback callback;
+    private Product[] products;
 
     public ProductListAdapter(Context context, IAddItemCallback callback) {
-        mContext = context;
-        mCallback = callback;
-        mItems = null;
+        this.context = context;
+        this.callback = callback;
+        this.products = null;
     }
 
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_product, parent, false);
-        return new ProductListAdapter.ViewHolder(v);
+        ItemProductBinding binding =
+                ItemProductBinding.inflate(LayoutInflater.from(parent.getContext()),
+                        parent, false);
+        return new ViewHolder(binding);
     }
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        Product product = mItems[position];
+        Product product = products[position];
 
-        holder.itemView.setOnClickListener(view -> mCallback.onItemSelected(product));
-
-        holder.btnAdd.setOnClickListener(view -> mCallback.onAddItemTo(product));
+        holder.itemView.setOnClickListener(view -> callback.onItemSelected(product));
+        holder.btnAdd.setOnClickListener(view -> callback.onAddItemTo(product));
 
         holder.tvTitle.setText(product.getName());
         holder.tvSubtitle.setText(product.getDescription());
-        holder.tvRating.setText(String.valueOf(product.getRating()));
 
-        if (product.getThumbnail() != null) {
-            Glide.with(mContext)
+        holder.tvRating.setText(Utils.floatToString(product.getRating()));
+        holder.tvPrice.setText(Utils.floatToString(product.getPrice()));
+
+        if (!TextUtils.isEmpty(product.getThumbnail())) {
+            CircularProgressDrawable circularProgressDrawable = new CircularProgressDrawable(holder.itemView.getContext());
+            circularProgressDrawable.setStrokeWidth(5);
+            circularProgressDrawable.setCenterRadius(30);
+            circularProgressDrawable.start();
+
+            Glide.with(context)
                     .asBitmap()
-                    .placeholder(R.drawable.ic_thumbnail)
+                    .placeholder(circularProgressDrawable)
                     .load(product.getThumbnail())
                     .into(holder.imgView);
         } else {
-            Glide.with(mContext)
-                    .asBitmap()
+            Glide.with(context)
                     .load(R.drawable.ic_thumbnail)
                     .into(holder.imgView);
         }
     }
 
     public void setProducts(Product[] products) {
-        this.mItems = products;
+        this.products = products;
         notifyDataSetChanged();
     }
 
     @Override
     public int getItemCount() {
-        return mItems != null ? mItems.length : 0;
+        return products != null ? products.length : 0;
     }
 
     class ViewHolder extends RecyclerView.ViewHolder {
-
         ImageView imgView;
-        TextView tvTitle, tvSubtitle, tvRating;
+        TextView tvTitle, tvSubtitle, tvRating, tvPrice;
         Button btnAdd;
 
-
-        ViewHolder(@NonNull View itemView) {
-            super(itemView);
-            imgView = itemView.findViewById(R.id.item_product_img);
-            tvTitle = itemView.findViewById(R.id.item_product_title);
-            tvSubtitle = itemView.findViewById(R.id.item_product_subtitle);
-            tvRating = itemView.findViewById(R.id.item_product_rating);
-            btnAdd = itemView.findViewById(R.id.item_product_add_btn);
+        ViewHolder(@NonNull ItemProductBinding binding) {
+            super(binding.getRoot());
+            imgView = binding.itemProductImg;
+            tvTitle = binding.itemProductTitle;
+            tvSubtitle = binding.itemProductSubtitle;
+            tvRating = binding.itemProductRating;
+            tvPrice = binding.priceTv;
+            btnAdd = binding.itemProductAddBtn;
         }
     }
 }

@@ -8,6 +8,7 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.CircularProgressDrawable;
 
 import com.bumptech.glide.Glide;
 
@@ -18,42 +19,48 @@ import cat.buyaround.app.model.Store;
 
 public class StoreListAdapter extends RecyclerView.Adapter<StoreListAdapter.ViewHolder> {
 
-    private Context mContext;
-    private IListAdapter mCallback;
-    private Store[] mItems;
+    private Context context;
+    private IListAdapter callback;
+    private Store[] stores;
 
     public StoreListAdapter(Context context, IListAdapter callback) {
-        mContext = context;
-        mCallback = callback;
-        mItems = null;
+        this.context = context;
+        this.callback = callback;
+        this.stores = null;
     }
 
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         ItemStoreBinding binding =
-                ItemStoreBinding.inflate(LayoutInflater.from(parent.getContext()), parent, false);
+                ItemStoreBinding.inflate(LayoutInflater.from(parent.getContext()),
+                        parent, false);
         return new ViewHolder(binding);
     }
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        Store store = mItems[position];
+        Store store = stores[position];
 
-        holder.itemView.setOnClickListener(view -> mCallback.onItemSelected(store));
+        holder.itemView.setOnClickListener(view -> callback.onItemSelected(store));
 
         holder.tvTitle.setText(store.getName());
         holder.tvSubtitle.setText(store.getDescription());
         holder.tvRating.setText(String.valueOf(store.getRating()));
 
         if (store.getThumbnail() != null) {
-            Glide.with(mContext)
+            CircularProgressDrawable circularProgressDrawable = new CircularProgressDrawable(holder.itemView.getContext());
+            circularProgressDrawable.setStrokeWidth(5);
+            circularProgressDrawable.setCenterRadius(30);
+            circularProgressDrawable.start();
+
+            Glide.with(context)
                     .asBitmap()
-                    .placeholder(R.drawable.ic_thumbnail)
+                    .placeholder(circularProgressDrawable)
                     .load(store.getThumbnail())
                     .into(holder.imgView);
         } else {
-            Glide.with(mContext)
+            Glide.with(context)
                     .asBitmap()
                     .load(R.drawable.ic_thumbnail)
                     .into(holder.imgView);
@@ -61,17 +68,16 @@ public class StoreListAdapter extends RecyclerView.Adapter<StoreListAdapter.View
     }
 
     public void setStores(Store[] stores) {
-        this.mItems = stores;
+        this.stores = stores;
         notifyDataSetChanged();
     }
 
     @Override
     public int getItemCount() {
-        return mItems != null ? mItems.length : 0;
+        return stores != null ? stores.length : 0;
     }
 
     static class ViewHolder extends RecyclerView.ViewHolder {
-
         ImageView imgView;
         TextView tvTitle, tvSubtitle, tvRating;
 
