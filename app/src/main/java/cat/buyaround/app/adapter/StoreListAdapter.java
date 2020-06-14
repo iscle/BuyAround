@@ -50,8 +50,7 @@ public class StoreListAdapter extends RecyclerView.Adapter<StoreListAdapter.View
 
         if (store.getThumbnail() != null) {
             CircularProgressDrawable circularProgressDrawable = new CircularProgressDrawable(holder.itemView.getContext());
-            circularProgressDrawable.setStrokeWidth(5);
-            circularProgressDrawable.setCenterRadius(30);
+            circularProgressDrawable.setStyle(CircularProgressDrawable.DEFAULT);
             circularProgressDrawable.start();
 
             Glide.with(context)

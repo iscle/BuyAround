@@ -56,8 +56,7 @@ public class ProductListAdapter extends RecyclerView.Adapter<ProductListAdapter.
 
         if (!TextUtils.isEmpty(product.getThumbnail())) {
             CircularProgressDrawable circularProgressDrawable = new CircularProgressDrawable(holder.itemView.getContext());
-            circularProgressDrawable.setStrokeWidth(5);
-            circularProgressDrawable.setCenterRadius(30);
+            circularProgressDrawable.setStyle(CircularProgressDrawable.LARGE);
             circularProgressDrawable.start();
 
             Glide.with(context)

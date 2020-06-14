@@ -8,6 +8,7 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.CircularProgressDrawable;
 
 import com.bumptech.glide.Glide;
 
@@ -40,14 +41,21 @@ public class PackListAdapter extends RecyclerView.Adapter<PackListAdapter.ViewHo
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         Pack pack = packs[position];
+
         holder.itemView.setOnClickListener(view -> callback.onItemSelected(pack));
+
         holder.tvTitle.setText(pack.getName());
         holder.tvSubtitle.setText(pack.getDescription());
         holder.tvRating.setText(String.valueOf(pack.getRating()));
+
         if (pack.getThumbnail() != null) {
+            CircularProgressDrawable circularProgressDrawable = new CircularProgressDrawable(holder.itemView.getContext());
+            circularProgressDrawable.setStyle(CircularProgressDrawable.LARGE);
+            circularProgressDrawable.start();
+
             Glide.with(context)
                     .asBitmap()
-                    .placeholder(R.drawable.ic_thumbnail)
+                    .placeholder(circularProgressDrawable)
                     .load(pack.getThumbnail())
                     .into(holder.imgView);
         } else {
