@@ -85,4 +85,5 @@ dependencies {
     implementation 'org.osmdroid:osmdroid-android:6.1.6'
     implementation 'com.google.android.gms:play-services-maps:17.0.0'
 
+    implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.0.0"
 }
