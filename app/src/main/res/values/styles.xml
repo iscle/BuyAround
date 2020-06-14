@@ -12,7 +12,16 @@
         <item name="android:windowBackground">@drawable/splash_screen</item>
     </style>
 
-    <style name="Toolbar" parent="ThemeOverlay.AppCompat.Dark" />
+    <style name="Toolbar">
+        <item name="android:theme">@style/ThemeOverlay.AppCompat.Dark</item>
+    </style>
+
+    <style name="PaddedView">
+        <item name="android:paddingStart">8dp</item>
+        <item name="android:paddingEnd">8dp</item>
+        <item name="android:paddingTop">8dp</item>
+        <item name="android:paddingBottom">8dp</item>
+    </style>
 
     <style name="ParentLayout">
         <item name="android:layout_marginStart">16dp</item>
@@ -42,7 +51,6 @@
         <item name="paddingStart">16dp</item>
         <item name="paddingEnd">16dp</item>
     </style>
-
 
     <style name="TitlesThemeLarge">
         <item name="android:textSize">25sp</item>
