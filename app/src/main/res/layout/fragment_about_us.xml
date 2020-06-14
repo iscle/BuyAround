@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    style="@style/ParentLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
@@ -11,20 +10,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:paddingStart="8dp"
-        android:paddingTop="8dp"
-        android:paddingEnd="8dp"
-        android:paddingBottom="8dp">
-
+        android:padding="8dp">
 
         <ImageView
-            android:id="@+id/imageView3"
             android:layout_width="match_parent"
-            android:layout_height="200dp"
+            android:layout_height="100dp"
             android:src="@drawable/app_logo_transparent" />
 
         <TextView
-            android:id="@+id/app_name"
             style="@style/TitlesThemeLarge"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -32,7 +25,6 @@
             android:text="@string/app_name" />
 
         <TextView
-            android:id="@+id/what_is_buyaround"
             style="@style/TitlesTheme"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -41,33 +33,59 @@
             android:text="@string/what_is_buyaround" />
 
         <TextView
-            android:id="@+id/what_is_buyaround_text"
             style="@style/SubTitlesTheme"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="20dp"
-            android:layout_marginTop="10dp"
+            android:paddingHorizontal="20dp"
+            android:layout_marginTop="8dp"
             android:gravity="center"
             android:text="@string/what_is_buyaround_text" />
 
         <TextView
-            android:id="@+id/who_are_we"
             style="@style/TitlesTheme"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="16dp"
             android:gravity="center"
             android:text="@string/who_are_we" />
 
         <TextView
-            android:id="@+id/who_are_we_text"
             style="@style/SubTitlesTheme"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="20dp"
-            android:layout_marginTop="10dp"
+            android:paddingHorizontal="20dp"
+            android:layout_marginTop="8dp"
             android:gravity="center"
             android:text="@string/who_are_we_text" />
+
+        <TextView
+            style="@style/TitlesTheme"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:gravity="center"
+            android:text="@string/credit_names" />
+
+        <TextView
+            style="@style/SubTitlesTheme"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="20dp"
+            android:layout_marginTop="8dp"
+            android:gravity="center"
+            android:text="@string/credit_names_text"
+            android:autoLink="web"/>
+
+        <TextView
+            style="@style/SubTitlesTheme"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="20dp"
+            android:layout_marginTop="16dp"
+            android:gravity="center"
+            android:text="@string/more_info_text"
+            android:autoLink="web"/>
+
     </LinearLayout>
 
 </ScrollView>
