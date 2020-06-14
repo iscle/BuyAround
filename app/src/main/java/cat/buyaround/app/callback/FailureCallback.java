@@ -1,11 +1,7 @@
 package cat.buyaround.app.callback;
 
-public interface FailureCallback {
-    void onFailure(FailureError error);
+import cat.buyaround.app.network.model.SimpleResponse;
 
-    enum FailureError {
-        REQUEST_ERROR,
-        INTERNAL_ERROR,
-        NETWORK_ERROR
-    }
+public interface FailureCallback {
+    void onFailure(SimpleResponse.Status error);
 }

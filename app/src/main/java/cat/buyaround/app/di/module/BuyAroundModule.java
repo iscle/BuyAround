@@ -9,7 +9,7 @@ import com.google.gson.GsonBuilder;
 import javax.inject.Singleton;
 
 import cat.buyaround.app.network.ResponseStatusDeserializer;
-import cat.buyaround.app.network.model.Response;
+import cat.buyaround.app.network.model.SimpleResponse;
 import dagger.Module;
 import dagger.Provides;
 
@@ -32,7 +32,7 @@ public class BuyAroundModule {
     @Singleton
     public static Gson provideGson(ResponseStatusDeserializer responseStatusDeserializer) {
         return new GsonBuilder()
-                .registerTypeAdapter(Response.Status.class, responseStatusDeserializer)
+                .registerTypeAdapter(SimpleResponse.Status.class, responseStatusDeserializer)
                 .create();
     }
 }

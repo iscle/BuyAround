@@ -18,6 +18,7 @@ import cat.buyaround.app.databinding.FragmentAddStoreBinding;
 import cat.buyaround.app.factory.ViewModelFactory;
 import cat.buyaround.app.model.Category;
 import cat.buyaround.app.model.Store;
+import cat.buyaround.app.network.model.SimpleResponse;
 import cat.buyaround.app.viewmodel.AddStoreViewModel;
 
 import java.util.ArrayList;
@@ -63,7 +64,7 @@ public class AddStoreFragment extends DaggerFragment implements StoreCallback, C
     }
 
     @Override
-    public void onFailure(FailureError error) {
+    public void onFailure(SimpleResponse.Status error) {
         Toast.makeText(getContext(), error.toString(), Toast.LENGTH_SHORT).show();
     }
 

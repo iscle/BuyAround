@@ -9,6 +9,7 @@ import cat.buyaround.app.model.Direction;
 import cat.buyaround.app.model.Store;
 import cat.buyaround.app.model.UserRadius;
 import cat.buyaround.app.network.BuyAroundRepository;
+import cat.buyaround.app.network.model.SimpleResponse;
 
 import javax.inject.Inject;
 
@@ -31,7 +32,7 @@ public class LocationViewModel extends ViewModel {
             }
 
             @Override
-            public void onFailure(FailureError error) {
+            public void onFailure(SimpleResponse.Status error) {
 
             }
         });

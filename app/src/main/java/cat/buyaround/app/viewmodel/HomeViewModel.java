@@ -11,6 +11,7 @@ import cat.buyaround.app.model.Pack;
 import cat.buyaround.app.model.Product;
 import cat.buyaround.app.model.Store;
 import cat.buyaround.app.network.BuyAroundRepository;
+import cat.buyaround.app.network.model.SimpleResponse;
 
 import javax.inject.Inject;
 
@@ -38,7 +39,7 @@ public class HomeViewModel extends ViewModel {
             }
 
             @Override
-            public void onFailure(FailureError error) {
+            public void onFailure(SimpleResponse.Status error) {
 
             }
         });
@@ -53,7 +54,7 @@ public class HomeViewModel extends ViewModel {
             }
 
             @Override
-            public void onFailure(FailureError error) {
+            public void onFailure(SimpleResponse.Status error) {
 
             }
         });
@@ -68,7 +69,7 @@ public class HomeViewModel extends ViewModel {
             }
 
             @Override
-            public void onFailure(FailureError error) {
+            public void onFailure(SimpleResponse.Status error) {
 
             }
         });

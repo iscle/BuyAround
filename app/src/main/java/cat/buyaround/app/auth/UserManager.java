@@ -17,6 +17,7 @@ import cat.buyaround.app.callback.UserCallback;
 import cat.buyaround.app.model.OrderProduct;
 import cat.buyaround.app.model.User;
 import cat.buyaround.app.network.BuyAroundRepository;
+import cat.buyaround.app.network.model.SimpleResponse;
 
 @Singleton
 public class UserManager {
@@ -39,7 +40,7 @@ public class UserManager {
     }
 
     public boolean hasSession() {
-        return false;
+        return tokenManager.hasValidToken();
     }
 
     public User getUser() {
@@ -54,7 +55,7 @@ public class UserManager {
             }
 
             @Override
-            public void onFailure(FailureError error) {
+            public void onFailure(SimpleResponse.Status error) {
                 updateUser(null);
             }
         });

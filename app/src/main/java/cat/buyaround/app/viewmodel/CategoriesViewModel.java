@@ -7,6 +7,7 @@ import androidx.lifecycle.ViewModel;
 import cat.buyaround.app.callback.CategoryCallback;
 import cat.buyaround.app.model.Category;
 import cat.buyaround.app.network.BuyAroundRepository;
+import cat.buyaround.app.network.model.SimpleResponse;
 
 import javax.inject.Inject;
 
@@ -29,7 +30,7 @@ public class CategoriesViewModel extends ViewModel {
             }
 
             @Override
-            public void onFailure(FailureError error) {
+            public void onFailure(SimpleResponse.Status error) {
 
             }
         });

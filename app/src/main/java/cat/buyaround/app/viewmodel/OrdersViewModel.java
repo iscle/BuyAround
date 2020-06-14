@@ -7,6 +7,7 @@ import androidx.lifecycle.ViewModel;
 import cat.buyaround.app.callback.OrderCallback;
 import cat.buyaround.app.model.Order;
 import cat.buyaround.app.network.BuyAroundRepository;
+import cat.buyaround.app.network.model.SimpleResponse;
 
 import javax.inject.Inject;
 
@@ -29,7 +30,7 @@ public class OrdersViewModel extends ViewModel {
             }
 
             @Override
-            public void onFailure(FailureError error) {
+            public void onFailure(SimpleResponse.Status error) {
 
             }
         });
@@ -48,7 +49,7 @@ public class OrdersViewModel extends ViewModel {
             }
 
             @Override
-            public void onFailure(FailureError error) {
+            public void onFailure(SimpleResponse.Status error) {
 
             }
         });

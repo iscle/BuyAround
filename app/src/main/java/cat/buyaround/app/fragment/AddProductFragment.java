@@ -18,6 +18,7 @@ import cat.buyaround.app.databinding.FragmentAddProductBinding;
 import cat.buyaround.app.factory.ViewModelFactory;
 import cat.buyaround.app.model.Category;
 import cat.buyaround.app.model.Product;
+import cat.buyaround.app.network.model.SimpleResponse;
 import cat.buyaround.app.viewmodel.AddProductViewModel;
 
 import java.util.ArrayList;
@@ -75,7 +76,7 @@ public class AddProductFragment extends DaggerFragment implements ProductCallbac
     }
 
     @Override
-    public void onFailure(FailureError error) {
+    public void onFailure(SimpleResponse.Status error) {
         Toast.makeText(getContext(), error.toString(), Toast.LENGTH_SHORT).show();
     }
 

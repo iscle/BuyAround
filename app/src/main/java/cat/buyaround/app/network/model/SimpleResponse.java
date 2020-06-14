@@ -1,6 +1,6 @@
 package cat.buyaround.app.network.model;
 
-public abstract class Response {
+public class SimpleResponse {
 
     private Status status;
 
@@ -16,5 +16,6 @@ public abstract class Response {
         WEAK_PASSWORD,
         EXISTING_EMAIL,
         INVALID_TOKEN,
+        NETWORK_FAILURE,
     }
 }

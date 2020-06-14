@@ -34,6 +34,10 @@ public class TokenManager {
         return token;
     }
 
+    public boolean hasValidToken() {
+        return isTokenValid(token);
+    }
+
     public static boolean isTokenValid(String token) {
         return !TextUtils.isEmpty(token);
     }

@@ -2,6 +2,8 @@ package cat.buyaround.app.network;
 
 import android.util.Log;
 
+import com.google.gson.Gson;
+
 import cat.buyaround.app.auth.TokenManager;
 import cat.buyaround.app.callback.CategoryCallback;
 import cat.buyaround.app.callback.FailureCallback;
@@ -24,6 +26,7 @@ import cat.buyaround.app.network.model.OrderResponse;
 import cat.buyaround.app.network.model.PackResponse;
 import cat.buyaround.app.network.model.ProductResponse;
 import cat.buyaround.app.network.model.RegisterResponse;
+import cat.buyaround.app.network.model.SimpleResponse;
 import cat.buyaround.app.network.model.StoreResponse;
 import cat.buyaround.app.network.model.UserResponse;
 
@@ -132,17 +135,17 @@ public class BuyAroundRepository {
                             callback.onProductsReceived(productResponse.getProducts());
                             break;
                         case INTERNAL_ERROR:
-                            callback.onFailure(FailureCallback.FailureError.INTERNAL_ERROR);
+                            callback.onFailure(SimpleResponse.Status.INTERNAL_ERROR);
                             break;
                     }
                 } else {
-                    callback.onFailure(FailureCallback.FailureError.INTERNAL_ERROR);
+                    callback.onFailure(SimpleResponse.Status.INTERNAL_ERROR);
                 }
             }
 
             @Override
             public void onFailure(Call<ProductResponse> call, Throwable t) {
-                callback.onFailure(FailureCallback.FailureError.NETWORK_ERROR);
+                callback.onFailure(SimpleResponse.Status.NETWORK_FAILURE);
                 t.printStackTrace();
             }
         });
@@ -160,18 +163,17 @@ public class BuyAroundRepository {
                             callback.onCategoriesReceived(categoryResponse.getCategories());
                             break;
                         case INTERNAL_ERROR:
-                            callback.onFailure(FailureCallback.FailureError.INTERNAL_ERROR);
+                            callback.onFailure(SimpleResponse.Status.INTERNAL_ERROR);
                             break;
                     }
                 } else {
-                    callback.onFailure(FailureCallback.FailureError.INTERNAL_ERROR);
+                    callback.onFailure(SimpleResponse.Status.INTERNAL_ERROR);
                 }
             }
 
             @Override
             public void onFailure(Call<CategoryResponse> call, Throwable t) {
-                t.printStackTrace();
-                callback.onFailure(FailureCallback.FailureError.NETWORK_ERROR);
+                callback.onFailure(SimpleResponse.Status.NETWORK_FAILURE);
                 t.printStackTrace();
             }
         });
@@ -189,18 +191,17 @@ public class BuyAroundRepository {
                             callback.onCategoriesReceived(categoryResponse.getCategories());
                             break;
                         case INTERNAL_ERROR:
-                            callback.onFailure(FailureCallback.FailureError.INTERNAL_ERROR);
+                            callback.onFailure(SimpleResponse.Status.INTERNAL_ERROR);
                             break;
                     }
                 } else {
-                    callback.onFailure(FailureCallback.FailureError.INTERNAL_ERROR);
+                    callback.onFailure(SimpleResponse.Status.INTERNAL_ERROR);
                 }
             }
 
             @Override
             public void onFailure(Call<CategoryResponse> call, Throwable t) {
-                t.printStackTrace();
-                callback.onFailure(FailureCallback.FailureError.NETWORK_ERROR);
+                callback.onFailure(SimpleResponse.Status.NETWORK_FAILURE);
                 t.printStackTrace();
             }
         });
@@ -218,17 +219,17 @@ public class BuyAroundRepository {
                             callback.onProductsReceived(productResponse.getProducts());
                             break;
                         case INTERNAL_ERROR:
-                            callback.onFailure(FailureCallback.FailureError.INTERNAL_ERROR);
+                            callback.onFailure(SimpleResponse.Status.INTERNAL_ERROR);
                             break;
                     }
                 } else {
-                    callback.onFailure(FailureCallback.FailureError.INTERNAL_ERROR);
+                    callback.onFailure(SimpleResponse.Status.INTERNAL_ERROR);
                 }
             }
 
             @Override
             public void onFailure(Call<ProductResponse> call, Throwable t) {
-                callback.onFailure(FailureCallback.FailureError.NETWORK_ERROR);
+                callback.onFailure(SimpleResponse.Status.NETWORK_FAILURE);
                 t.printStackTrace();
             }
         });
@@ -246,17 +247,17 @@ public class BuyAroundRepository {
                             callback.onStoresReceived(storeResponse.getStores());
                             break;
                         case INTERNAL_ERROR:
-                            callback.onFailure(FailureCallback.FailureError.INTERNAL_ERROR);
+                            callback.onFailure(SimpleResponse.Status.INTERNAL_ERROR);
                             break;
                     }
                 } else {
-                    callback.onFailure(FailureCallback.FailureError.INTERNAL_ERROR);
+                    callback.onFailure(SimpleResponse.Status.INTERNAL_ERROR);
                 }
             }
 
             @Override
             public void onFailure(Call<StoreResponse> call, Throwable t) {
-                callback.onFailure(FailureCallback.FailureError.NETWORK_ERROR);
+                callback.onFailure(SimpleResponse.Status.NETWORK_FAILURE);
                 t.printStackTrace();
             }
         });
@@ -274,17 +275,17 @@ public class BuyAroundRepository {
                             callback.onStoresReceived(storeResponse.getStores());
                             break;
                         case INTERNAL_ERROR:
-                            callback.onFailure(FailureCallback.FailureError.INTERNAL_ERROR);
+                            callback.onFailure(SimpleResponse.Status.INTERNAL_ERROR);
                             break;
                     }
                 } else {
-                    callback.onFailure(FailureCallback.FailureError.INTERNAL_ERROR);
+                    callback.onFailure(SimpleResponse.Status.INTERNAL_ERROR);
                 }
             }
 
             @Override
             public void onFailure(Call<StoreResponse> call, Throwable t) {
-                callback.onFailure(FailureCallback.FailureError.NETWORK_ERROR);
+                callback.onFailure(SimpleResponse.Status.NETWORK_FAILURE);
                 t.printStackTrace();
             }
         });
@@ -302,17 +303,17 @@ public class BuyAroundRepository {
                             callback.onStoresReceived(storeResponse.getStores());
                             break;
                         case INTERNAL_ERROR:
-                            callback.onFailure(FailureCallback.FailureError.INTERNAL_ERROR);
+                            callback.onFailure(SimpleResponse.Status.INTERNAL_ERROR);
                             break;
                     }
                 } else {
-                    callback.onFailure(FailureCallback.FailureError.INTERNAL_ERROR);
+                    callback.onFailure(SimpleResponse.Status.INTERNAL_ERROR);
                 }
             }
 
             @Override
             public void onFailure(Call<StoreResponse> call, Throwable t) {
-                callback.onFailure(FailureCallback.FailureError.NETWORK_ERROR);
+                callback.onFailure(SimpleResponse.Status.NETWORK_FAILURE);
                 t.printStackTrace();
             }
         });
@@ -330,17 +331,17 @@ public class BuyAroundRepository {
                             callback.onNotificationsReceived(notificationResponse.getNotifications());
                             break;
                         case INTERNAL_ERROR:
-                            callback.onFailure(FailureCallback.FailureError.INTERNAL_ERROR);
+                            callback.onFailure(SimpleResponse.Status.INTERNAL_ERROR);
                             break;
                     }
                 } else {
-                    callback.onFailure(FailureCallback.FailureError.INTERNAL_ERROR);
+                    callback.onFailure(SimpleResponse.Status.INTERNAL_ERROR);
                 }
             }
 
             @Override
             public void onFailure(Call<NotificationResponse> call, Throwable t) {
-                callback.onFailure(FailureCallback.FailureError.NETWORK_ERROR);
+                callback.onFailure(SimpleResponse.Status.NETWORK_FAILURE);
                 t.printStackTrace();
             }
         });
@@ -358,17 +359,17 @@ public class BuyAroundRepository {
                             callback.onOrdersReceived(orderResponse.getOrders());
                             break;
                         case INTERNAL_ERROR:
-                            callback.onFailure(FailureCallback.FailureError.INTERNAL_ERROR);
+                            callback.onFailure(SimpleResponse.Status.INTERNAL_ERROR);
                             break;
                     }
                 } else {
-                    callback.onFailure(FailureCallback.FailureError.INTERNAL_ERROR);
+                    callback.onFailure(SimpleResponse.Status.INTERNAL_ERROR);
                 }
             }
 
             @Override
             public void onFailure(Call<OrderResponse> call, Throwable t) {
-                callback.onFailure(FailureCallback.FailureError.NETWORK_ERROR);
+                callback.onFailure(SimpleResponse.Status.NETWORK_FAILURE);
                 t.printStackTrace();
             }
         });
@@ -386,17 +387,17 @@ public class BuyAroundRepository {
                             callback.onOrdersReceived(orderResponse.getOrders());
                             break;
                         case INTERNAL_ERROR:
-                            callback.onFailure(FailureCallback.FailureError.INTERNAL_ERROR);
+                            callback.onFailure(SimpleResponse.Status.INTERNAL_ERROR);
                             break;
                     }
                 } else {
-                    callback.onFailure(FailureCallback.FailureError.INTERNAL_ERROR);
+                    callback.onFailure(SimpleResponse.Status.INTERNAL_ERROR);
                 }
             }
 
             @Override
             public void onFailure(Call<OrderResponse> call, Throwable t) {
-                callback.onFailure(FailureCallback.FailureError.NETWORK_ERROR);
+                callback.onFailure(SimpleResponse.Status.NETWORK_FAILURE);
                 t.printStackTrace();
             }
         });
@@ -414,17 +415,17 @@ public class BuyAroundRepository {
                             callback.onStoresReceived(storeResponse.getStores());
                             break;
                         case INTERNAL_ERROR:
-                            callback.onFailure(FailureCallback.FailureError.INTERNAL_ERROR);
+                            callback.onFailure(SimpleResponse.Status.INTERNAL_ERROR);
                             break;
                     }
                 } else {
-                    callback.onFailure(FailureCallback.FailureError.INTERNAL_ERROR);
+                    callback.onFailure(SimpleResponse.Status.INTERNAL_ERROR);
                 }
             }
 
             @Override
             public void onFailure(Call<StoreResponse> call, Throwable t) {
-                callback.onFailure(FailureCallback.FailureError.NETWORK_ERROR);
+                callback.onFailure(SimpleResponse.Status.NETWORK_FAILURE);
                 t.printStackTrace();
             }
         });
@@ -442,17 +443,17 @@ public class BuyAroundRepository {
                             callback.onPacksReceived(packResponse.getPacks());
                             break;
                         case INTERNAL_ERROR:
-                            callback.onFailure(FailureCallback.FailureError.INTERNAL_ERROR);
+                            callback.onFailure(SimpleResponse.Status.INTERNAL_ERROR);
                             break;
                     }
                 } else {
-                    callback.onFailure(FailureCallback.FailureError.INTERNAL_ERROR);
+                    callback.onFailure(SimpleResponse.Status.INTERNAL_ERROR);
                 }
             }
 
             @Override
             public void onFailure(Call<PackResponse> call, Throwable t) {
-                callback.onFailure(FailureCallback.FailureError.NETWORK_ERROR);
+                callback.onFailure(SimpleResponse.Status.NETWORK_FAILURE);
                 t.printStackTrace();
             }
         });
@@ -470,17 +471,17 @@ public class BuyAroundRepository {
                             callback.onProductsReceived(productResponse.getProducts());
                             break;
                         case INTERNAL_ERROR:
-                            callback.onFailure(FailureCallback.FailureError.INTERNAL_ERROR);
+                            callback.onFailure(SimpleResponse.Status.INTERNAL_ERROR);
                             break;
                     }
                 } else {
-                    callback.onFailure(FailureCallback.FailureError.INTERNAL_ERROR);
+                    callback.onFailure(SimpleResponse.Status.INTERNAL_ERROR);
                 }
             }
 
             @Override
             public void onFailure(Call<ProductResponse> call, Throwable t) {
-                callback.onFailure(FailureCallback.FailureError.NETWORK_ERROR);
+                callback.onFailure(SimpleResponse.Status.NETWORK_FAILURE);
                 t.printStackTrace();
             }
         });
@@ -498,17 +499,17 @@ public class BuyAroundRepository {
                             callback.onPacksReceived(packResponse.getPacks());
                             break;
                         case INTERNAL_ERROR:
-                            callback.onFailure(FailureCallback.FailureError.INTERNAL_ERROR);
+                            callback.onFailure(SimpleResponse.Status.INTERNAL_ERROR);
                             break;
                     }
                 } else {
-                    callback.onFailure(FailureCallback.FailureError.INTERNAL_ERROR);
+                    callback.onFailure(SimpleResponse.Status.INTERNAL_ERROR);
                 }
             }
 
             @Override
             public void onFailure(Call<PackResponse> call, Throwable t) {
-                callback.onFailure(FailureCallback.FailureError.NETWORK_ERROR);
+                callback.onFailure(SimpleResponse.Status.NETWORK_FAILURE);
                 t.printStackTrace();
             }
         });
@@ -519,24 +520,17 @@ public class BuyAroundRepository {
             @Override
             public void onResponse(Call<UserResponse> call, Response<UserResponse> response) {
                 if (response.isSuccessful()) {
-                    UserResponse userResponse = response.body();
-                    Log.d(TAG, "onResponse: " + userResponse.getStatus());
-                    switch (userResponse.getStatus()) {
-                        case OK:
-                            callback.onUserReceived(userResponse.getUser());
-                            break;
-                        case INTERNAL_ERROR:
-                            callback.onFailure(FailureCallback.FailureError.INTERNAL_ERROR);
-                            break;
-                    }
+                    callback.onUserReceived(response.body().getUser());
                 } else {
-                    callback.onFailure(FailureCallback.FailureError.INTERNAL_ERROR);
+                    Log.d(TAG, "getUser: Something went wrong.");
+                    SimpleResponse errorResponse = new Gson().fromJson(response.errorBody().charStream(), SimpleResponse.class);
+                    callback.onFailure(errorResponse.getStatus());
                 }
             }
 
             @Override
             public void onFailure(Call<UserResponse> call, Throwable t) {
-                callback.onFailure(FailureCallback.FailureError.NETWORK_ERROR);
+                callback.onFailure(SimpleResponse.Status.NETWORK_FAILURE);
                 t.printStackTrace();
             }
         });
