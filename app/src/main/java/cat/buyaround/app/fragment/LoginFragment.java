@@ -76,6 +76,10 @@ public class LoginFragment extends DaggerFragment implements LoginCallback {
                 binding.loginMail.requestFocus();
             }
         });
+
+        binding.forgotPasswordTv.setOnClickListener(v -> {
+            // TODO: GO TO FORGOT PASSWORD FRAGMENT, WHICH REQUESTS MAIL AND MAKES API CALL
+        });
     }
 
     @Override

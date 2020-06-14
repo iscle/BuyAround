@@ -60,6 +60,13 @@
 
     </com.google.android.material.textfield.TextInputLayout>
 
+    <TextView
+        android:id="@+id/forgot_password_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/login_forgot_password" />
+
     <Button
         android:id="@+id/login_btn"
         style="@style/GreenButton"
@@ -69,7 +76,6 @@
         android:text="@string/login_button" />
 
     <TextView
-        android:id="@+id/login_to_register"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -77,5 +83,12 @@
         android:text="@string/login_goto_register_tv"
         android:textAllCaps="true"
         android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/login_to_register"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/login_goto_register_click" />
 
 </LinearLayout>

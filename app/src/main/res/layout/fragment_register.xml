@@ -70,6 +70,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
+        app:counterEnabled="true"
+        app:helperText="@string/password_helper"
         app:hintEnabled="false"
         app:passwordToggleEnabled="true">
 
@@ -98,6 +100,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
+        app:counterEnabled="true"
+        app:helperText="@string/password_verification_helper"
         app:hintEnabled="false"
         app:passwordToggleEnabled="true">
 
@@ -123,7 +127,6 @@
         android:text="@string/register" />
 
     <TextView
-        android:id="@+id/register_to_login"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -131,5 +134,12 @@
         android:text="@string/register_goto_login_tv"
         android:textAllCaps="true"
         android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/register_to_login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/register_goto_login_click" />
 
 </LinearLayout>
