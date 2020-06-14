@@ -1,100 +1,93 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="8dp"
     tools:context=".fragment.HomeFragment">
 
-    <LinearLayout
+    <EditText
+        android:id="@+id/search_et"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="8dp">
+        android:background="@drawable/bg_edittext_icon"
+        android:drawableStart="@drawable/ic_search_with_bg"
+        android:drawablePadding="8dp"
+        android:ems="10"
+        android:focusable="false"
+        android:hint="@string/search_hint"
+        android:inputType="text" />
 
-        <EditText
-            android:id="@+id/search_et"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/bg_edittext_icon"
-            android:drawableStart="@drawable/ic_search_with_bg"
-            android:drawablePadding="8dp"
-            android:ems="10"
-            android:focusable="false"
-            android:hint="@string/search_hint"
-            android:inputType="text" />
+    <TextView
+        android:id="@+id/textView2"
+        style="@style/TitlesThemeLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/home_stores_around" />
 
-        <TextView
-            android:id="@+id/textView2"
-            style="@style/TitlesThemeLarge"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:text="@string/home_stores_around" />
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/home_stores_recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:visibility="gone" />
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/home_stores_recyclerView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:visibility="gone" />
-
-        <TextView
-            android:id="@+id/stores_empty_view"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_margin="24dp"
-            android:gravity="center"
-            android:text="@string/no_stores_around" />
+    <TextView
+        android:id="@+id/stores_empty_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="24dp"
+        android:gravity="center"
+        android:text="@string/no_stores_around" />
 
 
-        <TextView
-            android:id="@+id/textView3"
-            style="@style/TitlesThemeLarge"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:text="@string/home_top_packs" />
+    <TextView
+        android:id="@+id/textView3"
+        style="@style/TitlesThemeLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/home_top_packs" />
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/home_packs_recyclerView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:visibility="gone" />
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/home_packs_recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:visibility="gone" />
 
-        <TextView
-            android:id="@+id/packs_empty_view"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_margin="24dp"
-            android:gravity="center"
-            android:text="@string/no_packs_around" />
+    <TextView
+        android:id="@+id/packs_empty_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="24dp"
+        android:gravity="center"
+        android:text="@string/no_packs_around" />
 
-        <TextView
-            android:id="@+id/textView4"
-            style="@style/TitlesThemeLarge"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:text="@string/home_top_products" />
-
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/home_products_recyclerView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:visibility="gone" />
-
-        <TextView
-            android:id="@+id/products_empty_view"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_margin="24dp"
-            android:gravity="center"
-            android:text="@string/no_products_around" />
-
-    </LinearLayout>
+    <TextView
+        android:id="@+id/textView4"
+        style="@style/TitlesThemeLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/home_top_products" />
 
 
-</ScrollView>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/home_products_recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/products_empty_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="24dp"
+        android:gravity="center"
+        android:text="@string/no_products_around" />
+
+</LinearLayout>
