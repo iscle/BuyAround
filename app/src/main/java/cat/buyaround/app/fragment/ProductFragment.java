@@ -15,7 +15,6 @@ import cat.buyaround.app.databinding.FragmentProductBinding;
 
 import cat.buyaround.app.factory.ViewModelFactory;
 import cat.buyaround.app.viewmodel.ProductViewModel;
-import cat.buyaround.app.viewmodel.RegisterViewModel;
 import dagger.android.support.DaggerFragment;
 
 public class ProductFragment extends DaggerFragment {
@@ -65,6 +64,9 @@ public class ProductFragment extends DaggerFragment {
                 binding.productQuantity.setText(String.valueOf(productQuantity - 1));
             }
         });
+
+        // TODO: UNCOMMENT
+        // binding.productUnit.setText(productViewModel.getProductUnit());
 
         binding.productAddCartBtn.setOnClickListener(v -> {
             // TODO: ADD TO CART API CALL + TOAST + ADD TEXT "X ADDED TO CART"
