@@ -19,8 +19,10 @@
     <string name="login_password_hint">Enter your password</string>
     <string name="login_password_hint_again">Enter your password again</string>
     <string name="login_button">Log in</string>
-    <string name="login_goto_register_tv">Register</string>
-    <string name="register_goto_login_tv">Log in</string>
+    <string name="login_goto_register_tv">You don\'t have an account?</string>
+    <string name="login_goto_register_click">Click here to create an account.</string>
+    <string name="register_goto_login_tv">Already have an account?</string>
+    <string name="register_goto_login_click">Click here to log in.</string>
     <string name="login">Login</string>
     <string name="register">Register</string>
     <string name="home">Home</string>
@@ -30,6 +32,9 @@
     <string name="register_empty_password_verification">Error! You must enter the password again.</string>
     <string name="register_passwords_dont_match">Error! The passwords don\'t match.</string>
     <string name="register_password_not_secure">The password must contain at least 8 characters: 1 lowercase letter, 1 uppercase letter and one number.</string>
+    <string name="login_forgot_password">Forgot your password? Click here to recover it.</string>
+    <string name="password_helper">At least 8 characters long, including numbers and lowercase and uppercase letters.</string>
+    <string name="password_verification_helper">The passwords must match.</string>
 
     <!-- ACCOUNT -->
     <string name="username">Username</string>
