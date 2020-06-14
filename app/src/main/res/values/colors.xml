@@ -9,4 +9,5 @@
     <color name="colorCircleBorder">#0097A7</color>
     <color name="lightGrey">#858585</color>
     <color name="selectedNavbar">#1BA696</color>
+    <color name="superLightGrey">#BBBBBB</color>
 </resources>

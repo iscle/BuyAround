@@ -2,7 +2,9 @@ package cat.buyaround.app.model;
 
 import android.text.TextUtils;
 
-public class Product {
+import java.io.Serializable;
+
+public class Product implements Serializable {
 
     private String name;
     private String description;

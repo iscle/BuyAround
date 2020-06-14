@@ -14,16 +14,22 @@
         android:layout_height="match_parent"
         android:padding="10dp">
 
-        <ImageView
-            android:id="@+id/item_product_img"
+        <androidx.cardview.widget.CardView
+            android:id="@+id/item_product_img_container"
             android:layout_width="match_parent"
             android:layout_height="130dp"
-            android:adjustViewBounds="true"
-            android:src="@drawable/ic_thumbnail"
+            app:cardCornerRadius="3dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent">
 
+            <ImageView
+                android:id="@+id/item_product_img"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:adjustViewBounds="true"
+                android:src="@drawable/ic_thumbnail" />
+        </androidx.cardview.widget.CardView>
 
         <LinearLayout
             android:id="@+id/layout2"
@@ -32,7 +38,7 @@
             android:layout_marginTop="8dp"
             android:orientation="vertical"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/item_product_img">
+            app:layout_constraintTop_toBottomOf="@id/item_product_img_container">
 
             <TextView
                 android:id="@+id/item_product_title"
@@ -62,8 +68,8 @@
             android:layout_marginTop="8dp"
             android:gravity="center_vertical"
             android:orientation="horizontal"
-            app:layout_constraintEnd_toEndOf="@+id/item_product_img"
-            app:layout_constraintTop_toBottomOf="@+id/item_product_img">
+            app:layout_constraintEnd_toEndOf="@+id/item_product_img_container"
+            app:layout_constraintTop_toBottomOf="@+id/item_product_img_container">
 
             <TextView
                 android:id="@+id/item_product_rating"
@@ -75,7 +81,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="1dp"
-                android:src="@drawable/ic_stars_v2"
+                android:src="@drawable/ic_star_filled"
                 android:tint="@color/colorPrimaryDark" />
 
         </LinearLayout>

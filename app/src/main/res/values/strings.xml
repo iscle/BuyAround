@@ -20,7 +20,7 @@
     <string name="login_password_hint_again">Enter your password again</string>
     <string name="login_button">Log in</string>
     <string name="login_goto_register_tv">You don\'t have an account?</string>
-    <string name="login_goto_register_click">Click here to create an account.</string>
+    <string name="login_goto_register_click">Click here to create one.</string>
     <string name="register_goto_login_tv">Already have an account?</string>
     <string name="register_goto_login_click">Click here to log in.</string>
     <string name="login">Login</string>

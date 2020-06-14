@@ -66,6 +66,12 @@ public class HomeFragment extends DaggerFragment implements IListAdapter, IAddIt
         homeViewModel = new ViewModelProvider(this, viewModelFactory).get(HomeViewModel.class);
         cartViewModel = new ViewModelProvider(this, viewModelFactory).get(CartViewModel.class);
 
+        initViews();
+
+        subscribeObservers();
+    }
+
+    private void initViews() {
         storesRecyclerView = binding.homeStoresRecyclerView;
         storeListAdapter = new StoreListAdapter(getContext(), this);
         storesRecyclerView.setAdapter(storeListAdapter);
@@ -84,13 +90,10 @@ public class HomeFragment extends DaggerFragment implements IListAdapter, IAddIt
         productsRecyclerView.setLayoutManager(new LinearLayoutManager(getContext(), RecyclerView.HORIZONTAL, false));
         productsRecyclerView.addItemDecoration(decorator);
 
-
         binding.searchEt.setOnClickListener(v -> {
             NavDirections action = HomeFragmentDirections.actionHomeFragmentToSearchFragment();
             Navigation.findNavController(v).navigate(action);
         });
-
-        subscribeObservers();
     }
 
     private void subscribeObservers() {
@@ -132,7 +135,10 @@ public class HomeFragment extends DaggerFragment implements IListAdapter, IAddIt
             if (item instanceof Pack) {
 
             } else {
-                NavDirections action = HomeFragmentDirections.actionHomeFragmentToProductFragment();
+                HomeFragmentDirections.ActionHomeFragmentToProductFragment action =
+                        HomeFragmentDirections.actionHomeFragmentToProductFragment();
+                action.setProduct((Product) item);
+
                 Navigation.findNavController(binding.getRoot()).navigate(action);
             }
         }
@@ -140,7 +146,6 @@ public class HomeFragment extends DaggerFragment implements IListAdapter, IAddIt
 
     @Override
     public void onAddItemTo(Object item) {
-        Product product = (Product) item;
         String img = "";
         if (((Product) item).getImages() != null) {
             if (((Product) item).getImages().length > 0) {

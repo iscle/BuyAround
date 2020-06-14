@@ -82,8 +82,6 @@ public class CartFragment extends DaggerFragment implements IListAdapter {
 
     @Override
     public void onItemSelected(Object item) {
-        NavDirections action = CartFragmentDirections
-                .actionCartFragmentToProductFragment();
-        Navigation.findNavController(binding.getRoot()).navigate(action);
+        //Navigation.findNavController(binding.getRoot()).navigate(action);
     }
 }

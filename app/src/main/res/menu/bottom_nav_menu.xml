@@ -10,7 +10,7 @@
         android:title="@string/categories" />
     <item
         android:id="@+id/favouritesFragment"
-        android:icon="@drawable/ic_favourites"
+        android:icon="@drawable/ic_favourite_filled"
         android:title="@string/favourites" />
 
     <item
