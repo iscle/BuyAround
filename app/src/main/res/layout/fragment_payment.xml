@@ -5,10 +5,12 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:padding="8dp"
     tools:context=".fragment.PaymentFragment">
 
     <TextView
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="8dp"
         style="@style/TitlesThemeLarge"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -21,6 +23,8 @@
         android:layout_marginTop="8dp" />
 
     <Button
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
         android:id="@+id/payment_add_card"
         style="@style/GreenButton"
         android:layout_width="match_parent"
@@ -30,6 +34,8 @@
         app:layout_constraintTop_toBottomOf="@+id/payment_cards_recyclerView" />
 
     <TextView
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
         style="@style/TitlesThemeLarge"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -43,6 +49,8 @@
         android:layout_marginTop="8dp" />
 
     <Button
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
         android:id="@+id/payment_add_bank"
         style="@style/GreenButton"
         android:layout_width="match_parent"

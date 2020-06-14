@@ -6,7 +6,6 @@
     android:layout_height="wrap_content"
     android:gravity="center"
     android:orientation="vertical"
-    android:padding="8dp"
     tools:context=".fragment.AccountFragment">
 
     <LinearLayout
