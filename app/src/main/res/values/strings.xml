@@ -145,8 +145,10 @@
     <string name="what_is_buyaround">What is BuyAround?</string>
     <string name="what_is_buyaround_text">BuyAround is an app for making purchases at nearby stores easily and quickly.\n\nThis app was created in the wake of the Covid-19 crisis, which threatened local commerce. In order to reactivate it, we sought the most convenient way to give visibility to the shops around us.</string>
     <string name="who_are_we">Who are we?</string>
-    <string name="who_are_we_text">The BuyAround team is formed by 3 engineering students of La Salle - URL.\n\nIn view of the economic crisis caused by the global pandemic of 2020, and in an attempt to contribute our bit in restoring normality, we decided that we wanted to help the local shops, as they would be directly affected by this crisis.</string>
-    <string name="more_info_text">For more information you can visit out web page at: <a href="https://buyaround.cat">https://buyaround.cat</a></string>
+    <string name="who_are_we_text">The BuyAround team is formed by 3 engineering students of La Salle - URL:\n\nIn view of the economic crisis caused by the global pandemic of 2020, and in an attempt to contribute our bit in restoring normality, we decided that we wanted to help the local shops, as they would be directly affected by this crisis.</string>
+    <string name="more_info_text">For more information you can visit out web page at: <a href="https://buyaround.cat">https://buyaround.cat</a>\n\nThis is an open-source project, so if you want to check the code you can access it through this GitHub repository: <a href="https://github.com/Iscle/BuyAround">https://github.com/Iscle/BuyAround</a></string>
+    <string name="credit_names">Credit</string>
+    <string name="credit_names_text">Iscle Gil.\nFerran Montoliu.\nJoan Carrión.</string>
 
     <!-- LOCATION -->
     <string name="nearby_stores_tv">Number of nearby stores:</string>

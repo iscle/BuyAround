@@ -59,14 +59,33 @@
             android:text="@string/who_are_we_text" />
 
         <TextView
+            style="@style/TitlesTheme"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:gravity="center"
+            android:text="@string/credit_names" />
+
+        <TextView
             style="@style/SubTitlesTheme"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingHorizontal="20dp"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="8dp"
+            android:gravity="center"
+            android:text="@string/credit_names_text"
+            android:autoLink="web"/>
+
+        <TextView
+            style="@style/SubTitlesTheme"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="20dp"
+            android:layout_marginTop="16dp"
             android:gravity="center"
             android:text="@string/more_info_text"
             android:autoLink="web"/>
+
     </LinearLayout>
 
 </ScrollView>

@@ -33,7 +33,7 @@ public class AccountFragment extends DaggerFragment implements IListAdapter {
 
     private FragmentAccountBinding binding;
     private final List<String> mContents = new ArrayList<>(
-            Arrays.asList("Personal Info", "Addresses", "Payment", "Use conditions"));
+            Arrays.asList("Personal Info", "Addresses", "Payment", "Use conditions", "About Us"));
 
     @Inject
     protected ViewModelFactory viewModelFactory;
@@ -119,9 +119,13 @@ public class AccountFragment extends DaggerFragment implements IListAdapter {
                 action = AccountFragmentDirections
                         .actionAccountFragmentToUseConditionsFragment();
                 break;
+            case "About Us":
+                action = AccountFragmentDirections
+                        .actionAccountFragmentToAboutUsFragment();
+                break;
         }
 
-        assert action != null;
+        if (action == null) return;
         Navigation.findNavController(this.requireView()).navigate(action);
     }
 }
