@@ -81,14 +81,4 @@
         android:paddingHorizontal="20dp"
         android:text="@string/more_info_text" />
 
-    <TextView
-        style="@style/SubTitlesTheme"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:autoLink="web"
-        android:gravity="center"
-        android:paddingHorizontal="20dp"
-        android:text="@string/more_info_text" />
-
 </LinearLayout>
