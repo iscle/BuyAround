@@ -1,107 +1,101 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     style="@style/ParentLayout"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:orientation="vertical"
     tools:context=".fragment.AccountFragment">
 
     <LinearLayout
+        android:id="@+id/logged_in_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
         android:gravity="center"
-        android:orientation="vertical">
+        android:orientation="horizontal"
+        android:visibility="gone">
 
-        <LinearLayout
-            android:id="@+id/logged_in_layout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:gravity="center"
-            android:orientation="horizontal"
-            android:visibility="gone">
+        <androidx.cardview.widget.CardView
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            app:cardCornerRadius="5dp">
 
-            <androidx.cardview.widget.CardView
-                android:layout_width="70dp"
-                android:layout_height="70dp"
-                app:cardCornerRadius="5dp">
-
-                <ImageView
-                    android:id="@+id/profile_thumbnail"
-                    android:layout_width="match_parent"
-                    android:layout_height="70dp"
-                    android:scaleType="centerCrop" />
-            </androidx.cardview.widget.CardView>
-
-            <LinearLayout
+            <ImageView
+                android:id="@+id/profile_thumbnail"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:orientation="vertical">
-
-                <TextView
-                    android:id="@+id/profile_username"
-                    style="@style/UsernameTheme"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:ellipsize="end"
-                    android:maxLines="1"
-                    android:text="@string/username" />
-
-                <TextView
-                    android:id="@+id/profile_email"
-                    style="@style/UsermailTheme"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:ellipsize="end"
-                    android:maxLines="1"
-                    android:text="@string/email" />
-            </LinearLayout>
-        </LinearLayout>
+                android:layout_height="70dp"
+                android:scaleType="centerCrop" />
+        </androidx.cardview.widget.CardView>
 
         <LinearLayout
-            android:id="@+id/not_logged_in_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:gravity="center"
+            android:layout_marginStart="8dp"
             android:orientation="vertical">
 
             <TextView
-                style="@style/TitlesTheme"
+                android:id="@+id/profile_username"
+                style="@style/UsernameTheme"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="@string/log_in_acc" />
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="@string/username" />
 
             <TextView
-                style="@style/SubTitlesTheme"
+                android:id="@+id/profile_email"
+                style="@style/UsermailTheme"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:gravity="center"
-                android:text="@string/log_in_text_acc" />
-
-            <Button
-                android:id="@+id/login_btn"
-                style="@style/GreenButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:text="@string/log_in_acc" />
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="@string/email" />
         </LinearLayout>
-
-        <View
-            style="@style/Divider"
-            android:layout_marginTop="10dp" />
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/account_recyclerView"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="10dp" />
-
     </LinearLayout>
 
-</ScrollView>
+    <LinearLayout
+        android:id="@+id/not_logged_in_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            style="@style/TitlesTheme"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/log_in_acc" />
+
+        <TextView
+            style="@style/SubTitlesTheme"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:text="@string/log_in_text_acc" />
+
+        <Button
+            android:id="@+id/login_btn"
+            style="@style/GreenButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@string/log_in_acc" />
+    </LinearLayout>
+
+    <View
+        style="@style/Divider"
+        android:layout_marginTop="10dp" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/account_recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="10dp" />
+
+</LinearLayout>

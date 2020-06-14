@@ -1,58 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="8dp"
     tools:context=".fragment.PaymentFragment">
 
-    <LinearLayout
+    <TextView
+        style="@style/TitlesThemeLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/payment_cards" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/payment_cards_recyclerView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="8dp">
+        android:layout_marginTop="8dp" />
 
-        <TextView
-            style="@style/TitlesThemeLarge"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/payment_cards"/>
+    <Button
+        android:id="@+id/payment_add_card"
+        style="@style/GreenButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/payment_add_card"
+        app:layout_constraintTop_toBottomOf="@+id/payment_cards_recyclerView" />
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/payment_cards_recyclerView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"/>
+    <TextView
+        style="@style/TitlesThemeLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/payment_bank_accounts" />
 
-        <Button
-            android:id="@+id/payment_add_card"
-            style="@style/GreenButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:text="@string/payment_add_card"
-            app:layout_constraintTop_toBottomOf="@+id/payment_cards_recyclerView" />
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/payment_bank_recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp" />
 
-        <TextView
-            style="@style/TitlesThemeLarge"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="@string/payment_bank_accounts" />
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/payment_bank_recyclerView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp" />
-
-        <Button
-            android:id="@+id/payment_add_bank"
-            style="@style/GreenButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:text="@string/payment_add_bank_account" />
-    </LinearLayout>
-
-</ScrollView>
+    <Button
+        android:id="@+id/payment_add_bank"
+        style="@style/GreenButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/payment_add_bank_account" />
+</LinearLayout>

@@ -1,106 +1,100 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    tools:context=".fragment.LocationFragment">
+
+    <TextView
+        android:id="@+id/my_location_tv"
+        style="@style/TitlesThemeLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/my_location" />
+
+    <org.osmdroid.views.MapView
+        android:id="@+id/map_view"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_marginHorizontal="32dp"
+        android:layout_marginTop="8dp">
+
+    </org.osmdroid.views.MapView>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        tools:context=".fragment.LocationFragment">
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:orientation="horizontal">
 
         <TextView
-            android:id="@+id/my_location_tv"
-            style="@style/TitlesThemeLarge"
+            android:id="@+id/radius_tv"
+            style="@style/TitlesTheme"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="8dp"
-            android:text="@string/my_location" />
+            android:text="@string/radius_number" />
 
-        <org.osmdroid.views.MapView
-            android:id="@+id/map_view"
-            android:layout_width="match_parent"
-            android:layout_height="300dp"
-            android:layout_marginHorizontal="32dp"
-            android:layout_marginTop="8dp">
-
-        </org.osmdroid.views.MapView>
-
-        <LinearLayout
-            android:layout_width="match_parent"
+        <EditText
+            android:id="@+id/radius_meters_num_et"
+            android:layout_width="60dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:orientation="horizontal">
-
-            <TextView
-                android:id="@+id/radius_tv"
-                style="@style/TitlesTheme"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/radius_number" />
-
-            <EditText
-                android:id="@+id/radius_meters_num_et"
-                android:layout_width="60dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:ems="10"
-                android:hint="@string/radius_selected"
-                android:inputType="number" />
-
-            <TextView
-                android:id="@+id/radius_meters_tv"
-                style="@style/SubTitlesTheme"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:text="@string/radius_meters" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:orientation="horizontal">
-
-            <TextView
-                android:id="@+id/nearby_stores_tv"
-                style="@style/TitlesTheme"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/nearby_stores_tv" />
-
-            <TextView
-                android:id="@+id/nearby_stores_num_tv"
-                style="@style/SubTitlesTheme"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:text="@string/nearby_stores_num_tv" />
-        </LinearLayout>
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/nearby_stores_rv"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:visibility="gone" />
+            android:layout_marginStart="8dp"
+            android:ems="10"
+            android:hint="@string/radius_selected"
+            android:inputType="number" />
 
         <TextView
-            android:id="@+id/stores_empty_view"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_margin="24dp"
-            android:gravity="center"
-            android:text="@string/no_stores_around" />
+            android:id="@+id/radius_meters_tv"
+            style="@style/SubTitlesTheme"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="@string/radius_meters" />
 
     </LinearLayout>
 
-</ScrollView>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/nearby_stores_tv"
+            style="@style/TitlesTheme"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/nearby_stores_tv" />
+
+        <TextView
+            android:id="@+id/nearby_stores_num_tv"
+            style="@style/SubTitlesTheme"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="@string/nearby_stores_num_tv" />
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/nearby_stores_rv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/stores_empty_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="24dp"
+        android:gravity="center"
+        android:text="@string/no_stores_around" />
+
+</LinearLayout>
 
 
 
