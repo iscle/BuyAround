@@ -35,6 +35,8 @@ public class UserManager {
         this.tokenManager = tokenManager;
         this.buyAroundRepository = buyAroundRepository;
         this.localBroadcastManager = LocalBroadcastManager.getInstance(context);
+
+        // TODO: Remove this
         mProducts = new MutableLiveData<>();
         mProducts.postValue(new OrderProduct[0]);
     }
@@ -51,17 +53,17 @@ public class UserManager {
         buyAroundRepository.getUser(new UserCallback() {
             @Override
             public void onUserReceived(User user) {
-                updateUser(user);
+                setUser(user);
             }
 
             @Override
             public void onFailure(SimpleResponse.Status error) {
-                updateUser(null);
+                setUser(null);
             }
         });
     }
 
-    public void updateUser(User user) {
+    public void setUser(User user) {
         this.user = user;
         localBroadcastManager.sendBroadcast(new Intent(ACTION_USER_UPDATED));
     }
