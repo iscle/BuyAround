@@ -4,6 +4,6 @@
     <item
         android:width="250dp"
         android:height="250dp"
-        android:drawable="@drawable/app_logo_transparent"
+        android:drawable="@drawable/app_logo_transparent_white"
         android:gravity="center" />
 </layer-list>
