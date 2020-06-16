@@ -42,9 +42,7 @@
         android:id="@+id/stores_empty_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_margin="24dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
+        android:padding="24dp"
         android:gravity="center"
         android:text="@string/no_stores_around" />
 
@@ -70,9 +68,7 @@
         android:id="@+id/packs_empty_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_margin="24dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
+        android:padding="24dp"
         android:gravity="center"
         android:text="@string/no_packs_around" />
 
@@ -98,9 +94,7 @@
         android:id="@+id/products_empty_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_margin="24dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
+        android:padding="24dp"
         android:gravity="center"
         android:text="@string/no_products_around" />
 

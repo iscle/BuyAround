@@ -121,12 +121,6 @@
         tools:layout="@layout/fragment_legal" />
 
     <fragment
-        android:id="@+id/supportFragment"
-        android:name="cat.buyaround.app.fragment.SupportFragment"
-        android:label="@string/customer_support"
-        tools:layout="@layout/fragment_support" />
-
-    <fragment
         android:id="@+id/locationFragment"
         android:name="cat.buyaround.app.fragment.LocationFragment"
         android:label="@string/location"

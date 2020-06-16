@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -8,53 +7,105 @@
     tools:context=".fragment.PaymentFragment">
 
     <TextView
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginTop="8dp"
         style="@style/TitlesThemeLarge"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginHorizontal="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/default_payment_method" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/payment_default_rv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/default_payment_empty_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:paddingHorizontal="24dp"
+        android:paddingTop="16dp"
+        android:text="@string/no_default_payment_method" />
+
+    <Button
+        android:id="@+id/payment_default_change_btn"
+        style="@style/GreenButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="@string/change_default_method" />
+
+    <TextView
+        style="@style/TitlesThemeLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="8dp"
+        android:layout_marginTop="16dp"
         android:text="@string/payment_cards" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/payment_cards_recyclerView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp" />
-
-    <Button
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:id="@+id/payment_add_card"
-        style="@style/GreenButton"
+        android:id="@+id/payment_cards_rv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:text="@string/payment_add_card"
-        app:layout_constraintTop_toBottomOf="@+id/payment_cards_recyclerView" />
+        android:visibility="gone" />
 
     <TextView
+        android:id="@+id/cards_empty_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:paddingHorizontal="24dp"
+        android:paddingTop="16dp"
+        android:text="@string/no_cards" />
+
+    <Button
+        android:id="@+id/payment_add_card_btn"
+        style="@style/GreenButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
+        android:text="@string/payment_add_card" />
+
+    <TextView
         style="@style/TitlesThemeLarge"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginHorizontal="8dp"
         android:layout_marginTop="16dp"
-        android:text="@string/payment_bank_accounts" />
+        android:text="@string/payment_paypal" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/payment_bank_recyclerView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp" />
-
-    <Button
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:id="@+id/payment_add_bank"
-        style="@style/GreenButton"
+        android:id="@+id/payment_paypal_rv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:text="@string/payment_add_bank_account" />
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/paypal_empty_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:paddingHorizontal="24dp"
+        android:paddingTop="16dp"
+        android:text="@string/no_paypal" />
+
+    <Button
+        android:id="@+id/payment_add_paypal_btn"
+        style="@style/GreenButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="@string/payment_add_paypal" />
+
 </LinearLayout>

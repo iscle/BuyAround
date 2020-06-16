@@ -55,10 +55,15 @@
     <string name="log_in_text_acc">To be able to buy something,\nyou need to log in.</string>
 
     <!-- PAYMENT -->
-    <string name="payment_cards">Cards</string>
-    <string name="payment_bank_accounts">Bank Accounts</string>
+    <string name="default_payment_method">Default payment method</string>
+    <string name="change_default_method">Change default</string>
+    <string name="payment_cards">Credit/Debit cards</string>
     <string name="payment_add_card">Add Card</string>
-    <string name="payment_add_bank_account">Add Bank account</string>
+    <string name="payment_paypal">PayPal accounts</string>
+    <string name="payment_add_paypal">Add PayPal account</string>
+    <string name="no_default_payment_method">You haven\'t chosen any default payment method yet…\nChoose one now!</string>
+    <string name="no_cards">You haven\'t added any credit or debit card yet…\nAdd one now!</string>
+    <string name="no_paypal">You haven\'t added any PayPal account yet…\nAdd one now!</string>
 
     <!-- STORE -->
     <string name="store_label">Store</string>
@@ -66,8 +71,6 @@
     <string name="store_hint">Enter the store name</string>
     <string name="address_tv">Address</string>
     <string name="address_btn">Add new Address</string>
-
-    <!-- STORE CONFIGURATION -->
 
     <!-- RECYCLER_VIEW ITEM -->
     <string name="item_content_title">Content title</string>
