@@ -63,10 +63,6 @@
             app:destination="@id/paymentFragment" />
 
         <action
-            android:id="@+id/action_accountFragment_to_useConditionsFragment"
-            app:destination="@id/useConditionsFragment" />
-
-        <action
             android:id="@+id/action_accountFragment_to_notificationsFragment"
             app:destination="@id/notificationsFragment" />
 
@@ -77,6 +73,9 @@
         <action
             android:id="@+id/action_accountFragment_to_aboutUsFragment"
             app:destination="@id/aboutUsFragment" />
+        <action
+            android:id="@+id/action_accountFragment_to_legalFragment"
+            app:destination="@id/legalFragment" />
     </fragment>
 
     <fragment
@@ -144,12 +143,6 @@
         android:name="cat.buyaround.app.fragment.PaymentFragment"
         android:label="@string/payment"
         tools:layout="@layout/fragment_payment" />
-
-    <fragment
-        android:id="@+id/useConditionsFragment"
-        android:name="cat.buyaround.app.fragment.UseConditionsFragment"
-        android:label="@string/use_conditions"
-        tools:layout="@layout/fragment_use_conditions" />
 
     <fragment
         android:id="@+id/addProductFragment"

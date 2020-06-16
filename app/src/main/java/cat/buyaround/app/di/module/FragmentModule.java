@@ -19,7 +19,6 @@ import cat.buyaround.app.fragment.PersonalInfoFragment;
 import cat.buyaround.app.fragment.ProductFragment;
 import cat.buyaround.app.fragment.RegisterFragment;
 import cat.buyaround.app.fragment.SearchFragment;
-import cat.buyaround.app.fragment.UseConditionsFragment;
 import dagger.Module;
 import dagger.android.ContributesAndroidInjector;
 
@@ -52,9 +51,6 @@ public abstract class FragmentModule {
 
     @ContributesAndroidInjector
     abstract PaymentFragment paymentFragment();
-
-    @ContributesAndroidInjector
-    abstract UseConditionsFragment useConditionsFragment();
 
     @ContributesAndroidInjector
     abstract AddProductFragment addProductFragment();

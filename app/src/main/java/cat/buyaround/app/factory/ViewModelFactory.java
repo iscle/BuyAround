@@ -26,7 +26,6 @@ import cat.buyaround.app.viewmodel.PersonalInfoViewModel;
 import cat.buyaround.app.viewmodel.ProductViewModel;
 import cat.buyaround.app.viewmodel.RegisterViewModel;
 import cat.buyaround.app.viewmodel.SearchViewModel;
-import cat.buyaround.app.viewmodel.UseConditionsViewModel;
 import dagger.Module;
 
 @Module
@@ -71,9 +70,6 @@ public class ViewModelFactory implements ViewModelProvider.Factory {
         }
         if (modelClass.isAssignableFrom(PaymentViewModel.class)) {
             return (T) new PaymentViewModel(buyAroundRepository);
-        }
-        if (modelClass.isAssignableFrom(UseConditionsViewModel.class)) {
-            return (T) new UseConditionsViewModel(buyAroundRepository);
         }
         if (modelClass.isAssignableFrom(AddProductViewModel.class)) {
             return (T) new AddProductViewModel(buyAroundRepository);
