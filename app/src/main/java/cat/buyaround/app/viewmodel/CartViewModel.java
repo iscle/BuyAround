@@ -16,7 +16,6 @@ public class CartViewModel extends ViewModel {
 
     @Inject
     UserManager userManager;
-    
 
     private BuyAroundRepository buyAroundRepository;
 
@@ -31,14 +30,14 @@ public class CartViewModel extends ViewModel {
     }
 
     public LiveData<List<OrderProduct>> getOrderProducts() {
-        return userManager.getProducts();
+        return null;
     }
 
     public void addProduct(OrderProduct product) {
-        userManager.addProduct(product);
+
     }
 
     public void clearProductList() {
-        userManager.clearProducts();
+
     }
 }

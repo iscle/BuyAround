@@ -2,6 +2,8 @@ package cat.buyaround.app.auth;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.text.TextUtils;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
@@ -23,44 +25,35 @@ import cat.buyaround.app.network.model.SimpleResponse;
 public class UserManager {
     public static final String ACTION_USER_UPDATED = "cat.buyaround.app.action.USER_UPDATED";
 
-    private TokenManager tokenManager;
-    private User user;
+    private static final String USER_MANAGER_PREF_NAME = "user_manager";
+    private static final String TOKEN_PREF = "token";
 
-    private BuyAroundRepository buyAroundRepository;
+    private SharedPreferences sharedPreferences;
+    private String token;
+    private User user;
     private LocalBroadcastManager localBroadcastManager;
-    private MutableLiveData<OrderProduct[]> mProducts;
 
     @Inject
-    public UserManager(TokenManager tokenManager, BuyAroundRepository buyAroundRepository, Context context) {
-        this.tokenManager = tokenManager;
-        this.buyAroundRepository = buyAroundRepository;
+    public UserManager(Context context) {
+        this.sharedPreferences = context.getSharedPreferences(USER_MANAGER_PREF_NAME, Context.MODE_PRIVATE);
+        this.token = sharedPreferences.getString(TOKEN_PREF, "");
         this.localBroadcastManager = LocalBroadcastManager.getInstance(context);
-
-        // TODO: Remove this
-        mProducts = new MutableLiveData<>();
-        mProducts.postValue(new OrderProduct[0]);
     }
 
     public boolean hasSession() {
-        return tokenManager.hasValidToken();
+        return isTokenValid(token);
+    }
+
+    public boolean isLoggedIn() {
+        return user != null;
     }
 
     public User getUser() {
         return user;
     }
 
-    public void updateUser() {
-        buyAroundRepository.getUser(new UserCallback() {
-            @Override
-            public void onUserReceived(User user) {
-                setUser(user);
-            }
-
-            @Override
-            public void onFailure(SimpleResponse.Status error) {
-                setUser(null);
-            }
-        });
+    public String getToken() {
+        return token;
     }
 
     public void setUser(User user) {
@@ -68,39 +61,14 @@ public class UserManager {
         localBroadcastManager.sendBroadcast(new Intent(ACTION_USER_UPDATED));
     }
 
-    public TokenManager getTokenManager() {
-        return tokenManager;
+    public void setToken(String token) {
+        this.token = token;
+        SharedPreferences.Editor sharedPrefEditor = sharedPreferences.edit();
+        sharedPrefEditor.putString(TOKEN_PREF, token);
+        sharedPrefEditor.apply();
     }
 
-    public LiveData<List<OrderProduct>> getProducts() {
-        if (mProducts == null) {
-            mProducts = new MutableLiveData<>();
-            mProducts.postValue(new OrderProduct[0]);
-        }
-        List<OrderProduct> list = Arrays.asList(mProducts.getValue());
-        MutableLiveData<List<OrderProduct>> liveData = new MutableLiveData<>();
-        liveData.setValue(list);
-        return liveData;
-    }
-
-    public void addProduct(OrderProduct product) {
-        int size = mProducts.getValue().length;
-
-        OrderProduct[] newList = new OrderProduct[size + 1];
-        for (int i = 0; i < size; i++) {
-            newList[i] = mProducts.getValue()[i];
-        }
-        newList[size] = product;
-        mProducts = new MutableLiveData<>();
-        mProducts.setValue(newList);
-    }
-
-    public void setProducts(OrderProduct[] products) {
-        mProducts = new MutableLiveData<>();
-        mProducts.setValue(products);
-    }
-
-    public void clearProducts() {
-        mProducts.postValue(new OrderProduct[0]);
+    public static boolean isTokenValid(String token) {
+        return !TextUtils.isEmpty(token);
     }
 }

@@ -13,12 +13,18 @@ import javax.inject.Inject;
 
 import cat.buyaround.app.R;
 import cat.buyaround.app.auth.UserManager;
+import cat.buyaround.app.callback.UserCallback;
+import cat.buyaround.app.model.User;
+import cat.buyaround.app.network.BuyAroundRepository;
+import cat.buyaround.app.network.model.SimpleResponse;
 import dagger.android.support.DaggerAppCompatActivity;
 
 import static cat.buyaround.app.auth.UserManager.ACTION_USER_UPDATED;
 
 public class SplashActivity extends DaggerAppCompatActivity {
 
+    @Inject
+    protected BuyAroundRepository repository;
     @Inject
     protected UserManager userManager;
 
@@ -38,7 +44,17 @@ public class SplashActivity extends DaggerAppCompatActivity {
             LocalBroadcastManager.getInstance(this).registerReceiver(receiver, filter);
             receiverRegistered = true;
 
-            userManager.updateUser();
+            repository.getUser(new UserCallback() {
+                @Override
+                public void onUserReceived(User user) {
+                    userManager.setUser(user);
+                }
+
+                @Override
+                public void onFailure(SimpleResponse.Status error) {
+                    userManager.setUser(null);
+                }
+            });
         } else {
             startMainActivity();
         }

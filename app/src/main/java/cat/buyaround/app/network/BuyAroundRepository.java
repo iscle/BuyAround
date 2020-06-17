@@ -4,9 +4,8 @@ import android.util.Log;
 
 import com.google.gson.Gson;
 
-import cat.buyaround.app.auth.TokenManager;
+import cat.buyaround.app.auth.UserManager;
 import cat.buyaround.app.callback.CategoryCallback;
-import cat.buyaround.app.callback.FailureCallback;
 import cat.buyaround.app.callback.LoginCallback;
 import cat.buyaround.app.callback.NotificationCallback;
 import cat.buyaround.app.callback.OrderCallback;
@@ -42,12 +41,12 @@ public class BuyAroundRepository {
     private static final String TAG = "BuyAroundRepository";
 
     private BuyAroundService service;
-    private TokenManager tokenManager;
+    @Inject
+    protected UserManager userManager;
 
     @Inject
-    public BuyAroundRepository(BuyAroundService service, TokenManager tokenManager) {
+    public BuyAroundRepository(BuyAroundService service) {
         this.service = service;
-        this.tokenManager = tokenManager;
     }
 
     public void register(User user, RegisterCallback callback) {
@@ -97,8 +96,20 @@ public class BuyAroundRepository {
                     Log.d(TAG, "onResponse: " + loginResponse.getStatus());
                     switch (loginResponse.getStatus()) {
                         case OK:
-                            tokenManager.setToken(loginResponse.getToken());
+                            userManager.setToken(loginResponse.getToken());
                             callback.onSuccess();
+                            getUser(new UserCallback() {
+                                @Override
+                                public void onUserReceived(User user) {
+                                    userManager.setUser(user);
+                                }
+
+                                @Override
+                                public void onFailure(SimpleResponse.Status error) {
+                                    userManager.setUser(null);
+                                }
+                            });
+
                             break;
                         case INTERNAL_ERROR:
                             callback.onFailure(LoginCallback.LoginError.INTERNAL_ERROR);
