@@ -65,7 +65,7 @@ public class ProductFragment extends DaggerFragment {
 
         binding.productSubstractBtn.setOnClickListener(v -> {
             int productQuantity = Integer.parseInt(binding.productQuantity.getText().toString());
-            if (productQuantity > 0) {
+            if (productQuantity > 1) {
                 binding.productQuantity.setText(String.valueOf(productQuantity - 1));
             }
         });

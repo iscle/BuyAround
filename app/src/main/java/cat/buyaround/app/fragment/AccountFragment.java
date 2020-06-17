@@ -157,7 +157,7 @@ public class AccountFragment extends DaggerFragment implements IListAdapter {
                 action = AccountFragmentDirections
                         .actionAccountFragmentToLegalFragment();
                 break;
-            case "About Us":
+            case "About us":
                 action = AccountFragmentDirections
                         .actionAccountFragmentToAboutUsFragment();
                 break;
