@@ -13,9 +13,7 @@ import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import cat.buyaround.app.fragment.HomeFragmentDirections;
-
-import cat.buyaround.app.MarginItemDecorator;
+import cat.buyaround.app.utils.MarginItemDecorator;
 import cat.buyaround.app.adapter.PackListAdapter;
 import cat.buyaround.app.adapter.ProductListAdapter;
 import cat.buyaround.app.adapter.StoreListAdapter;

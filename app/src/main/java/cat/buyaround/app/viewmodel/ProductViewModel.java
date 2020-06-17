@@ -45,4 +45,8 @@ public class ProductViewModel extends ViewModel {
     public String getProductUnit() {
         return product.getUnit().getName();
     }
+
+    public String[] getProductImages() {
+        return product.getImages();
+    }
 }
