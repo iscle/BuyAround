@@ -1,4 +1,4 @@
-package cat.buyaround.app;
+package cat.buyaround.app.utils;
 
 import java.text.DecimalFormat;
 

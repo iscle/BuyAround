@@ -1,4 +1,4 @@
-package cat.buyaround.app;
+package cat.buyaround.app.utils;
 
 import android.graphics.Rect;
 import android.util.DisplayMetrics;
