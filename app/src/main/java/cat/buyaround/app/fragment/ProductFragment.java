@@ -10,6 +10,8 @@ import androidx.annotation.Nullable;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.viewpager2.widget.ViewPager2;
 
+import com.google.android.material.tabs.TabLayoutMediator;
+
 import javax.inject.Inject;
 
 import cat.buyaround.app.adapter.ImageViewPagerAdapter;
@@ -87,6 +89,9 @@ public class ProductFragment extends DaggerFragment {
             }
         });
         binding.productViewpager.setPageTransformer(new ZoomOutPageTransformer());
+        new TabLayoutMediator(binding.productTabLayout, binding.productViewpager, (tab, position) -> {
+
+        }).attach();
 
         // TODO: UNCOMMENT
         // binding.productUnit.setText(productViewModel.getProductUnit());
