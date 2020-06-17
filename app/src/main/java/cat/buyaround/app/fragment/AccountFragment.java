@@ -160,6 +160,13 @@ public class AccountFragment extends DaggerFragment implements IListAdapter {
                 action = AccountFragmentDirections
                         .actionAccountFragmentToAboutUsFragment();
                 break;
+            case "Log out":
+                userManager.setUser(null);
+                binding.notLoggedInLayout.setVisibility(View.VISIBLE);
+                binding.loggedInLayout.setVisibility(View.GONE);
+
+                binding.accountRecyclerView.setAdapter(new ContentListAdapter(this, guestUserContents));
+                break;
         }
 
         if (action == null) return;
