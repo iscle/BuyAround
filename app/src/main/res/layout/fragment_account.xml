@@ -12,9 +12,10 @@
         android:id="@+id/logged_in_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:gravity="center"
         android:orientation="horizontal"
+        android:paddingHorizontal="8dp"
         android:visibility="gone">
 
         <androidx.cardview.widget.CardView

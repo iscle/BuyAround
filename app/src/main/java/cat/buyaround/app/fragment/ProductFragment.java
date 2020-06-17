@@ -50,13 +50,7 @@ public class ProductFragment extends DaggerFragment {
     }
 
     private void initViews() {
-        binding.productName.setText(productViewModel.getProductName());
-
-        binding.productDescription.setText(productViewModel.getProductDescription());
-
-        binding.productPrice.setText(String.valueOf(productViewModel.getProductPrice()));
-
-        binding.productPoints.setText(String.valueOf(productViewModel.getProductPoints()));
+        addProductInfo();
 
         binding.productAddBtn.setOnClickListener(v -> {
             int productQuantity = Integer.parseInt(binding.productQuantity.getText().toString());
@@ -70,6 +64,31 @@ public class ProductFragment extends DaggerFragment {
             }
         });
 
+        binding.productAddCartBtn.setOnClickListener(v -> {
+            // TODO: ADD TO CART API CALL + TOAST + ADD TEXT "X ADDED TO CART"
+        });
+
+        binding.productShareBtn.setOnClickListener(v -> {
+            // TODO: OPEN SHARE INTENT WITH FIRST IMAGE
+        });
+    }
+
+    private void addProductInfo() {
+        configureViewPager();
+
+        binding.productName.setText(productViewModel.getProductName());
+
+        binding.productDescription.setText(productViewModel.getProductDescription());
+
+        binding.productPrice.setText(String.valueOf(productViewModel.getProductPrice()));
+
+        binding.productPoints.setText(String.valueOf(productViewModel.getProductPoints()));
+
+        // TODO: UNCOMMENT
+        // binding.productUnit.setText(productViewModel.getProductUnit());
+    }
+
+    private void configureViewPager() {
         binding.productViewpager.setOrientation(ViewPager2.ORIENTATION_HORIZONTAL);
         binding.productViewpager.setAdapter(new ImageViewPagerAdapter(requireContext(), productViewModel.getProductImages()));
         binding.productViewpager.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
@@ -92,12 +111,5 @@ public class ProductFragment extends DaggerFragment {
         new TabLayoutMediator(binding.productTabLayout, binding.productViewpager, (tab, position) -> {
 
         }).attach();
-
-        // TODO: UNCOMMENT
-        // binding.productUnit.setText(productViewModel.getProductUnit());
-
-        binding.productAddCartBtn.setOnClickListener(v -> {
-            // TODO: ADD TO CART API CALL + TOAST + ADD TEXT "X ADDED TO CART"
-        });
     }
 }

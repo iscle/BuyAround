@@ -4,14 +4,16 @@ import java.io.Serializable;
 
 public class User implements Serializable {
     private String name;
+    private String surnames;
     private String password;
     private Direction[] directions;
     private String profilePicture;
     private long birthday;
     private String email;
 
-    public User(String name, String password, Direction[] directions, String profilePicture, long birthday, String email) {
+    public User(String name, String surnames, String password, Direction[] directions, String profilePicture, long birthday, String email) {
         this.name = name;
+        this.surnames = surnames;
         this.password = password;
         this.directions = directions;
         this.profilePicture = profilePicture;
@@ -31,6 +33,14 @@ public class User implements Serializable {
         this.profilePicture = null;
         this.birthday = -1;
         this.email = email;
+    }
+
+    public String getSurnames() {
+        return surnames;
+    }
+
+    public void setSurnames(String surnames) {
+        this.surnames = surnames;
     }
 
     public String getName() {

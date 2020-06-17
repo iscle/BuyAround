@@ -17,7 +17,6 @@ import androidx.navigation.NavDirections;
 import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-import androidx.swiperefreshlayout.widget.CircularProgressDrawable;
 
 import com.bumptech.glide.Glide;
 
@@ -111,7 +110,7 @@ public class AccountFragment extends DaggerFragment implements IListAdapter {
     private void updateUser() {
         if (userManager.isLoggedIn()) {
             User user = userManager.getUser();
-            binding.profileUsername.setText(user.getName());
+            binding.profileUsername.setText(user.getName() + " " + user.getSurnames());
             binding.profileEmail.setText(user.getEmail());
 
             Glide.with(this)
