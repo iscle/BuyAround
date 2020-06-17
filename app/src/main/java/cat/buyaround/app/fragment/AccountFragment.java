@@ -32,8 +32,12 @@ import dagger.android.support.DaggerFragment;
 public class AccountFragment extends DaggerFragment implements IListAdapter {
 
     private FragmentAccountBinding binding;
-    private final List<String> mContents = new ArrayList<>(
-            Arrays.asList("Personal Info", "Addresses", "Payment", "Legal", "About Us"));
+
+    private final List<String> loggedUserContents = new ArrayList<>(
+            Arrays.asList("Personal info", "Previous orders", "My addresses", "My payment methods", "Legal", "About us", "Log out"));
+
+    private final List<String> guestUserContents = new ArrayList<>(
+            Arrays.asList("Legal", "About us"));
 
     @Inject
     protected ViewModelFactory viewModelFactory;
@@ -59,13 +63,9 @@ public class AccountFragment extends DaggerFragment implements IListAdapter {
     }
 
     private void initViews() {
-        Glide.with(AccountFragment.this)
-                .asBitmap()
-                .load(R.drawable.ic_thumbnail)
-                .into(binding.profileThumbnail);
-
         binding.accountRecyclerView.setLayoutManager(new LinearLayoutManager(getContext(), RecyclerView.VERTICAL, false));
-        binding.accountRecyclerView.setAdapter(new ContentListAdapter(this, mContents));
+
+        binding.accountRecyclerView.setAdapter(new ContentListAdapter(this, guestUserContents));
 
         binding.loginBtn.setOnClickListener(v -> {
             NavDirections action = AccountFragmentDirections
@@ -73,11 +73,12 @@ public class AccountFragment extends DaggerFragment implements IListAdapter {
 
             Navigation.findNavController(v).navigate(action);
         });
+
     }
 
     private void subscribeObservers() {
         viewModel.getUser().observe(getViewLifecycleOwner(), user -> {
-            if (user!= null) {
+            if (user != null) {
                 binding.profileUsername.setText(user.getName());
                 binding.profileEmail.setText(user.getEmail());
 
@@ -89,6 +90,8 @@ public class AccountFragment extends DaggerFragment implements IListAdapter {
 
                 binding.notLoggedInLayout.setVisibility(View.GONE);
                 binding.loggedInLayout.setVisibility(View.VISIBLE);
+
+                binding.accountRecyclerView.setAdapter(new ContentListAdapter(this, loggedUserContents));
             }
         });
     }
@@ -103,15 +106,19 @@ public class AccountFragment extends DaggerFragment implements IListAdapter {
         NavDirections action = null;
 
         switch ((String) item) {
-            case "Personal Info":
+            case "Personal info":
                 action = AccountFragmentDirections
                         .actionAccountFragmentToPersonalInfoFragment();
                 break;
-            case "Addresses":
+            case "Previous orders":
+                action = AccountFragmentDirections
+                        .actionAccountFragmentToOrdersFragment();
+                break;
+            case "My addresses":
                 action = AccountFragmentDirections
                         .actionAccountFragmentToAddressesFragment();
                 break;
-            case "Payment":
+            case "My payment methods":
                 action = AccountFragmentDirections
                         .actionAccountFragmentToPaymentFragment();
                 break;

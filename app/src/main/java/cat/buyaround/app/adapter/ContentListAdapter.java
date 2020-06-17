@@ -1,8 +1,10 @@
 package cat.buyaround.app.adapter;
 
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -32,8 +34,14 @@ public class ContentListAdapter extends RecyclerView.Adapter<ContentListAdapter.
 
     @Override
     public void onBindViewHolder(@NonNull ContentListAdapter.ViewHolder holder, int position) {
-        holder.itemView.setOnClickListener(view -> mCallback.onItemSelected(mItems.get(position)));
         holder.tvTitle.setText(mItems.get(position));
+        holder.itemView.setOnClickListener(view -> mCallback.onItemSelected(mItems.get(position)));
+
+        if (mItems.get(position).equals("Log out")) {
+            holder.tvTitle.setTextColor(Color.parseColor("#B00020"));
+            holder.ivIcon.setImageResource(R.drawable.ic_log_out);
+            holder.ivIcon.setColorFilter(Color.parseColor("#B00020"));
+        }
     }
 
     @Override
@@ -44,10 +52,12 @@ public class ContentListAdapter extends RecyclerView.Adapter<ContentListAdapter.
     class ViewHolder extends RecyclerView.ViewHolder {
 
         TextView tvTitle;
+        ImageView ivIcon;
 
         ViewHolder(@NonNull View itemView) {
             super(itemView);
             tvTitle = itemView.findViewById(R.id.item_content_title);
+            ivIcon = itemView.findViewById(R.id.item_content_icon);
         }
     }
 }
