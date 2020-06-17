@@ -142,6 +142,9 @@
     <string name="description_hint">Enter a brief description</string>
     <string name="images_tv">Images</string>
     <string name="product_unit">unit</string>
+    <string name="share_product_via">Share product via</string>
+    <string name="share_product_text">Check out this &#57932; product I found on BuyAround!\n\n</string>
+    <string name="share_product_only_for"> only for </string>
 
     <!-- ADDRESS -->
     <string name="address_label">Address</string>
@@ -180,4 +183,11 @@
     <string name="legal_text_1">This application is an open-source project running under <i>Apache License 2.0</i>.</string>
     <string name="legal_text_2">It is a non-functional prototype developed as a proof of concept. If the project becomes real later, we will update the information and inform all our registered users.</string>
     <string name="legal_more_info">For more information, visit our web page at: <a href="https://buyaround.cat/legal">https://buyaround.cat/legal</a></string>
+
+    <!-- CART POPUP -->
+    <string name="cart_items_text_singular">product</string>
+    <string name="cart_items_text_plural">products</string>
+    <string name="cart_total_cost_text">Total:</string>
+    <string name="currency">€</string>
+    <string name="check_cart">Check cart</string>
 </resources>

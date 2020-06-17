@@ -1,5 +1,7 @@
 package cat.buyaround.app.fragment;
 
+import android.Manifest;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -7,6 +9,8 @@ import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.viewpager2.widget.ViewPager2;
 
@@ -65,11 +69,15 @@ public class ProductFragment extends DaggerFragment {
         });
 
         binding.productAddCartBtn.setOnClickListener(v -> {
-            // TODO: ADD TO CART API CALL + TOAST + ADD TEXT "X ADDED TO CART"
+            // TODO: ADD TO CART API CALL
         });
 
         binding.productShareBtn.setOnClickListener(v -> {
-            // TODO: OPEN SHARE INTENT WITH FIRST IMAGE
+            checkForPermissions();
+        });
+
+        binding.favouriteCheckbox.setOnClickListener(v -> {
+            // TODO: API CALL TO TOGGLE LIKE
         });
     }
 
@@ -114,4 +122,24 @@ public class ProductFragment extends DaggerFragment {
 
         }).attach();
     }
+
+    private void checkForPermissions() {
+        int permissionWrite = ContextCompat.checkSelfPermission(requireActivity(), Manifest.permission.WRITE_EXTERNAL_STORAGE);
+        int permissionRead = ContextCompat.checkSelfPermission(requireActivity(), Manifest.permission.READ_EXTERNAL_STORAGE);
+
+        if (permissionWrite != PackageManager.PERMISSION_GRANTED || permissionRead != PackageManager.PERMISSION_GRANTED)
+            askForPermission();
+        else
+            shareProduct();
+    }
+
+    private void askForPermission() {
+        ActivityCompat.requestPermissions(requireActivity(),
+                new String[]{Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE}, 1);
+    }
+
+    private void shareProduct() {
+        // TODO
+    }
+
 }
