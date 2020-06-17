@@ -84,6 +84,8 @@ public class ProductFragment extends DaggerFragment {
 
         binding.productPoints.setText(String.valueOf(productViewModel.getProductPoints()));
 
+        binding.productRating.setText(String.valueOf(productViewModel.getProductRating()));
+
         // TODO: UNCOMMENT
         // binding.productUnit.setText(productViewModel.getProductUnit());
     }

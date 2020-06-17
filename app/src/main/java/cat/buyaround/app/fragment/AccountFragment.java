@@ -45,7 +45,8 @@ public class AccountFragment extends DaggerFragment implements IListAdapter {
 
     @Inject
     protected ViewModelFactory viewModelFactory;
-    @Inject UserManager userManager;
+    @Inject
+    UserManager userManager;
     private FragmentAccountBinding binding;
 
     private boolean registered;
