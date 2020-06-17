@@ -32,17 +32,13 @@ import cat.buyaround.app.adapter.ContentListAdapter;
 import cat.buyaround.app.adapter.callback.IListAdapter;
 import cat.buyaround.app.auth.UserManager;
 import cat.buyaround.app.databinding.FragmentAccountBinding;
+import cat.buyaround.app.databinding.ItemContentBinding;
 import cat.buyaround.app.factory.ViewModelFactory;
 import cat.buyaround.app.model.User;
 import dagger.android.support.DaggerFragment;
 
-public class AccountFragment extends DaggerFragment implements IListAdapter {
+public class AccountFragment extends DaggerFragment {
     private static final String TAG = "AccountFragment";
-
-    private final List<String> loggedUserContents = new ArrayList<>(
-            Arrays.asList("Personal info", "Previous orders", "My addresses", "My payment methods", "Legal", "About us", "Log out"));
-    private final List<String> guestUserContents = new ArrayList<>(
-            Arrays.asList("Legal", "About us"));
 
     @Inject
     protected ViewModelFactory viewModelFactory;
@@ -63,7 +59,6 @@ public class AccountFragment extends DaggerFragment implements IListAdapter {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
         binding = FragmentAccountBinding.inflate(inflater, container, false);
         return binding.getRoot();
     }
@@ -72,9 +67,6 @@ public class AccountFragment extends DaggerFragment implements IListAdapter {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        binding.accountRecyclerView.setLayoutManager(new LinearLayoutManager(getContext(), RecyclerView.VERTICAL, false));
-        binding.accountRecyclerView.setAdapter(new ContentListAdapter(this, guestUserContents));
-
         binding.loginBtn.setOnClickListener(v -> {
             NavDirections action = AccountFragmentDirections
                     .actionAccountFragmentToLoginFragment();
@@ -82,7 +74,47 @@ public class AccountFragment extends DaggerFragment implements IListAdapter {
             Navigation.findNavController(v).navigate(action);
         });
 
+        setupItemContent(binding.personalInfo, "Personal info",
+                getListener(AccountFragmentDirections
+                .actionAccountFragmentToPersonalInfoFragment()));
+
+        setupItemContent(binding.orders, "Previous orders",
+                getListener(AccountFragmentDirections
+                .actionAccountFragmentToOrdersFragment()));
+
+        setupItemContent(binding.addresses, "My addresses",
+                getListener(AccountFragmentDirections
+                .actionAccountFragmentToAddressesFragment()));
+
+        setupItemContent(binding.paymentMethods, "My payment methods",
+                getListener(AccountFragmentDirections
+                .actionAccountFragmentToPaymentFragment()));
+
+        setupItemContent(binding.legal, "Legal",
+                getListener(AccountFragmentDirections
+                .actionAccountFragmentToLegalFragment()));
+
+        setupItemContent(binding.aboutUs, "About us",
+                getListener(AccountFragmentDirections
+                .actionAccountFragmentToAboutUsFragment()));
+
+        setupItemContent(binding.logOut, "Log out", new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
         registered = false;
+    }
+
+    private void setupItemContent(ItemContentBinding b, String title, View.OnClickListener listener) {
+        b.itemContentTitle.setText(title);
+        b.getRoot().setOnClickListener(listener);
+    }
+
+    private View.OnClickListener getListener(NavDirections action) {
+        return v -> Navigation.findNavController(requireView()).navigate(action);
     }
 
     @Override
@@ -123,47 +155,12 @@ public class AccountFragment extends DaggerFragment implements IListAdapter {
             binding.notLoggedInLayout.setVisibility(View.GONE);
             binding.loggedInLayout.setVisibility(View.VISIBLE);
 
-            binding.accountRecyclerView.setAdapter(new ContentListAdapter(this, loggedUserContents));
+            //binding.accountRecyclerView.setAdapter(new ContentListAdapter(this, loggedUserContents));
         } else {
             binding.notLoggedInLayout.setVisibility(View.VISIBLE);
             binding.loggedInLayout.setVisibility(View.GONE);
 
-            binding.accountRecyclerView.setAdapter(new ContentListAdapter(this, guestUserContents));
+            //binding.accountRecyclerView.setAdapter(new ContentListAdapter(this, guestUserContents));
         }
-    }
-
-    @Override
-    public void onItemSelected(Object item) {
-        NavDirections action = null;
-
-        switch ((String) item) {
-            case "Personal info":
-                action = AccountFragmentDirections
-                        .actionAccountFragmentToPersonalInfoFragment();
-                break;
-            case "Previous orders":
-                action = AccountFragmentDirections
-                        .actionAccountFragmentToOrdersFragment();
-                break;
-            case "My addresses":
-                action = AccountFragmentDirections
-                        .actionAccountFragmentToAddressesFragment();
-                break;
-            case "My payment methods":
-                action = AccountFragmentDirections
-                        .actionAccountFragmentToPaymentFragment();
-                break;
-            case "Legal":
-                action = AccountFragmentDirections
-                        .actionAccountFragmentToLegalFragment();
-                break;
-            case "About us":
-                action = AccountFragmentDirections
-                        .actionAccountFragmentToAboutUsFragment();
-                break;
-        }
-
-        if (action == null) return;
-        Navigation.findNavController(this.requireView()).navigate(action);
     }
 }
