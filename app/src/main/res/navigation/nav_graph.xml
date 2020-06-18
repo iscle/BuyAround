@@ -181,7 +181,11 @@
         android:id="@+id/addressesFragment"
         android:name="cat.buyaround.app.fragment.AddressesFragment"
         android:label="@string/addresses"
-        tools:layout="@layout/fragment_addresses" />
+        tools:layout="@layout/fragment_addresses" >
+        <action
+            android:id="@+id/action_addressesFragment_to_addressFragment"
+            app:destination="@id/addressFragment" />
+    </fragment>
 
     <fragment
         android:id="@+id/paymentFragment"
