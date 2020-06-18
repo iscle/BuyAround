@@ -125,6 +125,11 @@ public class HomeFragment extends DaggerFragment implements IListAdapter, IAddIt
     @Override
     public void onItemSelected(Object item) {
         if (item instanceof Store) {
+            HomeFragmentDirections.ActionHomeFragmentToStoreFragment action =
+                    HomeFragmentDirections.actionHomeFragmentToStoreFragment();
+            action.setStore((Store) item);
+
+            Navigation.findNavController(binding.getRoot()).navigate(action);
 
         } else {
 

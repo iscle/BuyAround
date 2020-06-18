@@ -8,18 +8,28 @@ public class Store implements Serializable {
     private String description;
     private float rating;
     private String thumbnail;
+    private String[] images;
     private Category category;
     private long since;
     private Product[] products;
 
-    public Store(String name, Direction direction, String description, float rating, String thumbnail, Category category, long since) {
+    public Store(String name, Direction direction, String description, float rating, String thumbnail, String[] images, Category category, long since) {
         this.name = name;
         this.direction = direction;
         this.description = description;
         this.rating = rating;
         this.thumbnail = thumbnail;
+        this.images = images;
         this.category = category;
         this.since = since;
+    }
+
+    public void setImages(String[] images) {
+        this.images = images;
+    }
+
+    public String[] getImages() {
+        return images;
     }
 
     public Store(String name, String description) {

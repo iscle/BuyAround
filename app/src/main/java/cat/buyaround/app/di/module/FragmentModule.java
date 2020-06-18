@@ -19,6 +19,7 @@ import cat.buyaround.app.fragment.PersonalInfoFragment;
 import cat.buyaround.app.fragment.ProductFragment;
 import cat.buyaround.app.fragment.RegisterFragment;
 import cat.buyaround.app.fragment.SearchFragment;
+import cat.buyaround.app.fragment.StoreFragment;
 import dagger.Module;
 import dagger.android.ContributesAndroidInjector;
 
@@ -56,7 +57,7 @@ public abstract class FragmentModule {
     abstract AddProductFragment addProductFragment();
 
     @ContributesAndroidInjector
-    abstract AddStoreFragment storeFragment();
+    abstract AddStoreFragment addStoreFragment();
 
     @ContributesAndroidInjector
     abstract AddressFragment addressFragment();
@@ -81,4 +82,8 @@ public abstract class FragmentModule {
 
     @ContributesAndroidInjector
     abstract LocationFragment locationFragment();
+
+    @ContributesAndroidInjector
+    abstract StoreFragment storeFragment();
+
 }

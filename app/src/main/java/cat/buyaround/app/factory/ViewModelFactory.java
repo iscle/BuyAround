@@ -26,6 +26,7 @@ import cat.buyaround.app.viewmodel.PersonalInfoViewModel;
 import cat.buyaround.app.viewmodel.ProductViewModel;
 import cat.buyaround.app.viewmodel.RegisterViewModel;
 import cat.buyaround.app.viewmodel.SearchViewModel;
+import cat.buyaround.app.viewmodel.StoreViewModel;
 import dagger.Module;
 
 @Module
@@ -97,6 +98,9 @@ public class ViewModelFactory implements ViewModelProvider.Factory {
         }
         if (modelClass.isAssignableFrom(ProductViewModel.class)) {
             return (T) new ProductViewModel(buyAroundRepository);
+        }
+        if (modelClass.isAssignableFrom(StoreViewModel.class)) {
+            return (T) new StoreViewModel(buyAroundRepository);
         }
 
         throw new IllegalArgumentException("Unknown class!");
