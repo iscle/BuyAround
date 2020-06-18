@@ -21,6 +21,7 @@ import cat.buyaround.app.viewmodel.LocationViewModel;
 import cat.buyaround.app.viewmodel.LoginViewModel;
 import cat.buyaround.app.viewmodel.NotificationsViewModel;
 import cat.buyaround.app.viewmodel.OrdersViewModel;
+import cat.buyaround.app.viewmodel.PackViewModel;
 import cat.buyaround.app.viewmodel.PaymentViewModel;
 import cat.buyaround.app.viewmodel.PersonalInfoViewModel;
 import cat.buyaround.app.viewmodel.ProductViewModel;
@@ -101,6 +102,9 @@ public class ViewModelFactory implements ViewModelProvider.Factory {
         }
         if (modelClass.isAssignableFrom(StoreViewModel.class)) {
             return (T) new StoreViewModel(buyAroundRepository);
+        }
+        if (modelClass.isAssignableFrom(PackViewModel.class)) {
+            return (T) new PackViewModel(buyAroundRepository);
         }
 
         throw new IllegalArgumentException("Unknown class!");

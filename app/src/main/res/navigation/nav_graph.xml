@@ -36,7 +36,11 @@
 
         <action
             android:id="@+id/action_homeFragment_to_productFragment"
-            app:destination="@id/productFragment">
+            app:destination="@id/productFragment"
+            app:enterAnim="@anim/fragment_open_enter"
+            app:exitAnim="@anim/fragment_open_exit"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim">
             <argument
                 android:name="product"
                 android:defaultValue="@null"
@@ -55,6 +59,20 @@
                 android:name="store"
                 android:defaultValue="@null"
                 app:argType="cat.buyaround.app.model.Store"
+                app:nullable="true" />
+        </action>
+
+        <action
+            android:id="@+id/action_homeFragment_to_packFragment"
+            app:destination="@id/packFragment"
+            app:enterAnim="@anim/fragment_open_enter"
+            app:exitAnim="@anim/fragment_open_exit"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim">
+            <argument
+                android:name="pack"
+                android:defaultValue="@null"
+                app:argType="cat.buyaround.app.model.Pack"
                 app:nullable="true" />
         </action>
     </fragment>
@@ -204,6 +222,18 @@
             android:name="product"
             android:defaultValue="@null"
             app:argType="cat.buyaround.app.model.Product"
+            app:nullable="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/packFragment"
+        android:name="cat.buyaround.app.fragment.PackFragment"
+        android:label="@string/pack_label"
+        tools:layout="@layout/fragment_pack">
+        <argument
+            android:name="pack"
+            android:defaultValue="@null"
+            app:argType="cat.buyaround.app.model.Pack"
             app:nullable="true" />
     </fragment>
 

@@ -13,6 +13,7 @@ import cat.buyaround.app.fragment.LocationFragment;
 import cat.buyaround.app.fragment.LoginFragment;
 import cat.buyaround.app.fragment.NotificationsFragment;
 import cat.buyaround.app.fragment.OrdersFragment;
+import cat.buyaround.app.fragment.PackFragment;
 import cat.buyaround.app.fragment.PayFragment;
 import cat.buyaround.app.fragment.PaymentFragment;
 import cat.buyaround.app.fragment.PersonalInfoFragment;
@@ -86,4 +87,6 @@ public abstract class FragmentModule {
     @ContributesAndroidInjector
     abstract StoreFragment storeFragment();
 
+    @ContributesAndroidInjector
+    abstract PackFragment packFragment();
 }
