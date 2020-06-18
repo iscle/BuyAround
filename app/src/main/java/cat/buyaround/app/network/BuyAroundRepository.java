@@ -272,6 +272,34 @@ public class BuyAroundRepository {
         });
     }
 
+    public void getStoreProducts(Store store, ProductCallback callback) {
+        service.getStoreProducts(store.getId()).enqueue(new Callback<ProductResponse>() {
+            @Override
+            public void onResponse(Call<ProductResponse> call, Response<ProductResponse> response) {
+                if (response.isSuccessful()) {
+                    ProductResponse productResponse = response.body();
+                    Log.d(TAG, "onResponse: " + productResponse.getStatus());
+                    switch (productResponse.getStatus()) {
+                        case OK:
+                            callback.onProductsReceived(productResponse.getProducts());
+                            break;
+                        case INTERNAL_ERROR:
+                            callback.onFailure(SimpleResponse.Status.INTERNAL_ERROR);
+                            break;
+                    }
+                } else {
+                    callback.onFailure(SimpleResponse.Status.INTERNAL_ERROR);
+                }
+            }
+
+            @Override
+            public void onFailure(Call<ProductResponse> call, Throwable t) {
+                callback.onFailure(SimpleResponse.Status.NETWORK_FAILURE);
+                t.printStackTrace();
+            }
+        });
+    }
+
     public void getNearbyStores(UserRadius userRadius, StoreCallback callback) {
         service.getNearbyStores(userRadius).enqueue(new Callback<StoreResponse>() {
             @Override

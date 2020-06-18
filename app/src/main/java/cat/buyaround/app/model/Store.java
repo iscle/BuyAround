@@ -1,8 +1,12 @@
 package cat.buyaround.app.model;
 
+import com.google.gson.annotations.SerializedName;
+
 import java.io.Serializable;
 
 public class Store implements Serializable {
+    @SerializedName("_id")
+    private String id;
     private String name;
     private Direction direction;
     private String description;
@@ -22,6 +26,14 @@ public class Store implements Serializable {
         this.images = images;
         this.category = category;
         this.since = since;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getId() {
+        return id;
     }
 
     public void setImages(String[] images) {

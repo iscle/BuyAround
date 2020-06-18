@@ -58,6 +58,9 @@ public interface BuyAroundService {
     @GET("store")
     Call<StoreResponse> getNearbyStores(@Body UserRadius userRadius);
 
+    @GET("store/{id}/products")
+    Call<ProductResponse> getStoreProducts(@Path(value = "id") String id);
+
     // Packs
     @GET("pack")
     Call<PackResponse> getAllPacks();
