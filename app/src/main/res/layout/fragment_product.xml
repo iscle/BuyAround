@@ -25,6 +25,18 @@
             app:tabGravity="center"
             app:tabIndicatorHeight="0dp" />
 
+        <ImageButton
+            android:id="@+id/product_share_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:background="@android:color/transparent"
+            android:backgroundTint="@android:color/transparent"
+            android:elevation="8dp"
+            android:padding="16dp"
+            android:src="@drawable/ic_share" />
+
     </RelativeLayout>
 
     <LinearLayout
@@ -132,7 +144,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
         android:orientation="vertical">
 
@@ -150,14 +162,11 @@
             android:text="@string/description_hint" />
     </LinearLayout>
 
-    <View
-        style="@style/Divider"
-        android:layout_marginVertical="10dp" />
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
         android:orientation="horizontal">
 

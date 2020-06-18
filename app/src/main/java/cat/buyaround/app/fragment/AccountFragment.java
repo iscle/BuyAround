@@ -101,7 +101,11 @@ public class AccountFragment extends DaggerFragment {
         setupItemContent(binding.logOut, "Log out", new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                userManager.setUser(null);
+                binding.notLoggedInLayout.setVisibility(View.VISIBLE);
+                binding.loggedInLayout.setVisibility(View.GONE);
 
+                // TODO: Hide things
             }
         });
 
