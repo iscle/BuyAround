@@ -49,7 +49,7 @@ public class ProductListAdapter extends RecyclerView.Adapter<ProductListAdapter.
         holder.btnAdd.setOnClickListener(view -> callback.onAddItemTo(product));
 
         holder.tvTitle.setText(product.getName());
-        holder.tvSubtitle.setText(product.getDescription());
+        holder.tvSubtitle.setText(product.getStore().getName());
 
         holder.tvRating.setText(Utils.floatToString(product.getRating()));
         holder.tvPrice.setText(Utils.floatToString(product.getPrice()));

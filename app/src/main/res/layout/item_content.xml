@@ -3,8 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     style="@style/SingleLineItem"
     android:layout_width="match_parent"
-    android:background="?selectableItemBackground"
-    android:layout_height="64dp">
+    android:layout_height="64dp"
+    android:background="?selectableItemBackground">
 
     <TextView
         android:id="@+id/item_content_title"

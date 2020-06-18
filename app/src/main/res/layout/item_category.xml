@@ -3,15 +3,16 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     style="@style/DoubleLineItem"
     android:layout_width="match_parent"
-    android:layout_height="60dp">
+    android:layout_height="60dp"
+    android:background="?selectableItemBackground">
 
     <ImageView
         android:id="@+id/item_category_img"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
+        android:layout_margin="8dp"
         android:adjustViewBounds="true"
         android:src="@drawable/ic_thumbnail"
-        android:layout_margin="8dp"
         android:tint="@color/superLightGrey"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
