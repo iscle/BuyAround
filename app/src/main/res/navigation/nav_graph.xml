@@ -181,7 +181,7 @@
         android:id="@+id/addressesFragment"
         android:name="cat.buyaround.app.fragment.AddressesFragment"
         android:label="@string/addresses"
-        tools:layout="@layout/fragment_addresses" >
+        tools:layout="@layout/fragment_addresses">
         <action
             android:id="@+id/action_addressesFragment_to_addressFragment"
             app:destination="@id/addressFragment" />
@@ -227,6 +227,20 @@
             android:defaultValue="@null"
             app:argType="cat.buyaround.app.model.Product"
             app:nullable="true" />
+
+        <action
+            android:id="@+id/action_productFragment_to_storeFragment"
+            app:destination="@id/storeFragment"
+            app:enterAnim="@anim/fragment_open_enter"
+            app:exitAnim="@anim/fragment_open_exit"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim">
+            <argument
+                android:name="store"
+                android:defaultValue="@null"
+                app:argType="cat.buyaround.app.model.Store"
+                app:nullable="true" />
+        </action>
     </fragment>
 
     <fragment
@@ -239,6 +253,33 @@
             android:defaultValue="@null"
             app:argType="cat.buyaround.app.model.Pack"
             app:nullable="true" />
+        <action
+            android:id="@+id/action_packFragment_to_productFragment"
+            app:destination="@id/productFragment"
+            app:enterAnim="@anim/fragment_open_enter"
+            app:exitAnim="@anim/fragment_open_exit"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim">
+            <argument
+                android:name="product"
+                android:defaultValue="@null"
+                app:argType="cat.buyaround.app.model.Product"
+                app:nullable="true" />
+        </action>
+
+        <action
+            android:id="@+id/action_packFragment_to_storeFragment"
+            app:destination="@id/storeFragment"
+            app:enterAnim="@anim/fragment_open_enter"
+            app:exitAnim="@anim/fragment_open_exit"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim">
+            <argument
+                android:name="store"
+                android:defaultValue="@null"
+                app:argType="cat.buyaround.app.model.Store"
+                app:nullable="true" />
+        </action>
     </fragment>
 
     <fragment

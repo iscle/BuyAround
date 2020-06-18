@@ -12,6 +12,7 @@ import androidx.annotation.Nullable;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.navigation.Navigation;
 import androidx.viewpager2.widget.ViewPager2;
 
 import com.google.android.material.tabs.TabLayoutMediator;
@@ -85,6 +86,15 @@ public class ProductFragment extends DaggerFragment {
         configureViewPager();
 
         binding.productName.setText(productViewModel.getProductName());
+
+        binding.storeName.setText(productViewModel.getProductStore().getName());
+        binding.storeName.setOnClickListener(v -> {
+            ProductFragmentDirections.ActionProductFragmentToStoreFragment action =
+                    ProductFragmentDirections.actionProductFragmentToStoreFragment();
+            action.setStore(productViewModel.getProductStore());
+
+            Navigation.findNavController(v).navigate(action);
+        });
 
         binding.productDescription.setText(productViewModel.getProductDescription());
 
