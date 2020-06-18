@@ -30,7 +30,7 @@ public class HomeViewModel extends ViewModel {
         this.mProducts = new MutableLiveData<>();
     }
 
-    private void requestStoresAround(String username) {
+    private void requestStoresAround() {
         // Handle request
         buyAroundRepository.getAllStores(new StoreCallback() {
             @Override
@@ -76,7 +76,7 @@ public class HomeViewModel extends ViewModel {
     }
 
     public LiveData<Store[]> getStores() {
-        requestStoresAround(null);
+        requestStoresAround();
         return mStores;
     }
 
