@@ -18,6 +18,7 @@ import cat.buyaround.app.adapter.CategoryListAdapter;
 import cat.buyaround.app.adapter.callback.IListAdapter;
 import cat.buyaround.app.databinding.FragmentCategoriesBinding;
 import cat.buyaround.app.factory.ViewModelFactory;
+import cat.buyaround.app.model.Category;
 import cat.buyaround.app.viewmodel.CategoriesViewModel;
 import dagger.android.support.DaggerFragment;
 
@@ -47,16 +48,17 @@ public class CategoriesFragment extends DaggerFragment implements IListAdapter {
         categoriesViewModel.getAllProductCategories();
 
         recyclerView = binding.categoriesRecyclerView;
-        categoryListAdapter = new CategoryListAdapter(getContext(), this);
+        categoryListAdapter = new CategoryListAdapter(requireContext(), this);
         recyclerView.setAdapter(categoryListAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext(), RecyclerView.VERTICAL, false));
         DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(recyclerView.getContext(), RecyclerView.VERTICAL);
         recyclerView.addItemDecoration(dividerItemDecoration);
+
         subscribeObserver();
     }
 
     private void subscribeObserver() {
-        categoriesViewModel.getAllProductCategories().observe(getViewLifecycleOwner(), categories -> {
+        categoriesViewModel.getAllStoreCategories().observe(getViewLifecycleOwner(), categories -> {
             categoryListAdapter.setCategories(categories);
         });
     }
@@ -64,6 +66,8 @@ public class CategoriesFragment extends DaggerFragment implements IListAdapter {
 
     @Override
     public void onItemSelected(Object item) {
-        // TODO
+        if (item instanceof Category) {
+            // TODO: GO TO SEARCH FRAGMENT AND MAKE AN API CALL LOOKING FOR SPECIFIED CATEGORY
+        }
     }
 }

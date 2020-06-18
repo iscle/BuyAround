@@ -48,7 +48,7 @@ public class CategoryListAdapter extends RecyclerView.Adapter<CategoryListAdapte
                     .into(holder.imgView);
         } else {
             Glide.with(mContext)
-                    .load(R.drawable.app_logo_transparent)
+                    .load(R.drawable.ic_thumbnail)
                     .into(holder.imgView);
         }
     }

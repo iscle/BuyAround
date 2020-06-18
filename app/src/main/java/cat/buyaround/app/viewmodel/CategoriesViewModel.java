@@ -40,4 +40,23 @@ public class CategoriesViewModel extends ViewModel {
         requestAllProductCategories();
         return mCategories;
     }
+
+    public void requestAllStoreCategories() {
+        buyAroundRepository.getAllStoreCategories(new CategoryCallback() {
+            @Override
+            public void onCategoriesReceived(Category[] categories) {
+                mCategories.postValue(categories);
+            }
+
+            @Override
+            public void onFailure(SimpleResponse.Status error) {
+
+            }
+        });
+    }
+
+    public LiveData<Category[]> getAllStoreCategories() {
+        requestAllStoreCategories();
+        return mCategories;
+    }
 }

@@ -11,6 +11,8 @@
         android:layout_height="match_parent"
         android:adjustViewBounds="true"
         android:src="@drawable/ic_thumbnail"
+        android:layout_margin="8dp"
+        android:tint="@color/superLightGrey"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -25,7 +27,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@id/item_category_img"
         app:layout_constraintTop_toTopOf="parent" />
-
 
     <ImageView
         android:layout_width="wrap_content"
