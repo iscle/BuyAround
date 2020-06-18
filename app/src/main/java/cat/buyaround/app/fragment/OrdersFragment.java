@@ -1,7 +1,6 @@
 package cat.buyaround.app.fragment;
 
 import android.os.Bundle;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,21 +12,20 @@ import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import javax.inject.Inject;
+
 import cat.buyaround.app.adapter.OrderListAdapter;
 import cat.buyaround.app.adapter.callback.IListAdapter;
 import cat.buyaround.app.databinding.FragmentOrdersBinding;
 import cat.buyaround.app.factory.ViewModelFactory;
 import cat.buyaround.app.viewmodel.OrdersViewModel;
-
-import javax.inject.Inject;
-
 import dagger.android.support.DaggerFragment;
 
 
 public class OrdersFragment extends DaggerFragment implements IListAdapter {
-    private FragmentOrdersBinding binding;
     @Inject
     protected ViewModelFactory viewModelFactory;
+    private FragmentOrdersBinding binding;
     private OrdersViewModel ordersViewModel;
 
     private RecyclerView lastOrdersrecyclerView;

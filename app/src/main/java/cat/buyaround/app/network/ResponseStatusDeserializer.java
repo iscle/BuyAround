@@ -4,11 +4,12 @@ import com.google.gson.JsonDeserializationContext;
 import com.google.gson.JsonDeserializer;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonParseException;
-import cat.buyaround.app.network.model.SimpleResponse;
 
 import java.lang.reflect.Type;
 
 import javax.inject.Singleton;
+
+import cat.buyaround.app.network.model.SimpleResponse;
 
 @Singleton
 public class ResponseStatusDeserializer implements JsonDeserializer<SimpleResponse.Status> {

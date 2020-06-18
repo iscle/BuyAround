@@ -4,6 +4,8 @@ import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
+import javax.inject.Inject;
+
 import cat.buyaround.app.callback.PackCallback;
 import cat.buyaround.app.callback.ProductCallback;
 import cat.buyaround.app.callback.StoreCallback;
@@ -12,8 +14,6 @@ import cat.buyaround.app.model.Product;
 import cat.buyaround.app.model.Store;
 import cat.buyaround.app.network.BuyAroundRepository;
 import cat.buyaround.app.network.model.SimpleResponse;
-
-import javax.inject.Inject;
 
 public class HomeViewModel extends ViewModel {
 

@@ -103,9 +103,6 @@
     <string name="orders_last_orders">Last Orders</string>
     <string name="no_orders_yet">You don\'t have any orders yet.\nMake your first purchase!</string>
 
-    <!-- ORDER DETAIL -->
-    <string name="order_cost">Total cost</string>
-
     <!-- GENERAL PURPOSE -->
     <string name="search_hint">What are you looking for?</string>
     <string name="accept">Accept</string>
@@ -138,10 +135,13 @@
     <string name="points">Points:</string>
     <string name="product_other_info">Other info</string>
     <string name="currency_tv">Currency</string>
-    <string name="description_tv">Description</string>
+    <string name="description_tv">Description:</string>
     <string name="description_hint">Enter a brief description</string>
     <string name="images_tv">Images</string>
     <string name="product_unit">unit</string>
+    <string name="share_product_via">Share product via</string>
+    <string name="share_product_text">Check out this &#57932; product I found on BuyAround!\n\n</string>
+    <string name="share_product_only_for"> only for </string>
 
     <!-- ADDRESS -->
     <string name="address_label">Address</string>
@@ -164,7 +164,7 @@
     <string name="what_is_buyaround_text">BuyAround is an app for making purchases at nearby stores easily and quickly.\n\nThis app was created in the wake of the Covid-19 crisis, which threatened local commerce. In order to reactivate it, we sought the most convenient way to give visibility to the shops around us.</string>
     <string name="who_are_we">Who are we?</string>
     <string name="who_are_we_text">The BuyAround team is formed by 3 engineering students of La Salle - URL.\n\nIn view of the economic crisis caused by the global pandemic of 2020, and in an attempt to contribute our bit in restoring normality, we decided that we wanted to help the local shops, as they would be directly affected by this crisis.</string>
-    <string name="more_info_text">For more information you can visit out web page at: <a href="https://buyaround.cat">https://buyaround.cat</a>\n\nThis is an open-source project, so if you want to check the code you can access it through this GitHub repository: <a href="https://github.com/Iscle/BuyAround">https://github.com/Iscle/BuyAround</a></string>
+    <string name="more_info_text">For more information you can visit our web page at: <a href="https://buyaround.cat">https://buyaround.cat</a>\n\nThis is an open-source project, so if you want to check the code you can access it through this GitHub repository: <a href="https://github.com/Iscle/BuyAround">https://github.com/Iscle/BuyAround</a></string>
     <string name="credit_names">Developers</string>
     <string name="credit_names_text">Iscle Gil.\nFerran Montoliu.\nJoan Carrión.</string>
 
@@ -180,4 +180,12 @@
     <string name="legal_text_1">This application is an open-source project running under <i>Apache License 2.0</i>.</string>
     <string name="legal_text_2">It is a non-functional prototype developed as a proof of concept. If the project becomes real later, we will update the information and inform all our registered users.</string>
     <string name="legal_more_info">For more information, visit our web page at: <a href="https://buyaround.cat/legal">https://buyaround.cat/legal</a></string>
+
+    <!-- CART POPUP -->
+    <string name="cart_items_text_singular">product</string>
+    <string name="cart_items_text_plural">products</string>
+    <string name="cart_total_cost_text">Total:</string>
+    <string name="currency">€</string>
+    <string name="check_cart">Check cart</string>
+
 </resources>

@@ -9,19 +9,18 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.lifecycle.ViewModelProvider;
 
+import javax.inject.Inject;
+
 import cat.buyaround.app.databinding.FragmentAddressesBinding;
 import cat.buyaround.app.factory.ViewModelFactory;
 import cat.buyaround.app.viewmodel.AddressesViewModel;
-
-import javax.inject.Inject;
-
 import dagger.android.support.DaggerFragment;
 
 public class AddressesFragment extends DaggerFragment {
 
-    private FragmentAddressesBinding binding;
     @Inject
     protected ViewModelFactory viewModelFactory;
+    private FragmentAddressesBinding binding;
     private AddressesViewModel addressesViewModel;
 
     @Override

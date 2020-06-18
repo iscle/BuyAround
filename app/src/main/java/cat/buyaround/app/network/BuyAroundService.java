@@ -14,7 +14,6 @@ import cat.buyaround.app.network.model.ProductResponse;
 import cat.buyaround.app.network.model.RegisterResponse;
 import cat.buyaround.app.network.model.StoreResponse;
 import cat.buyaround.app.network.model.UserResponse;
-
 import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.GET;

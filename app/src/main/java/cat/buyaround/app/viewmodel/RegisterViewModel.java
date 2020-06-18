@@ -7,13 +7,12 @@ import androidx.lifecycle.ViewModel;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
-import java.util.Date;
+
+import javax.inject.Inject;
 
 import cat.buyaround.app.callback.RegisterCallback;
 import cat.buyaround.app.model.User;
 import cat.buyaround.app.network.BuyAroundRepository;
-
-import javax.inject.Inject;
 
 public class RegisterViewModel extends ViewModel {
 

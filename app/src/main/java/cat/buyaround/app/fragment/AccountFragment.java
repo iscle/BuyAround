@@ -42,7 +42,8 @@ public class AccountFragment extends DaggerFragment {
 
     @Inject
     protected ViewModelFactory viewModelFactory;
-    @Inject UserManager userManager;
+    @Inject
+    UserManager userManager;
     private FragmentAccountBinding binding;
 
     private boolean registered;

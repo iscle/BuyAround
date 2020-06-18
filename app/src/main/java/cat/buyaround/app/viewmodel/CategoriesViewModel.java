@@ -4,12 +4,12 @@ import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
+import javax.inject.Inject;
+
 import cat.buyaround.app.callback.CategoryCallback;
 import cat.buyaround.app.model.Category;
 import cat.buyaround.app.network.BuyAroundRepository;
 import cat.buyaround.app.network.model.SimpleResponse;
-
-import javax.inject.Inject;
 
 public class CategoriesViewModel extends ViewModel {
 

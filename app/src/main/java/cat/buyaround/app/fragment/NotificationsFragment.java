@@ -12,20 +12,19 @@ import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import javax.inject.Inject;
+
 import cat.buyaround.app.adapter.NotificationListAdapter;
 import cat.buyaround.app.adapter.callback.IListAdapter;
 import cat.buyaround.app.databinding.FragmentNotificationsBinding;
 import cat.buyaround.app.factory.ViewModelFactory;
 import cat.buyaround.app.viewmodel.NotificationsViewModel;
-
-import javax.inject.Inject;
-
 import dagger.android.support.DaggerFragment;
 
 public class NotificationsFragment extends DaggerFragment implements IListAdapter {
-    private FragmentNotificationsBinding binding;
     @Inject
     protected ViewModelFactory viewModelFactory;
+    private FragmentNotificationsBinding binding;
     private NotificationsViewModel notificationsViewModel;
 
     private RecyclerView recyclerView;

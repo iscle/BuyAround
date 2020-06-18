@@ -9,19 +9,18 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.lifecycle.ViewModelProvider;
 
+import javax.inject.Inject;
+
 import cat.buyaround.app.databinding.FragmentPersonalInfoBinding;
 import cat.buyaround.app.factory.ViewModelFactory;
 import cat.buyaround.app.viewmodel.PersonalInfoViewModel;
-
-import javax.inject.Inject;
-
 import dagger.android.support.DaggerFragment;
 
 public class PersonalInfoFragment extends DaggerFragment {
 
-    private FragmentPersonalInfoBinding binding;
     @Inject
     protected ViewModelFactory viewModelFactory;
+    private FragmentPersonalInfoBinding binding;
     private PersonalInfoViewModel personalInfoViewModel;
 
     @Override

@@ -10,10 +10,11 @@ public class Category implements Serializable {
     private String name;
     private String thumbnail;
 
-    public Category () {
+    public Category() {
         name = null;
         thumbnail = null;
     }
+
     public Category(String name) {
         this.name = name;
         thumbnail = null;

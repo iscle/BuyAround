@@ -4,10 +4,10 @@ import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
+import javax.inject.Inject;
+
 import cat.buyaround.app.model.User;
 import cat.buyaround.app.network.BuyAroundRepository;
-
-import javax.inject.Inject;
 
 public class AccountViewModel extends ViewModel {
 

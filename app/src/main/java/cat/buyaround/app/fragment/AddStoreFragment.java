@@ -12,6 +12,11 @@ import androidx.annotation.Nullable;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.Navigation;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.inject.Inject;
+
 import cat.buyaround.app.callback.CategoryCallback;
 import cat.buyaround.app.callback.StoreCallback;
 import cat.buyaround.app.databinding.FragmentAddStoreBinding;
@@ -20,19 +25,13 @@ import cat.buyaround.app.model.Category;
 import cat.buyaround.app.model.Store;
 import cat.buyaround.app.network.model.SimpleResponse;
 import cat.buyaround.app.viewmodel.AddStoreViewModel;
-
-import java.util.ArrayList;
-import java.util.List;
-
-import javax.inject.Inject;
-
 import dagger.android.support.DaggerFragment;
 
 public class AddStoreFragment extends DaggerFragment implements StoreCallback, CategoryCallback {
 
-    private FragmentAddStoreBinding binding;
     @Inject
     protected ViewModelFactory viewModelFactory;
+    private FragmentAddStoreBinding binding;
     private AddStoreViewModel addStoreViewModel;
 
     @Override

@@ -23,9 +23,9 @@ import dagger.android.support.DaggerFragment;
 
 public class RegisterFragment extends DaggerFragment implements RegisterCallback {
 
-    private FragmentRegisterBinding binding;
     @Inject
     protected ViewModelFactory viewModelFactory;
+    private FragmentRegisterBinding binding;
     private RegisterViewModel registerViewModel;
 
     @Override

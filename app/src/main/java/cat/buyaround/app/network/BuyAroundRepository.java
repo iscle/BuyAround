@@ -4,6 +4,9 @@ import android.util.Log;
 
 import com.google.gson.Gson;
 
+import javax.inject.Inject;
+import javax.inject.Singleton;
+
 import cat.buyaround.app.auth.UserManager;
 import cat.buyaround.app.callback.CategoryCallback;
 import cat.buyaround.app.callback.LoginCallback;
@@ -28,10 +31,6 @@ import cat.buyaround.app.network.model.RegisterResponse;
 import cat.buyaround.app.network.model.SimpleResponse;
 import cat.buyaround.app.network.model.StoreResponse;
 import cat.buyaround.app.network.model.UserResponse;
-
-import javax.inject.Inject;
-import javax.inject.Singleton;
-
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -39,10 +38,9 @@ import retrofit2.Response;
 @Singleton
 public class BuyAroundRepository {
     private static final String TAG = "BuyAroundRepository";
-
-    private BuyAroundService service;
     @Inject
     protected UserManager userManager;
+    private BuyAroundService service;
 
     @Inject
     public BuyAroundRepository(BuyAroundService service) {

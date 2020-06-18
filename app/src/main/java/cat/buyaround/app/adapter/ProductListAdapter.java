@@ -15,10 +15,10 @@ import androidx.swiperefreshlayout.widget.CircularProgressDrawable;
 import com.bumptech.glide.Glide;
 
 import cat.buyaround.app.R;
-import cat.buyaround.app.utils.Utils;
 import cat.buyaround.app.adapter.callback.IAddItemCallback;
 import cat.buyaround.app.databinding.ItemProductBinding;
 import cat.buyaround.app.model.Product;
+import cat.buyaround.app.utils.Utils;
 
 public class ProductListAdapter extends RecyclerView.Adapter<ProductListAdapter.ViewHolder> {
 

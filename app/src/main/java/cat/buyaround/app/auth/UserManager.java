@@ -5,21 +5,12 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.text.TextUtils;
 
-import androidx.lifecycle.LiveData;
-import androidx.lifecycle.MutableLiveData;
 import androidx.localbroadcastmanager.content.LocalBroadcastManager;
-
-import java.util.Arrays;
-import java.util.List;
 
 import javax.inject.Inject;
 import javax.inject.Singleton;
 
-import cat.buyaround.app.callback.UserCallback;
-import cat.buyaround.app.model.OrderProduct;
 import cat.buyaround.app.model.User;
-import cat.buyaround.app.network.BuyAroundRepository;
-import cat.buyaround.app.network.model.SimpleResponse;
 
 @Singleton
 public class UserManager {
@@ -40,6 +31,10 @@ public class UserManager {
         this.localBroadcastManager = LocalBroadcastManager.getInstance(context);
     }
 
+    public static boolean isTokenValid(String token) {
+        return !TextUtils.isEmpty(token);
+    }
+
     public boolean hasSession() {
         return isTokenValid(token);
     }
@@ -52,13 +47,13 @@ public class UserManager {
         return user;
     }
 
-    public String getToken() {
-        return token;
-    }
-
     public void setUser(User user) {
         this.user = user;
         localBroadcastManager.sendBroadcast(new Intent(ACTION_USER_UPDATED));
+    }
+
+    public String getToken() {
+        return token;
     }
 
     public void setToken(String token) {
@@ -66,9 +61,5 @@ public class UserManager {
         SharedPreferences.Editor sharedPrefEditor = sharedPreferences.edit();
         sharedPrefEditor.putString(TOKEN_PREF, token);
         sharedPrefEditor.apply();
-    }
-
-    public static boolean isTokenValid(String token) {
-        return !TextUtils.isEmpty(token);
     }
 }
