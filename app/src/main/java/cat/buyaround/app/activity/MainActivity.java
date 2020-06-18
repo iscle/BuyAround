@@ -1,6 +1,7 @@
 package cat.buyaround.app.activity;
 
 import android.os.Bundle;
+import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.navigation.NavController;
@@ -38,5 +39,10 @@ public class MainActivity extends AppCompatActivity {
 
         // Set up bottom navigation
         NavigationUI.setupWithNavController(binding.bottomNavigationView, navController);
+
+        binding.checkCartBtn.setOnClickListener(v -> {
+            Navigation.findNavController(this, R.id.nav_host_fragment).navigate(R.id.cartFragment);
+            binding.cartPopupLayout.setVisibility(View.GONE);
+        });
     }
 }

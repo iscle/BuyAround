@@ -41,11 +41,14 @@
     </ScrollView>
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/cart_popup_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
         android:backgroundTint="@android:color/transparent"
+        android:clickable="true"
         android:elevation="8dp"
+        android:focusable="true"
         android:visibility="gone"
         app:layout_constraintBottom_toTopOf="@+id/bottom_navigation_view"
         app:layout_constraintEnd_toEndOf="parent"
