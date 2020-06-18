@@ -7,14 +7,11 @@ import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavDirections;
 import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
-import java.util.List;
 
 import javax.inject.Inject;
 
@@ -22,17 +19,15 @@ import cat.buyaround.app.adapter.CartItemsAdapter;
 import cat.buyaround.app.adapter.callback.IListAdapter;
 import cat.buyaround.app.databinding.FragmentCartBinding;
 import cat.buyaround.app.factory.ViewModelFactory;
-import cat.buyaround.app.model.OrderProduct;
 import cat.buyaround.app.model.Product;
 import cat.buyaround.app.viewmodel.CartViewModel;
 import dagger.android.support.DaggerFragment;
 
 public class CartFragment extends DaggerFragment implements IListAdapter {
 
-    private FragmentCartBinding binding;
-
     @Inject
     protected ViewModelFactory viewModelFactory;
+    private FragmentCartBinding binding;
     private CartViewModel cartViewModel;
 
     @Override

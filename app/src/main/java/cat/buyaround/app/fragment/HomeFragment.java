@@ -13,7 +13,8 @@ import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import cat.buyaround.app.utils.MarginItemDecorator;
+import javax.inject.Inject;
+
 import cat.buyaround.app.adapter.PackListAdapter;
 import cat.buyaround.app.adapter.ProductListAdapter;
 import cat.buyaround.app.adapter.StoreListAdapter;
@@ -25,21 +26,18 @@ import cat.buyaround.app.model.OrderProduct;
 import cat.buyaround.app.model.Pack;
 import cat.buyaround.app.model.Product;
 import cat.buyaround.app.model.Store;
+import cat.buyaround.app.utils.MarginItemDecorator;
 import cat.buyaround.app.viewmodel.CartViewModel;
 import cat.buyaround.app.viewmodel.HomeViewModel;
-
-import javax.inject.Inject;
-
 import dagger.android.support.DaggerFragment;
 
 public class HomeFragment extends DaggerFragment implements IListAdapter, IAddItemCallback {
-
-    private FragmentHomeBinding binding;
 
     @Inject
     protected ViewModelFactory viewModelFactory;
     @Inject
     protected MarginItemDecorator decorator;
+    private FragmentHomeBinding binding;
     private HomeViewModel homeViewModel;
     private CartViewModel cartViewModel;
 

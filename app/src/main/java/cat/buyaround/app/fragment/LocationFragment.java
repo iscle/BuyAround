@@ -7,6 +7,12 @@ import android.location.Criteria;
 import android.location.Location;
 import android.location.LocationManager;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
+import android.text.Editable;
+import android.text.TextWatcher;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -15,22 +21,6 @@ import androidx.core.content.ContextCompat;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
-import android.preference.PreferenceManager;
-import android.text.Editable;
-import android.text.TextWatcher;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-
-import cat.buyaround.app.R;
-import cat.buyaround.app.adapter.CompactStoreListAdapter;
-import cat.buyaround.app.adapter.callback.IListAdapter;
-import cat.buyaround.app.databinding.FragmentLocationBinding;
-import cat.buyaround.app.factory.ViewModelFactory;
-import cat.buyaround.app.model.Store;
-import cat.buyaround.app.model.UserRadius;
-import cat.buyaround.app.viewmodel.LocationViewModel;
 
 import org.osmdroid.api.IMapController;
 import org.osmdroid.config.Configuration;
@@ -51,6 +41,14 @@ import java.util.Objects;
 
 import javax.inject.Inject;
 
+import cat.buyaround.app.R;
+import cat.buyaround.app.adapter.CompactStoreListAdapter;
+import cat.buyaround.app.adapter.callback.IListAdapter;
+import cat.buyaround.app.databinding.FragmentLocationBinding;
+import cat.buyaround.app.factory.ViewModelFactory;
+import cat.buyaround.app.model.Store;
+import cat.buyaround.app.model.UserRadius;
+import cat.buyaround.app.viewmodel.LocationViewModel;
 import dagger.android.support.DaggerFragment;
 
 public class LocationFragment extends DaggerFragment implements IListAdapter {
@@ -58,10 +56,9 @@ public class LocationFragment extends DaggerFragment implements IListAdapter {
     private final int REQUEST_PERMISSIONS_REQUEST_CODE = 1;
     private final int DEFAULT_RADIUS = 500;
     private final double DEFAULT_ZOOM = 16;
-
-    private FragmentLocationBinding binding;
     @Inject
     protected ViewModelFactory viewModelFactory;
+    private FragmentLocationBinding binding;
     private LocationViewModel locationViewModel;
 
     private LocationManager locationManager;

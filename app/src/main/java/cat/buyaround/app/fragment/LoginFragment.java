@@ -13,23 +13,20 @@ import androidx.navigation.NavDirections;
 import androidx.navigation.Navigation;
 import androidx.navigation.fragment.NavHostFragment;
 
-import cat.buyaround.app.fragment.LoginFragmentDirections;
+import javax.inject.Inject;
 
 import cat.buyaround.app.R;
 import cat.buyaround.app.callback.LoginCallback;
 import cat.buyaround.app.databinding.FragmentLoginBinding;
 import cat.buyaround.app.factory.ViewModelFactory;
 import cat.buyaround.app.viewmodel.LoginViewModel;
-
-import javax.inject.Inject;
-
 import dagger.android.support.DaggerFragment;
 
 public class LoginFragment extends DaggerFragment implements LoginCallback {
 
-    private FragmentLoginBinding binding;
     @Inject
     protected ViewModelFactory viewModelFactory;
+    private FragmentLoginBinding binding;
     private LoginViewModel loginViewModel;
 
     @Override

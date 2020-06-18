@@ -29,6 +29,14 @@ public class SplashActivity extends DaggerAppCompatActivity {
     protected UserManager userManager;
 
     private boolean receiverRegistered;
+    private BroadcastReceiver receiver = new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            if (intent.getAction().equals(ACTION_USER_UPDATED)) {
+                startMainActivity();
+            }
+        }
+    };
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -74,13 +82,4 @@ public class SplashActivity extends DaggerAppCompatActivity {
             receiverRegistered = false;
         }
     }
-
-    private BroadcastReceiver receiver = new BroadcastReceiver() {
-        @Override
-        public void onReceive(Context context, Intent intent) {
-            if (intent.getAction().equals(ACTION_USER_UPDATED)) {
-                startMainActivity();
-            }
-        }
-    };
 }

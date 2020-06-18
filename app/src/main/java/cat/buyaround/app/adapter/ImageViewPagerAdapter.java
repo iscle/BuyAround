@@ -46,7 +46,7 @@ public class ImageViewPagerAdapter extends RecyclerView.Adapter<ImageViewPagerAd
 
     @Override
     public int getItemCount() {
-        return images == null? 0 : images.length;
+        return images == null ? 0 : images.length;
     }
 
     public class ImageViewHolder extends RecyclerView.ViewHolder {

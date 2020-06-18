@@ -27,9 +27,9 @@ import dagger.android.support.DaggerFragment;
 
 public class ProductFragment extends DaggerFragment {
 
-    private FragmentProductBinding binding;
     @Inject
     protected ViewModelFactory viewModelFactory;
+    private FragmentProductBinding binding;
     private ProductViewModel productViewModel;
 
     @Nullable

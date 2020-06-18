@@ -2,9 +2,9 @@ package cat.buyaround.app.viewmodel;
 
 import androidx.lifecycle.ViewModel;
 
-import cat.buyaround.app.network.BuyAroundRepository;
-
 import javax.inject.Inject;
+
+import cat.buyaround.app.network.BuyAroundRepository;
 
 public class AddressesViewModel extends ViewModel {
 

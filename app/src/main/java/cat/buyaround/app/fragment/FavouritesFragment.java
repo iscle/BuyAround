@@ -11,7 +11,8 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import cat.buyaround.app.utils.MarginItemDecorator;
+import javax.inject.Inject;
+
 import cat.buyaround.app.adapter.PackListAdapter;
 import cat.buyaround.app.adapter.ProductListAdapter;
 import cat.buyaround.app.adapter.StoreListAdapter;
@@ -21,20 +22,17 @@ import cat.buyaround.app.databinding.FragmentFavouritesBinding;
 import cat.buyaround.app.factory.ViewModelFactory;
 import cat.buyaround.app.model.Pack;
 import cat.buyaround.app.model.Store;
+import cat.buyaround.app.utils.MarginItemDecorator;
 import cat.buyaround.app.viewmodel.FavouritesViewModel;
-
-import javax.inject.Inject;
-
 import dagger.android.support.DaggerFragment;
 
 public class FavouritesFragment extends DaggerFragment implements IListAdapter, IAddItemCallback {
-
-    private FragmentFavouritesBinding binding;
 
     @Inject
     protected ViewModelFactory viewModelFactory;
     @Inject
     protected MarginItemDecorator decorator;
+    private FragmentFavouritesBinding binding;
     private FavouritesViewModel favouritesViewModel;
 
     private RecyclerView storesRecyclerView;

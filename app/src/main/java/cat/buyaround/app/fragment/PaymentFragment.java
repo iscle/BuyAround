@@ -9,19 +9,18 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.lifecycle.ViewModelProvider;
 
+import javax.inject.Inject;
+
 import cat.buyaround.app.databinding.FragmentPaymentBinding;
 import cat.buyaround.app.factory.ViewModelFactory;
 import cat.buyaround.app.viewmodel.PaymentViewModel;
-
-import javax.inject.Inject;
-
 import dagger.android.support.DaggerFragment;
 
 public class PaymentFragment extends DaggerFragment {
 
-    private FragmentPaymentBinding binding;
     @Inject
     protected ViewModelFactory viewModelFactory;
+    private FragmentPaymentBinding binding;
     private PaymentViewModel paymentViewModel;
 
     @Override

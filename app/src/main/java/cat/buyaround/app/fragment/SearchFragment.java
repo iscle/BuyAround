@@ -14,17 +14,15 @@ import androidx.lifecycle.ViewModelProvider;
 import javax.inject.Inject;
 
 import cat.buyaround.app.databinding.FragmentSearchBinding;
-
 import cat.buyaround.app.factory.ViewModelFactory;
 import cat.buyaround.app.viewmodel.SearchViewModel;
 import dagger.android.support.DaggerFragment;
 
 public class SearchFragment extends DaggerFragment {
 
-    private FragmentSearchBinding binding;
-
     @Inject
     protected ViewModelFactory viewModelFactory;
+    private FragmentSearchBinding binding;
     private SearchViewModel searchViewModel;
 
     @Override

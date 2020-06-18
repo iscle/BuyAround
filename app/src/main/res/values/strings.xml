@@ -103,9 +103,6 @@
     <string name="orders_last_orders">Last Orders</string>
     <string name="no_orders_yet">You don\'t have any orders yet.\nMake your first purchase!</string>
 
-    <!-- ORDER DETAIL -->
-    <string name="order_cost">Total cost</string>
-
     <!-- GENERAL PURPOSE -->
     <string name="search_hint">What are you looking for?</string>
     <string name="accept">Accept</string>
@@ -190,4 +187,5 @@
     <string name="cart_total_cost_text">Total:</string>
     <string name="currency">€</string>
     <string name="check_cart">Check cart</string>
+
 </resources>

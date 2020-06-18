@@ -12,6 +12,11 @@ import androidx.annotation.Nullable;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.Navigation;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.inject.Inject;
+
 import cat.buyaround.app.callback.CategoryCallback;
 import cat.buyaround.app.callback.ProductCallback;
 import cat.buyaround.app.databinding.FragmentAddProductBinding;
@@ -20,19 +25,13 @@ import cat.buyaround.app.model.Category;
 import cat.buyaround.app.model.Product;
 import cat.buyaround.app.network.model.SimpleResponse;
 import cat.buyaround.app.viewmodel.AddProductViewModel;
-
-import java.util.ArrayList;
-import java.util.List;
-
-import javax.inject.Inject;
-
 import dagger.android.support.DaggerFragment;
 
 public class AddProductFragment extends DaggerFragment implements ProductCallback, CategoryCallback {
 
-    private FragmentAddProductBinding binding;
     @Inject
     protected ViewModelFactory viewModelFactory;
+    private FragmentAddProductBinding binding;
     private AddProductViewModel addProductViewModel;
     private ArrayList<String> addedImages = new ArrayList<>();
 

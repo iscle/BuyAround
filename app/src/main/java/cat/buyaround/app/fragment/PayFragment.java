@@ -9,7 +9,6 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import cat.buyaround.app.databinding.FragmentPayBinding;
-
 import dagger.android.support.DaggerFragment;
 
 public class PayFragment extends DaggerFragment {
