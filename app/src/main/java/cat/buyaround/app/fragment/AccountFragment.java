@@ -99,15 +99,9 @@ public class AccountFragment extends DaggerFragment {
                 getListener(AccountFragmentDirections
                 .actionAccountFragmentToAboutUsFragment()));
 
-        setupItemContent(binding.logOut, "Log out", new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                userManager.setUser(null);
-                binding.notLoggedInLayout.setVisibility(View.VISIBLE);
-                binding.loggedInLayout.setVisibility(View.GONE);
-
-                // TODO: Hide things
-            }
+        setupItemContent(binding.logOut, "Log out", v -> {
+            userManager.setUser(null);
+            updateUser();
         });
 
         registered = false;
@@ -157,15 +151,31 @@ public class AccountFragment extends DaggerFragment {
                     .load(user.getProfilePicture())
                     .into(binding.profileThumbnail);
 
+            setLoggedIn(true);
+        } else {
+            setLoggedIn(false);
+        }
+    }
+
+    private void setLoggedIn(boolean loggedIn) {
+        if (loggedIn) {
             binding.notLoggedInLayout.setVisibility(View.GONE);
             binding.loggedInLayout.setVisibility(View.VISIBLE);
 
-            //binding.accountRecyclerView.setAdapter(new ContentListAdapter(this, loggedUserContents));
+            binding.personalInfo.getRoot().setVisibility(View.VISIBLE);
+            binding.orders.getRoot().setVisibility(View.VISIBLE);
+            binding.addresses.getRoot().setVisibility(View.VISIBLE);
+            binding.paymentMethods.getRoot().setVisibility(View.VISIBLE);
+            binding.logOut.getRoot().setVisibility(View.VISIBLE);
         } else {
             binding.notLoggedInLayout.setVisibility(View.VISIBLE);
             binding.loggedInLayout.setVisibility(View.GONE);
 
-            //binding.accountRecyclerView.setAdapter(new ContentListAdapter(this, guestUserContents));
+            binding.personalInfo.getRoot().setVisibility(View.GONE);
+            binding.orders.getRoot().setVisibility(View.GONE);
+            binding.addresses.getRoot().setVisibility(View.GONE);
+            binding.paymentMethods.getRoot().setVisibility(View.GONE);
+            binding.logOut.getRoot().setVisibility(View.GONE);
         }
     }
 }
