@@ -8,6 +8,8 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.navigation.NavDirections;
+import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
@@ -52,7 +54,9 @@ public class AddressesFragment extends DaggerFragment {
         binding.addressRecycler.addItemDecoration(new DividerItemDecoration(requireContext(), DividerItemDecoration.VERTICAL));
 
         binding.addAddressBtn.setOnClickListener(v -> {
-            // TODO: GO TO ADD ADDRESS FRAGMENT
+            NavDirections action = AddressesFragmentDirections
+                    .actionAddressesFragmentToAddAddressFragment();
+            Navigation.findNavController(v).navigate(action);
         });
 
     }
