@@ -6,6 +6,7 @@ import androidx.lifecycle.ViewModel;
 
 import javax.inject.Inject;
 
+import cat.buyaround.app.callback.EditUserCallback;
 import cat.buyaround.app.callback.UserCallback;
 import cat.buyaround.app.model.User;
 import cat.buyaround.app.network.BuyAroundRepository;
@@ -39,5 +40,9 @@ public class PersonalInfoViewModel extends ViewModel {
     public LiveData<User> getCurrentUser() {
         requestCurrentUser();
         return mUser;
+    }
+
+    public void updateUser(User user, EditUserCallback callback) {
+        buyAroundRepository.updateUser(user, callback);
     }
 }

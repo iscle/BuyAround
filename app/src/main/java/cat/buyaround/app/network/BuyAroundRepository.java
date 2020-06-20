@@ -9,6 +9,7 @@ import javax.inject.Singleton;
 
 import cat.buyaround.app.auth.UserManager;
 import cat.buyaround.app.callback.CategoryCallback;
+import cat.buyaround.app.callback.EditUserCallback;
 import cat.buyaround.app.callback.LoginCallback;
 import cat.buyaround.app.callback.NotificationCallback;
 import cat.buyaround.app.callback.OrderCallback;
@@ -128,6 +129,33 @@ public class BuyAroundRepository {
             public void onFailure(Call<LoginResponse> call, Throwable t) {
                 callback.onFailure(LoginCallback.LoginError.NETWORK_ERROR);
                 t.printStackTrace();
+            }
+        });
+    }
+
+    public void updateUser(User user, EditUserCallback callback) {
+        service.updateUser(user).enqueue(new Callback<UserResponse>() {
+            @Override
+            public void onResponse(Call<UserResponse> call, Response<UserResponse> response) {
+                if (response.isSuccessful()) {
+                    UserResponse userResponse = response.body();
+                    Log.d(TAG, "onResponse: " + userResponse.getStatus());
+                    switch (userResponse.getStatus()) {
+                        case OK:
+                            callback.onUserUpdated();
+                            break;
+                        case INTERNAL_ERROR:
+                            callback.onFailure(SimpleResponse.Status.INTERNAL_ERROR);
+                            break;
+                    }
+                } else {
+                    callback.onFailure(SimpleResponse.Status.INTERNAL_ERROR);
+                }
+            }
+
+            @Override
+            public void onFailure(Call<UserResponse> call, Throwable t) {
+                callback.onFailure(SimpleResponse.Status.INTERNAL_ERROR);
             }
         });
     }
