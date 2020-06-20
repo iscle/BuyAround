@@ -1,18 +1,26 @@
 package cat.buyaround.app.fragment;
 
+import android.Manifest;
+import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
 import android.os.Bundle;
-import android.text.Editable;
-import android.text.TextWatcher;
+import android.provider.MediaStore;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.bumptech.glide.Glide;
+import com.theartofdev.edmodo.cropper.CropImage;
+import com.theartofdev.edmodo.cropper.CropImageView;
 
+import java.io.IOException;
 import java.text.SimpleDateFormat;
 
 import javax.inject.Inject;
@@ -22,9 +30,10 @@ import cat.buyaround.app.auth.UserManager;
 import cat.buyaround.app.databinding.FragmentPersonalInfoBinding;
 import cat.buyaround.app.databinding.ItemPersonalInfoBinding;
 import cat.buyaround.app.factory.ViewModelFactory;
-import cat.buyaround.app.model.User;
 import cat.buyaround.app.viewmodel.PersonalInfoViewModel;
 import dagger.android.support.DaggerFragment;
+
+import static android.app.Activity.RESULT_OK;
 
 public class PersonalInfoFragment extends DaggerFragment {
     private static final String TAG = "PersonalInfoFragment";
@@ -52,8 +61,28 @@ public class PersonalInfoFragment extends DaggerFragment {
         subscribeObserver();
 
         binding.editPhotoBtn.setOnClickListener(v -> {
-            // TODO: ASK FOR PERMISSION AND OPEN GALLERY INTENT
+            checkForPermissions();
         });
+    }
+
+    private void checkForPermissions() {
+        int permissionWrite = ContextCompat.checkSelfPermission(requireActivity(), Manifest.permission.WRITE_EXTERNAL_STORAGE);
+        int permissionRead = ContextCompat.checkSelfPermission(requireActivity(), Manifest.permission.READ_EXTERNAL_STORAGE);
+
+        if (permissionWrite != PackageManager.PERMISSION_GRANTED || permissionRead != PackageManager.PERMISSION_GRANTED) {
+            askForPermission();
+        } else {
+            CropImage.activity()
+                    .setGuidelines(CropImageView.Guidelines.ON)
+                    .setAspectRatio(1, 1)
+                    .setAutoZoomEnabled(true)
+                    .start(requireContext(), this);
+        }
+    }
+
+    private void askForPermission() {
+        ActivityCompat.requestPermissions(requireActivity(),
+                new String[]{Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE}, 1);
     }
 
     private void subscribeObserver() {
@@ -81,5 +110,31 @@ public class PersonalInfoFragment extends DaggerFragment {
         else
             b.itemContentTv.setText(getResources().getString(R.string.edit_password));
 
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (requestCode == CropImage.CROP_IMAGE_ACTIVITY_REQUEST_CODE) {
+            CropImage.ActivityResult result = CropImage.getActivityResult(data);
+
+            if (resultCode == RESULT_OK) {
+                try {
+                    Bitmap bitmap = MediaStore.Images.Media.getBitmap(requireActivity().getContentResolver(),
+                            result.getUri());
+
+                    Glide.with(requireContext())
+                            .asBitmap()
+                            .placeholder(R.drawable.ic_thumbnail)
+                            .load(bitmap)
+                            .into(binding.profilePhotoIv);
+
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+
+            } else if (resultCode == CropImage.CROP_IMAGE_ACTIVITY_RESULT_ERROR_CODE) {
+                result.getError().printStackTrace();
+            }
+        }
     }
 }
