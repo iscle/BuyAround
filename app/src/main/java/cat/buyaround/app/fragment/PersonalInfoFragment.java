@@ -51,8 +51,9 @@ public class PersonalInfoFragment extends DaggerFragment {
 
         subscribeObserver();
 
-        //binding.registerName.addTextChangedListener(watcher);
-        //binding.registerSurname.addTextChangedListener(watcher);
+        binding.editPhotoBtn.setOnClickListener(v -> {
+            // TODO: ASK FOR PERMISSION AND OPEN GALLERY INTENT
+        });
     }
 
     private void subscribeObserver() {
@@ -80,39 +81,5 @@ public class PersonalInfoFragment extends DaggerFragment {
         else
             b.itemContentTv.setText(getResources().getString(R.string.edit_password));
 
-    }
-
-
-    private final TextWatcher watcher = new TextWatcher() {
-        @Override
-        public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-        }
-
-        @Override
-        public void onTextChanged(CharSequence s, int start, int before, int count) {
-
-        }
-
-        @Override
-        public void afterTextChanged(Editable s) {
-            /*
-            boolean userModified = false;
-            if (!stringsAreEqual(binding.registerName.getText().toString(), originalUser.getName())) {
-            userModified = true;
-            } else if (!stringsAreEqual(binding.registerSurname.getText().toString(), originalUser.getSurnames())) {
-            userModified = true;
-            }
-
-            binding.updateButton.setEnabled(userModified);
-             */
-        }
-    };
-
-    private static boolean stringsAreEqual(String a, String b) {
-        if ((a == null || a.isEmpty()) && (b == null || b.isEmpty())) return true;
-        if (a == null || b == null) return false;
-
-        return a.equals(b);
     }
 }
