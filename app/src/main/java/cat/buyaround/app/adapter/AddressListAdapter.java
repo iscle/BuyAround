@@ -1,6 +1,7 @@
 package cat.buyaround.app.adapter;
 
 import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -24,10 +25,15 @@ public class AddressListAdapter extends RecyclerView.Adapter<AddressListAdapter.
             holder.street.setText("Carrer Trompeta, 22");
             holder.city.setText("Sant Antoni de Vilamajor, 08123");
             holder.province.setText("Barcelona, Spain");
+            holder.defaultBtn.setVisibility(View.GONE);
+            holder.defaultText.setVisibility(View.VISIBLE);
         } else {
             holder.street.setText("Carrer Sant Joan de la Salle, 42");
             holder.city.setText("Barcelona, 08022");
             holder.province.setText("Barcelona, Spain");
+            holder.defaultBtn.setOnClickListener(v -> {
+                // TODO: POPUP ASKING IF USER WANTS TO CHANGE ITS DEFAULT ADDRESS
+            });
         }
 
         holder.editBtn.setOnClickListener(v -> {
@@ -50,6 +56,8 @@ public class AddressListAdapter extends RecyclerView.Adapter<AddressListAdapter.
         final TextView province;
         final ImageView editBtn;
         final ImageView deleteBtn;
+        final TextView defaultBtn;
+        final TextView defaultText;
 
         public ViewHolder(@NonNull ItemAddressBinding itemBinding) {
             super(itemBinding.getRoot());
@@ -59,6 +67,8 @@ public class AddressListAdapter extends RecyclerView.Adapter<AddressListAdapter.
             this.province = itemBinding.province;
             this.editBtn = itemBinding.editBtn;
             this.deleteBtn = itemBinding.deleteBtn;
+            this.defaultBtn = itemBinding.establishAsDefaultBtn;
+            this.defaultText = itemBinding.defaultTv;
         }
     }
 }

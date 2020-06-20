@@ -203,5 +203,7 @@
     <string name="personal_info_birthday">Birthday</string>
     <string name="personal_info_password">Password</string>
     <string name="edit_password">Edit password</string>
+    <string name="establish_as_default">Establish as default</string>
+    <string name="default_address">Default address</string>
 
 </resources>
