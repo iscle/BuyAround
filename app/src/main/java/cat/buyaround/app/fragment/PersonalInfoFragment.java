@@ -3,20 +3,24 @@ package cat.buyaround.app.fragment;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import androidx.activity.OnBackPressedCallback;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.bumptech.glide.Glide;
+
+import java.text.SimpleDateFormat;
+
 import javax.inject.Inject;
 
+import cat.buyaround.app.R;
 import cat.buyaround.app.auth.UserManager;
 import cat.buyaround.app.databinding.FragmentPersonalInfoBinding;
+import cat.buyaround.app.databinding.ItemPersonalInfoBinding;
 import cat.buyaround.app.factory.ViewModelFactory;
 import cat.buyaround.app.model.User;
 import cat.buyaround.app.viewmodel.PersonalInfoViewModel;
@@ -32,8 +36,6 @@ public class PersonalInfoFragment extends DaggerFragment {
     private FragmentPersonalInfoBinding binding;
     private PersonalInfoViewModel personalInfoViewModel;
 
-    private User originalUser;
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -47,13 +49,39 @@ public class PersonalInfoFragment extends DaggerFragment {
 
         personalInfoViewModel = new ViewModelProvider(this, viewModelFactory).get(PersonalInfoViewModel.class);
 
-        originalUser = userManager.getUser();
-        binding.registerName.setText(originalUser.getName());
-        binding.registerSurname.setText(originalUser.getSurnames());
+        subscribeObserver();
 
-        binding.registerName.addTextChangedListener(watcher);
-        binding.registerSurname.addTextChangedListener(watcher);
+        //binding.registerName.addTextChangedListener(watcher);
+        //binding.registerSurname.addTextChangedListener(watcher);
     }
+
+    private void subscribeObserver() {
+        personalInfoViewModel.getCurrentUser().observe(getViewLifecycleOwner(), user -> {
+
+            Glide.with(requireContext())
+                    .asBitmap()
+                    .placeholder(R.drawable.ic_thumbnail)
+                    .load(user.getProfilePicture())
+                    .into(binding.profilePhotoIv);
+
+            setupItemContent(binding.name, getResources().getString(R.string.personal_info_name), user.getName());
+            setupItemContent(binding.surname, getResources().getString(R.string.personal_info_surname), user.getSurnames());
+            setupItemContent(binding.email, getResources().getString(R.string.personal_info_email), user.getEmail());
+            setupItemContent(binding.birthday, getResources().getString(R.string.personal_info_birthday), new SimpleDateFormat("dd/MM/yyyy").format(user.getBirthday()));
+            setupItemContent(binding.password, getResources().getString(R.string.personal_info_password), null);
+
+        });
+    }
+
+    private void setupItemContent(ItemPersonalInfoBinding b, String title, String content) {
+        b.itemTv.setText(title);
+        if (content != null)
+            b.itemContentTv.setText(content);
+        else
+            b.itemContentTv.setText(getResources().getString(R.string.edit_password));
+
+    }
+
 
     private final TextWatcher watcher = new TextWatcher() {
         @Override
@@ -68,14 +96,16 @@ public class PersonalInfoFragment extends DaggerFragment {
 
         @Override
         public void afterTextChanged(Editable s) {
+            /*
             boolean userModified = false;
             if (!stringsAreEqual(binding.registerName.getText().toString(), originalUser.getName())) {
-                userModified = true;
+            userModified = true;
             } else if (!stringsAreEqual(binding.registerSurname.getText().toString(), originalUser.getSurnames())) {
-                userModified = true;
+            userModified = true;
             }
 
             binding.updateButton.setEnabled(userModified);
+             */
         }
     };
 

@@ -39,7 +39,7 @@
     <string name="password_helper">At least 8 characters long, including numbers and lowercase and uppercase letters.</string>
     <string name="password_verification_helper">The passwords must match.</string>
     <string name="register_success">Account created successfully.</string>
-    <string name="surname">Surnames</string>
+    <string name="surnames">Surnames</string>
     <string name="login_surname_hint">Enter your surnames here</string>
     <string name="birthday">Birthday</string>
     <string name="login_birthday_hint">dd/mm/yyyy</string>
@@ -193,5 +193,15 @@
 
     <!-- PACK -->
     <string name="pack_label">Pack</string>
+
+    <!-- PERSONAL INFO -->
+    <string name="photo">Photo</string>
+    <string name="update_profile">Update profile</string>
+    <string name="personal_info_name">Name</string>
+    <string name="personal_info_surname">Surname</string>
+    <string name="personal_info_email">Email</string>
+    <string name="personal_info_birthday">Birthday</string>
+    <string name="personal_info_password">Password</string>
+    <string name="edit_password">Edit password</string>
 
 </resources>
