@@ -146,6 +146,8 @@
 
     <!-- ADDRESS -->
     <string name="address_label">Address</string>
+    <string name="no_addresses">You haven\'t added any address yet!\nAdd one now!</string>
+    <string name="add_address">Add a new address</string>
 
     <!-- FAVOURITE -->
     <string name="fav_stores">Favourite stores</string>
@@ -180,7 +182,7 @@
     <!-- LEGAL -->
     <string name="legal_text_1">This application is an open-source project running under <i>Apache License 2.0</i>.</string>
     <string name="legal_text_2">It is a non-functional prototype developed as a proof of concept. If the project becomes real later, we will update the information and inform all our registered users.</string>
-    <string name="legal_more_info">For more information, visit our web page at:\n<a href="https://buyaround.cat/legal.html">https://buyaround.cat/legal</a></string>
+    <string name="legal_more_info">For more information, visit our web page at:\n<a href="https://buyaround.cat/legal.html">https://buyaround.cat/legal.html</a></string>
 
     <!-- CART POPUP -->
     <string name="cart_items_text_singular">product</string>

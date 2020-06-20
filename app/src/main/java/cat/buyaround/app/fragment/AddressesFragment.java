@@ -40,12 +40,21 @@ public class AddressesFragment extends DaggerFragment {
 
         addressesViewModel = new ViewModelProvider(this, viewModelFactory).get(AddressesViewModel.class);
 
+        initView();
+
+        updateAddresses();
+    }
+
+    private void initView() {
         binding.addressRecycler.setLayoutManager(new LinearLayoutManager(getContext()));
         addressListAdapter = new AddressListAdapter();
         binding.addressRecycler.setAdapter(addressListAdapter);
         binding.addressRecycler.addItemDecoration(new DividerItemDecoration(requireContext(), DividerItemDecoration.VERTICAL));
 
-        updateAddresses();
+        binding.addAddressBtn.setOnClickListener(v -> {
+            // TODO: GO TO ADD ADDRESS FRAGMENT
+        });
+
     }
 
     private void updateAddresses() {
