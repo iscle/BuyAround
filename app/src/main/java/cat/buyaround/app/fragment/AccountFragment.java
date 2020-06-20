@@ -75,6 +75,11 @@ public class AccountFragment extends DaggerFragment {
             Navigation.findNavController(v).navigate(action);
         });
 
+        binding.logOutBtn.setOnClickListener(v -> {
+            userManager.setUser(null);
+            updateUser();
+        });
+
         setupItemContent(binding.personalInfo, "Personal info",
                 getListener(AccountFragmentDirections
                 .actionAccountFragmentToPersonalInfoFragment()));
@@ -99,11 +104,6 @@ public class AccountFragment extends DaggerFragment {
                 getListener(AccountFragmentDirections
                 .actionAccountFragmentToAboutUsFragment()));
 
-        setupItemContent(binding.logOut, "Log out", v -> {
-            userManager.setUser(null);
-            updateUser();
-        });
-
         registered = false;
     }
 
@@ -123,7 +123,7 @@ public class AccountFragment extends DaggerFragment {
         if (!registered) {
             IntentFilter filter = new IntentFilter();
             filter.addAction(UserManager.ACTION_USER_UPDATED);
-            LocalBroadcastManager.getInstance(getContext()).registerReceiver(receiver, filter);
+            LocalBroadcastManager.getInstance(requireContext()).registerReceiver(receiver, filter);
             registered = true;
             updateUser();
         }
@@ -132,7 +132,7 @@ public class AccountFragment extends DaggerFragment {
     @Override
     public void onPause() {
         if (registered) {
-            LocalBroadcastManager.getInstance(getContext()).unregisterReceiver(receiver);
+            LocalBroadcastManager.getInstance(requireContext()).unregisterReceiver(receiver);
             registered = false;
         }
 
@@ -166,7 +166,6 @@ public class AccountFragment extends DaggerFragment {
             binding.orders.getRoot().setVisibility(View.VISIBLE);
             binding.addresses.getRoot().setVisibility(View.VISIBLE);
             binding.paymentMethods.getRoot().setVisibility(View.VISIBLE);
-            binding.logOut.getRoot().setVisibility(View.VISIBLE);
         } else {
             binding.notLoggedInLayout.setVisibility(View.VISIBLE);
             binding.loggedInLayout.setVisibility(View.GONE);
@@ -175,7 +174,6 @@ public class AccountFragment extends DaggerFragment {
             binding.orders.getRoot().setVisibility(View.GONE);
             binding.addresses.getRoot().setVisibility(View.GONE);
             binding.paymentMethods.getRoot().setVisibility(View.GONE);
-            binding.logOut.getRoot().setVisibility(View.GONE);
         }
     }
 }
