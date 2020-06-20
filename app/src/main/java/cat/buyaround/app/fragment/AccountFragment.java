@@ -15,21 +15,12 @@ import androidx.annotation.Nullable;
 import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 import androidx.navigation.NavDirections;
 import androidx.navigation.Navigation;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-import androidx.swiperefreshlayout.widget.CircularProgressDrawable;
 
 import com.bumptech.glide.Glide;
-
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 
 import javax.inject.Inject;
 
 import cat.buyaround.app.R;
-import cat.buyaround.app.adapter.ContentListAdapter;
-import cat.buyaround.app.adapter.callback.IListAdapter;
 import cat.buyaround.app.auth.UserManager;
 import cat.buyaround.app.databinding.FragmentAccountBinding;
 import cat.buyaround.app.databinding.ItemContentBinding;
@@ -82,27 +73,27 @@ public class AccountFragment extends DaggerFragment {
 
         setupItemContent(binding.personalInfo, "Personal info",
                 getListener(AccountFragmentDirections
-                .actionAccountFragmentToPersonalInfoFragment()));
+                        .actionAccountFragmentToPersonalInfoFragment()));
 
         setupItemContent(binding.orders, "Previous orders",
                 getListener(AccountFragmentDirections
-                .actionAccountFragmentToOrdersFragment()));
+                        .actionAccountFragmentToOrdersFragment()));
 
         setupItemContent(binding.addresses, "My addresses",
                 getListener(AccountFragmentDirections
-                .actionAccountFragmentToAddressesFragment()));
+                        .actionAccountFragmentToAddressesFragment()));
 
         setupItemContent(binding.paymentMethods, "My payment methods",
                 getListener(AccountFragmentDirections
-                .actionAccountFragmentToPaymentFragment()));
+                        .actionAccountFragmentToPaymentFragment()));
 
         setupItemContent(binding.legal, "Legal",
                 getListener(AccountFragmentDirections
-                .actionAccountFragmentToLegalFragment()));
+                        .actionAccountFragmentToLegalFragment()));
 
         setupItemContent(binding.aboutUs, "About us",
                 getListener(AccountFragmentDirections
-                .actionAccountFragmentToAboutUsFragment()));
+                        .actionAccountFragmentToAboutUsFragment()));
 
         registered = false;
     }
