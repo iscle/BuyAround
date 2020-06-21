@@ -146,6 +146,7 @@
     <string name="share_product_via">Share product via</string>
     <string name="share_product_text">Check out this &#57932; product I found on BuyAround!\n\n</string>
     <string name="share_product_only_for"> only for </string>
+    <string name="store_information">Check out more products of this store:</string>
 
     <!-- ADDRESS -->
     <string name="address_label">Address</string>
