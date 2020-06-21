@@ -9,5 +9,5 @@
         android:layout_height="wrap_content"
         android:lineSpacingMultiplier="1.2"
         android:padding="16dp"
-        android:text="@string/item_content_title" />
+        android:text="@string/product_label" />
 </ScrollView>

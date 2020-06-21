@@ -24,6 +24,7 @@ import org.osmdroid.views.MapView;
 
 import javax.inject.Inject;
 
+import cat.buyaround.app.R;
 import cat.buyaround.app.adapter.ImageViewPagerAdapter;
 import cat.buyaround.app.databinding.FragmentStoreBinding;
 import cat.buyaround.app.factory.ViewModelFactory;
@@ -43,8 +44,6 @@ public class StoreFragment extends DaggerFragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         binding = FragmentStoreBinding.inflate(inflater, container, false);
-
-        binding.productPacksViewPager.setAdapter(new ScreenSlidePagerAdapter(this));
 
         return binding.getRoot();
     }
@@ -75,7 +74,8 @@ public class StoreFragment extends DaggerFragment {
     }
 
     private void addStoreInfo() {
-        configureViewPager();
+        configureImagesViewPager();
+        configureBottomViewPager();
 
         binding.storeName.setText(storeViewModel.getStoreName());
 
@@ -84,6 +84,35 @@ public class StoreFragment extends DaggerFragment {
         binding.storeRating.setText(String.valueOf(storeViewModel.getStoreRating()));
 
         requestLocationPermissions();
+    }
+
+    private void configureBottomViewPager() {
+        binding.productPacksViewPager.setOrientation(ViewPager2.ORIENTATION_HORIZONTAL);
+        binding.productPacksViewPager.setAdapter(new ScreenSlidePagerAdapter(this));
+        binding.productPacksViewPager.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+                super.onPageScrolled(position, positionOffset, positionOffsetPixels);
+            }
+
+            @Override
+            public void onPageSelected(int position) {
+                super.onPageSelected(position);
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
+                super.onPageScrollStateChanged(state);
+            }
+        });
+
+        new TabLayoutMediator(binding.tabLayout, binding.productPacksViewPager, (tab, position) -> {
+            if (position == 0)
+                tab.setText(R.string.store_fragment_products);
+            else
+                tab.setText(R.string.store_fragment_packs);
+
+        }).attach();
     }
 
     private void requestLocationPermissions() {
@@ -121,7 +150,7 @@ public class StoreFragment extends DaggerFragment {
                         Manifest.permission.INTERNET}, 1);
     }
 
-    private void configureViewPager() {
+    private void configureImagesViewPager() {
         binding.storeViewpager.setOrientation(ViewPager2.ORIENTATION_HORIZONTAL);
         binding.storeViewpager.setAdapter(new ImageViewPagerAdapter(requireContext(), storeViewModel.getStoreImages()));
         binding.storeViewpager.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
@@ -172,7 +201,10 @@ public class StoreFragment extends DaggerFragment {
 
         @Override
         public Fragment createFragment(int position) {
-            return new ScreenSlidePageFragment();
+            if (position == 0)
+                return new ScreenProductsFragment();
+            else
+                return new ScreenPacksFragment();
         }
 
         @Override

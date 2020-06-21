@@ -217,33 +217,41 @@
         <TextView
             android:id="@+id/product_quantity"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="2"
             android:background="@drawable/bg_edittext_icon"
             android:gravity="center"
             android:padding="8dp"
             android:text="1" />
 
-        <Button
+        <ImageButton
             android:id="@+id/product_add_btn"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginStart="8dp"
             android:layout_weight="2"
-            android:text="+" />
+            android:background="@drawable/selector_rounded_corner_button"
+            android:elevation="6dp"
+            android:src="@drawable/ic_add" />
 
-        <Button
+        <ImageButton
             android:id="@+id/product_substract_btn"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginStart="8dp"
             android:layout_weight="2"
-            android:text="-" />
+            android:background="@drawable/selector_rounded_corner_button"
+            android:elevation="6dp"
+            android:src="@drawable/ic_substract" />
 
         <Button
             android:id="@+id/product_add_cart_btn"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
             android:layout_weight="4"
-            android:backgroundTint="@color/colorPrimaryDark"
+            android:background="@drawable/selector_rounded_corner_button_green"
+            android:elevation="6dp"
             android:scaleX="1"
             android:scaleY="1"
             android:text="@string/add_to_cart"
