@@ -76,6 +76,8 @@
     <string name="address_tv">Address</string>
     <string name="address_btn">Add new Address</string>
     <string name="location_tv">Location:</string>
+    <string name="store_fragment_products">Products</string>
+    <string name="store_fragment_packs">Packs</string>
 
     <!-- RECYCLER_VIEW ITEM -->
     <string name="item_content_title">Content title</string>

@@ -11,7 +11,9 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
+import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.viewpager2.adapter.FragmentStateAdapter;
 import androidx.viewpager2.widget.ViewPager2;
 
 import com.google.android.material.tabs.TabLayoutMediator;
@@ -41,6 +43,8 @@ public class StoreFragment extends DaggerFragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         binding = FragmentStoreBinding.inflate(inflater, container, false);
+
+        binding.productPacksViewPager.setAdapter(new ScreenSlidePagerAdapter(this));
 
         return binding.getRoot();
     }
@@ -161,4 +165,19 @@ public class StoreFragment extends DaggerFragment {
         // TODO
     }
 
+    private class ScreenSlidePagerAdapter extends FragmentStateAdapter {
+        public ScreenSlidePagerAdapter(Fragment f) {
+            super(f);
+        }
+
+        @Override
+        public Fragment createFragment(int position) {
+            return new ScreenSlidePageFragment();
+        }
+
+        @Override
+        public int getItemCount() {
+            return 2;
+        }
+    }
 }
