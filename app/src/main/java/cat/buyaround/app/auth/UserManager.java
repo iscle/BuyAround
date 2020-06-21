@@ -52,6 +52,15 @@ public class UserManager {
         localBroadcastManager.sendBroadcast(new Intent(ACTION_USER_UPDATED));
     }
 
+    public void logout() {
+        this.user = null;
+        this.token = null;
+        SharedPreferences.Editor sharedPrefEditor = sharedPreferences.edit();
+        sharedPrefEditor.remove(TOKEN_PREF);
+        sharedPrefEditor.apply();
+        localBroadcastManager.sendBroadcast(new Intent(ACTION_USER_UPDATED));
+    }
+
     public String getToken() {
         return token;
     }

@@ -100,8 +100,7 @@ public class AccountFragment extends DaggerFragment {
                 .actionAccountFragmentToAboutUsFragment()));
 
         setupItemContent(binding.logOut, "Log out", v -> {
-            userManager.setUser(null);
-            updateUser();
+            userManager.logout();
         });
 
         registered = false;
