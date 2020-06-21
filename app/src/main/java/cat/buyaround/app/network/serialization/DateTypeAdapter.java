@@ -16,15 +16,16 @@ import java.util.Date;
 public class DateTypeAdapter implements JsonSerializer<Date>, JsonDeserializer<Date> {
     @Override
     public JsonElement serialize(Date src, Type typeOfSrc, JsonSerializationContext context) {
-        String serializedDate = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm'Z'").format(src);
+        String serializedDate = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'").format(src);
         return new JsonPrimitive(serializedDate);
     }
 
     @Override
     public Date deserialize(JsonElement json, Type typeOfT, JsonDeserializationContext context) throws JsonParseException {
         try {
-            return new SimpleDateFormat("yyyy-MM-dd'T'HH:mm'Z'").parse(json.getAsString());
+            return new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'").parse(json.getAsString());
         } catch (ParseException e) {
+            e.printStackTrace();
             return null;
         }
     }
