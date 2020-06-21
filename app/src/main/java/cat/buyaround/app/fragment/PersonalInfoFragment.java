@@ -9,12 +9,14 @@ import android.provider.MediaStore;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.navigation.Navigation;
 
 import com.bumptech.glide.Glide;
 import com.theartofdev.edmodo.cropper.CropImage;
@@ -27,9 +29,12 @@ import javax.inject.Inject;
 
 import cat.buyaround.app.R;
 import cat.buyaround.app.auth.UserManager;
+import cat.buyaround.app.callback.EditUserCallback;
 import cat.buyaround.app.databinding.FragmentPersonalInfoBinding;
 import cat.buyaround.app.databinding.ItemPersonalInfoBinding;
 import cat.buyaround.app.factory.ViewModelFactory;
+import cat.buyaround.app.model.User;
+import cat.buyaround.app.network.model.SimpleResponse;
 import cat.buyaround.app.viewmodel.PersonalInfoViewModel;
 import dagger.android.support.DaggerFragment;
 
@@ -62,6 +67,23 @@ public class PersonalInfoFragment extends DaggerFragment {
 
         binding.editPhotoBtn.setOnClickListener(v -> {
             checkForPermissions();
+        });
+
+        binding.updateBtn.setOnClickListener(v -> {
+            // TODO: GET USER MODIFIED DATA
+            User user = null;
+            personalInfoViewModel.updateUser(user, new EditUserCallback() {
+                @Override
+                public void onUserUpdated() {
+                    Toast.makeText(getContext(), R.string.info_updated, Toast.LENGTH_LONG).show();
+                    Navigation.findNavController(v).popBackStack();
+                }
+
+                @Override
+                public void onFailure(SimpleResponse.Status error) {
+                    Toast.makeText(getContext(), R.string.error_updating_info, Toast.LENGTH_LONG).show();
+                }
+            });
         });
     }
 
@@ -97,6 +119,7 @@ public class PersonalInfoFragment extends DaggerFragment {
             setupItemContent(binding.name, getResources().getString(R.string.personal_info_name), user.getName());
             setupItemContent(binding.surname, getResources().getString(R.string.personal_info_surname), user.getSurnames());
             setupItemContent(binding.email, getResources().getString(R.string.personal_info_email), user.getEmail());
+            setupItemContent(binding.phone, getResources().getString(R.string.phone), user.getPhone());
             setupItemContent(binding.birthday, getResources().getString(R.string.personal_info_birthday), new SimpleDateFormat("dd/MM/yyyy").format(user.getBirthday()));
             setupItemContent(binding.password, getResources().getString(R.string.personal_info_password), null);
 
