@@ -10,6 +10,7 @@ public interface RegisterCallback {
         INTERNAL_ERROR,
         NETWORK_ERROR,
         MISSING_PARAMETERS,
-        WEAK_PASSWORD
+        WEAK_PASSWORD,
+        INVALID_BIRTHDAY
     }
 }

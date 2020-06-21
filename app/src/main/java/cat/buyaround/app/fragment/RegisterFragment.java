@@ -65,7 +65,7 @@ public class RegisterFragment extends DaggerFragment implements RegisterCallback
     private void showDatePickerDialog() {
         DatePickerFragment newFragment = DatePickerFragment.newInstance((datePicker, year, month, day) -> {
             // +1 because January is zero
-            binding.registerBirthday.setText(day + " / " + (month + 1) + " / " + year);
+            binding.registerBirthday.setText(String.format("%02d/%02d/%04d", day, month + 1, year));
         });
 
         newFragment.show(requireActivity().getSupportFragmentManager(), "datePicker");
@@ -74,7 +74,7 @@ public class RegisterFragment extends DaggerFragment implements RegisterCallback
     private void registerUser() {
         String name = binding.registerName.getText().toString().trim();
         String email = binding.registerMail.getText().toString().trim();
-        String surname = binding.registerSurname.getText().toString().trim();
+        String surnames = binding.registerSurname.getText().toString().trim();
         String phone = binding.registerPhone.getText().toString().trim();
         String birthday = binding.registerBirthday.getText().toString().trim();
         String password = binding.registerPassword.getText().toString();
@@ -84,7 +84,7 @@ public class RegisterFragment extends DaggerFragment implements RegisterCallback
             Toast.makeText(getContext(), R.string.register_empty_name, Toast.LENGTH_LONG).show();
             binding.registerName.requestFocus();
 
-        } else if (surname.isEmpty()) {
+        } else if (surnames.isEmpty()) {
             Toast.makeText(getContext(), R.string.register_empty_surname, Toast.LENGTH_LONG).show();
             binding.registerSurname.requestFocus();
 
@@ -95,6 +95,10 @@ public class RegisterFragment extends DaggerFragment implements RegisterCallback
             Toast.makeText(getContext(), R.string.register_empty_email, Toast.LENGTH_LONG).show();
             binding.registerMail.requestFocus();
 
+        } else if (phone.length() != 12) {
+            Toast.makeText(getContext(), R.string.register_phone_not_valid, Toast.LENGTH_LONG).show();
+            binding.registerPhone.requestFocus();
+
         } else if (password.isEmpty()) {
             Toast.makeText(getContext(), R.string.register_empty_password, Toast.LENGTH_LONG).show();
             binding.registerPassword.requestFocus();
@@ -103,34 +107,25 @@ public class RegisterFragment extends DaggerFragment implements RegisterCallback
             Toast.makeText(getContext(), R.string.register_empty_password_verification, Toast.LENGTH_LONG).show();
             binding.registerMail.requestFocus();
 
-        } else if (password.equals(passwordVerification)) {
-            if (registerViewModel.isValidEmail(email)) {
-                if (registerViewModel.isValidPassword(password)) {
-                    if (registerViewModel.isValidBirthday(birthday)) {
-                        if (phone.length() == 12) {
-                            // TODO: THERE ARE MISSING PARAMETERS
-                            registerViewModel.register(name, email, password, this);
-
-                        } else {
-                            Toast.makeText(getContext(), R.string.register_phone_not_valid, Toast.LENGTH_LONG).show();
-                            binding.registerPhone.requestFocus();
-                        }
-
-                    } else {
-                        Toast.makeText(getContext(), R.string.register_birthday_not_valid, Toast.LENGTH_LONG).show();
-                    }
-
-                } else {
-                    Toast.makeText(getContext(), R.string.register_password_not_secure, Toast.LENGTH_LONG).show();
-                    binding.registerPassword.requestFocus();
-                }
-            } else {
-                Toast.makeText(getContext(), R.string.register_empty_email, Toast.LENGTH_LONG).show();
-                binding.registerMail.requestFocus();
-            }
-        } else {
+        } else if (!password.equals(passwordVerification)) {
             Toast.makeText(getContext(), R.string.register_passwords_dont_match, Toast.LENGTH_LONG).show();
             binding.registerPassword.requestFocus();
+
+        } else if (!registerViewModel.isValidEmail(email)) {
+            Toast.makeText(getContext(), R.string.register_empty_email, Toast.LENGTH_LONG).show();
+            binding.registerMail.requestFocus();
+
+        } else if (!registerViewModel.isValidPassword(password)) {
+            Toast.makeText(getContext(), R.string.register_password_not_secure, Toast.LENGTH_LONG).show();
+            binding.registerPassword.requestFocus();
+
+        } else if (!registerViewModel.isValidBirthday(birthday)) {
+            Toast.makeText(getContext(), R.string.register_birthday_not_valid, Toast.LENGTH_LONG).show();
+
+        } else {
+            // TODO: THERE ARE MISSING PARAMETERS
+            registerViewModel.register(name, surnames, birthday, email, phone, password, this);
+
         }
     }
 

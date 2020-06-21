@@ -1,5 +1,11 @@
 package cat.buyaround.app.network.model;
 
+import cat.buyaround.app.model.User;
+
 public class RegisterResponse extends SimpleResponse {
-    // Empty class
+    private User user;
+
+    public User getUser() {
+        return user;
+    }
 }

@@ -53,13 +53,13 @@ public class BuyAroundRepository {
             @Override
             public void onResponse(Call<RegisterResponse> call, Response<RegisterResponse> response) {
                 Log.d(TAG, "onResponse: " + response.code());
+
                 if (response.isSuccessful()) {
-                    RegisterResponse registerResponse = response.body();
+                    callback.onSuccess();
+                } else {
+                    /*RegisterResponse registerResponse = response.body();
                     Log.d(TAG, "onResponse: " + registerResponse.getStatus());
                     switch (registerResponse.getStatus()) {
-                        case OK:
-                            callback.onSuccess();
-                            break;
                         case INTERNAL_ERROR:
                             callback.onFailure(RegisterCallback.RegisterError.INTERNAL_ERROR);
                             break;
@@ -72,8 +72,7 @@ public class BuyAroundRepository {
                         case WEAK_PASSWORD:
                             callback.onFailure(RegisterCallback.RegisterError.WEAK_PASSWORD);
                             break;
-                    }
-                } else {
+                    }*/
                     callback.onFailure(RegisterCallback.RegisterError.INTERNAL_ERROR);
                 }
             }

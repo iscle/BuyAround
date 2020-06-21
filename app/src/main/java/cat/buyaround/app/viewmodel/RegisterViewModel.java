@@ -4,9 +4,13 @@ import android.text.TextUtils;
 
 import androidx.lifecycle.ViewModel;
 
+import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.Duration;
+import java.time.Instant;
 import java.util.Calendar;
+import java.util.Date;
 
 import javax.inject.Inject;
 
@@ -23,9 +27,14 @@ public class RegisterViewModel extends ViewModel {
         this.buyAroundRepository = buyAroundRepository;
     }
 
-    public void register(String name, String email, String password, RegisterCallback registerCallback) {
-        User user = new User(name, email, password);
-        buyAroundRepository.register(user, registerCallback);
+    public void register(String name, String surnames, String birthday, String email, String phone, String password, RegisterCallback registerCallback) {
+        try {
+            Date birthDate = new SimpleDateFormat("dd/MM/yyyy").parse(birthday);
+            User user = new User(name, surnames, birthDate, email, phone, password);
+            buyAroundRepository.register(user, registerCallback);
+        } catch (ParseException e) {
+            registerCallback.onFailure(RegisterCallback.RegisterError.INVALID_BIRTHDAY);
+        }
     }
 
     public boolean isValidEmail(CharSequence target) {
@@ -37,17 +46,12 @@ public class RegisterViewModel extends ViewModel {
     }
 
     public boolean isValidBirthday(String birthday) {
-        int age = 0;
-        SimpleDateFormat format = new SimpleDateFormat("dd / MM / yyyy");
-
         try {
             Calendar birthdayDate = Calendar.getInstance();
-            birthdayDate.setTime(format.parse(birthday));
-
+            birthdayDate.setTime(new SimpleDateFormat("dd/MM/yyyy").parse(birthday));
             Calendar currentDate = Calendar.getInstance();
 
-            age = currentDate.get(Calendar.YEAR) - birthdayDate.get(Calendar.YEAR);
-
+            int age = currentDate.get(Calendar.YEAR) - birthdayDate.get(Calendar.YEAR);
             if (currentDate.get(Calendar.MONTH) < birthdayDate.get(Calendar.MONTH)) {
                 age--;
             } else if (currentDate.get(Calendar.MONTH) == birthdayDate.get(Calendar.MONTH)
@@ -55,10 +59,9 @@ public class RegisterViewModel extends ViewModel {
                 age--;
             }
 
+            return age >= 18;
         } catch (ParseException e) {
-            e.printStackTrace();
+            return false;
         }
-
-        return age >= 18;
     }
 }

@@ -1,6 +1,7 @@
 package cat.buyaround.app.model;
 
 import java.io.Serializable;
+import java.util.Date;
 
 public class User implements Serializable {
     private String name;
@@ -8,11 +9,11 @@ public class User implements Serializable {
     private String password;
     private Direction[] directions;
     private String profilePicture;
-    private long birthday;
+    private Date birthday;
     private String email;
     private String phone;
 
-    public User(String name, String surnames, String password, Direction[] directions, String profilePicture, long birthday, String email, String phone) {
+    public User(String name, String surnames, String password, Direction[] directions, String profilePicture, Date birthday, String email, String phone) {
         this.name = name;
         this.surnames = surnames;
         this.password = password;
@@ -36,13 +37,13 @@ public class User implements Serializable {
         this.password = password;
     }
 
-    public User(String name, String email, String password) {
+    public User(String name, String surnames, Date birthday, String email, String phone, String password) {
         this.name = name;
-        this.password = password;
-        this.directions = null;
-        this.profilePicture = null;
-        this.birthday = -1;
+        this.surnames = surnames;
+        this.birthday = birthday;
         this.email = email;
+        this.phone = phone;
+        this.password = password;
     }
 
     public String getSurnames() {
@@ -85,11 +86,11 @@ public class User implements Serializable {
         this.profilePicture = profilePicture;
     }
 
-    public long getBirthday() {
+    public Date getBirthday() {
         return birthday;
     }
 
-    public void setBirthday(long birthday) {
+    public void setBirthday(Date birthday) {
         this.birthday = birthday;
     }
 
