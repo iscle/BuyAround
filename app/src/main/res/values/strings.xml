@@ -43,6 +43,9 @@
     <string name="login_surname_hint">Enter your surnames here</string>
     <string name="birthday">Birthday</string>
     <string name="login_birthday_hint">dd/mm/yyyy</string>
+    <string name="phone">Phone number</string>
+    <string name="register_phone_hint">612 34 56 78</string>
+    <string name="register_phone_not_valid">Error! You must enter a valid phone number.</string>
 
     <!-- ACCOUNT -->
     <string name="username">Username</string>

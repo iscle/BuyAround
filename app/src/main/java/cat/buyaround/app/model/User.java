@@ -10,8 +10,9 @@ public class User implements Serializable {
     private String profilePicture;
     private long birthday;
     private String email;
+    private String phone;
 
-    public User(String name, String surnames, String password, Direction[] directions, String profilePicture, long birthday, String email) {
+    public User(String name, String surnames, String password, Direction[] directions, String profilePicture, long birthday, String email, String phone) {
         this.name = name;
         this.surnames = surnames;
         this.password = password;
@@ -19,6 +20,15 @@ public class User implements Serializable {
         this.profilePicture = profilePicture;
         this.birthday = birthday;
         this.email = email;
+        this.phone = phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public String getPhone() {
+        return phone;
     }
 
     public User(String email, String password) {
