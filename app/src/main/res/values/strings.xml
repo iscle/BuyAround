@@ -39,10 +39,13 @@
     <string name="password_helper">At least 8 characters long, including numbers and lowercase and uppercase letters.</string>
     <string name="password_verification_helper">The passwords must match.</string>
     <string name="register_success">Account created successfully.</string>
-    <string name="surname">Surnames</string>
+    <string name="surnames">Surnames</string>
     <string name="login_surname_hint">Enter your surnames here</string>
     <string name="birthday">Birthday</string>
     <string name="login_birthday_hint">dd/mm/yyyy</string>
+    <string name="phone">Phone number</string>
+    <string name="register_phone_hint">612 34 56 78</string>
+    <string name="register_phone_not_valid">Error! You must enter a valid phone number.</string>
 
     <!-- ACCOUNT -->
     <string name="username">Username</string>
@@ -53,6 +56,7 @@
     <string name="use_conditions">Use Conditions</string>
     <string name="log_in_acc">Log In</string>
     <string name="log_in_text_acc">To be able to buy something,\nyou need to log in.</string>
+    <string name="log_out">Log out</string>
 
     <!-- PAYMENT -->
     <string name="default_payment_method">Default payment method</string>
@@ -71,6 +75,9 @@
     <string name="store_hint">Enter the store name</string>
     <string name="address_tv">Address</string>
     <string name="address_btn">Add new Address</string>
+    <string name="location_tv">Location:</string>
+    <string name="store_fragment_products">Products</string>
+    <string name="store_fragment_packs">Packs</string>
 
     <!-- RECYCLER_VIEW ITEM -->
     <string name="item_content_title">Content title</string>
@@ -142,9 +149,12 @@
     <string name="share_product_via">Share product via</string>
     <string name="share_product_text">Check out this &#57932; product I found on BuyAround!\n\n</string>
     <string name="share_product_only_for"> only for </string>
+    <string name="store_information">Check out more products of this store:</string>
 
     <!-- ADDRESS -->
     <string name="address_label">Address</string>
+    <string name="no_addresses">You haven\'t added any address yet!\nAdd one now!</string>
+    <string name="add_address">Add a new address</string>
 
     <!-- FAVOURITE -->
     <string name="fav_stores">Favourite stores</string>
@@ -179,7 +189,7 @@
     <!-- LEGAL -->
     <string name="legal_text_1">This application is an open-source project running under <i>Apache License 2.0</i>.</string>
     <string name="legal_text_2">It is a non-functional prototype developed as a proof of concept. If the project becomes real later, we will update the information and inform all our registered users.</string>
-    <string name="legal_more_info">For more information, visit our web page at:\n<a href="https://buyaround.cat/legal.html">https://buyaround.cat/legal</a></string>
+    <string name="legal_more_info">For more information, visit our web page at:\n<a href="https://buyaround.cat/legal.html">https://buyaround.cat/legal.html</a></string>
 
     <!-- CART POPUP -->
     <string name="cart_items_text_singular">product</string>
@@ -190,5 +200,19 @@
 
     <!-- PACK -->
     <string name="pack_label">Pack</string>
+
+    <!-- PERSONAL INFO -->
+    <string name="photo">Photo</string>
+    <string name="update_profile">Update profile</string>
+    <string name="personal_info_name">Name</string>
+    <string name="personal_info_surname">Surname</string>
+    <string name="personal_info_email">Email</string>
+    <string name="personal_info_birthday">Birthday</string>
+    <string name="personal_info_password">Password</string>
+    <string name="edit_password">Edit password</string>
+    <string name="establish_as_default">Establish as default</string>
+    <string name="default_address">Default address</string>
+    <string name="info_updated">Profile updated successfully.</string>
+    <string name="error_updating_info">An error occurred while updating your info.</string>
 
 </resources>

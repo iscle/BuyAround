@@ -81,6 +81,9 @@ public interface BuyAroundService {
     @GET("user/{id}")
     Call<UserResponse> getUser(@Path(value = "id", encoded = true) String id);
 
+    @POST("user")
+    Call<UserResponse> updateUser(@Body User user);
+
     // Category
     @GET("category/product")
     Call<CategoryResponse> getAllProductCategories();

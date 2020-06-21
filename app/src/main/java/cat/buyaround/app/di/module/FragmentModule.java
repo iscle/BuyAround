@@ -3,7 +3,7 @@ package cat.buyaround.app.di.module;
 import cat.buyaround.app.fragment.AccountFragment;
 import cat.buyaround.app.fragment.AddProductFragment;
 import cat.buyaround.app.fragment.AddStoreFragment;
-import cat.buyaround.app.fragment.AddressFragment;
+import cat.buyaround.app.fragment.AddAddressFragment;
 import cat.buyaround.app.fragment.AddressesFragment;
 import cat.buyaround.app.fragment.CartFragment;
 import cat.buyaround.app.fragment.CategoriesFragment;
@@ -61,7 +61,7 @@ public abstract class FragmentModule {
     abstract AddStoreFragment addStoreFragment();
 
     @ContributesAndroidInjector
-    abstract AddressFragment addressFragment();
+    abstract AddAddressFragment addressFragment();
 
     @ContributesAndroidInjector
     abstract CategoriesFragment categoriesFragment();

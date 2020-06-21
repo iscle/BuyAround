@@ -11,10 +11,16 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
+import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.viewpager2.adapter.FragmentStateAdapter;
 import androidx.viewpager2.widget.ViewPager2;
 
 import com.google.android.material.tabs.TabLayoutMediator;
+
+import org.osmdroid.api.IMapController;
+import org.osmdroid.tileprovider.tilesource.TileSourceFactory;
+import org.osmdroid.views.MapView;
 
 import javax.inject.Inject;
 
@@ -31,11 +37,14 @@ public class StoreFragment extends DaggerFragment {
     protected ViewModelFactory viewModelFactory;
     private FragmentStoreBinding binding;
     private StoreViewModel storeViewModel;
+    private MapView map;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         binding = FragmentStoreBinding.inflate(inflater, container, false);
+
+        binding.productPacksViewPager.setAdapter(new ScreenSlidePagerAdapter(this));
 
         return binding.getRoot();
     }
@@ -73,6 +82,43 @@ public class StoreFragment extends DaggerFragment {
         binding.storeDescription.setText(storeViewModel.getStoreDescription());
 
         binding.storeRating.setText(String.valueOf(storeViewModel.getStoreRating()));
+
+        requestLocationPermissions();
+    }
+
+    private void requestLocationPermissions() {
+        int permissionFineLocation = ContextCompat.checkSelfPermission(requireActivity(), Manifest.permission.ACCESS_FINE_LOCATION);
+        int permissionCoarseLocation = ContextCompat.checkSelfPermission(requireActivity(), Manifest.permission.ACCESS_COARSE_LOCATION);
+        int permissionWrite = ContextCompat.checkSelfPermission(requireActivity(), Manifest.permission.WRITE_EXTERNAL_STORAGE);
+        int permissionInternet = ContextCompat.checkSelfPermission(requireActivity(), Manifest.permission.INTERNET);
+
+        if (permissionFineLocation != PackageManager.PERMISSION_GRANTED ||
+                permissionCoarseLocation != PackageManager.PERMISSION_GRANTED ||
+                permissionWrite != PackageManager.PERMISSION_GRANTED ||
+                permissionInternet != PackageManager.PERMISSION_GRANTED)
+            askForLocationPermission();
+        else
+            initMap();
+
+    }
+
+    private void initMap() {
+        // TODO: GET LOCATION OF STORE AND PUT A PIN IN THE MAP
+        map = binding.mapView;
+        map.setTileSource(TileSourceFactory.MAPNIK);
+
+        map.setMultiTouchControls(true);
+
+        IMapController mapController = map.getController();
+        mapController.setZoom(16.0);
+    }
+
+    private void askForLocationPermission() {
+        ActivityCompat.requestPermissions(requireActivity(),
+                new String[]{Manifest.permission.ACCESS_FINE_LOCATION,
+                        Manifest.permission.ACCESS_COARSE_LOCATION,
+                        Manifest.permission.WRITE_EXTERNAL_STORAGE,
+                        Manifest.permission.INTERNET}, 1);
     }
 
     private void configureViewPager() {
@@ -119,4 +165,19 @@ public class StoreFragment extends DaggerFragment {
         // TODO
     }
 
+    private class ScreenSlidePagerAdapter extends FragmentStateAdapter {
+        public ScreenSlidePagerAdapter(Fragment f) {
+            super(f);
+        }
+
+        @Override
+        public Fragment createFragment(int position) {
+            return new ScreenSlidePageFragment();
+        }
+
+        @Override
+        public int getItemCount() {
+            return 2;
+        }
+    }
 }

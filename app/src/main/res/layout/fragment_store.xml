@@ -54,7 +54,8 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="8dp">
+        android:paddingHorizontal="8dp"
+        android:paddingTop="8dp">
 
         <TextView
             android:id="@+id/store_name"
@@ -67,21 +68,12 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/store_address"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/address_label"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/store_name" />
-
         <androidx.cardview.widget.CardView
             android:id="@+id/cardView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:elevation="8dp"
-            app:cardCornerRadius="3dp"
+            app:cardCornerRadius="4dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
@@ -90,13 +82,12 @@
                 android:layout_height="match_parent"
                 android:gravity="center_vertical"
                 android:orientation="horizontal"
-                android:padding="1dp">
+                android:padding="4dp">
 
                 <TextView
                     android:id="@+id/store_rating"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:elevation="5dp"
                     android:text="@string/item_content_stars"
                     android:textSize="16sp" />
 
@@ -109,6 +100,42 @@
                     android:tint="@color/colorPrimaryDark" />
             </LinearLayout>
         </androidx.cardview.widget.CardView>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/store_name">
+
+            <ImageView
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:layout_marginEnd="1dp"
+                android:elevation="5dp"
+                android:src="@drawable/ic_location"
+                android:tint="@color/colorPrimaryDark" />
+
+            <TextView
+                android:id="@+id/item_store_distance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="1dp"
+                android:elevation="5dp"
+                android:text="500"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/item_store_metric"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:elevation="5dp"
+                android:text="m"
+                android:textSize="12sp" />
+        </LinearLayout>
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <View
@@ -135,5 +162,65 @@
             android:layout_marginTop="8dp"
             android:text="@string/description_hint" />
     </LinearLayout>
+
+    <View
+        style="@style/Divider"
+        android:layout_marginVertical="10dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="8dp"
+        android:text="@string/location_tv"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/store_address"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="8dp"
+        android:text="@string/address_label" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/map_cardView"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_marginHorizontal="8dp"
+        android:layout_marginTop="8dp"
+        android:elevation="8dp"
+        app:cardCornerRadius="20dp">
+
+        <org.osmdroid.views.MapView
+            android:id="@+id/map_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </androidx.cardview.widget.CardView>
+
+    <View
+        style="@style/Divider"
+        android:layout_marginTop="16dp" />
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tab_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/store_fragment_products" />
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/store_fragment_packs" />
+
+    </com.google.android.material.tabs.TabLayout>
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/product_packs_viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 
 </LinearLayout>

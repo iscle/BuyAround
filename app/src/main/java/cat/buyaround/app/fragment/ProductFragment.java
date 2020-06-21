@@ -15,10 +15,12 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.Navigation;
 import androidx.viewpager2.widget.ViewPager2;
 
+import com.bumptech.glide.Glide;
 import com.google.android.material.tabs.TabLayoutMediator;
 
 import javax.inject.Inject;
 
+import cat.buyaround.app.R;
 import cat.buyaround.app.adapter.ImageViewPagerAdapter;
 import cat.buyaround.app.databinding.FragmentProductBinding;
 import cat.buyaround.app.factory.ViewModelFactory;
@@ -56,6 +58,7 @@ public class ProductFragment extends DaggerFragment {
 
     private void initViews() {
         addProductInfo();
+        addStoreInfo();
 
         binding.productAddBtn.setOnClickListener(v -> {
             int productQuantity = Integer.parseInt(binding.productQuantity.getText().toString());
@@ -87,15 +90,6 @@ public class ProductFragment extends DaggerFragment {
 
         binding.productName.setText(productViewModel.getProductName());
 
-        binding.storeName.setText(productViewModel.getProductStore().getName());
-        binding.storeName.setOnClickListener(v -> {
-            ProductFragmentDirections.ActionProductFragmentToStoreFragment action =
-                    ProductFragmentDirections.actionProductFragmentToStoreFragment();
-            action.setStore(productViewModel.getProductStore());
-
-            Navigation.findNavController(v).navigate(action);
-        });
-
         binding.productDescription.setText(productViewModel.getProductDescription());
 
         binding.productPrice.setText(String.valueOf(productViewModel.getProductPrice()));
@@ -106,6 +100,28 @@ public class ProductFragment extends DaggerFragment {
 
         // TODO: UNCOMMENT
         // binding.productUnit.setText(productViewModel.getProductUnit());
+    }
+
+    private void addStoreInfo() {
+        binding.storeName.setText(productViewModel.getProductStore().getName());
+
+        // TODO: UNCOMMENT
+        /*
+        binding.storeAddress.setText(productViewModel.getProductStore().getDirection().getAddress());
+        Glide.with(requireContext())
+                .asBitmap()
+                .placeholder(R.drawable.ic_thumbnail)
+                .load(productViewModel.getProductStore().getImages()[0])
+                .into(binding.storeIv);
+         */
+
+        binding.storeCardview.setOnClickListener(v -> {
+            ProductFragmentDirections.ActionProductFragmentToStoreFragment action =
+                    ProductFragmentDirections.actionProductFragmentToStoreFragment();
+            action.setStore(productViewModel.getProductStore());
+
+            Navigation.findNavController(v).navigate(action);
+        });
     }
 
     private void configureViewPager() {

@@ -1,6 +1,7 @@
 package cat.buyaround.app.fragment;
 
 import android.os.Bundle;
+import android.telephony.PhoneNumberFormattingTextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -56,6 +57,9 @@ public class RegisterFragment extends DaggerFragment implements RegisterCallback
         binding.registerBtn.setOnClickListener(v -> {
             registerUser();
         });
+
+        binding.registerPhone.addTextChangedListener(new PhoneNumberFormattingTextWatcher("ES"));
+
     }
 
     private void showDatePickerDialog() {
@@ -71,10 +75,10 @@ public class RegisterFragment extends DaggerFragment implements RegisterCallback
         String name = binding.registerName.getText().toString().trim();
         String email = binding.registerMail.getText().toString().trim();
         String surname = binding.registerSurname.getText().toString().trim();
+        String phone = binding.registerPhone.getText().toString().trim();
         String birthday = binding.registerBirthday.getText().toString().trim();
         String password = binding.registerPassword.getText().toString();
         String passwordVerification = binding.registerPasswordVerification.getText().toString();
-
 
         if (name.isEmpty()) {
             Toast.makeText(getContext(), R.string.register_empty_name, Toast.LENGTH_LONG).show();
@@ -103,7 +107,15 @@ public class RegisterFragment extends DaggerFragment implements RegisterCallback
             if (registerViewModel.isValidEmail(email)) {
                 if (registerViewModel.isValidPassword(password)) {
                     if (registerViewModel.isValidBirthday(birthday)) {
-                        registerViewModel.register(name, email, password, this);
+                        if (phone.length() == 12) {
+                            // TODO: THERE ARE MISSING PARAMETERS
+                            registerViewModel.register(name, email, password, this);
+
+                        } else {
+                            Toast.makeText(getContext(), R.string.register_phone_not_valid, Toast.LENGTH_LONG).show();
+                            binding.registerPhone.requestFocus();
+                        }
+
                     } else {
                         Toast.makeText(getContext(), R.string.register_birthday_not_valid, Toast.LENGTH_LONG).show();
                     }
