@@ -24,6 +24,7 @@ import org.osmdroid.views.MapView;
 
 import javax.inject.Inject;
 
+import cat.buyaround.app.R;
 import cat.buyaround.app.adapter.ImageViewPagerAdapter;
 import cat.buyaround.app.databinding.FragmentStoreBinding;
 import cat.buyaround.app.factory.ViewModelFactory;
@@ -106,6 +107,10 @@ public class StoreFragment extends DaggerFragment {
         });
 
         new TabLayoutMediator(binding.tabLayout, binding.productPacksViewPager, (tab, position) -> {
+            if (position == 0)
+                tab.setText(R.string.store_fragment_products);
+            else
+                tab.setText(R.string.store_fragment_packs);
 
         }).attach();
     }
@@ -196,7 +201,10 @@ public class StoreFragment extends DaggerFragment {
 
         @Override
         public Fragment createFragment(int position) {
-            return new ScreenSlidePageFragment();
+            if (position == 0)
+                return new ScreenProductsFragment();
+            else
+                return new ScreenPacksFragment();
         }
 
         @Override
