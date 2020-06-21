@@ -99,9 +99,7 @@ public class AccountFragment extends DaggerFragment {
                 getListener(AccountFragmentDirections
                 .actionAccountFragmentToAboutUsFragment()));
 
-        setupItemContent(binding.logOut, "Log out", v -> {
-            userManager.logout();
-        });
+        binding.logOutBtn.setOnClickListener(v -> userManager.logout());
 
         registered = false;
     }
@@ -165,7 +163,6 @@ public class AccountFragment extends DaggerFragment {
             binding.orders.getRoot().setVisibility(View.VISIBLE);
             binding.addresses.getRoot().setVisibility(View.VISIBLE);
             binding.paymentMethods.getRoot().setVisibility(View.VISIBLE);
-            binding.logOut.getRoot().setVisibility(View.VISIBLE);
         } else {
             binding.notLoggedInLayout.setVisibility(View.VISIBLE);
             binding.loggedInLayout.setVisibility(View.GONE);
@@ -174,7 +171,6 @@ public class AccountFragment extends DaggerFragment {
             binding.orders.getRoot().setVisibility(View.GONE);
             binding.addresses.getRoot().setVisibility(View.GONE);
             binding.paymentMethods.getRoot().setVisibility(View.GONE);
-            binding.logOut.getRoot().setVisibility(View.GONE);
         }
     }
 }
