@@ -323,9 +323,9 @@
                 <ImageView
                     android:id="@+id/store_iv"
                     android:layout_width="match_parent"
-                    android:layout_height="70dp"
+                    android:layout_height="match_parent"
                     android:background="@color/superDuperLightGrey"
-                    android:scaleType="centerCrop" />
+                    android:scaleType="fitXY" />
             </androidx.cardview.widget.CardView>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
