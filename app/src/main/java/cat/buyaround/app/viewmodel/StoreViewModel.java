@@ -41,6 +41,10 @@ public class StoreViewModel extends ViewModel {
 
     }
 
+    public String getStoreCategory() {
+        return store.getCategory().getName();
+    }
+
     public Direction getStoreDirection() {
         return store.getDirection();
     }

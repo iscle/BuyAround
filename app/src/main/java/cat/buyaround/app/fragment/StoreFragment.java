@@ -95,6 +95,8 @@ public class StoreFragment extends DaggerFragment {
 
         binding.storeRating.setText(String.valueOf(storeViewModel.getStoreRating()));
 
+        binding.storeCategory.setText(storeViewModel.getStoreCategory());
+
         requestLocationPermissions();
     }
 
