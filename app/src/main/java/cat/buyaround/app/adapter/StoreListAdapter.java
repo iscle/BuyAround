@@ -45,7 +45,7 @@ public class StoreListAdapter extends RecyclerView.Adapter<StoreListAdapter.View
         holder.itemView.setOnClickListener(view -> callback.onItemSelected(store));
 
         holder.tvTitle.setText(store.getName());
-        holder.tvSubtitle.setText(store.getDescription());
+        holder.tvSubtitle.setText(store.getDirection().getAddress());
         holder.tvRating.setText(String.valueOf(store.getRating()));
 
         if (store.getThumbnail() != null) {

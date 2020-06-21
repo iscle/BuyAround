@@ -105,15 +105,12 @@ public class ProductFragment extends DaggerFragment {
     private void addStoreInfo() {
         binding.storeName.setText(productViewModel.getProductStore().getName());
 
-        // TODO: UNCOMMENT
-        /*
         binding.storeAddress.setText(productViewModel.getProductStore().getDirection().getAddress());
         Glide.with(requireContext())
                 .asBitmap()
                 .placeholder(R.drawable.ic_thumbnail)
                 .load(productViewModel.getProductStore().getImages()[0])
                 .into(binding.storeIv);
-         */
 
         binding.storeCardview.setOnClickListener(v -> {
             ProductFragmentDirections.ActionProductFragmentToStoreFragment action =

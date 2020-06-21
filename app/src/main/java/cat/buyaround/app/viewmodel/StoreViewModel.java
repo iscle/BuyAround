@@ -8,6 +8,7 @@ import java.util.List;
 
 import javax.inject.Inject;
 
+import cat.buyaround.app.model.Direction;
 import cat.buyaround.app.model.Pack;
 import cat.buyaround.app.model.Product;
 import cat.buyaround.app.model.Store;
@@ -38,6 +39,10 @@ public class StoreViewModel extends ViewModel {
 
     private void requestStorePacks() {
 
+    }
+
+    public Direction getStoreDirection() {
+        return store.getDirection();
     }
 
     public LiveData<List<Product>> getStoreProducts() {

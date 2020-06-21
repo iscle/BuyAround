@@ -3,6 +3,7 @@ package cat.buyaround.app.fragment;
 import android.Manifest;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,8 +20,15 @@ import androidx.viewpager2.widget.ViewPager2;
 import com.google.android.material.tabs.TabLayoutMediator;
 
 import org.osmdroid.api.IMapController;
+import org.osmdroid.config.Configuration;
 import org.osmdroid.tileprovider.tilesource.TileSourceFactory;
+import org.osmdroid.util.GeoPoint;
 import org.osmdroid.views.MapView;
+import org.osmdroid.views.overlay.ItemizedIconOverlay;
+import org.osmdroid.views.overlay.ItemizedOverlayWithFocus;
+import org.osmdroid.views.overlay.OverlayItem;
+
+import java.util.ArrayList;
 
 import javax.inject.Inject;
 
@@ -44,6 +52,8 @@ public class StoreFragment extends DaggerFragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         binding = FragmentStoreBinding.inflate(inflater, container, false);
+
+        Configuration.getInstance().load(getContext(), PreferenceManager.getDefaultSharedPreferences(getContext()));
 
         return binding.getRoot();
     }
@@ -120,11 +130,13 @@ public class StoreFragment extends DaggerFragment {
         int permissionCoarseLocation = ContextCompat.checkSelfPermission(requireActivity(), Manifest.permission.ACCESS_COARSE_LOCATION);
         int permissionWrite = ContextCompat.checkSelfPermission(requireActivity(), Manifest.permission.WRITE_EXTERNAL_STORAGE);
         int permissionInternet = ContextCompat.checkSelfPermission(requireActivity(), Manifest.permission.INTERNET);
+        int permissionNetworkState = ContextCompat.checkSelfPermission(requireActivity(), Manifest.permission.ACCESS_NETWORK_STATE);
 
         if (permissionFineLocation != PackageManager.PERMISSION_GRANTED ||
                 permissionCoarseLocation != PackageManager.PERMISSION_GRANTED ||
                 permissionWrite != PackageManager.PERMISSION_GRANTED ||
-                permissionInternet != PackageManager.PERMISSION_GRANTED)
+                permissionInternet != PackageManager.PERMISSION_GRANTED ||
+                permissionNetworkState != PackageManager.PERMISSION_GRANTED)
             askForLocationPermission();
         else
             initMap();
@@ -132,14 +144,39 @@ public class StoreFragment extends DaggerFragment {
     }
 
     private void initMap() {
-        // TODO: GET LOCATION OF STORE AND PUT A PIN IN THE MAP
+        // TODO: PUT A PIN IN THE MAP
         map = binding.mapView;
         map.setTileSource(TileSourceFactory.MAPNIK);
-
         map.setMultiTouchControls(true);
 
         IMapController mapController = map.getController();
-        mapController.setZoom(16.0);
+        mapController.setZoom(19.0);
+
+        GeoPoint storeLocation = new GeoPoint(
+                storeViewModel.getStoreDirection().getLatitude(),
+                storeViewModel.getStoreDirection().getLongitude());
+
+        mapController.setCenter(storeLocation);
+
+
+        ArrayList<OverlayItem> items = new ArrayList<>();
+        items.add(new OverlayItem(storeViewModel.getStoreName(), storeViewModel.getStoreDirection().getAddress(), storeLocation));
+
+        ItemizedOverlayWithFocus<OverlayItem> overlay = new ItemizedOverlayWithFocus<>(requireContext(), items, new ItemizedIconOverlay.OnItemGestureListener<OverlayItem>() {
+            @Override
+            public boolean onItemSingleTapUp(int index, OverlayItem item) {
+                return false;
+            }
+
+            @Override
+            public boolean onItemLongPress(int index, OverlayItem item) {
+                return false;
+            }
+        });
+
+        overlay.setFocusItemsOnTap(true);
+        map.getOverlayManager().add(overlay);
+
     }
 
     private void askForLocationPermission() {
@@ -147,7 +184,8 @@ public class StoreFragment extends DaggerFragment {
                 new String[]{Manifest.permission.ACCESS_FINE_LOCATION,
                         Manifest.permission.ACCESS_COARSE_LOCATION,
                         Manifest.permission.WRITE_EXTERNAL_STORAGE,
-                        Manifest.permission.INTERNET}, 1);
+                        Manifest.permission.INTERNET,
+                        Manifest.permission.ACCESS_NETWORK_STATE}, 1);
     }
 
     private void configureImagesViewPager() {
