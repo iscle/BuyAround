@@ -252,7 +252,8 @@
 
     <View
         style="@style/Divider"
-        android:layout_marginVertical="10dp" />
+        android:layout_marginTop="24dp"
+        android:layout_marginBottom="10dp" />
 
     <TextView
         android:layout_width="match_parent"
@@ -269,7 +270,7 @@
         android:layout_marginHorizontal="8dp"
         android:layout_marginBottom="16dp"
         android:elevation="8dp"
-        app:cardCornerRadius="10dp"
+        app:cardCornerRadius="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -281,7 +282,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:padding="8dp"
+                android:padding="12dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/store_image_cardview"
                 app:layout_constraintStart_toStartOf="parent"
@@ -305,8 +306,8 @@
                 android:id="@+id/store_image_cardview"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:layout_margin="8dp"
-                app:cardCornerRadius="10dp"
+                android:layout_margin="12dp"
+                app:cardCornerRadius="15dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
