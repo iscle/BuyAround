@@ -4,7 +4,7 @@ public class Direction {
     private String address;
     private String city;
     private String province;
-    private int postalCode;
+    private String postalCode;
     private double latitude;
     private double longitude;
 

@@ -128,11 +128,11 @@ public class PersonalInfoFragment extends DaggerFragment {
 
     private void setupItemContent(ItemPersonalInfoBinding b, String title, String content) {
         b.itemTv.setText(title);
-        if (content != null)
+        if (content != null) {
             b.itemContentTv.setText(content);
-        else
+        } else {
             b.itemContentTv.setText(getResources().getString(R.string.edit_password));
-
+        }
     }
 
     @Override
