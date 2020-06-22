@@ -16,8 +16,9 @@ public class Store implements Serializable {
     private Category category;
     private long since;
     private Product[] products;
+    private String phone;
 
-    public Store(String name, Direction direction, String description, float rating, String thumbnail, String[] images, Category category, long since) {
+    public Store(String name, Direction direction, String description, float rating, String thumbnail, String[] images, Category category, long since, String phone) {
         this.name = name;
         this.direction = direction;
         this.description = description;
@@ -26,6 +27,15 @@ public class Store implements Serializable {
         this.images = images;
         this.category = category;
         this.since = since;
+        this.phone = phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public String getPhone() {
+        return phone;
     }
 
     public void setId(String id) {

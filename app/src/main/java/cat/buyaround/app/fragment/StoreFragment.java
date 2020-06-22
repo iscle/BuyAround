@@ -97,6 +97,9 @@ public class StoreFragment extends DaggerFragment {
 
         binding.storeCategory.setText(storeViewModel.getStoreCategory());
 
+        // TODO: UNCOMMENT
+        //binding.storePhone.setText(storeViewModel.getStorePhone());
+
         requestLocationPermissions();
     }
 
@@ -148,7 +151,6 @@ public class StoreFragment extends DaggerFragment {
     }
 
     private void initMap() {
-        // TODO: PUT A PIN IN THE MAP
         map = binding.mapView;
         map.setTileSource(TileSourceFactory.MAPNIK);
         map.setMultiTouchControls(true);
