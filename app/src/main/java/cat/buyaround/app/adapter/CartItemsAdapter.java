@@ -34,6 +34,7 @@ public class CartItemsAdapter extends RecyclerView.Adapter<CartItemsAdapter.View
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+        /*
         holder.tvTitle.setText(mProducts.get(position).getName());
         holder.tvPrice.setText(Float.toString(mProducts.get(position).getPrice()));
         holder.tvQuantity.setText("x" + mProducts.get(position).getQuantity());
@@ -43,6 +44,7 @@ public class CartItemsAdapter extends RecyclerView.Adapter<CartItemsAdapter.View
                 mCallback.onItemSelected(mProducts.get(position));
             }
         });
+         */
     }
 
     @Override
@@ -57,10 +59,12 @@ public class CartItemsAdapter extends RecyclerView.Adapter<CartItemsAdapter.View
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
+            /*
             tvTitle = itemView.findViewById(R.id.item_cart_order_title);
             tvPrice = itemView.findViewById(R.id.item_cart_unit_price);
             tvQuantity = itemView.findViewById(R.id.item_cart_order_quantity);
             btnDelete = itemView.findViewById(R.id.item_cart_order_delete);
+             */
         }
     }
 }
