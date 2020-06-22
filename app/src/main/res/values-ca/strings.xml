@@ -69,9 +69,9 @@
     <string name="no_fav_packs_yet">Encara no has marcat cap paquet com a preferit!</string>
     <string name="no_fav_stores_yet">Encara no has marcat cap botiga com a preferida!</string>
     <string name="no_fav_products_yet">Encara no has marcat cap producte com a preferit!</string>
-    <string name="cart_clear">Buidar el carro</string>
-    <string name="add_to_cart">Afegir al carro</string>
-    <string name="cart">Carro</string>
+    <string name="cart_clear">Buidar la cistella</string>
+    <string name="add_to_cart">Afegir a la cistella</string>
+    <string name="cart">Cistella</string>
     <string name="default_payment_method">Mètode de pagament per defecte</string>
     <string name="payment_cards">Tarjetes de crèdit/dèbit</string>
     <string name="no_cards">Encara no has afegit cap tarjeta de crèdit/dèbit!</string>
@@ -83,7 +83,7 @@
     <string name="log_out">Tancar sessió</string>
     <string name="log_in_acc">Iniciar sessió</string>
     <string name="login_surname_hint">Introdueix els teus cognoms</string>
-    <string name="login_forgot_password">Has oblidat la contrassenya? Prem aqui per recuperar-la.</string>
+    <string name="login_forgot_password">Has oblidat la contrasenya? Prem aqui per recuperar-la.</string>
     <string name="register_goto_login_click">Prem aqui per iniciar sessió.</string>
     <string name="login_goto_register_click">Prem aqui per crear-ne un.</string>
     <string name="login_button">Iniciar sessió</string>
