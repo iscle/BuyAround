@@ -2,7 +2,6 @@ package cat.buyaround.app.adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
-import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
@@ -12,8 +11,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 
 import cat.buyaround.app.R;
+import cat.buyaround.app.databinding.ItemImageViewpagerBinding;
 
-public class ImageViewPagerAdapter extends RecyclerView.Adapter<ImageViewPagerAdapter.ImageViewHolder> {
+public class ImageViewPagerAdapter extends RecyclerView.Adapter<ImageViewPagerAdapter.ViewHolder> {
     private Context context;
     private String[] images;
 
@@ -24,13 +24,15 @@ public class ImageViewPagerAdapter extends RecyclerView.Adapter<ImageViewPagerAd
 
     @NonNull
     @Override
-    public ImageViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(R.layout.item_image_viewpager, parent, false);
-        return new ImageViewHolder(view);
+    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        ItemImageViewpagerBinding binding =
+                ItemImageViewpagerBinding.inflate(LayoutInflater.from(parent.getContext()),
+                        parent, false);
+        return new ViewHolder(binding);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ImageViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         if (images[position] != null) {
             Glide.with(context)
                     .asBitmap()
@@ -49,12 +51,12 @@ public class ImageViewPagerAdapter extends RecyclerView.Adapter<ImageViewPagerAd
         return images == null ? 0 : images.length;
     }
 
-    public class ImageViewHolder extends RecyclerView.ViewHolder {
+    public class ViewHolder extends RecyclerView.ViewHolder {
         ImageView itemIv;
 
-        public ImageViewHolder(@NonNull View itemView) {
-            super(itemView);
-            itemIv = itemView.findViewById(R.id.image_iv);
+        ViewHolder(ItemImageViewpagerBinding binding) {
+            super(binding.getRoot());
+            itemIv = binding.imageIv;
         }
     }
 }

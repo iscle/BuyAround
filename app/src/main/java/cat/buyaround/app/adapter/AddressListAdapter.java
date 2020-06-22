@@ -15,7 +15,9 @@ public class AddressListAdapter extends RecyclerView.Adapter<AddressListAdapter.
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        ItemAddressBinding binding = ItemAddressBinding.inflate(LayoutInflater.from(parent.getContext()), parent, false);
+        ItemAddressBinding binding =
+                ItemAddressBinding.inflate(LayoutInflater.from(parent.getContext()),
+                        parent, false);
         return new ViewHolder(binding);
     }
 

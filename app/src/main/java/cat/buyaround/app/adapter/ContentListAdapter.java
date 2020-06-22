@@ -2,7 +2,6 @@ package cat.buyaround.app.adapter;
 
 import android.graphics.Color;
 import android.view.LayoutInflater;
-import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -14,6 +13,7 @@ import java.util.List;
 
 import cat.buyaround.app.R;
 import cat.buyaround.app.adapter.callback.IListAdapter;
+import cat.buyaround.app.databinding.ItemContentBinding;
 
 public class ContentListAdapter extends RecyclerView.Adapter<ContentListAdapter.ViewHolder> {
 
@@ -28,8 +28,10 @@ public class ContentListAdapter extends RecyclerView.Adapter<ContentListAdapter.
     @NonNull
     @Override
     public ContentListAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_content, parent, false);
-        return new ContentListAdapter.ViewHolder(v);
+        ItemContentBinding binding =
+                ItemContentBinding.inflate(LayoutInflater.from(parent.getContext()),
+                        parent, false);
+        return new ViewHolder(binding);
     }
 
     @Override
@@ -54,10 +56,10 @@ public class ContentListAdapter extends RecyclerView.Adapter<ContentListAdapter.
         TextView tvTitle;
         ImageView ivIcon;
 
-        ViewHolder(@NonNull View itemView) {
-            super(itemView);
-            tvTitle = itemView.findViewById(R.id.item_content_title);
-            ivIcon = itemView.findViewById(R.id.item_content_icon);
+        ViewHolder(ItemContentBinding binding) {
+            super(binding.getRoot());
+            tvTitle = binding.itemContentTitle;
+            ivIcon = binding.itemContentIcon;
         }
     }
 }

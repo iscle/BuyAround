@@ -32,7 +32,8 @@ public class CompactStoreListAdapter extends RecyclerView.Adapter<CompactStoreLi
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         ItemCompactStoreBinding binding =
-                ItemCompactStoreBinding.inflate(LayoutInflater.from(parent.getContext()), parent, false);
+                ItemCompactStoreBinding.inflate(LayoutInflater.from(parent.getContext()),
+                        parent, false);
         return new ViewHolder(binding);
     }
 

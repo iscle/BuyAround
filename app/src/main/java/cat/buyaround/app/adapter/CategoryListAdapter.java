@@ -2,7 +2,6 @@ package cat.buyaround.app.adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
-import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -14,6 +13,7 @@ import com.bumptech.glide.Glide;
 
 import cat.buyaround.app.R;
 import cat.buyaround.app.adapter.callback.IListAdapter;
+import cat.buyaround.app.databinding.ItemCategoryBinding;
 import cat.buyaround.app.model.Category;
 
 public class CategoryListAdapter extends RecyclerView.Adapter<CategoryListAdapter.ViewHolder> {
@@ -31,8 +31,10 @@ public class CategoryListAdapter extends RecyclerView.Adapter<CategoryListAdapte
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_category, parent, false);
-        return new CategoryListAdapter.ViewHolder(v);
+        ItemCategoryBinding binding =
+                ItemCategoryBinding.inflate(LayoutInflater.from(parent.getContext()),
+                        parent, false);
+        return new ViewHolder(binding);
     }
 
     @Override
@@ -68,10 +70,10 @@ public class CategoryListAdapter extends RecyclerView.Adapter<CategoryListAdapte
         ImageView imgView;
         TextView tvName;
 
-        ViewHolder(@NonNull View itemView) {
-            super(itemView);
-            imgView = itemView.findViewById(R.id.item_category_img);
-            tvName = itemView.findViewById(R.id.item_category_name);
+        ViewHolder(ItemCategoryBinding binding) {
+            super(binding.getRoot());
+            imgView = binding.itemCategoryImg;
+            tvName = binding.itemCategoryName;
         }
     }
 }

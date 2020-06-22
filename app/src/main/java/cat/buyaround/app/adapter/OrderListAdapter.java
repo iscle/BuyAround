@@ -2,15 +2,14 @@ package cat.buyaround.app.adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
-import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import cat.buyaround.app.R;
 import cat.buyaround.app.adapter.callback.IListAdapter;
+import cat.buyaround.app.databinding.ItemOrderBinding;
 import cat.buyaround.app.model.Order;
 
 public class OrderListAdapter extends RecyclerView.Adapter<OrderListAdapter.ViewHolder> {
@@ -28,8 +27,10 @@ public class OrderListAdapter extends RecyclerView.Adapter<OrderListAdapter.View
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_order, parent, false);
-        return new OrderListAdapter.ViewHolder(v);
+        ItemOrderBinding binding =
+                ItemOrderBinding.inflate(LayoutInflater.from(parent.getContext()),
+                        parent, false);
+        return new ViewHolder(binding);
     }
 
     @Override
@@ -57,11 +58,11 @@ public class OrderListAdapter extends RecyclerView.Adapter<OrderListAdapter.View
         TextView tvShop;
         TextView tvCost;
 
-        ViewHolder(@NonNull View itemView) {
-            super(itemView);
-            tvTitle = itemView.findViewById(R.id.item_order_title);
-            tvShop = itemView.findViewById(R.id.item_order_shop);
-            tvCost = itemView.findViewById(R.id.item_order_cost);
+        ViewHolder(ItemOrderBinding binding) {
+            super(binding.getRoot());
+            tvTitle = binding.itemOrderTitle;
+            tvShop = binding.itemOrderShop;
+            tvCost = binding.itemOrderCost;
         }
     }
 }

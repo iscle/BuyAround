@@ -34,8 +34,9 @@ public class CartItemListAdapter extends RecyclerView.Adapter<CartItemListAdapte
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         ItemCartOrderBinding binding =
-                ItemCartOrderBinding.inflate(LayoutInflater.from(parent.getContext()), parent, false);
-        return new CartItemListAdapter.ViewHolder(binding);
+                ItemCartOrderBinding.inflate(LayoutInflater.from(parent.getContext()),
+                        parent, false);
+        return new ViewHolder(binding);
     }
 
     @Override
