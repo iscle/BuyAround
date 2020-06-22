@@ -7,7 +7,6 @@ import androidx.lifecycle.ViewModelProvider;
 import javax.inject.Inject;
 
 import cat.buyaround.app.auth.UserManager;
-import cat.buyaround.app.fragment.ScreenProductsFragment;
 import cat.buyaround.app.network.BuyAroundRepository;
 import cat.buyaround.app.viewmodel.AccountViewModel;
 import cat.buyaround.app.viewmodel.AddAddressViewModel;
@@ -109,7 +108,7 @@ public class ViewModelFactory implements ViewModelProvider.Factory {
         if (modelClass.isAssignableFrom(PackViewModel.class)) {
             return (T) new PackViewModel(buyAroundRepository);
         }
-        if (modelClass.isAssignableFrom(ScreenProductsFragment.class)) {
+        if (modelClass.isAssignableFrom(ScreenProductsViewModel.class)) {
             return (T) new ScreenProductsViewModel(buyAroundRepository);
         }
         if (modelClass.isAssignableFrom(ScreenPacksViewModel.class)) {

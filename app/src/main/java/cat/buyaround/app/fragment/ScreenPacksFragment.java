@@ -9,6 +9,7 @@ import javax.inject.Inject;
 
 import cat.buyaround.app.databinding.FragmentScreenPacksBinding;
 import cat.buyaround.app.factory.ViewModelFactory;
+import cat.buyaround.app.model.Store;
 import cat.buyaround.app.viewmodel.ScreenPacksViewModel;
 import dagger.android.support.DaggerFragment;
 
@@ -18,6 +19,11 @@ public class ScreenPacksFragment extends DaggerFragment {
     protected ViewModelFactory viewModelFactory;
     private FragmentScreenPacksBinding binding;
     private ScreenPacksViewModel screenPacksViewModel;
+    private Store store;
+
+    public ScreenPacksFragment(Store store) {
+        this.store = store;
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,

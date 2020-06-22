@@ -23,6 +23,10 @@ public class StoreViewModel extends ViewModel {
         this.store = store;
     }
 
+    public Store getStore() {
+        return store;
+    }
+
     public String getStorePhone() {
         return store.getPhone();
     }

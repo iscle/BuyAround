@@ -81,6 +81,7 @@
     <string name="store_contact_data">Contact data:</string>
     <string name="store_phone">Phone:</string>
     <string name="store_phone_placeholder">912 34 56 78</string>
+    <string name="no_products_store">Sorry…\nThis store has no products right now.</string>
 
     <!-- RECYCLER_VIEW ITEM -->
     <string name="item_content_title">Content title</string>

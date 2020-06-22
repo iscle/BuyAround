@@ -246,9 +246,9 @@ public class StoreFragment extends DaggerFragment {
         @Override
         public DaggerFragment createFragment(int position) {
             if (position == 0)
-                return new ScreenProductsFragment();
+                return new ScreenProductsFragment(storeViewModel.getStore());
             else
-                return new ScreenPacksFragment();
+                return new ScreenPacksFragment(storeViewModel.getStore());
         }
 
         @Override
