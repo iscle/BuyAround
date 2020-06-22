@@ -244,7 +244,7 @@ public class StoreFragment extends DaggerFragment {
         }
 
         @Override
-        public Fragment createFragment(int position) {
+        public DaggerFragment createFragment(int position) {
             if (position == 0)
                 return new ScreenProductsFragment();
             else

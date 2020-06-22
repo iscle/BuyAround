@@ -5,15 +5,24 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import androidx.fragment.app.Fragment;
+import javax.inject.Inject;
 
-import cat.buyaround.app.R;
+import cat.buyaround.app.databinding.FragmentScreenPacksBinding;
+import cat.buyaround.app.factory.ViewModelFactory;
+import cat.buyaround.app.viewmodel.ScreenPacksViewModel;
+import dagger.android.support.DaggerFragment;
 
-public class ScreenPacksFragment extends Fragment {
+public class ScreenPacksFragment extends DaggerFragment {
+
+    @Inject
+    protected ViewModelFactory viewModelFactory;
+    private FragmentScreenPacksBinding binding;
+    private ScreenPacksViewModel screenPacksViewModel;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        return (ViewGroup) inflater.inflate(
-                R.layout.fragment_screen_packs, container, false);
+        binding = FragmentScreenPacksBinding.inflate(inflater, container, false);
+        return binding.getRoot();
     }
 }

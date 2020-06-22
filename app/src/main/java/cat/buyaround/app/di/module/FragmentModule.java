@@ -19,6 +19,8 @@ import cat.buyaround.app.fragment.PaymentFragment;
 import cat.buyaround.app.fragment.PersonalInfoFragment;
 import cat.buyaround.app.fragment.ProductFragment;
 import cat.buyaround.app.fragment.RegisterFragment;
+import cat.buyaround.app.fragment.ScreenPacksFragment;
+import cat.buyaround.app.fragment.ScreenProductsFragment;
 import cat.buyaround.app.fragment.SearchFragment;
 import cat.buyaround.app.fragment.StoreFragment;
 import dagger.Module;
@@ -89,4 +91,10 @@ public abstract class FragmentModule {
 
     @ContributesAndroidInjector
     abstract PackFragment packFragment();
+
+    @ContributesAndroidInjector
+    abstract ScreenPacksFragment screenPacksFragment();
+
+    @ContributesAndroidInjector
+    abstract ScreenProductsFragment screenProductsFragment();
 }
