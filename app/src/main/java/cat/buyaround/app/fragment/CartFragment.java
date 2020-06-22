@@ -15,7 +15,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import javax.inject.Inject;
 
-import cat.buyaround.app.adapter.CartItemsAdapter;
+import cat.buyaround.app.adapter.CartItemListAdapter;
 import cat.buyaround.app.adapter.callback.IListAdapter;
 import cat.buyaround.app.databinding.FragmentCartBinding;
 import cat.buyaround.app.factory.ViewModelFactory;
@@ -63,7 +63,7 @@ public class CartFragment extends DaggerFragment implements IListAdapter {
 
     private void subscribeObservers() {
         cartViewModel.getOrderProducts().observe(getViewLifecycleOwner(), products -> {
-            binding.cartItemsRecyclerview.setAdapter(new CartItemsAdapter(products, CartFragment.this));
+            binding.cartItemsRecyclerview.setAdapter(new CartItemListAdapter(products, CartFragment.this));
             binding.cartTotalCost.setText(String.valueOf(cartViewModel.getTotalCost()));
         });
     }
