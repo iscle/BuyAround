@@ -31,6 +31,9 @@ android {
         viewBinding = true
     }
 
+    lintOptions {
+        disable 'MissingTranslation'
+    }
 }
 
 dependencies {
