@@ -66,6 +66,8 @@
     <string name="payment_add_paypal">Add PayPal account</string>
     <string name="no_cards">You haven\'t added any credit or debit card yet…\nAdd one now.</string>
     <string name="no_paypal">You haven\'t added any PayPal account yet…\nAdd one now.</string>
+    <string name="establish_as_default_payment_card">Establish as default</string>
+    <string name="default_payment">Default method</string>
 
     <!-- STORE -->
     <string name="store_label">Store</string>

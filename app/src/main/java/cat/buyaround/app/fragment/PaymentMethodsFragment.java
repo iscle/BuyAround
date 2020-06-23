@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 
 import javax.inject.Inject;
 
+import cat.buyaround.app.adapter.PaymentCardListAdapter;
 import cat.buyaround.app.databinding.FragmentPaymentMethodsBinding;
 import cat.buyaround.app.factory.ViewModelFactory;
 import cat.buyaround.app.viewmodel.PaymentMethodsViewModel;
@@ -42,6 +43,6 @@ public class PaymentMethodsFragment extends DaggerFragment {
 
     private void initViews() {
         binding.paymentCardsRv.setLayoutManager(new LinearLayoutManager(getContext()));
-        //binding.paymentCardsRv.setAdapter(new PaymentCardListAdapter());
+        binding.paymentCardsRv.setAdapter(new PaymentCardListAdapter());
     }
 }
