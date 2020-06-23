@@ -12,37 +12,63 @@
         android:layout_height="wrap_content"
         android:background="?selectableItemBackground">
 
-        <TextView
-            android:id="@+id/street"
-            android:layout_width="0dp"
+        <ImageView
+            android:id="@+id/card_icon"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="8dp"
-            android:layout_marginTop="8dp"
-            android:text="@string/address_label"
-            app:layout_constraintEnd_toStartOf="@+id/edit_btn"
+            android:layout_marginVertical="8dp"
+            android:layout_marginStart="8dp"
+            android:elevation="6dp"
+            android:src="@drawable/ic_card"
+            android:tint="@color/colorPrimary"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/city"
+            android:id="@+id/last_digits_tv"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="8dp"
-            android:text="@string/address_label"
-            app:layout_constraintEnd_toStartOf="@+id/edit_btn"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/street" />
+            android:layout_marginTop="8dp"
+            android:text="**** 1234"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@id/edit_btn"
+            app:layout_constraintStart_toEndOf="@id/card_icon"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/province"
+            android:id="@+id/cardholder_tv"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="8dp"
-            android:text="@string/address_label"
+            android:text="@string/name"
+            app:layout_constraintEnd_toStartOf="@id/edit_btn"
+            app:layout_constraintStart_toEndOf="@id/card_icon"
+            app:layout_constraintTop_toBottomOf="@id/last_digits_tv" />
+
+        <TextView
+            android:id="@+id/valid_until"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="6dp"
+            android:text="@string/valid_until"
+            app:layout_constraintBottom_toTopOf="@id/default_layout"
+            app:layout_constraintEnd_toStartOf="@id/expiration_tv"
+            app:layout_constraintStart_toEndOf="@id/card_icon"
+            app:layout_constraintTop_toBottomOf="@id/cardholder_tv" />
+
+        <TextView
+            android:id="@+id/expiration_tv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:text="10/22"
             app:layout_constraintBottom_toTopOf="@id/default_layout"
             app:layout_constraintEnd_toStartOf="@id/edit_btn"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/city" />
+            app:layout_constraintStart_toEndOf="@id/valid_until"
+            app:layout_constraintTop_toBottomOf="@id/cardholder_tv" />
 
         <ImageView
             android:id="@+id/edit_btn"
@@ -78,12 +104,12 @@
 
         <LinearLayout
             android:id="@+id/default_layout"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:orientation="vertical"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent">
+            app:layout_constraintStart_toEndOf="@id/card_icon">
 
             <TextView
                 android:id="@+id/establish_as_default_btn"

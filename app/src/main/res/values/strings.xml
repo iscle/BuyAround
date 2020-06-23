@@ -64,8 +64,8 @@
     <string name="payment_add_card">Add Card</string>
     <string name="payment_paypal">PayPal accounts</string>
     <string name="payment_add_paypal">Add PayPal account</string>
-    <string name="no_cards">You haven\'t added any credit or debit card yet…\nAdd one now!</string>
-    <string name="no_paypal">You haven\'t added any PayPal account yet…\nAdd one now!</string>
+    <string name="no_cards">You haven\'t added any credit or debit card yet…\nAdd one now.</string>
+    <string name="no_paypal">You haven\'t added any PayPal account yet…\nAdd one now.</string>
 
     <!-- STORE -->
     <string name="store_label">Store</string>
@@ -117,6 +117,7 @@
     <string name="quantity">Quantity</string>
     <string name="search">Search</string>
     <string name="add_pack">Add pack</string>
+    <string name="name">Name</string>
 
     <!-- NAVBAR -->
     <string name="location">Location</string>
@@ -151,6 +152,7 @@
     <string name="address_label">Address</string>
     <string name="no_addresses">You haven\'t added any address yet!\nAdd one now!</string>
     <string name="add_address">Add a new address</string>
+    <string name="valid_until">Valid until:</string>
 
     <!-- FAVOURITE -->
     <string name="fav_stores">Favourite stores</string>
@@ -168,14 +170,6 @@
     <string name="more_info_text">For more information you can visit our web page at:\n<a href="https://buyaround.cat">https://buyaround.cat</a>\n\nThis is an open-source project, so if you want to check the code you can access it through this GitHub repository:\n<a href="https://github.com/Iscle/BuyAround">https://github.com/Iscle/BuyAround</a></string>
     <string name="credit_names">Developers</string>
     <string name="credit_names_text">Iscle Gil.\nFerran Montoliu.\nJoan Carrión.</string>
-
-    <!-- LOCATION -->
-    <string name="nearby_stores_tv">Number of nearby stores:</string>
-    <string name="nearby_stores_num_tv">0</string>
-    <string name="name">Name</string>
-    <string name="radius_number">Enter the radius in meters:</string>
-    <string name="radius_selected">500</string>
-    <string name="radius_meters">m</string>
 
     <!-- LEGAL -->
     <string name="legal_text_1">This application is an open-source project running under <i>Apache License 2.0</i>.</string>

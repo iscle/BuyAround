@@ -99,8 +99,8 @@
             app:popExitAnim="@anim/nav_default_pop_exit_anim" />
 
         <action
-            android:id="@+id/action_accountFragment_to_paymentFragment"
-            app:destination="@id/paymentFragment"
+            android:id="@+id/action_accountFragment_to_paymentMethodsFragment"
+            app:destination="@id/paymentMethodsFragment"
             app:enterAnim="@anim/fragment_open_enter"
             app:exitAnim="@anim/fragment_open_exit"
             app:popEnterAnim="@anim/nav_default_pop_enter_anim"
@@ -177,12 +177,6 @@
         tools:layout="@layout/fragment_legal" />
 
     <fragment
-        android:id="@+id/locationFragment"
-        android:name="cat.buyaround.app.fragment.LocationFragment"
-        android:label="@string/location"
-        tools:layout="@layout/fragment_location" />
-
-    <fragment
         android:id="@+id/personalInfoFragment"
         android:name="cat.buyaround.app.fragment.PersonalInfoFragment"
         android:label="@string/account_personal_info"
@@ -203,10 +197,10 @@
     </fragment>
 
     <fragment
-        android:id="@+id/paymentFragment"
-        android:name="cat.buyaround.app.fragment.PaymentFragment"
+        android:id="@+id/paymentMethodsFragment"
+        android:name="cat.buyaround.app.fragment.PaymentMethodsFragment"
         android:label="@string/payment"
-        tools:layout="@layout/fragment_payment" />
+        tools:layout="@layout/fragment_payment_methods" />
 
     <fragment
         android:id="@+id/addProductFragment"

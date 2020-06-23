@@ -17,11 +17,10 @@ import cat.buyaround.app.viewmodel.CartViewModel;
 import cat.buyaround.app.viewmodel.CategoriesViewModel;
 import cat.buyaround.app.viewmodel.FavouritesViewModel;
 import cat.buyaround.app.viewmodel.HomeViewModel;
-import cat.buyaround.app.viewmodel.LocationViewModel;
 import cat.buyaround.app.viewmodel.LoginViewModel;
 import cat.buyaround.app.viewmodel.OrdersViewModel;
 import cat.buyaround.app.viewmodel.PackViewModel;
-import cat.buyaround.app.viewmodel.PaymentViewModel;
+import cat.buyaround.app.viewmodel.PaymentMethodsViewModel;
 import cat.buyaround.app.viewmodel.PersonalInfoViewModel;
 import cat.buyaround.app.viewmodel.ProductViewModel;
 import cat.buyaround.app.viewmodel.RegisterViewModel;
@@ -71,8 +70,8 @@ public class ViewModelFactory implements ViewModelProvider.Factory {
         if (modelClass.isAssignableFrom(AddressesViewModel.class)) {
             return (T) new AddressesViewModel(buyAroundRepository);
         }
-        if (modelClass.isAssignableFrom(PaymentViewModel.class)) {
-            return (T) new PaymentViewModel(buyAroundRepository);
+        if (modelClass.isAssignableFrom(PaymentMethodsViewModel.class)) {
+            return (T) new PaymentMethodsViewModel(buyAroundRepository);
         }
         if (modelClass.isAssignableFrom(AddProductViewModel.class)) {
             return (T) new AddProductViewModel(buyAroundRepository);
@@ -91,9 +90,6 @@ public class ViewModelFactory implements ViewModelProvider.Factory {
         }
         if (modelClass.isAssignableFrom(CartViewModel.class)) {
             return (T) new CartViewModel(buyAroundRepository, userManager);
-        }
-        if (modelClass.isAssignableFrom(LocationViewModel.class)) {
-            return (T) new LocationViewModel(buyAroundRepository);
         }
         if (modelClass.isAssignableFrom(ProductViewModel.class)) {
             return (T) new ProductViewModel(buyAroundRepository);

@@ -6,12 +6,12 @@ import javax.inject.Inject;
 
 import cat.buyaround.app.network.BuyAroundRepository;
 
-public class PaymentViewModel extends ViewModel {
+public class PaymentMethodsViewModel extends ViewModel {
 
     private BuyAroundRepository buyAroundRepository;
 
     @Inject
-    public PaymentViewModel(BuyAroundRepository buyAroundRepository) {
+    public PaymentMethodsViewModel(BuyAroundRepository buyAroundRepository) {
         this.buyAroundRepository = buyAroundRepository;
     }
 }

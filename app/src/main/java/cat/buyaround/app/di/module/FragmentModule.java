@@ -9,12 +9,11 @@ import cat.buyaround.app.fragment.CartFragment;
 import cat.buyaround.app.fragment.CategoriesFragment;
 import cat.buyaround.app.fragment.FavouritesFragment;
 import cat.buyaround.app.fragment.HomeFragment;
-import cat.buyaround.app.fragment.LocationFragment;
 import cat.buyaround.app.fragment.LoginFragment;
 import cat.buyaround.app.fragment.OrdersFragment;
 import cat.buyaround.app.fragment.PackFragment;
 import cat.buyaround.app.fragment.PayFragment;
-import cat.buyaround.app.fragment.PaymentFragment;
+import cat.buyaround.app.fragment.PaymentMethodsFragment;
 import cat.buyaround.app.fragment.PersonalInfoFragment;
 import cat.buyaround.app.fragment.ProductFragment;
 import cat.buyaround.app.fragment.RegisterFragment;
@@ -53,7 +52,7 @@ public abstract class FragmentModule {
     abstract AddressesFragment addressesFragment();
 
     @ContributesAndroidInjector
-    abstract PaymentFragment paymentFragment();
+    abstract PaymentMethodsFragment paymentMethodsFragment();
 
     @ContributesAndroidInjector
     abstract AddProductFragment addProductFragment();
@@ -78,9 +77,6 @@ public abstract class FragmentModule {
 
     @ContributesAndroidInjector
     abstract PayFragment payFragment();
-
-    @ContributesAndroidInjector
-    abstract LocationFragment locationFragment();
 
     @ContributesAndroidInjector
     abstract StoreFragment storeFragment();

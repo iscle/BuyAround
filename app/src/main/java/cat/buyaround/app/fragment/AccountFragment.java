@@ -89,7 +89,7 @@ public class AccountFragment extends DaggerFragment {
 
         setupItemContent(binding.paymentMethods, "My payment methods",
                 getListener(AccountFragmentDirections
-                .actionAccountFragmentToPaymentFragment()));
+                .actionAccountFragmentToPaymentMethodsFragment()));
 
         setupItemContent(binding.legal, "Legal",
                 getListener(AccountFragmentDirections

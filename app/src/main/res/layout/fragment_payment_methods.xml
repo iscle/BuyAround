@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    tools:context=".fragment.PaymentFragment">
+    tools:context=".fragment.PaymentMethodsFragment">
 
     <TextView
         style="@style/TitlesTheme"
@@ -19,6 +19,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
+        android:paddingHorizontal="8dp"
         android:visibility="gone" />
 
     <TextView
@@ -53,6 +54,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
+        android:paddingHorizontal="8dp"
         android:visibility="gone" />
 
     <TextView
