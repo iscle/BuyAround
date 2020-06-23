@@ -19,7 +19,6 @@ import cat.buyaround.app.viewmodel.FavouritesViewModel;
 import cat.buyaround.app.viewmodel.HomeViewModel;
 import cat.buyaround.app.viewmodel.LocationViewModel;
 import cat.buyaround.app.viewmodel.LoginViewModel;
-import cat.buyaround.app.viewmodel.NotificationsViewModel;
 import cat.buyaround.app.viewmodel.OrdersViewModel;
 import cat.buyaround.app.viewmodel.PackViewModel;
 import cat.buyaround.app.viewmodel.PaymentViewModel;
@@ -86,9 +85,6 @@ public class ViewModelFactory implements ViewModelProvider.Factory {
         }
         if (modelClass.isAssignableFrom(CategoriesViewModel.class)) {
             return (T) new CategoriesViewModel(buyAroundRepository);
-        }
-        if (modelClass.isAssignableFrom(NotificationsViewModel.class)) {
-            return (T) new NotificationsViewModel(buyAroundRepository);
         }
         if (modelClass.isAssignableFrom(FavouritesViewModel.class)) {
             return (T) new FavouritesViewModel(buyAroundRepository);

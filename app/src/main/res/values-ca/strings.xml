@@ -1,90 +1,209 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">BuyAround</string>
-    <string name="home">Inici</string>
-    <string name="register">Registrar-se</string>
-    <string name="login">Iniciar sessió</string>
-    <string name="register_goto_login_tv">Ja tens un compte?</string>
+
+    <string name="hello_blank_fragment">Això serà implementat en actualtizacions futures!</string>
+
+    <!-- TOASTS -->
+    <string name="wrong_password">Contrasenya incorrecta!</string>
+    <string name="internal_error">Error intern!</string>
+    <string name="network_error">Error en la connexió!</string>
+    <string name="existing_email">Aquest email ja existeix!</string>
+    <string name="weak_password">La contrasenya és poc segura!</string>
+    <string name="missing_parameters">Falten paràmetres per omplir!</string>
+
+    <!-- LOGIN AND REGISTER -->
+    <string name="login_name_hint">Introdueix el teu nom</string>
+    <string name="login_email_hint">Introdueix el teu email</string>
     <string name="password_tv">Contrasenya</string>
     <string name="password_verification_tv">Verificar contrasenya</string>
     <string name="login_password_hint">Introdueix una contrasenya</string>
     <string name="login_password_hint_again">Repeteix la contrasenya</string>
+    <string name="login_button">Iniciar sessió</string>
     <string name="login_goto_register_tv">No tens un compte?</string>
-    <string name="wrong_password">Contrasenya incorrecta!</string>
-    <string name="existing_email">Aquest email ja existeix!</string>
-    <string name="login_name_hint">Introdueix el teu nom</string>
-    <string name="login_email_hint">Introdueix el teu email</string>
+    <string name="login_goto_register_click">Prem aqui per crear-ne un.</string>
+    <string name="register_goto_login_tv">Ja tens un compte?</string>
+    <string name="register_goto_login_click">Prem aqui per iniciar sessió.</string>
+    <string name="login">Iniciar sessió</string>
+    <string name="register">Registrar-se</string>
+    <string name="home">Inici</string>
+    <string name="register_empty_name">Error! Has d\'introduir el teu nom.</string>
+    <string name="register_empty_surname">Error! Has d\'introduir els teus cognoms.</string>
+    <string name="register_empty_email">Error! Has d\'introduir un correu electrònic vàlid!</string>
+    <string name="register_empty_password">Error! Has d\'introduir una contrasenya.</string>
+    <string name="register_empty_birthday">Error! Has d\'introduir la teva data de naixement.</string>
+    <string name="register_birthday_not_valid">Error! Has de ser major d\'edat.</string>
+    <string name="register_empty_password_verification">Error! Has d\'introduir la contrasenya un altre cop.</string>
+    <string name="register_passwords_dont_match">Error! Les dues contrasenyes no coincideixen.</string>
+    <string name="register_password_not_secure">Error! La contrasenya no és segura.</string>
+    <string name="login_forgot_password">Has oblidat la contrasenya? Prem aqui per recuperar-la.</string>
+    <string name="password_helper">8 caràcters mínim, incloent-hi nombres i lletres majúscules i minúscules.</string>
+    <string name="password_verification_helper">Les contrasenyes han de coincidir.</string>
+    <string name="register_success">Compte creat correctament.</string>
     <string name="surnames">Cognoms</string>
+    <string name="login_surname_hint">Introdueix els teus cognoms</string>
     <string name="birthday">Data de naixement</string>
+    <string name="login_birthday_hint">dd/mm/yyyy</string>
     <string name="phone">Número de telèfon</string>
+    <string name="register_phone_hint">612 34 56 78</string>
+    <string name="register_phone_not_valid">Error! Has d\'introduir un número de telèfon vàlid.</string>
+
+    <!-- ACCOUNT -->
     <string name="username">Nom d\'usuari</string>
     <string name="email">Correu electrònic</string>
+    <string name="account_personal_info">Informació personal</string>
     <string name="addresses">Adreces</string>
     <string name="payment">Pagament</string>
-    <string name="store_tv">Nom</string>
-    <string name="address_tv">Adreça</string>
-    <string name="personal_info_password">Contrasenya</string>
-    <string name="edit_password">Editar contrasenya</string>
-    <string name="establish_as_default">Utilitzar per defecte</string>
-    <string name="default_address">Adreça per defecte</string>
-    <string name="info_updated">Perfil actualitzat correctament!</string>
-    <string name="personal_info_birthday">Aniversari</string>
-    <string name="personal_info_name">Nom</string>
-    <string name="personal_info_surname">Cognom</string>
-    <string name="update_profile">Actualitzar perfil</string>
-    <string name="photo">Imatge</string>
-    <string name="cart_items_text_plural">productes</string>
-    <string name="cart_items_text_singular">producte</string>
-    <string name="name">Nom</string>
-    <string name="what_is_buyaround">Què és BuyAround?</string>
-    <string name="fav_stores">Botigues preferides</string>
-    <string name="fav_products">Productes preferits</string>
-    <string name="add_address">Afegir una nova adreça</string>
-    <string name="address_label">Adreces</string>
-    <string name="share_product_only_for">" només per "</string>
-    <string name="price_tv">Preu:</string>
-    <string name="points">Punts:</string>
-    <string name="about_us">Sobre nosaltres</string>
-    <string name="categories">Categories</string>
-    <string name="favourites">Preferits</string>
-    <string name="account_personal_info">Informació personal</string>
-    <string name="payment_paypal">Comptes de PayPal</string>
-    <string name="payment_add_paypal">Afegir un compte PayPal</string>
-    <string name="my_account">Compte</string>
-    <string name="search_hint">Què estàs buscant?</string>
-    <string name="home_top_packs">Millors paquets</string>
-    <string name="home_top_products">Millors productes</string>
-    <string name="search_top_search">Millors busquedes</string>
-    <string name="home_stores_around">Botigues a prop teu</string>
-    <string name="description_tv">Descripció:</string>
-    <string name="store_fragment_products">Productes</string>
-    <string name="store_fragment_packs">Paquets</string>
-    <string name="location_tv">Localització:</string>
-    <string name="location">Localització:</string>
-    <string name="store_label">Botiga</string>
-    <string name="add_store_tv">Afegir una botiga</string>
-    <string name="product_unit">unitat</string>
-    <string name="store_information">Més productes de la mateixa botiga:</string>
-    <string name="fav_packs">Paquets preferits</string>
-    <string name="no_fav_packs_yet">Encara no has marcat cap paquet com a preferit!</string>
-    <string name="no_fav_stores_yet">Encara no has marcat cap botiga com a preferida!</string>
-    <string name="no_fav_products_yet">Encara no has marcat cap producte com a preferit!</string>
-    <string name="cart_clear">Buidar la cistella</string>
-    <string name="add_to_cart">Afegir a la cistella</string>
-    <string name="cart">Cistella</string>
-    <string name="default_payment_method">Mètode de pagament per defecte</string>
+    <string name="use_conditions">Condicions d\'ús</string>
+    <string name="log_in_acc">Iniciar sessió</string>
+    <string name="log_in_text_acc">Per a poder realitzar una comanda,\nnecessites estar registrat.</string>
+    <string name="log_out">Tancar sessió</string>
+
+    <!-- PAYMENT -->
     <string name="payment_cards">Tarjetes de crèdit/dèbit</string>
+    <string name="payment_add_card">Afegir tarjeta</string>
+    <string name="payment_paypal">Comptes de PayPal</string>
+    <string name="payment_add_paypal">Afegir un compte de PayPal</string>
     <string name="no_cards">Encara no has afegit cap tarjeta de crèdit/dèbit!</string>
     <string name="no_paypal">Encara no has afegit cap compte de PayPal!</string>
-    <string name="payment_add_card">Afegir tarjeta</string>
-    <string name="personal_info_email">Correu electrònic</string>
-    <string name="register_empty_email">Error: Has d\'introduir un correu electrònic vàlid!</string>
+
+    <!-- STORE -->
+    <string name="store_label">Botiga</string>
+    <string name="store_tv">Nom</string>
+    <string name="store_hint">Enter the store name</string>
+    <string name="address_tv">Adreça</string>
+    <string name="address_btn">Add new Address</string>
+    <string name="location_tv">Ubicació:</string>
+    <string name="store_fragment_products">Productes</string>
+    <string name="store_fragment_packs">Packs</string>
+    <string name="store_contact_data">Dades de contacte:</string>
+    <string name="store_phone">Telèfon:</string>
+    <string name="store_phone_placeholder">912 34 56 78</string>
+    <string name="no_products_store">Ho sentim…\nAquesta botiga no té cap producte ara mateix.</string>
+
+    <!-- RECYCLER_VIEW ITEM -->
+    <string name="item_content_title">Títol del contingut</string>
+    <string name="item_content_subtitle">Subtítol del contingut</string>
+    <string name="item_content_cost">Preu</string>
+    <string name="item_content_stars">4,2</string>
+
+    <!-- HOME -->
+    <string name="home_stores_around">Botigues al teu voltant</string>
+    <string name="home_top_packs">Millors packs</string>
+    <string name="home_top_products">Millors productes</string>
+    <string name="no_stores_around">Ho sentim…\nNo hi ha cap botiga al teu voltant encara!</string>
+    <string name="no_packs_around">Ho sentim…\nNo hi ha cap pack al teu voltant encara!</string>
+    <string name="no_products_around">Ho sentim…\nNo hi ha cap producte al teu voltant encara!</string>
+
+    <!-- SEARCH -->
+    <string name="search_top_search">Cerques principals</string>
+
+    <!-- CART -->
+    <string name="cart_clear">Buidar la cistella</string>
+    <string name="cart_to_pay">Procedir al pagament</string>
+
+    <!-- ORDERS -->
+    <string name="orders_repeat_order">Repetir una comanda</string>
+    <string name="orders_last_orders">Últimes comandes</string>
+    <string name="no_orders_yet">Encara no has fet cap comanda.\nFes la teva primera compra!</string>
+
+    <!-- GENERAL PURPOSE -->
+    <string name="search_hint">Què estàs buscant?</string>
+    <string name="accept">Acceptar</string>
+    <string name="cancel">Cancelar</string>
+    <string name="add">Afegir</string>
+    <string name="categories">Categories</string>
+    <string name="add_to_cart">Afegir a la cistella</string>
+    <string name="quantity">Quantitat</string>
+    <string name="search">Cerca</string>
+    <string name="add_pack">Afegir un pack</string>
+
+    <!-- NAVBAR -->
+    <string name="location">Ubicació</string>
+    <string name="orders">Comandes</string>
+    <string name="notifications">Notificacions</string>
+    <string name="favourites">Preferits</string>
+    <string name="my_account">Compte</string>
+    <string name="settings">Configuració</string>
+    <string name="legal">Legal</string>
+    <string name="cart">Cistella</string>
+    <string name="about_us">Sobre nosaltres</string>
+
+    <!-- PRODUCT -->
+    <string name="product_label">Producte</string>
+    <string name="product_tv">Producte</string>
+    <string name="product_hint">Introdueix el nom del producte</string>
+    <string name="category_tv">Categoria</string>
+    <string name="price_tv">Preu:</string>
+    <string name="points">Punts:</string>
+    <string name="product_other_info">Altra informació</string>
+    <string name="currency_tv">Moneda</string>
+    <string name="description_tv">Descripció:</string>
+    <string name="description_hint">Introdueix una breu descripció</string>
+    <string name="images_tv">Imatges</string>
+    <string name="product_unit">unitat</string>
+    <string name="share_product_via">Compartir el producte via</string>
+    <string name="share_product_text">Mira aquest producte &#57932; que he trobat a BuyAround!\n\n</string>
+    <string name="share_product_only_for"> només per </string>
+    <string name="store_information">Més productes de la mateixa botiga:</string>
+
+    <!-- ADDRESS -->
+    <string name="address_label">Adreça</string>
+    <string name="no_addresses">No has afegit cap adreça encara!\nAfegeix-ne una ara!</string>
+    <string name="add_address">Afegir una nova adreça</string>
+
+    <!-- FAVOURITE -->
+    <string name="fav_stores">Botigues preferides</string>
+    <string name="fav_products">Productes preferits</string>
+    <string name="fav_packs">Packs preferits</string>
+    <string name="no_fav_stores_yet">Encara no has marcat cap botiga com a preferida!</string>
+    <string name="no_fav_packs_yet">Encara no has marcat cap paquet com a preferit!</string>
+    <string name="no_fav_products_yet">Encara no has marcat cap producte com a preferit!</string>
+
+    <!-- ABOUT US -->
+    <string name="what_is_buyaround">Què és BuyAround?</string>
+    <string name="what_is_buyaround_text">BuyAround és una aplicació per fer compres a botigues properes fàcilment i ràpidament.\n\nAquesta aplicació es va crear arran de la crisi de Covid-19, que va amenaçar el comerç local. Per reactivar-lo, vam cercar la manera més convenient de donar visibilitat a les botigues que ens envolten.</string>
     <string name="who_are_we">Qui som?</string>
-    <string name="log_out">Tancar sessió</string>
-    <string name="log_in_acc">Iniciar sessió</string>
-    <string name="login_surname_hint">Introdueix els teus cognoms</string>
-    <string name="login_forgot_password">Has oblidat la contrasenya? Prem aqui per recuperar-la.</string>
-    <string name="register_goto_login_click">Prem aqui per iniciar sessió.</string>
-    <string name="login_goto_register_click">Prem aqui per crear-ne un.</string>
-    <string name="login_button">Iniciar sessió</string>
+    <string name="who_are_we_text">L’equip de BuyAround està format per 3 estudiants d’enginyeria de La Salle - URL.\n\nEn vista de la crisi econòmica provocada per la pandèmia global del 2020 i per intentar contribuir a la restauració de la normalitat, vam decidir que volíem ajudar els comerços locals, ja que es veurien afectats directament per aquesta crisi.</string>
+    <string name="more_info_text">Per a més informació, podeu visitar la nostra pàgina web a:\n<a href="https://buyaround.cat">https://buyaround.cat</a>\n\nAquest és un projecte de codi obert, de manera que si voleu comprovar el codi podeu accedir a través d’aquest repositori de GitHub:\n<a href="https://github.com/Iscle/BuyAround">https://github.com/Iscle/BuyAround</a></string>
+    <string name="credit_names">Desenvolupadors</string>
+    <string name="credit_names_text">Iscle Gil.\nFerran Montoliu.\nJoan Carrión.</string>
+
+    <!-- LOCATION -->
+    <string name="nearby_stores_tv">Nombre de botigues properes:</string>
+    <string name="nearby_stores_num_tv">0</string>
+    <string name="name">Nom</string>
+    <string name="radius_number">Introdueix un radi en metres:</string>
+    <string name="radius_selected">500</string>
+    <string name="radius_meters">m</string>
+
+    <!-- LEGAL -->
+    <string name="legal_text_1">Aquesta aplicació és un projecte de codi obert que es troba sota una <i> Llicència Apache 2.0 </i>.</string>
+    <string name="legal_text_2">És un prototip no funcional desenvolupat com a prova de concepte. Si el projecte es fa realitzat posteriorment, actualitzarem la informació i informarem a tots els nostres usuaris registrats.</string>
+    <string name="legal_more_info">Per obtenir més informació, visiteu la nostra pàgina web a:\n<a href="https://buyaround.cat/legal.html">https://buyaround.cat/legal.html</a></string>
+
+    <!-- CART POPUP -->
+    <string name="cart_items_text_singular">producte</string>
+    <string name="cart_items_text_plural">productes</string>
+    <string name="cart_total_cost_text">Total:</string>
+    <string name="currency">€</string>
+    <string name="check_cart">Veure cistella</string>
+
+    <!-- PACK -->
+    <string name="pack_label">Pack</string>
+
+    <!-- PERSONAL INFO -->
+    <string name="photo">Imatge</string>
+    <string name="update_profile">Actualitzar perfil</string>
+    <string name="personal_info_name">Nom</string>
+    <string name="personal_info_surname">Cognoms</string>
+    <string name="personal_info_email">Correu electrònic</string>
+    <string name="personal_info_birthday">Data de naixement</string>
+    <string name="personal_info_password">Contrasenya</string>
+    <string name="edit_password">Modifica la contrasenya</string>
+    <string name="establish_as_default">Establiu-lo com a predeterminat</string>
+    <string name="default_address">Adreça predeterminada</string>
+    <string name="info_updated">Perfil actualitzat correctament.</string>
+    <string name="error_updating_info">An error occurred while updating your info.</string>
+
 </resources>

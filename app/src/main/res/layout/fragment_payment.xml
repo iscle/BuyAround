@@ -7,45 +7,11 @@
     tools:context=".fragment.PaymentFragment">
 
     <TextView
-        style="@style/TitlesThemeLarge"
+        style="@style/TitlesTheme"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="8dp"
         android:layout_marginTop="8dp"
-        android:text="@string/default_payment_method" />
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/payment_default_rv"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:visibility="gone" />
-
-    <TextView
-        android:id="@+id/default_payment_empty_view"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:paddingHorizontal="24dp"
-        android:paddingTop="16dp"
-        android:text="@string/no_default_payment_method" />
-
-    <Button
-        android:id="@+id/payment_default_change_btn"
-        style="@style/GreenButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:text="@string/change_default_method" />
-
-    <TextView
-        style="@style/TitlesThemeLarge"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="8dp"
-        android:layout_marginTop="16dp"
         android:text="@string/payment_cards" />
 
     <androidx.recyclerview.widget.RecyclerView
@@ -75,7 +41,7 @@
         android:text="@string/payment_add_card" />
 
     <TextView
-        style="@style/TitlesThemeLarge"
+        style="@style/TitlesTheme"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="8dp"

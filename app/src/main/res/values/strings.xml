@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">BuyAround</string>
 
@@ -59,13 +60,10 @@
     <string name="log_out">Log out</string>
 
     <!-- PAYMENT -->
-    <string name="default_payment_method">Default payment method</string>
-    <string name="change_default_method">Change default</string>
     <string name="payment_cards">Credit/Debit cards</string>
     <string name="payment_add_card">Add Card</string>
     <string name="payment_paypal">PayPal accounts</string>
     <string name="payment_add_paypal">Add PayPal account</string>
-    <string name="no_default_payment_method">You haven\'t chosen any default payment method yet…\nChoose one now!</string>
     <string name="no_cards">You haven\'t added any credit or debit card yet…\nAdd one now!</string>
     <string name="no_paypal">You haven\'t added any PayPal account yet…\nAdd one now!</string>
 
@@ -96,16 +94,11 @@
     <string name="no_stores_around">Sorry…\nThere are no stores around you yet!</string>
     <string name="no_packs_around">Sorry…\nThere are no packs around you yet!</string>
     <string name="no_products_around">Sorry…\nThere are no products around you yet!</string>
-    <string name="add_store_tv">Add a store</string>
-    <string name="add_pack_tv">Add a pack</string>
-    <string name="add_product_tv">Add a product</string>
 
     <!-- SEARCH -->
     <string name="search_top_search">Top Search</string>
-    <string name="search_nav_categories">Navigate through categories</string>
 
     <!-- CART -->
-    <string name="cart_items">Items</string>
     <string name="cart_clear">Clear Cart</string>
     <string name="cart_to_pay">Proceed to Pay</string>
 
@@ -132,7 +125,6 @@
     <string name="favourites">Favourites</string>
     <string name="my_account">Account</string>
     <string name="settings">Settings</string>
-    <string name="customer_support">Customer support</string>
     <string name="legal">Legal</string>
     <string name="cart">Cart</string>
     <string name="about_us">About us</string>
@@ -167,11 +159,6 @@
     <string name="no_fav_stores_yet">You haven\'t marked any store as favourite yet!</string>
     <string name="no_fav_packs_yet">You haven\'t marked any pack as favourite yet!</string>
     <string name="no_fav_products_yet">You haven\'t marked any product as favourite yet!</string>
-
-    <!-- NOTIFICATIONS -->
-    <string name="item_notification_text">The deliveryman has finished purchasing goods and is heading to your portal. He/She will be there in approximately</string>
-    <string name="item_notification_time">X minutes.</string>
-    <string name="no_notifications_yet">You don\'t have any notifications yet.\nMake your first purchase!</string>
 
     <!-- ABOUT US -->
     <string name="what_is_buyaround">What is BuyAround?</string>

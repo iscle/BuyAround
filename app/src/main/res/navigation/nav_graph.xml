@@ -183,12 +183,6 @@
         tools:layout="@layout/fragment_location" />
 
     <fragment
-        android:id="@+id/notificationsFragment"
-        android:name="cat.buyaround.app.fragment.NotificationsFragment"
-        android:label="@string/notifications"
-        tools:layout="@layout/fragment_notifications" />
-
-    <fragment
         android:id="@+id/personalInfoFragment"
         android:name="cat.buyaround.app.fragment.PersonalInfoFragment"
         android:label="@string/account_personal_info"
