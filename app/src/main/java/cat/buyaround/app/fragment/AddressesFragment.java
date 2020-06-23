@@ -51,7 +51,6 @@ public class AddressesFragment extends DaggerFragment {
         binding.addressRecycler.setLayoutManager(new LinearLayoutManager(getContext()));
         addressListAdapter = new AddressListAdapter();
         binding.addressRecycler.setAdapter(addressListAdapter);
-        binding.addressRecycler.addItemDecoration(new DividerItemDecoration(requireContext(), DividerItemDecoration.VERTICAL));
 
         binding.addAddressBtn.setOnClickListener(v -> {
             NavDirections action = AddressesFragmentDirections

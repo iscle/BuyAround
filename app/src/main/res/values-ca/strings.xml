@@ -201,7 +201,7 @@
     <string name="personal_info_birthday">Data de naixement</string>
     <string name="personal_info_password">Contrasenya</string>
     <string name="edit_password">Modifica la contrasenya</string>
-    <string name="establish_as_default">Establiu-lo com a predeterminat</string>
+    <string name="establish_as_default">Establir com a predeterminada</string>
     <string name="default_address">Adreça predeterminada</string>
     <string name="info_updated">Perfil actualitzat correctament.</string>
     <string name="error_updating_info">An error occurred while updating your info.</string>
