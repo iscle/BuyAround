@@ -51,10 +51,12 @@
     <!-- ACCOUNT -->
     <string name="username">Username</string>
     <string name="email">Email</string>
-    <string name="account_personal_info">Personal Info</string>
-    <string name="addresses">Addresses</string>
-    <string name="payment">Payment</string>
-    <string name="use_conditions">Use Conditions</string>
+    <string name="account_personal_info">Personal info</string>
+    <string name="account_previous_orders">Previous orders</string>
+    <string name="account_addresses">My addresses</string>
+    <string name="account_payment_methods">My payment methods</string>
+    <string name="account_legal">Legal</string>
+    <string name="account_about_us">About us</string>
     <string name="log_in_acc">Log In</string>
     <string name="log_in_text_acc">To be able to buy something,\nyou need to log in.</string>
     <string name="log_out">Log out</string>

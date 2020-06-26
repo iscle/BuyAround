@@ -15,21 +15,12 @@ import androidx.annotation.Nullable;
 import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 import androidx.navigation.NavDirections;
 import androidx.navigation.Navigation;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-import androidx.swiperefreshlayout.widget.CircularProgressDrawable;
 
 import com.bumptech.glide.Glide;
-
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 
 import javax.inject.Inject;
 
 import cat.buyaround.app.R;
-import cat.buyaround.app.adapter.ContentListAdapter;
-import cat.buyaround.app.adapter.callback.IListAdapter;
 import cat.buyaround.app.auth.UserManager;
 import cat.buyaround.app.databinding.FragmentAccountBinding;
 import cat.buyaround.app.databinding.ItemContentBinding;
@@ -75,29 +66,29 @@ public class AccountFragment extends DaggerFragment {
             Navigation.findNavController(v).navigate(action);
         });
 
-        setupItemContent(binding.personalInfo, "Personal info",
+        setupItemContent(binding.personalInfo, getResources().getString(R.string.account_personal_info),
                 getListener(AccountFragmentDirections
-                .actionAccountFragmentToPersonalInfoFragment()));
+                        .actionAccountFragmentToPersonalInfoFragment()));
 
-        setupItemContent(binding.orders, "Previous orders",
+        setupItemContent(binding.orders, getResources().getString(R.string.account_previous_orders),
                 getListener(AccountFragmentDirections
-                .actionAccountFragmentToOrdersFragment()));
+                        .actionAccountFragmentToOrdersFragment()));
 
-        setupItemContent(binding.addresses, "My addresses",
+        setupItemContent(binding.addresses, getResources().getString(R.string.account_addresses),
                 getListener(AccountFragmentDirections
-                .actionAccountFragmentToAddressesFragment()));
+                        .actionAccountFragmentToAddressesFragment()));
 
-        setupItemContent(binding.paymentMethods, "My payment methods",
+        setupItemContent(binding.paymentMethods, getResources().getString(R.string.account_payment_methods),
                 getListener(AccountFragmentDirections
-                .actionAccountFragmentToPaymentMethodsFragment()));
+                        .actionAccountFragmentToPaymentMethodsFragment()));
 
-        setupItemContent(binding.legal, "Legal",
+        setupItemContent(binding.legal, getResources().getString(R.string.account_legal),
                 getListener(AccountFragmentDirections
-                .actionAccountFragmentToLegalFragment()));
+                        .actionAccountFragmentToLegalFragment()));
 
-        setupItemContent(binding.aboutUs, "About us",
+        setupItemContent(binding.aboutUs, getResources().getString(R.string.account_about_us),
                 getListener(AccountFragmentDirections
-                .actionAccountFragmentToAboutUsFragment()));
+                        .actionAccountFragmentToAboutUsFragment()));
 
         binding.logOutBtn.setOnClickListener(v -> userManager.logout());
 

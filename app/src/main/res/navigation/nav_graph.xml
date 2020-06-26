@@ -185,7 +185,7 @@
     <fragment
         android:id="@+id/addressesFragment"
         android:name="cat.buyaround.app.fragment.AddressesFragment"
-        android:label="@string/addresses"
+        android:label="@string/account_addresses"
         tools:layout="@layout/fragment_addresses">
         <action
             android:id="@+id/action_addressesFragment_to_addAddressFragment"
@@ -199,7 +199,7 @@
     <fragment
         android:id="@+id/paymentMethodsFragment"
         android:name="cat.buyaround.app.fragment.PaymentMethodsFragment"
-        android:label="@string/payment"
+        android:label="@string/account_payment_methods"
         tools:layout="@layout/fragment_payment_methods" />
 
     <fragment
@@ -223,7 +223,7 @@
     <fragment
         android:id="@+id/payFragment"
         android:name="cat.buyaround.app.fragment.PayFragment"
-        android:label="@string/payment"
+        android:label="@string/account_payment_methods"
         tools:layout="@layout/fragment_pay" />
 
     <fragment

@@ -52,9 +52,11 @@
     <string name="username">Nom d\'usuari</string>
     <string name="email">Correu electrònic</string>
     <string name="account_personal_info">Informació personal</string>
-    <string name="addresses">Adreces</string>
-    <string name="payment">Pagament</string>
-    <string name="use_conditions">Condicions d\'ús</string>
+    <string name="account_previous_orders">Comandes antigues</string>
+    <string name="account_addresses">Les meves adreces</string>
+    <string name="account_payment_methods">Els meus mètodes de pagament</string>
+    <string name="account_legal">Legal</string>
+    <string name="account_about_us">Sobre nosaltres</string>
     <string name="log_in_acc">Iniciar sessió</string>
     <string name="log_in_text_acc">Per a poder realitzar una comanda,\nnecessites estar registrat.</string>
     <string name="log_out">Tancar sessió</string>
