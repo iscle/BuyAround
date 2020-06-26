@@ -56,7 +56,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:paddingHorizontal="8dp"
-        android:visibility="gone" />
+        android:visibility="visible" />
 
     <TextView
         android:id="@+id/paypal_empty_view"
@@ -65,7 +65,8 @@
         android:gravity="center"
         android:paddingHorizontal="24dp"
         android:paddingTop="16dp"
-        android:text="@string/no_paypal" />
+        android:text="@string/no_paypal"
+        android:visibility="gone" />
 
     <Button
         android:id="@+id/payment_add_paypal_btn"

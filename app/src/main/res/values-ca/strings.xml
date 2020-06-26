@@ -66,7 +66,7 @@
     <string name="payment_add_paypal">Afegir un compte de PayPal</string>
     <string name="no_cards">Encara no has afegit cap tarjeta de crèdit/dèbit…\nAfegeix-ne una ara.</string>
     <string name="no_paypal">Encara no has afegit cap compte de PayPal…\nAfegeix-ne un ara.</string>
-    <string name="establish_as_default_payment_card">Establir com a predeterminada</string>
+    <string name="establish_as_default_payment_card">Establir com a predeterminat</string>
     <string name="default_payment">Mètode predeterminat</string>
 
     <!-- STORE -->
