@@ -18,6 +18,8 @@ import androidx.navigation.Navigation;
 
 import com.bumptech.glide.Glide;
 
+import java.util.Objects;
+
 import javax.inject.Inject;
 
 import cat.buyaround.app.R;
@@ -41,7 +43,7 @@ public class AccountFragment extends DaggerFragment {
     private BroadcastReceiver receiver = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
-            if (intent.getAction().equals(UserManager.ACTION_USER_UPDATED)) {
+            if (Objects.equals(intent.getAction(), UserManager.ACTION_USER_UPDATED)) {
                 Log.d(TAG, "onReceive: Updating user from broadcast");
                 updateUser();
             }
@@ -111,7 +113,7 @@ public class AccountFragment extends DaggerFragment {
         if (!registered) {
             IntentFilter filter = new IntentFilter();
             filter.addAction(UserManager.ACTION_USER_UPDATED);
-            LocalBroadcastManager.getInstance(getContext()).registerReceiver(receiver, filter);
+            LocalBroadcastManager.getInstance(requireContext()).registerReceiver(receiver, filter);
             registered = true;
             updateUser();
         }
@@ -120,7 +122,7 @@ public class AccountFragment extends DaggerFragment {
     @Override
     public void onPause() {
         if (registered) {
-            LocalBroadcastManager.getInstance(getContext()).unregisterReceiver(receiver);
+            LocalBroadcastManager.getInstance(requireContext()).unregisterReceiver(receiver);
             registered = false;
         }
 

@@ -73,10 +73,6 @@
 
     <!-- STORE -->
     <string name="store_label">Botiga</string>
-    <string name="store_tv">Nom</string>
-    <string name="store_hint">Enter the store name</string>
-    <string name="address_tv">Adreça</string>
-    <string name="address_btn">Add new Address</string>
     <string name="location_tv">Ubicació:</string>
     <string name="store_fragment_products">Productes</string>
     <string name="store_fragment_packs">Packs</string>
@@ -108,29 +104,19 @@
     <string name="cart_to_pay">Procedir al pagament</string>
 
     <!-- ORDERS -->
-    <string name="orders_repeat_order">Repetir una comanda</string>
-    <string name="orders_last_orders">Últimes comandes</string>
     <string name="no_orders_yet">Encara no has fet cap comanda.\nFes la teva primera compra!</string>
 
     <!-- GENERAL PURPOSE -->
     <string name="search_hint">Què estàs buscant?</string>
-    <string name="accept">Acceptar</string>
-    <string name="cancel">Cancelar</string>
-    <string name="add">Afegir</string>
     <string name="categories">Categories</string>
     <string name="add_to_cart">Afegir a la cistella</string>
-    <string name="quantity">Quantitat</string>
     <string name="search">Cerca</string>
-    <string name="add_pack">Afegir un pack</string>
     <string name="name">Nom</string>
 
     <!-- NAVBAR -->
-    <string name="location">Ubicació</string>
     <string name="orders">Comandes</string>
-    <string name="notifications">Notificacions</string>
     <string name="favourites">Preferits</string>
     <string name="my_account">Compte</string>
-    <string name="settings">Configuració</string>
     <string name="legal">Legal</string>
     <string name="cart">Cistella</string>
     <string name="about_us">Sobre nosaltres</string>
@@ -138,19 +124,12 @@
     <!-- PRODUCT -->
     <string name="product_label">Producte</string>
     <string name="product_tv">Producte</string>
-    <string name="product_hint">Introdueix el nom del producte</string>
     <string name="category_tv">Categoria</string>
     <string name="price_tv">Preu:</string>
     <string name="points">Punts:</string>
-    <string name="product_other_info">Altra informació</string>
-    <string name="currency_tv">Moneda</string>
     <string name="description_tv">Descripció:</string>
     <string name="description_hint">Introdueix una breu descripció</string>
-    <string name="images_tv">Imatges</string>
     <string name="product_unit">unitat</string>
-    <string name="share_product_via">Compartir el producte via</string>
-    <string name="share_product_text">Mira aquest producte &#57932; que he trobat a BuyAround!\n\n</string>
-    <string name="share_product_only_for"> només per </string>
     <string name="store_information">Més productes de la mateixa botiga:</string>
 
     <!-- ADDRESS -->
@@ -185,7 +164,6 @@
 
     <!-- CART POPUP -->
     <string name="cart_items_text_singular">producte</string>
-    <string name="cart_items_text_plural">productes</string>
     <string name="cart_total_cost_text">Total:</string>
     <string name="currency">€</string>
     <string name="check_cart">Veure cistella</string>

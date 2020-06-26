@@ -31,7 +31,6 @@ public class HomeViewModel extends ViewModel {
     }
 
     private void requestStoresAround() {
-        // Handle request
         buyAroundRepository.getAllStores(new StoreCallback() {
             @Override
             public void onStoresReceived(Store[] stores) {
@@ -46,7 +45,6 @@ public class HomeViewModel extends ViewModel {
     }
 
     private void requestPacks() {
-        // Handle request
         buyAroundRepository.getAllPacks(new PackCallback() {
             @Override
             public void onPacksReceived(Pack[] packs) {
@@ -61,7 +59,6 @@ public class HomeViewModel extends ViewModel {
     }
 
     private void requestProducts() {
-        // Handle request
         buyAroundRepository.getAllProducts(new ProductCallback() {
             @Override
             public void onProductsReceived(Product[] products) {

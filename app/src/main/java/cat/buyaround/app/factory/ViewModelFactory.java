@@ -10,8 +10,6 @@ import cat.buyaround.app.auth.UserManager;
 import cat.buyaround.app.network.BuyAroundRepository;
 import cat.buyaround.app.viewmodel.AccountViewModel;
 import cat.buyaround.app.viewmodel.AddAddressViewModel;
-import cat.buyaround.app.viewmodel.AddProductViewModel;
-import cat.buyaround.app.viewmodel.AddStoreViewModel;
 import cat.buyaround.app.viewmodel.AddressesViewModel;
 import cat.buyaround.app.viewmodel.CartViewModel;
 import cat.buyaround.app.viewmodel.CategoriesViewModel;
@@ -72,12 +70,6 @@ public class ViewModelFactory implements ViewModelProvider.Factory {
         }
         if (modelClass.isAssignableFrom(PaymentMethodsViewModel.class)) {
             return (T) new PaymentMethodsViewModel(buyAroundRepository);
-        }
-        if (modelClass.isAssignableFrom(AddProductViewModel.class)) {
-            return (T) new AddProductViewModel(buyAroundRepository);
-        }
-        if (modelClass.isAssignableFrom(AddStoreViewModel.class)) {
-            return (T) new AddStoreViewModel(buyAroundRepository);
         }
         if (modelClass.isAssignableFrom(AddAddressViewModel.class)) {
             return (T) new AddAddressViewModel(buyAroundRepository);

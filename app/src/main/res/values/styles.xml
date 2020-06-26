@@ -16,24 +16,6 @@
         <item name="android:theme">@style/ThemeOverlay.AppCompat.Dark</item>
     </style>
 
-    <style name="PaddedView">
-        <item name="android:paddingStart">8dp</item>
-        <item name="android:paddingEnd">8dp</item>
-        <item name="android:paddingTop">8dp</item>
-        <item name="android:paddingBottom">8dp</item>
-    </style>
-
-    <style name="ParentLayout">
-        <item name="android:layout_marginStart">16dp</item>
-        <item name="android:layout_marginEnd">16dp</item>
-    </style>
-
-    <style name="ParentLayoutLarge">
-        <item name="android:layout_marginStart">32dp</item>
-        <item name="android:layout_marginEnd">32dp</item>
-        <item name="android:layout_marginBottom">16dp</item>
-    </style>
-
     <style name="SingleLineItem">
         <item name="height">48dp</item>
         <item name="paddingStart">16dp</item>
@@ -42,12 +24,6 @@
 
     <style name="DoubleLineItem">
         <item name="height">64dp</item>
-        <item name="paddingStart">16dp</item>
-        <item name="paddingEnd">16dp</item>
-    </style>
-
-    <style name="DoubleLineItemWithIcon">
-        <item name="height">72dp</item>
         <item name="paddingStart">16dp</item>
         <item name="paddingEnd">16dp</item>
     </style>
