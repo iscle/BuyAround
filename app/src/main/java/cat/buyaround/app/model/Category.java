@@ -8,21 +8,21 @@ public class Category implements Serializable {
     @SerializedName("_id")
     private String id;
     private String name;
-    private String thumbnail;
+    private String icon;
 
     public Category() {
         name = null;
-        thumbnail = null;
+        icon = null;
     }
 
     public Category(String name) {
         this.name = name;
-        thumbnail = null;
+        icon = null;
     }
 
-    public Category(String name, String thumbnail) {
+    public Category(String name, String icon) {
         this.name = name;
-        this.thumbnail = thumbnail;
+        this.icon = icon;
     }
 
     public String getId() {
@@ -41,11 +41,11 @@ public class Category implements Serializable {
         this.name = name;
     }
 
-    public String getThumbnail() {
-        return thumbnail;
+    public String getIcon() {
+        return icon;
     }
 
-    public void setThumbnail(String thumbnail) {
-        this.thumbnail = thumbnail;
+    public void setIcon(String icon) {
+        this.icon = icon;
     }
 }

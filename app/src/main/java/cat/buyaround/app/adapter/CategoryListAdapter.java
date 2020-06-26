@@ -43,7 +43,7 @@ public class CategoryListAdapter extends RecyclerView.Adapter<CategoryListAdapte
         Category category = mCategories[position];
         holder.itemView.setOnClickListener(view -> mCallback.onItemSelected(category));
         holder.tvName.setText(category.getName());
-        if (category.getThumbnail() != null) {
+        if (category.getIcon() != null) {
             CircularProgressDrawable circularProgressDrawable = new CircularProgressDrawable(holder.itemView.getContext());
             circularProgressDrawable.setStyle(CircularProgressDrawable.LARGE);
             circularProgressDrawable.start();
@@ -51,7 +51,7 @@ public class CategoryListAdapter extends RecyclerView.Adapter<CategoryListAdapte
             Glide.with(mContext)
                     .asBitmap()
                     .placeholder(circularProgressDrawable)
-                    .load(category.getThumbnail())
+                    .load(category.getIcon())
                     .into(holder.imgView);
         } else {
             Glide.with(mContext)
