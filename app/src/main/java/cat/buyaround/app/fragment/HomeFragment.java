@@ -72,19 +72,16 @@ public class HomeFragment extends DaggerFragment implements IListAdapter, IAddIt
         storeListAdapter = new StoreListAdapter(getContext(), this);
         storesRecyclerView.setAdapter(storeListAdapter);
         storesRecyclerView.setLayoutManager(new LinearLayoutManager(getContext(), RecyclerView.HORIZONTAL, false));
-        storesRecyclerView.addItemDecoration(decorator);
 
         packsRecyclerView = binding.homePacksRecyclerView;
         packListAdapter = new PackListAdapter(getContext(), this);
         packsRecyclerView.setAdapter(packListAdapter);
         packsRecyclerView.setLayoutManager(new LinearLayoutManager(getContext(), RecyclerView.HORIZONTAL, false));
-        packsRecyclerView.addItemDecoration(decorator);
 
         productsRecyclerView = binding.homeProductsRecyclerView;
         productListAdapter = new ProductListAdapter(getContext(), this);
         productsRecyclerView.setAdapter(productListAdapter);
         productsRecyclerView.setLayoutManager(new LinearLayoutManager(getContext(), RecyclerView.HORIZONTAL, false));
-        productsRecyclerView.addItemDecoration(decorator);
 
         binding.searchEt.setOnClickListener(v -> {
             NavDirections action = HomeFragmentDirections.actionHomeFragmentToSearchFragment();
