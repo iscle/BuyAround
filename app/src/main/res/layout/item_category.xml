@@ -13,7 +13,7 @@
         android:layout_margin="8dp"
         android:adjustViewBounds="true"
         android:src="@drawable/ic_thumbnail"
-        android:tint="@color/superLightGrey"
+        android:tint="@color/colorPrimaryNotSaturated"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

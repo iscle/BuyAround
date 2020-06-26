@@ -11,4 +11,5 @@
     <color name="selectedNavbar">#1BA696</color>
     <color name="superLightGrey">#BBBBBB</color>
     <color name="superDuperLightGrey">#DDDDDD</color>
+    <color name="colorPrimaryNotSaturated">#63A8A0</color>
 </resources>
