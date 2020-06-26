@@ -171,8 +171,10 @@
     <string name="who_are_we">Who are we?</string>
     <string name="who_are_we_text">The BuyAround team is formed by 3 engineering students of La Salle - URL.\n\nIn view of the economic crisis caused by the global pandemic of 2020, and in an attempt to contribute our bit in restoring normality, we decided that we wanted to help the local shops, as they would be directly affected by this crisis.</string>
     <string name="more_info_text">For more information you can visit our web page at:\n<a href="https://buyaround.cat">https://buyaround.cat</a>\n\nThis is an open-source project, so if you want to check the code you can access it through this GitHub repository:\n<a href="https://github.com/Iscle/BuyAround">https://github.com/Iscle/BuyAround</a></string>
-    <string name="credit_names">Developers</string>
-    <string name="credit_names_text">Iscle Gil.\nFerran Montoliu.\nJoan Carrión.</string>
+    <string name="dev_names">Developers</string>
+    <string name="dev_names_text">Iscle Gil.\nFerran Montoliu.\nJoan Carrión.</string>
+    <string name="credit_names">Credits</string>
+    <string name="credit_names_text">Some category icons are made by:\n<a href="https://www.flaticon.com/authors/freepik">https://www.flaticon.com/authors/freepik</a></string>
 
     <!-- LEGAL -->
     <string name="legal_text_1">This application is an open-source project running under <i>Apache License 2.0</i>.</string>
