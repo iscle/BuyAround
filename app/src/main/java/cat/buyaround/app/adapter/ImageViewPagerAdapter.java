@@ -7,6 +7,7 @@ import android.widget.ImageView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.CircularProgressDrawable;
 
 import com.bumptech.glide.Glide;
 
@@ -34,9 +35,13 @@ public class ImageViewPagerAdapter extends RecyclerView.Adapter<ImageViewPagerAd
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         if (images[position] != null) {
+            CircularProgressDrawable circularProgressDrawable = new CircularProgressDrawable(holder.itemView.getContext());
+            circularProgressDrawable.setStyle(CircularProgressDrawable.LARGE);
+            circularProgressDrawable.start();
+
             Glide.with(context)
                     .asBitmap()
-                    .placeholder(R.drawable.ic_thumbnail)
+                    .placeholder(circularProgressDrawable)
                     .load(images[position])
                     .into(holder.itemIv);
         } else {

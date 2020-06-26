@@ -8,6 +8,7 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.CircularProgressDrawable;
 
 import com.bumptech.glide.Glide;
 
@@ -43,9 +44,13 @@ public class CategoryListAdapter extends RecyclerView.Adapter<CategoryListAdapte
         holder.itemView.setOnClickListener(view -> mCallback.onItemSelected(category));
         holder.tvName.setText(category.getName());
         if (category.getThumbnail() != null) {
+            CircularProgressDrawable circularProgressDrawable = new CircularProgressDrawable(holder.itemView.getContext());
+            circularProgressDrawable.setStyle(CircularProgressDrawable.LARGE);
+            circularProgressDrawable.start();
+
             Glide.with(mContext)
                     .asBitmap()
-                    .placeholder(R.drawable.ic_thumbnail)
+                    .placeholder(circularProgressDrawable)
                     .load(category.getThumbnail())
                     .into(holder.imgView);
         } else {
