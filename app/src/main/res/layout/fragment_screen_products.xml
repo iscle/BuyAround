@@ -23,7 +23,6 @@
             android:padding="24dp"
             android:text="@string/no_products_store" />
 
-
     </LinearLayout>
 
 </ScrollView>

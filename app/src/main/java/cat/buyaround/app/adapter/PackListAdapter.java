@@ -3,6 +3,7 @@ package cat.buyaround.app.adapter;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -12,17 +13,19 @@ import androidx.swiperefreshlayout.widget.CircularProgressDrawable;
 
 import com.bumptech.glide.Glide;
 
-import cat.buyaround.app.adapter.callback.IListAdapter;
+import cat.buyaround.app.R;
+import cat.buyaround.app.adapter.callback.IAddItemCallback;
 import cat.buyaround.app.databinding.ItemProductBinding;
 import cat.buyaround.app.model.Pack;
+import cat.buyaround.app.utils.Utils;
 
 public class PackListAdapter extends RecyclerView.Adapter<PackListAdapter.ViewHolder> {
 
     private Context context;
-    private IListAdapter callback;
+    private IAddItemCallback callback;
     private Pack[] packs;
 
-    public PackListAdapter(Context context, IListAdapter callback) {
+    public PackListAdapter(Context context, IAddItemCallback callback) {
         this.context = context;
         this.callback = callback;
         this.packs = null;
@@ -42,10 +45,13 @@ public class PackListAdapter extends RecyclerView.Adapter<PackListAdapter.ViewHo
         Pack pack = packs[position];
 
         holder.itemView.setOnClickListener(view -> callback.onItemSelected(pack));
+        holder.btnAdd.setOnClickListener(view -> callback.onAddItemTo(pack));
 
         holder.tvTitle.setText(pack.getName());
         holder.tvSubtitle.setText(pack.getDescription());
+
         holder.tvRating.setText(String.valueOf(pack.getRating()));
+        holder.tvPrice.setText(Utils.floatToString(pack.getPrice()));
 
         if (pack.getThumbnail() != null) {
             CircularProgressDrawable circularProgressDrawable = new CircularProgressDrawable(holder.itemView.getContext());
@@ -59,7 +65,7 @@ public class PackListAdapter extends RecyclerView.Adapter<PackListAdapter.ViewHo
                     .into(holder.imgView);
         } else {
             Glide.with(context)
-                    .load("https://www.plasticboxshop.co.uk/images/pack-of-5-eco-archive-cardboard-boxes-p4817-13301_zoom.jpg")
+                    .load(R.drawable.ic_thumbnail)
                     .into(holder.imgView);
         }
     }
@@ -76,7 +82,8 @@ public class PackListAdapter extends RecyclerView.Adapter<PackListAdapter.ViewHo
 
     class ViewHolder extends RecyclerView.ViewHolder {
         ImageView imgView;
-        TextView tvTitle, tvSubtitle, tvRating;
+        TextView tvTitle, tvSubtitle, tvRating, tvPrice;
+        Button btnAdd;
 
         ViewHolder(@NonNull ItemProductBinding binding) {
             super(binding.getRoot());
@@ -84,6 +91,8 @@ public class PackListAdapter extends RecyclerView.Adapter<PackListAdapter.ViewHo
             tvTitle = binding.itemProductTitle;
             tvSubtitle = binding.itemProductSubtitle;
             tvRating = binding.itemProductRating;
+            tvPrice = binding.priceTv;
+            btnAdd = binding.itemProductAddBtn;
         }
     }
 }

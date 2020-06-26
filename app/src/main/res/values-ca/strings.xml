@@ -82,6 +82,7 @@
     <string name="store_phone">Telèfon:</string>
     <string name="store_phone_placeholder">912 34 56 78</string>
     <string name="no_products_store">Ho sentim…\nAquesta botiga no té cap producte ara mateix.</string>
+    <string name="no_packs_store">Ho sentim…\nAquesta botiga no té cap pack ara mateix.</string>
 
     <!-- RECYCLER_VIEW ITEM -->
     <string name="item_content_title">Títol del contingut</string>

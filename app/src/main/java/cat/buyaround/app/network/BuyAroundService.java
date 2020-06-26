@@ -61,6 +61,9 @@ public interface BuyAroundService {
     @GET("store/{id}/products")
     Call<ProductResponse> getStoreProducts(@Path(value = "id") String id);
 
+    @GET("store/{id}/packs")
+    Call<PackResponse> getStorePacks(@Path(value = "id") String id);
+
     // Packs
     @GET("pack")
     Call<PackResponse> getAllPacks();

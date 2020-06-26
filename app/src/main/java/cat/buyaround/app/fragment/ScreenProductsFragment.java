@@ -68,7 +68,6 @@ public class ScreenProductsFragment extends DaggerFragment implements IAddItemCa
             }
             productListAdapter.setProducts(products);
         });
-
     }
 
     @Override
