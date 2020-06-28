@@ -163,13 +163,16 @@
     <string name="legal_more_info">Per obtenir més informació, visiteu la nostra pàgina web a:\n<a href="https://buyaround.cat/legal.html">https://buyaround.cat/legal.html</a></string>
 
     <!-- CART POPUP -->
-    <string name="cart_items_text_singular">producte</string>
     <string name="cart_total_cost_text">Total:</string>
     <string name="currency">€</string>
     <string name="check_cart">Veure cistella</string>
 
     <!-- PACK -->
     <string name="pack_label">Pack</string>
+    <string name="product_singular">producte</string>
+    <string name="product_plural">productes</string>
+    <string name="pack_products">Productes:</string>
+    <string name="total_saving">Estalvi total:</string>
 
     <!-- PERSONAL INFO -->
     <string name="photo">Imatge</string>

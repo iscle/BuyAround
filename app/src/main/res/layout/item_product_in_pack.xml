@@ -29,7 +29,7 @@
         android:layout_marginHorizontal="8dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/buttons_layout"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/product_img_cardView"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -60,52 +60,6 @@
                 android:text="€" />
 
         </LinearLayout>
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/buttons_layout"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="8dp"
-        android:gravity="center"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <TextView
-            android:id="@+id/product_quantity"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="3dp"
-            android:background="@drawable/bg_edittext_icon"
-            android:paddingHorizontal="8dp"
-            android:paddingVertical="2dp"
-            android:text="1" />
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <ImageButton
-                android:id="@+id/substract_btn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="8dp"
-                android:background="@drawable/bg_cart_popup"
-                android:src="@drawable/ic_substract"
-                android:tint="@color/colorPrimaryDark" />
-
-            <ImageButton
-                android:id="@+id/add_btn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/bg_cart_popup"
-                android:src="@drawable/ic_add"
-                android:tint="@color/colorPrimaryDark" />
-        </LinearLayout>
-
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

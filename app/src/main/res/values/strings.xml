@@ -163,13 +163,16 @@
     <string name="legal_more_info">For more information, visit our web page at:\n<a href="https://buyaround.cat/legal.html">https://buyaround.cat/legal.html</a></string>
 
     <!-- CART POPUP -->
-    <string name="cart_items_text_singular">product</string>
     <string name="cart_total_cost_text">Total:</string>
     <string name="currency">€</string>
     <string name="check_cart">Check cart</string>
 
     <!-- PACK -->
     <string name="pack_label">Pack</string>
+    <string name="product_singular">product</string>
+    <string name="product_plural">products</string>
+    <string name="pack_products">Products:</string>
+    <string name="total_saving">Total saving:</string>
 
     <!-- PERSONAL INFO -->
     <string name="photo">Photo</string>
