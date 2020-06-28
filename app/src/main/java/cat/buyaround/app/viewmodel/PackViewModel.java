@@ -4,7 +4,9 @@ import androidx.lifecycle.ViewModel;
 
 import javax.inject.Inject;
 
+import cat.buyaround.app.model.OrderProduct;
 import cat.buyaround.app.model.Pack;
+import cat.buyaround.app.model.Store;
 import cat.buyaround.app.network.BuyAroundRepository;
 
 public class PackViewModel extends ViewModel {
@@ -44,5 +46,13 @@ public class PackViewModel extends ViewModel {
 
     public String[] getPackImages() {
         return pack.getImages();
+    }
+
+    public OrderProduct[] getPackProducts() {
+        return pack.getProducts();
+    }
+
+    public Store getPackStore() {
+        return pack.getStore();
     }
 }

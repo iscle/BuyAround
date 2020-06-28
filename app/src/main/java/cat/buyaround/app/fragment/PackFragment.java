@@ -12,20 +12,28 @@ import androidx.annotation.Nullable;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.navigation.Navigation;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager2.widget.ViewPager2;
 
+import com.bumptech.glide.Glide;
 import com.google.android.material.tabs.TabLayoutMediator;
 
 import javax.inject.Inject;
 
+import cat.buyaround.app.R;
 import cat.buyaround.app.adapter.ImageViewPagerAdapter;
+import cat.buyaround.app.adapter.PackProductListAdapter;
+import cat.buyaround.app.adapter.callback.IListAdapter;
 import cat.buyaround.app.databinding.FragmentPackBinding;
 import cat.buyaround.app.factory.ViewModelFactory;
+import cat.buyaround.app.model.Product;
 import cat.buyaround.app.utils.ZoomOutPageTransformer;
 import cat.buyaround.app.viewmodel.PackViewModel;
 import dagger.android.support.DaggerFragment;
 
-public class PackFragment extends DaggerFragment {
+public class PackFragment extends DaggerFragment implements IListAdapter {
 
     @Inject
     protected ViewModelFactory viewModelFactory;
@@ -56,6 +64,8 @@ public class PackFragment extends DaggerFragment {
     private void initViews() {
         addPackInfo();
 
+        addStoreInfo();
+
         binding.packAddBtn.setOnClickListener(v -> {
             int productQuantity = Integer.parseInt(binding.packQuantity.getText().toString());
             binding.packQuantity.setText(String.valueOf(productQuantity + 1));
@@ -81,6 +91,25 @@ public class PackFragment extends DaggerFragment {
         });
     }
 
+    private void addStoreInfo() {
+        binding.storeName.setText(packViewModel.getPackStore().getName());
+
+        binding.storeAddress.setText(packViewModel.getPackStore().getDirection().getAddress());
+        Glide.with(requireContext())
+                .asBitmap()
+                .placeholder(R.drawable.ic_thumbnail)
+                .load(packViewModel.getPackStore().getImages()[0])
+                .into(binding.storeIv);
+
+        binding.storeCardview.setOnClickListener(v -> {
+            PackFragmentDirections.ActionPackFragmentToStoreFragment action =
+                    PackFragmentDirections.actionPackFragmentToStoreFragment();
+            action.setStore(packViewModel.getPackStore());
+
+            Navigation.findNavController(v).navigate(action);
+        });
+    }
+
     private void addPackInfo() {
         configureViewPager();
 
@@ -94,6 +123,8 @@ public class PackFragment extends DaggerFragment {
 
         binding.packRating.setText(String.valueOf(packViewModel.getPackRating()));
 
+        binding.packProductsRv.setLayoutManager(new LinearLayoutManager(requireContext(), RecyclerView.VERTICAL, false));
+        binding.packProductsRv.setAdapter(new PackProductListAdapter(packViewModel.getPackProducts(), PackFragment.this));
     }
 
     private void configureViewPager() {
@@ -140,4 +171,12 @@ public class PackFragment extends DaggerFragment {
         // TODO
     }
 
+    @Override
+    public void onItemSelected(Object item) {
+        PackFragmentDirections.ActionPackFragmentToProductFragment action =
+                PackFragmentDirections.actionPackFragmentToProductFragment();
+        action.setProduct((Product) item); //TODO: FIX... IS IT A PRODUCT OR IS IT AN ORDERPRODUCT??
+
+        Navigation.findNavController(binding.getRoot()).navigate(action);
+    }
 }

@@ -10,10 +10,11 @@ public class Pack implements Serializable {
     private float price;
     private float rating;
     private String[] images;
-    private Product[] products;
+    private OrderProduct[] products;
     private int points;
+    private Store store;
 
-    public Pack(String name, String description, String thumbnail, float price, float rating, String[] images, Product[] products, int points) {
+    public Pack(String name, String description, String thumbnail, float price, float rating, String[] images, OrderProduct[] products, int points, Store store) {
         this.name = name;
         this.description = description;
         this.thumbnail = thumbnail;
@@ -22,6 +23,15 @@ public class Pack implements Serializable {
         this.images = images;
         this.products = products;
         this.points = points;
+        this.store = store;
+    }
+
+    public Store getStore() {
+        return store;
+    }
+
+    public void setStore(Store store) {
+        this.store = store;
     }
 
     public void setPoints(int points) {
@@ -80,11 +90,11 @@ public class Pack implements Serializable {
         this.images = images;
     }
 
-    public Product[] getProducts() {
+    public OrderProduct[] getProducts() {
         return products;
     }
 
-    public void setProducts(Product[] products) {
+    public void setProducts(OrderProduct[] products) {
         this.products = products;
     }
 }
