@@ -19,14 +19,15 @@ import java.util.List;
 import cat.buyaround.app.R;
 import cat.buyaround.app.adapter.callback.IListAdapter;
 import cat.buyaround.app.databinding.ItemCartOrderBinding;
-import cat.buyaround.app.model.OrderProduct;
+import cat.buyaround.app.model.Item;
+import cat.buyaround.app.model.ItemGroup;
 
 public class CartItemListAdapter extends RecyclerView.Adapter<CartItemListAdapter.ViewHolder> {
 
-    private List<OrderProduct> mProducts;
+    private List<ItemGroup> mProducts;
     private IListAdapter mCallback;
 
-    public CartItemListAdapter(List<OrderProduct> products, IListAdapter callback) {
+    public CartItemListAdapter(List<ItemGroup> products, IListAdapter callback) {
         mProducts = products;
         mCallback = callback;
     }
@@ -42,7 +43,8 @@ public class CartItemListAdapter extends RecyclerView.Adapter<CartItemListAdapte
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        OrderProduct product = mProducts.get(position);
+        ItemGroup itemGroup = mProducts.get(position);
+        Item item = itemGroup.getItem();
 
         CircularProgressDrawable circularProgressDrawable = new CircularProgressDrawable(holder.itemView.getContext());
         circularProgressDrawable.setStyle(CircularProgressDrawable.LARGE);
@@ -51,34 +53,38 @@ public class CartItemListAdapter extends RecyclerView.Adapter<CartItemListAdapte
         Glide.with(holder.context)
                 .asBitmap()
                 .placeholder(circularProgressDrawable)
-                .load(product.getThumbnail())
+                .load(item.getImages()[0])
                 .into(holder.photoIv);
 
-        holder.nameTv.setText(product.getName());
-        holder.priceTv.setText(String.valueOf(product.getPrice()));
-        holder.quantityTv.setText(product.getQuantity());
+        holder.nameTv.setText(item.getName());
+        holder.priceTv.setText(String.valueOf(itemGroup.getTotalPrice()));
+        holder.quantityTv.setText(itemGroup.getQuantity());
 
 
-        if (product.getQuantity() == 1) {
+        if (itemGroup.getQuantity() == 1) {
             holder.substractBtn.setImageDrawable(
                     holder.context.getResources().getDrawable(R.drawable.ic_remove_cart));
             holder.substractBtn.setColorFilter(ContextCompat.getColor(holder.context, R.color.colorError));
         }
 
         holder.addBtn.setOnClickListener(v -> {
-            product.setQuantity(product.getQuantity() + 1);
+            // TODO: API CALL
+            itemGroup.addItem();
+            holder.priceTv.setText(String.valueOf(itemGroup.getTotalPrice()));
+            holder.quantityTv.setText(itemGroup.getQuantity());
         });
 
         holder.substractBtn.setOnClickListener(v -> {
-            if (product.getQuantity() > 1) {
-                product.setQuantity(product.getQuantity() - 1);
-                if (product.getQuantity() == 1) {
-                    holder.substractBtn.setImageDrawable(
-                            holder.context.getResources().getDrawable(R.drawable.ic_remove_cart));
-                    holder.substractBtn.setColorFilter(ContextCompat.getColor(holder.context, R.color.colorError));
-                }
-            } else {
-                //TODO: DELETE PRODUCT
+            // TODO: IF QUANTITY = 1, DELETE PRODUCT, ELSE:
+            // TODO: API CALL
+            itemGroup.substractItem();
+            holder.priceTv.setText(String.valueOf(itemGroup.getTotalPrice()));
+            holder.quantityTv.setText(itemGroup.getQuantity());
+
+            if (itemGroup.getQuantity() == 1) {
+                holder.substractBtn.setImageDrawable(
+                        holder.context.getResources().getDrawable(R.drawable.ic_remove_cart));
+                holder.substractBtn.setColorFilter(ContextCompat.getColor(holder.context, R.color.colorError));
             }
         });
     }

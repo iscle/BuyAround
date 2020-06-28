@@ -10,7 +10,7 @@ import java.util.List;
 import javax.inject.Inject;
 
 import cat.buyaround.app.auth.UserManager;
-import cat.buyaround.app.model.OrderProduct;
+import cat.buyaround.app.model.ItemGroup;
 import cat.buyaround.app.network.BuyAroundRepository;
 
 public class CartViewModel extends ViewModel {
@@ -19,7 +19,7 @@ public class CartViewModel extends ViewModel {
     UserManager userManager;
 
     private BuyAroundRepository buyAroundRepository;
-    private MutableLiveData<List<OrderProduct>> mProducts;
+    private MutableLiveData<List<ItemGroup>> mProducts;
 
     @Inject
     public CartViewModel(BuyAroundRepository buyAroundRepository, UserManager userManager) {
@@ -32,12 +32,12 @@ public class CartViewModel extends ViewModel {
 
     }
 
-    public LiveData<List<OrderProduct>> getOrderProducts() {
+    public LiveData<List<ItemGroup>> getOrderProducts() {
         requestProducts();
         return mProducts;
     }
 
-    public void addProduct(OrderProduct product) {
+    public void addProduct(ItemGroup product) {
 
     }
 

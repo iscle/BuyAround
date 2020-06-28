@@ -11,7 +11,6 @@ import cat.buyaround.app.auth.UserManager;
 import cat.buyaround.app.callback.CategoryCallback;
 import cat.buyaround.app.callback.EditUserCallback;
 import cat.buyaround.app.callback.LoginCallback;
-import cat.buyaround.app.callback.NotificationCallback;
 import cat.buyaround.app.callback.OrderCallback;
 import cat.buyaround.app.callback.PackCallback;
 import cat.buyaround.app.callback.ProductCallback;
@@ -24,7 +23,6 @@ import cat.buyaround.app.model.User;
 import cat.buyaround.app.model.UserRadius;
 import cat.buyaround.app.network.model.CategoryResponse;
 import cat.buyaround.app.network.model.LoginResponse;
-import cat.buyaround.app.network.model.NotificationResponse;
 import cat.buyaround.app.network.model.OrderResponse;
 import cat.buyaround.app.network.model.PackResponse;
 import cat.buyaround.app.network.model.ProductResponse;
@@ -405,34 +403,6 @@ public class BuyAroundRepository {
 
             @Override
             public void onFailure(Call<StoreResponse> call, Throwable t) {
-                callback.onFailure(SimpleResponse.Status.NETWORK_FAILURE);
-                t.printStackTrace();
-            }
-        });
-    }
-
-    public void getUserNotifications(NotificationCallback callback) {
-        service.getUserNotifications().enqueue(new Callback<NotificationResponse>() {
-            @Override
-            public void onResponse(Call<NotificationResponse> call, Response<NotificationResponse> response) {
-                if (response.isSuccessful()) {
-                    NotificationResponse notificationResponse = response.body();
-                    Log.d(TAG, "onResponse: " + notificationResponse.getStatus());
-                    switch (notificationResponse.getStatus()) {
-                        case OK:
-                            callback.onNotificationsReceived(notificationResponse.getNotifications());
-                            break;
-                        case INTERNAL_ERROR:
-                            callback.onFailure(SimpleResponse.Status.INTERNAL_ERROR);
-                            break;
-                    }
-                } else {
-                    callback.onFailure(SimpleResponse.Status.INTERNAL_ERROR);
-                }
-            }
-
-            @Override
-            public void onFailure(Call<NotificationResponse> call, Throwable t) {
                 callback.onFailure(SimpleResponse.Status.NETWORK_FAILURE);
                 t.printStackTrace();
             }

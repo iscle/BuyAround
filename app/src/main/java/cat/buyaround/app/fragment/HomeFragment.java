@@ -22,7 +22,8 @@ import cat.buyaround.app.adapter.callback.IAddItemCallback;
 import cat.buyaround.app.adapter.callback.IListAdapter;
 import cat.buyaround.app.databinding.FragmentHomeBinding;
 import cat.buyaround.app.factory.ViewModelFactory;
-import cat.buyaround.app.model.OrderProduct;
+import cat.buyaround.app.model.Item;
+import cat.buyaround.app.model.ItemGroup;
 import cat.buyaround.app.model.Pack;
 import cat.buyaround.app.model.Product;
 import cat.buyaround.app.model.Store;
@@ -144,14 +145,6 @@ public class HomeFragment extends DaggerFragment implements IListAdapter, IAddIt
 
     @Override
     public void onAddItemTo(Object item) {
-        String img = "";
-        if (((Product) item).getImages() != null) {
-            if (((Product) item).getImages().length > 0) {
-                img = ((Product) item).getImages()[0];
-            }
-        }
-        OrderProduct op = new OrderProduct("0", ((Product) item).getName(),
-                ((Product) item).getPrice(), img, 1);
-        cartViewModel.addProduct(op);
+        cartViewModel.addProduct(new ItemGroup(1, (Item) item, ((Item) item).getPrice()));
     }
 }

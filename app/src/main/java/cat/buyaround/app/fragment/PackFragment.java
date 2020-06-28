@@ -28,6 +28,7 @@ import cat.buyaround.app.adapter.PackProductListAdapter;
 import cat.buyaround.app.adapter.callback.IListAdapter;
 import cat.buyaround.app.databinding.FragmentPackBinding;
 import cat.buyaround.app.factory.ViewModelFactory;
+import cat.buyaround.app.model.Item;
 import cat.buyaround.app.model.Product;
 import cat.buyaround.app.utils.ZoomOutPageTransformer;
 import cat.buyaround.app.viewmodel.PackViewModel;
@@ -175,7 +176,7 @@ public class PackFragment extends DaggerFragment implements IListAdapter {
     public void onItemSelected(Object item) {
         PackFragmentDirections.ActionPackFragmentToProductFragment action =
                 PackFragmentDirections.actionPackFragmentToProductFragment();
-        action.setProduct((Product) item); //TODO: FIX... IS IT A PRODUCT OR IS IT AN ORDERPRODUCT??
+        action.setProduct((Product) item);
 
         Navigation.findNavController(binding.getRoot()).navigate(action);
     }

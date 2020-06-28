@@ -37,9 +37,9 @@ public class OrderListAdapter extends RecyclerView.Adapter<OrderListAdapter.View
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         Order order = mOrders[position];
         holder.itemView.setOnClickListener(view -> mCallback.onItemSelected(order));
-        holder.tvTitle.setText(order.getId());
-        holder.tvShop.setText(order.getShopId());
-        holder.tvCost.setText(String.valueOf(order.getPrice()));
+        holder.tvTitle.setText("1");
+        holder.tvShop.setText("1");
+        holder.tvCost.setText("1");
     }
 
     public void setOrders(Order[] orders) {

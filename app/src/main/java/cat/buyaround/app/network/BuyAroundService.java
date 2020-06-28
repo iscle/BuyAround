@@ -7,7 +7,6 @@ import cat.buyaround.app.model.User;
 import cat.buyaround.app.model.UserRadius;
 import cat.buyaround.app.network.model.CategoryResponse;
 import cat.buyaround.app.network.model.LoginResponse;
-import cat.buyaround.app.network.model.NotificationResponse;
 import cat.buyaround.app.network.model.OrderResponse;
 import cat.buyaround.app.network.model.PackResponse;
 import cat.buyaround.app.network.model.ProductResponse;
@@ -106,9 +105,5 @@ public interface BuyAroundService {
 
     @GET("user/orders/repeated")
     Call<OrderResponse> getRepeatedUserOrders();
-
-    // Notifications
-    @GET("user/notifications")
-    Call<NotificationResponse> getUserNotifications();
 
 }

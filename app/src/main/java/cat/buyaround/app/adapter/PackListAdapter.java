@@ -53,7 +53,7 @@ public class PackListAdapter extends RecyclerView.Adapter<PackListAdapter.ViewHo
         holder.tvRating.setText(String.valueOf(pack.getRating()));
         holder.tvPrice.setText(Utils.floatToString(pack.getPrice()));
 
-        if (pack.getThumbnail() != null) {
+        if (pack.getImages()[0] != null) {
             CircularProgressDrawable circularProgressDrawable = new CircularProgressDrawable(holder.itemView.getContext());
             circularProgressDrawable.setStyle(CircularProgressDrawable.LARGE);
             circularProgressDrawable.start();
@@ -61,7 +61,7 @@ public class PackListAdapter extends RecyclerView.Adapter<PackListAdapter.ViewHo
             Glide.with(context)
                     .asBitmap()
                     .placeholder(circularProgressDrawable)
-                    .load(pack.getThumbnail())
+                    .load(pack.getImages()[0])
                     .into(holder.imgView);
         } else {
             Glide.with(context)

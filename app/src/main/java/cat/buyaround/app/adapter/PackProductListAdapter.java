@@ -14,14 +14,15 @@ import com.bumptech.glide.Glide;
 
 import cat.buyaround.app.adapter.callback.IListAdapter;
 import cat.buyaround.app.databinding.ItemProductInPackBinding;
-import cat.buyaround.app.model.OrderProduct;
+import cat.buyaround.app.model.ItemGroup;
+import cat.buyaround.app.model.Product;
 
 public class PackProductListAdapter extends RecyclerView.Adapter<PackProductListAdapter.ViewHolder> {
 
-    private OrderProduct[] mProducts;
+    private ItemGroup[] mProducts;
     private IListAdapter mCallback;
 
-    public PackProductListAdapter(OrderProduct[] products, IListAdapter callback) {
+    public PackProductListAdapter(ItemGroup[] products, IListAdapter callback) {
         mProducts = products;
         mCallback = callback;
     }
@@ -37,7 +38,7 @@ public class PackProductListAdapter extends RecyclerView.Adapter<PackProductList
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        OrderProduct product = mProducts[position];
+        Product product = (Product) mProducts[position].getItem();
 
         CircularProgressDrawable circularProgressDrawable = new CircularProgressDrawable(holder.itemView.getContext());
         circularProgressDrawable.setStyle(CircularProgressDrawable.LARGE);
@@ -46,12 +47,12 @@ public class PackProductListAdapter extends RecyclerView.Adapter<PackProductList
         Glide.with(holder.context)
                 .asBitmap()
                 .placeholder(circularProgressDrawable)
-                .load(product.getThumbnail())
+                .load(product.getImages()[0])
                 .into(holder.photoIv);
 
         holder.nameTv.setText(product.getName());
         holder.priceTv.setText(String.valueOf(product.getPrice()));
-        holder.quantityTv.setText(product.getQuantity());
+        holder.quantityTv.setText(mProducts[position].getQuantity());
     }
 
     @Override

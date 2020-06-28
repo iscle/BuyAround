@@ -54,7 +54,7 @@ public class ProductListAdapter extends RecyclerView.Adapter<ProductListAdapter.
         holder.tvRating.setText(Utils.floatToString(product.getRating()));
         holder.tvPrice.setText(Utils.floatToString(product.getPrice()));
 
-        if (!TextUtils.isEmpty(product.getThumbnail())) {
+        if (!TextUtils.isEmpty(product.getImages()[0])) {
             CircularProgressDrawable circularProgressDrawable = new CircularProgressDrawable(holder.itemView.getContext());
             circularProgressDrawable.setStyle(CircularProgressDrawable.LARGE);
             circularProgressDrawable.start();
@@ -62,7 +62,7 @@ public class ProductListAdapter extends RecyclerView.Adapter<ProductListAdapter.
             Glide.with(context)
                     .asBitmap()
                     .placeholder(circularProgressDrawable)
-                    .load(product.getThumbnail())
+                    .load(product.getImages()[0])
                     .into(holder.imgView);
         } else {
             Glide.with(context)
