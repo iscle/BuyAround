@@ -50,8 +50,8 @@ public class CategoriesFragment extends DaggerFragment implements IListAdapter {
         recyclerView = binding.categoriesRecyclerView;
         categoryListAdapter = new CategoryListAdapter(requireContext(), this);
         recyclerView.setAdapter(categoryListAdapter);
-        recyclerView.setLayoutManager(new LinearLayoutManager(getContext(), RecyclerView.VERTICAL, false));
-        DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(recyclerView.getContext(), RecyclerView.VERTICAL);
+        recyclerView.setLayoutManager(new LinearLayoutManager(requireContext(), RecyclerView.VERTICAL, false));
+        DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(requireContext(), RecyclerView.VERTICAL);
         recyclerView.addItemDecoration(dividerItemDecoration);
 
         subscribeObserver();

@@ -29,7 +29,7 @@ public class CartViewModel extends ViewModel {
     }
 
     private void requestProducts() {
-
+        // TODO: API CALL
     }
 
     public LiveData<List<ItemGroup>> getOrderProducts() {
@@ -38,14 +38,21 @@ public class CartViewModel extends ViewModel {
     }
 
     public void addProduct(ItemGroup product) {
-
+        // TODO: API CALL
     }
 
     public void clearProductList() {
-
+        mProducts.postValue(null);
+        // TODO: API CALL
     }
 
     public float getTotalCost() {
-        return 0.0f;
+        float totalPrice = 0.0f;
+
+        for (ItemGroup prod : mProducts.getValue()) {
+            totalPrice += prod.getTotalPrice();
+        }
+
+        return totalPrice;
     }
 }

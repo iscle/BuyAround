@@ -24,9 +24,9 @@ public class CategoryListAdapter extends RecyclerView.Adapter<CategoryListAdapte
     private Category[] mCategories;
 
     public CategoryListAdapter(Context context, IListAdapter callback) {
-        mContext = context;
-        mCallback = callback;
-        mCategories = null;
+        this.mContext = context;
+        this.mCallback = callback;
+        this.mCategories = null;
     }
 
     @NonNull
@@ -41,8 +41,10 @@ public class CategoryListAdapter extends RecyclerView.Adapter<CategoryListAdapte
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         Category category = mCategories[position];
+
         holder.itemView.setOnClickListener(view -> mCallback.onItemSelected(category));
         holder.tvName.setText(category.getName());
+
         if (category.getIcon() != null) {
             CircularProgressDrawable circularProgressDrawable = new CircularProgressDrawable(holder.itemView.getContext());
             circularProgressDrawable.setStyle(CircularProgressDrawable.LARGE);
